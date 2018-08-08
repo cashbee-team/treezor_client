@@ -1,0 +1,43 @@
+# TreezorClient::Mandate
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**mandate_id** | **Integer** |  | [optional] 
+**title** | **String** |  | [optional] 
+**legal_informations** | **String** |  | [optional] 
+**unique_mandate_reference** | **String** |  | [optional] 
+**mandate_status** | **String** |  | [optional] 
+**user_id** | **Integer** |  | [optional] 
+**debtor_name** | **String** |  | [optional] 
+**debtor_address** | **String** |  | [optional] 
+**debtor_city** | **String** |  | [optional] 
+**debtor_zip_code** | **String** |  | [optional] 
+**debtor_country** | **String** |  | [optional] 
+**debtor_iban** | **String** |  | [optional] 
+**debtor_bic** | **String** |  | [optional] 
+**sequence_type** | **String** |  | [optional] 
+**creditor_name** | **String** |  | [optional] 
+**sepa_creditor_identifier** | **String** |  | [optional] 
+**creditor_address** | **String** |  | [optional] 
+**creditor_city** | **String** |  | [optional] 
+**creditor_zip_code** | **String** |  | [optional] 
+**creditor_country** | **String** |  | [optional] 
+**signature_date** | **String** | Date YYYY-MM-DD | [optional] 
+**debtor_signature_ip** | **String** |  | [optional] 
+**signed** | **Integer** |  | [optional] 
+**debtor_identification_code** | **String** |  | [optional] 
+**debtor_reference_party_name** | **String** |  | [optional] 
+**debtor_reference_identification_code** | **String** |  | [optional] 
+**creditor_reference_party_name** | **String** |  | [optional] 
+**creditor_reference_identification_code** | **String** |  | [optional] 
+**contract_identification_number** | **String** |  | [optional] 
+**contract_description** | **String** |  | [optional] 
+**is_paper** | **BOOLEAN** |  | [optional] 
+**sdd_type** | **String** |  | [optional] 
+**revocation_signature_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+**created_ip** | **String** |  | [optional] 
+**created_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+**modified_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+
+

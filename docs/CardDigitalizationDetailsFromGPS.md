@@ -1,0 +1,40 @@
+# TreezorClient::CardDigitalizationDetailsFromGPS
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**creator** | **String** | Creator Name | [optional] 
+**creator_pan_ref** | **String** | Digitiser&#39;s (i.e. who created this payment_token) unique ref to the linkedcard | [optional] 
+**creator_token_ref** | **String** | See internal documentation | [optional] 
+**pant** | **String** | PAN for the Card linked to the MDES card | [optional] 
+**payment_token** | **String** | PaymentToken DPAN for MDES Card | [optional] 
+**payment_token_exp_date** | **String** | Expiry date of payment token | [optional] 
+**payment_token_id** | **String** | PaymentToken Id for MDES card | [optional] 
+**payment_token_type** | **String** | See Appendix LL | [optional] 
+**gps_status** | **String** | This is the GPS set status of the token for transacting | [optional] 
+**tokenised_datetime** | **String** | date/time yyyy-mm-dd hh:mm:ss when tokenise | [optional] 
+**tokenised_status** | **String** | Has this Payment Token been digitised/personalised ? U&#x3D;unknown 0&#x3D;not-tokenised 1&#x3D;tokenised | [optional] 
+**txn_status** | **String** | Status of token for transacting. After tokenisation, this is not changed by GPS, but is received from token creator who maintains this. | [optional] 
+**txn_status_actor** | **String** | This says who/which-system was the last to change txn_status | [optional] 
+**txn_status_change_datetime** | **String** | Date/time that txn_status was last changed | [optional] 
+**accepted_terms_version** | **String** | Version of the terms and conditions which were accepted by the cardholder.(As received from network) | [optional] 
+**auth_datetime** | **String** | date/time yyyy-mm-dd hh:mm:ss when token authorisation (to digitise/personalise) request last responded to | [optional] 
+**auth_decision** | **String** | Final tokenisation decision - Values U&#x3D;unknown (not tested) 0&#x3D;Approve digitisation request A&#x3D;Approve digitisation request (with additional authentication) | [optional] 
+**auth_rspsrc** | **String** | who approved tokenisation | [optional] 
+**auth_status** | **String** | Status of the authorisation given to Digitise/personalise this Payment Token note not related to transaction authorisation Values U&#x3D;unknown (not tested) 0&#x3D;Approve digitisation request A&#x3D;Approve digitisation request (with additional authentication) 1&#x3D;decline digitisation request | [optional] 
+**digitisation_ref** | **String** | Unique (per payment_token_issuer_id) reference which all digitisation messageswill use, to link them together | [optional] 
+**activation_code** | **String** | Activation code to be sent directly to cardholder to activate this Payment Token | [optional] 
+**activation_code_expdate** | **String** | Date/time yyyy-mm-dd hh:mm:ss when activation code expires, in GMT (UTC) | [optional] 
+**activation_method** | **String** | Which Activation Method wa used 0 - None 1 - SMS to mobile phone 2 - Email 3 - Cardholder to call automated call centre 4 - Cardholder to call human call centre 5 - Website 6 - Mobile application 7 - Voice phone call | [optional] 
+**device_id** | **String** | unique ID of the secure element in the device | [optional] 
+**device_ip** | **String** | IP address (full or last part only) of the device at digitisation time | [optional] 
+**device_lang2** | **String** | Device language code as ISO 639-1 (2 letter lowercase) code | [optional] 
+**device_latitude** | **String** | Device Latitude in degrees at time of digitisation request -180 to +180 +ve&#x3D;East, -ve&#x3D;West (of Greenwich) eg  176.2 &#x3D;&gt; East 176.2 degrees,- 98.5 &#x3D;&gt; West 98.5 degrees | [optional] 
+**device_longitude** | **String** | Longitude as above | [optional] 
+**device_name** | **String** | name cardholder assigned to device in Wallet | [optional] 
+**device_tel_num** | **String** | Device telephone number (full or last part only) | [optional] 
+**device_type** | **String** | Not described | [optional] 
+**first_name** | **String** | Cardholder firstname as provided by Wallet Provider during digitisation. May not be provided, or just initial. | [optional] 
+**last_name** | **String** | Cardholder last name as provided by Wallet Provider during digitisation. May not be provided, or just initial. | [optional] 
+
+
