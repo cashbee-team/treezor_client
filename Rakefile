@@ -6,3 +6,8 @@ begin
 rescue LoadError
   # no rspec available
 end
+begin
+  require 'bundler/gem_tasks'
+rescue LoadError
+  # no rspec available
+end
