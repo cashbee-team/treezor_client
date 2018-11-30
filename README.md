@@ -50,7 +50,6 @@ ruby -Ilib script.rb
 ## Getting Started
 
 Please follow the [installation](#installation) procedure and then run the following code:
-
 ```ruby
 # Load the gem
 require 'treezor_client'
@@ -248,7 +247,6 @@ Class | Method | HTTP request | Description
  - [TreezorClient::InlineResponse2009](docs/InlineResponse2009.md)
  - [TreezorClient::InlineResponseDefault](docs/InlineResponseDefault.md)
  - [TreezorClient::IssuerInitiatedDigitizationDatasAdditionnalData](docs/IssuerInitiatedDigitizationDatasAdditionnalData.md)
- - [TreezorClient::IssuerInitiatedDigitizationDatasAdditionnalDataECCPublicCertificates](docs/IssuerInitiatedDigitizationDatasAdditionnalDataECCPublicCertificates.md)
  - [TreezorClient::Mandate](docs/Mandate.md)
  - [TreezorClient::MccRestrictionGroup](docs/MccRestrictionGroup.md)
  - [TreezorClient::MerchantIdRestrictionGroup](docs/MerchantIdRestrictionGroup.md)

@@ -311,6 +311,10 @@ module TreezorClient
     # @option opts [String] :legal_number_of_employee_range Business number of employees range
     # @option opts [Integer] :effective_beneficiary Business effective beneficiary
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
+    # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory.
+    # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
+    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in K€.
     # @return [InlineResponse20024]
     def put_user(id, opts = {})
       data, _status_code, _headers = put_user_with_http_info(id, opts)
@@ -358,6 +362,10 @@ module TreezorClient
     # @option opts [String] :legal_number_of_employee_range Business number of employees range
     # @option opts [Integer] :effective_beneficiary Business effective beneficiary
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
+    # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory.
+    # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
+    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in K€.
     # @return [Array<(InlineResponse20024, Fixnum, Hash)>] InlineResponse20024 data, response status code and response headers
     def put_user_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -381,6 +389,9 @@ module TreezorClient
       end
       if @api_client.config.client_side_validation && opts[:'legal_number_of_employee_range'] && !['0', '1-9', '10-99', '100-249', '250-*'].include?(opts[:'legal_number_of_employee_range'])
         fail ArgumentError, 'invalid value for "legal_number_of_employee_range", must be one of 0, 1-9, 10-99, 100-249, 250-*'
+      end
+      if @api_client.config.client_side_validation && opts[:'personal_assets'] && !['0-2', '3-22', '23-128', '129-319', '320-464', '465-'].include?(opts[:'personal_assets'])
+        fail ArgumentError, 'invalid value for "personal_assets", must be one of 0-2, 3-22, 23-128, 129-319, 320-464, 465-'
       end
       # resource path
       local_var_path = "/users/{id}".sub('{' + 'id' + '}', id.to_s)
@@ -424,6 +435,10 @@ module TreezorClient
       query_params[:'legalNumberOfEmployeeRange'] = opts[:'legal_number_of_employee_range'] if !opts[:'legal_number_of_employee_range'].nil?
       query_params[:'effectiveBeneficiary'] = opts[:'effective_beneficiary'] if !opts[:'effective_beneficiary'].nil?
       query_params[:'language'] = opts[:'language'] if !opts[:'language'].nil?
+      query_params[:'taxNumber'] = opts[:'tax_number'] if !opts[:'tax_number'].nil?
+      query_params[:'taxResidence'] = opts[:'tax_residence'] if !opts[:'tax_residence'].nil?
+      query_params[:'position'] = opts[:'position'] if !opts[:'position'].nil?
+      query_params[:'personalAssets'] = opts[:'personal_assets'] if !opts[:'personal_assets'].nil?
 
       # header parameters
       header_params = {}
@@ -468,8 +483,8 @@ module TreezorClient
     # @option opts [String] :lastname User&#39;s last name
     # @option opts [String] :middle_names User&#39;s middle names
     # @option opts [String] :birthday User&#39;s birth date. Format YYYY-MM-DD
-    # @option opts [String] :address1 User&#39;s postal address (main)
-    # @option opts [String] :address2 User&#39;s postal address (complement)
+    # @option opts [String] :address1 User&#39;s postal address (main). Can not contain carriage return.
+    # @option opts [String] :address2 User&#39;s postal address (complement). Can not contain carriage return.
     # @option opts [String] :postcode User&#39;s postcode
     # @option opts [String] :city User&#39;s city
     # @option opts [String] :state User&#39;s state
@@ -494,6 +509,10 @@ module TreezorClient
     # @option opts [String] :legal_number_of_employee_range Business number of employees range
     # @option opts [Integer] :effective_beneficiary Business effective beneficiary
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
+    # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory.
+    # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
+    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in K€.
     # @return [InlineResponse20024]
     def put_users(email, opts = {})
       data, _status_code, _headers = put_users_with_http_info(email, opts)
@@ -517,8 +536,8 @@ module TreezorClient
     # @option opts [String] :lastname User&#39;s last name
     # @option opts [String] :middle_names User&#39;s middle names
     # @option opts [String] :birthday User&#39;s birth date. Format YYYY-MM-DD
-    # @option opts [String] :address1 User&#39;s postal address (main)
-    # @option opts [String] :address2 User&#39;s postal address (complement)
+    # @option opts [String] :address1 User&#39;s postal address (main). Can not contain carriage return.
+    # @option opts [String] :address2 User&#39;s postal address (complement). Can not contain carriage return.
     # @option opts [String] :postcode User&#39;s postcode
     # @option opts [String] :city User&#39;s city
     # @option opts [String] :state User&#39;s state
@@ -543,6 +562,10 @@ module TreezorClient
     # @option opts [String] :legal_number_of_employee_range Business number of employees range
     # @option opts [Integer] :effective_beneficiary Business effective beneficiary
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
+    # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory.
+    # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
+    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in K€.
     # @return [Array<(InlineResponse20024, Fixnum, Hash)>] InlineResponse20024 data, response status code and response headers
     def put_users_with_http_info(email, opts = {})
       if @api_client.config.debugging
@@ -566,6 +589,9 @@ module TreezorClient
       end
       if @api_client.config.client_side_validation && opts[:'legal_number_of_employee_range'] && !['0', '1-9', '10-99', '100-249', '250-*'].include?(opts[:'legal_number_of_employee_range'])
         fail ArgumentError, 'invalid value for "legal_number_of_employee_range", must be one of 0, 1-9, 10-99, 100-249, 250-*'
+      end
+      if @api_client.config.client_side_validation && opts[:'personal_assets'] && !['0-2', '3-22', '23-128', '129-319', '320-464', '465-'].include?(opts[:'personal_assets'])
+        fail ArgumentError, 'invalid value for "personal_assets", must be one of 0-2, 3-22, 23-128, 129-319, 320-464, 465-'
       end
       # resource path
       local_var_path = "/users"
@@ -612,6 +638,10 @@ module TreezorClient
       query_params[:'legalNumberOfEmployeeRange'] = opts[:'legal_number_of_employee_range'] if !opts[:'legal_number_of_employee_range'].nil?
       query_params[:'effectiveBeneficiary'] = opts[:'effective_beneficiary'] if !opts[:'effective_beneficiary'].nil?
       query_params[:'language'] = opts[:'language'] if !opts[:'language'].nil?
+      query_params[:'taxNumber'] = opts[:'tax_number'] if !opts[:'tax_number'].nil?
+      query_params[:'taxResidence'] = opts[:'tax_residence'] if !opts[:'tax_residence'].nil?
+      query_params[:'position'] = opts[:'position'] if !opts[:'position'].nil?
+      query_params[:'personalAssets'] = opts[:'personal_assets'] if !opts[:'personal_assets'].nil?
 
       # header parameters
       header_params = {}

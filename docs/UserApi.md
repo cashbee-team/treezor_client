@@ -296,7 +296,11 @@ opts = {
   legal_net_income_range: "legal_net_income_range_example", # String | Business net income range (in k€)
   legal_number_of_employee_range: "legal_number_of_employee_range_example", # String | Business number of employees range
   effective_beneficiary: 56, # Integer | Business effective beneficiary
-  language: "language_example" # String | User's prefered language (ISO 639-1)
+  language: "language_example", # String | User's prefered language (ISO 639-1)
+  tax_number: "tax_number_example", # String | User's tax identification number. If the taxResidence is not set to FR, the field is mandatory.
+  tax_residence: "tax_residence_example", # String | User's tax residence country code (2 char code following ISO 3166 norm).
+  position: "position_example", # String | User's position.
+  personal_assets: "personal_assets_example" # String | User's personal assets range exprimed in K€.
 }
 
 begin
@@ -350,6 +354,10 @@ Name | Type | Description  | Notes
  **legal_number_of_employee_range** | **String**| Business number of employees range | [optional] 
  **effective_beneficiary** | **Integer**| Business effective beneficiary | [optional] 
  **language** | **String**| User&#39;s prefered language (ISO 639-1) | [optional] 
+ **tax_number** | **String**| User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory. | [optional] 
+ **tax_residence** | **String**| User&#39;s tax residence country code (2 char code following ISO 3166 norm). | [optional] 
+ **position** | **String**| User&#39;s position. | [optional] 
+ **personal_assets** | **String**| User&#39;s personal assets range exprimed in K€. | [optional] 
 
 ### Return type
 
@@ -403,8 +411,8 @@ opts = {
   lastname: "lastname_example", # String | User's last name
   middle_names: "middle_names_example", # String | User's middle names
   birthday: "birthday_example", # String | User's birth date. Format YYYY-MM-DD
-  address1: "address1_example", # String | User's postal address (main)
-  address2: "address2_example", # String | User's postal address (complement)
+  address1: "address1_example", # String | User's postal address (main). Can not contain carriage return.
+  address2: "address2_example", # String | User's postal address (complement). Can not contain carriage return.
   postcode: "postcode_example", # String | User's postcode
   city: "city_example", # String | User's city
   state: "state_example", # String | User's state
@@ -428,7 +436,11 @@ opts = {
   legal_net_income_range: "legal_net_income_range_example", # String | Business net income range (in k€)
   legal_number_of_employee_range: "legal_number_of_employee_range_example", # String | Business number of employees range
   effective_beneficiary: 56, # Integer | Business effective beneficiary
-  language: "language_example" # String | User's prefered language (ISO 639-1)
+  language: "language_example", # String | User's prefered language (ISO 639-1)
+  tax_number: "tax_number_example", # String | User's tax identification number. If the taxResidence is set to another country than France, the field is mandatory.
+  tax_residence: "tax_residence_example", # String | User's tax residence country code (2 char code following ISO 3166 norm).
+  position: "position_example", # String | User's position.
+  personal_assets: "personal_assets_example" # String | User's personal assets range exprimed in K€.
 }
 
 begin
@@ -458,8 +470,8 @@ Name | Type | Description  | Notes
  **lastname** | **String**| User&#39;s last name | [optional] 
  **middle_names** | **String**| User&#39;s middle names | [optional] 
  **birthday** | **String**| User&#39;s birth date. Format YYYY-MM-DD | [optional] 
- **address1** | **String**| User&#39;s postal address (main) | [optional] 
- **address2** | **String**| User&#39;s postal address (complement) | [optional] 
+ **address1** | **String**| User&#39;s postal address (main). Can not contain carriage return. | [optional] 
+ **address2** | **String**| User&#39;s postal address (complement). Can not contain carriage return. | [optional] 
  **postcode** | **String**| User&#39;s postcode | [optional] 
  **city** | **String**| User&#39;s city | [optional] 
  **state** | **String**| User&#39;s state | [optional] 
@@ -484,6 +496,10 @@ Name | Type | Description  | Notes
  **legal_number_of_employee_range** | **String**| Business number of employees range | [optional] 
  **effective_beneficiary** | **Integer**| Business effective beneficiary | [optional] 
  **language** | **String**| User&#39;s prefered language (ISO 639-1) | [optional] 
+ **tax_number** | **String**| User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory. | [optional] 
+ **tax_residence** | **String**| User&#39;s tax residence country code (2 char code following ISO 3166 norm). | [optional] 
+ **position** | **String**| User&#39;s position. | [optional] 
+ **personal_assets** | **String**| User&#39;s personal assets range exprimed in K€. | [optional] 
 
 ### Return type
 

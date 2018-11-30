@@ -93,6 +93,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
     # @option opts [String] :card_tag Custom field
+    # @option opts [String] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
     # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
     # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
     # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -103,6 +104,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
     # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
     # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+    # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
     # @option opts [String] :pin Card&#39;s PIN code value.
     # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
     # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
@@ -127,6 +129,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
     # @option opts [String] :card_tag Custom field
+    # @option opts [String] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
     # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
     # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
     # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -137,6 +140,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
     # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
     # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+    # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
     # @option opts [String] :pin Card&#39;s PIN code value.
     # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
     # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
@@ -178,6 +182,7 @@ module TreezorClient
       query_params[:'cardPrint'] = card_print
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'cardTag'] = opts[:'card_tag'] if !opts[:'card_tag'].nil?
+      query_params[:'batchDeliveryId'] = opts[:'batch_delivery_id'] if !opts[:'batch_delivery_id'].nil?
       query_params[:'limitAtmYear'] = opts[:'limit_atm_year'] if !opts[:'limit_atm_year'].nil?
       query_params[:'limitAtmMonth'] = opts[:'limit_atm_month'] if !opts[:'limit_atm_month'].nil?
       query_params[:'limitAtmWeek'] = opts[:'limit_atm_week'] if !opts[:'limit_atm_week'].nil?
@@ -188,6 +193,7 @@ module TreezorClient
       query_params[:'limitPaymentWeek'] = opts[:'limit_payment_week'] if !opts[:'limit_payment_week'].nil?
       query_params[:'limitPaymentDay'] = opts[:'limit_payment_day'] if !opts[:'limit_payment_day'].nil?
       query_params[:'limitPaymentAll'] = opts[:'limit_payment_all'] if !opts[:'limit_payment_all'].nil?
+      query_params[:'paymentDailyLimit'] = opts[:'payment_daily_limit'] if !opts[:'payment_daily_limit'].nil?
       query_params[:'pin'] = opts[:'pin'] if !opts[:'pin'].nil?
       query_params[:'anonymous'] = opts[:'anonymous'] if !opts[:'anonymous'].nil?
       query_params[:'sendToParent'] = opts[:'send_to_parent'] if !opts[:'send_to_parent'].nil?
@@ -664,6 +670,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week Payment week limit
     # @option opts [Integer] :limit_payment_day Payment day limit
     # @option opts [Integer] :limit_payment_all Payment from beginning limit
+    # @option opts [Float] :payment_daily_limit Payment day limit including cents. The decimal delimiter must be \&quot;.\&quot;
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
@@ -688,6 +695,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week Payment week limit
     # @option opts [Integer] :limit_payment_day Payment day limit
     # @option opts [Integer] :limit_payment_all Payment from beginning limit
+    # @option opts [Float] :payment_daily_limit Payment day limit including cents. The decimal delimiter must be \&quot;.\&quot;
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
@@ -716,6 +724,7 @@ module TreezorClient
       query_params[:'limitPaymentWeek'] = opts[:'limit_payment_week'] if !opts[:'limit_payment_week'].nil?
       query_params[:'limitPaymentDay'] = opts[:'limit_payment_day'] if !opts[:'limit_payment_day'].nil?
       query_params[:'limitPaymentAll'] = opts[:'limit_payment_all'] if !opts[:'limit_payment_all'].nil?
+      query_params[:'paymentDailyLimit'] = opts[:'payment_daily_limit'] if !opts[:'payment_daily_limit'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
@@ -1187,6 +1196,7 @@ module TreezorClient
     # @param card_print Card appearance code, also used to choose the program ID of the card
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+    # @option opts [String] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
     # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
     # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
     # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -1197,6 +1207,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
     # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
     # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+    # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
     # @option opts [String] :pin Card&#39;s PIN code value. Default random PIN.
     # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
     # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
@@ -1221,6 +1232,7 @@ module TreezorClient
     # @param card_print Card appearance code, also used to choose the program ID of the card
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+    # @option opts [String] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
     # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
     # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
     # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -1231,6 +1243,7 @@ module TreezorClient
     # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
     # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
     # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+    # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
     # @option opts [String] :pin Card&#39;s PIN code value. Default random PIN.
     # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
     # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
@@ -1276,6 +1289,7 @@ module TreezorClient
       query_params[:'cardTag'] = card_tag
       query_params[:'cardPrint'] = card_print
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
+      query_params[:'batchDeliveryId'] = opts[:'batch_delivery_id'] if !opts[:'batch_delivery_id'].nil?
       query_params[:'limitAtmYear'] = opts[:'limit_atm_year'] if !opts[:'limit_atm_year'].nil?
       query_params[:'limitAtmMonth'] = opts[:'limit_atm_month'] if !opts[:'limit_atm_month'].nil?
       query_params[:'limitAtmWeek'] = opts[:'limit_atm_week'] if !opts[:'limit_atm_week'].nil?
@@ -1286,6 +1300,7 @@ module TreezorClient
       query_params[:'limitPaymentWeek'] = opts[:'limit_payment_week'] if !opts[:'limit_payment_week'].nil?
       query_params[:'limitPaymentDay'] = opts[:'limit_payment_day'] if !opts[:'limit_payment_day'].nil?
       query_params[:'limitPaymentAll'] = opts[:'limit_payment_all'] if !opts[:'limit_payment_all'].nil?
+      query_params[:'paymentDailyLimit'] = opts[:'payment_daily_limit'] if !opts[:'payment_daily_limit'].nil?
       query_params[:'pin'] = opts[:'pin'] if !opts[:'pin'].nil?
       query_params[:'anonymous'] = opts[:'anonymous'] if !opts[:'anonymous'].nil?
       query_params[:'sendToParent'] = opts[:'send_to_parent'] if !opts[:'send_to_parent'].nil?

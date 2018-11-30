@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **limit_payment_week** | **Integer** |  | [optional] 
 **limit_payment_day** | **Integer** |  | [optional] 
 **limit_payment_all** | **Integer** |  | [optional] 
+**payment_daily_limit** | **Float** |  | [optional] 
 **total_atm_year** | **Integer** |  | [optional] 
 **total_atm_month** | **Integer** |  | [optional] 
 **total_atm_week** | **Integer** |  | [optional] 
