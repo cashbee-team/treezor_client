@@ -226,7 +226,6 @@ opts = {
   access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
   access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  fields: ["fields_example"], # Array<String> | List of the object's properties you want to pick up.
   body: TreezorClient::Body7.new # Body7 | 
 }
 
@@ -247,7 +246,6 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **fields** | [**Array&lt;String&gt;**](String.md)| List of the object&#39;s properties you want to pick up. | [optional] 
  **body** | [**Body7**](Body7.md)|  | [optional] 
 
 ### Return type
@@ -293,7 +291,6 @@ opts = {
   access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
   access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  fields: ["fields_example"], # Array<String> | List of the object's properties you want to pick up.
   body: TreezorClient::Body8.new # Body8 | 
 }
 
@@ -315,7 +312,6 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **fields** | [**Array&lt;String&gt;**](String.md)| List of the object&#39;s properties you want to pick up. | [optional] 
  **body** | [**Body8**](Body8.md)|  | [optional] 
 
 ### Return type

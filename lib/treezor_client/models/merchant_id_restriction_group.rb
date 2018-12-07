@@ -25,7 +25,7 @@ module TreezorClient
     attr_accessor :is_whitelist
 
     # Array of Merchant ID
-    attr_accessor :mcc
+    attr_accessor :merchants
 
     # status of the Merchant ID group
     attr_accessor :status
@@ -64,7 +64,7 @@ module TreezorClient
         :'id' => :'id',
         :'name' => :'name',
         :'is_whitelist' => :'isWhitelist',
-        :'mcc' => :'mcc',
+        :'merchants' => :'merchants',
         :'status' => :'status',
         :'start_date' => :'startDate',
         :'created_date' => :'createdDate'
@@ -77,7 +77,7 @@ module TreezorClient
         :'id' => :'Integer',
         :'name' => :'String',
         :'is_whitelist' => :'BOOLEAN',
-        :'mcc' => :'Array<String>',
+        :'merchants' => :'Array<String>',
         :'status' => :'String',
         :'start_date' => :'String',
         :'created_date' => :'String'
@@ -104,9 +104,9 @@ module TreezorClient
         self.is_whitelist = attributes[:'isWhitelist']
       end
 
-      if attributes.has_key?(:'mcc')
-        if (value = attributes[:'mcc']).is_a?(Array)
-          self.mcc = value
+      if attributes.has_key?(:'merchants')
+        if (value = attributes[:'merchants']).is_a?(Array)
+          self.merchants = value
         end
       end
 
@@ -157,7 +157,7 @@ module TreezorClient
           id == o.id &&
           name == o.name &&
           is_whitelist == o.is_whitelist &&
-          mcc == o.mcc &&
+          merchants == o.merchants &&
           status == o.status &&
           start_date == o.start_date &&
           created_date == o.created_date
@@ -172,7 +172,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, is_whitelist, mcc, status, start_date, created_date].hash
+      [id, name, is_whitelist, merchants, status, start_date, created_date].hash
     end
 
     # Builds the object from hash

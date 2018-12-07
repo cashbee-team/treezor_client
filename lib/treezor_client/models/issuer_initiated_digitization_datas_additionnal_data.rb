@@ -15,7 +15,8 @@ require 'date'
 module TreezorClient
   # This parameter is required in the case of APPLE tokenRequestor
   class IssuerInitiatedDigitizationDatasAdditionnalData
-    attr_accessor :ecc_public_certificates
+    # The certificate chain. Required when tokenRequestor is APPLE. The first element of array is the leaf certificate and the last should be the root certificate. There can be 0 or several sub certificates inbetween the first element of array and the last. All certificates are of type string (base64 encoded of DER format)
+    attr_accessor :certificates
 
     # The nonce as provided by the Apple SDK. Required when tokenRequestor is APPLE
     attr_accessor :nonce
@@ -27,7 +28,7 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ecc_public_certificates' => :'ECCPublicCertificates',
+        :'certificates' => :'certificates',
         :'nonce' => :'nonce',
         :'nonce_signature' => :'nonceSignature'
       }
@@ -36,7 +37,7 @@ module TreezorClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'ecc_public_certificates' => :'IssuerInitiatedDigitizationDatasAdditionnalDataECCPublicCertificates',
+        :'certificates' => :'Array<String>',
         :'nonce' => :'String',
         :'nonce_signature' => :'String'
       }
@@ -50,8 +51,10 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'ECCPublicCertificates')
-        self.ecc_public_certificates = attributes[:'ECCPublicCertificates']
+      if attributes.has_key?(:'certificates')
+        if (value = attributes[:'certificates']).is_a?(Array)
+          self.certificates = value
+        end
       end
 
       if attributes.has_key?(:'nonce')
@@ -68,13 +71,29 @@ module TreezorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if !@nonce_signature.nil? && @nonce_signature !~ Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+        invalid_properties.push("invalid value for 'nonce_signature', must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@nonce_signature.nil? && @nonce_signature !~ Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
       return true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] nonce_signature Value to be assigned
+    def nonce_signature=(nonce_signature)
+
+      if !nonce_signature.nil? && nonce_signature !~ Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+        fail ArgumentError, "invalid value for 'nonce_signature', must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/."
+      end
+
+      @nonce_signature = nonce_signature
     end
 
     # Checks equality by comparing each attribute.
@@ -82,7 +101,7 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ecc_public_certificates == o.ecc_public_certificates &&
+          certificates == o.certificates &&
           nonce == o.nonce &&
           nonce_signature == o.nonce_signature
     end
@@ -96,7 +115,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ecc_public_certificates, nonce, nonce_signature].hash
+      [certificates, nonce, nonce_signature].hash
     end
 
     # Builds the object from hash

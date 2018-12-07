@@ -118,6 +118,7 @@ card_print = "card_print_example" # String | Card appareance code, also used to 
 opts = { 
   access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
   card_tag: "card_tag_example", # String | Custom field
+  batch_delivery_id: "batch_delivery_id_example", # String | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   limit_atm_year: 56, # Integer | ATM operations limit for a sliding year. No default value.
   limit_atm_month: 56, # Integer | ATM operations limit for a sliding month. No default value.
   limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -128,6 +129,7 @@ opts = {
   limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000â‚¬.
   limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000â‚¬.
   limit_payment_all: 56, # Integer | POS operations limit from beginning. No default value.
+  payment_daily_limit: 3.4, # Float | POS operations limit for a single day including cents. The decimal delimiter must be \".\". No default value.
   pin: "pin_example", # String | Card's PIN code value.
   anonymous: 56, # Integer | Card is anonymous. If value is 1 there will be no embossed name.
   send_to_parent: 56, # Integer | If you put the value 1 the delivery address will be the parent user's.
@@ -158,6 +160,7 @@ Name | Type | Description  | Notes
  **card_print** | **String**| Card appareance code, also used to choose the program ID of the card | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
  **card_tag** | **String**| Custom field | [optional] 
+ **batch_delivery_id** | **String**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
  **limit_atm_year** | **Integer**| ATM operations limit for a sliding year. No default value. | [optional] 
  **limit_atm_month** | **Integer**| ATM operations limit for a sliding month. No default value. | [optional] 
  **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000â‚¬. | [optional] 
@@ -168,6 +171,7 @@ Name | Type | Description  | Notes
  **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000â‚¬. | [optional] 
  **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000â‚¬. | [optional] 
  **limit_payment_all** | **Integer**| POS operations limit from beginning. No default value. | [optional] 
+ **payment_daily_limit** | **Float**| POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value. | [optional] 
  **pin** | **String**| Card&#39;s PIN code value. | [optional] 
  **anonymous** | **Integer**| Card is anonymous. If value is 1 there will be no embossed name. | [optional] 
  **send_to_parent** | **Integer**| If you put the value 1 the delivery address will be the parent user&#39;s. | [optional] 
@@ -632,6 +636,7 @@ opts = {
   limit_payment_week: 56, # Integer | Payment week limit
   limit_payment_day: 56, # Integer | Payment day limit
   limit_payment_all: 56, # Integer | Payment from beginning limit
+  payment_daily_limit: 3.4, # Float | Payment day limit including cents. The decimal delimiter must be \".\"
   access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
   access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
@@ -662,6 +667,7 @@ Name | Type | Description  | Notes
  **limit_payment_week** | **Integer**| Payment week limit | [optional] 
  **limit_payment_day** | **Integer**| Payment day limit | [optional] 
  **limit_payment_all** | **Integer**| Payment from beginning limit | [optional] 
+ **payment_daily_limit** | **Float**| Payment day limit including cents. The decimal delimiter must be \&quot;.\&quot; | [optional] 
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
@@ -1125,6 +1131,7 @@ card_print = "card_print_example" # String | Card appearance code, also used to 
 
 opts = { 
   access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  batch_delivery_id: "batch_delivery_id_example", # String | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   limit_atm_year: 56, # Integer | ATM operations limit for a sliding year. No default value.
   limit_atm_month: 56, # Integer | ATM operations limit for a sliding month. No default value.
   limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000â‚¬.
@@ -1135,6 +1142,7 @@ opts = {
   limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000â‚¬.
   limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000â‚¬.
   limit_payment_all: 56, # Integer | POS operations limit from beginning. No default value.
+  payment_daily_limit: 3.4, # Float | POS operations limit for a single day including cents. The decimal delimiter must be \".\". No default value.
   pin: "pin_example", # String | Card's PIN code value. Default random PIN.
   anonymous: 56, # Integer | Card is anonymous. If value is 1 there will be no embossed name.
   send_to_parent: 56, # Integer | If you put the value 1 the delivery address will be the parent user's.
@@ -1165,6 +1173,7 @@ Name | Type | Description  | Notes
  **card_tag** | **String**| Custom field | 
  **card_print** | **String**| Card appearance code, also used to choose the program ID of the card | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
+ **batch_delivery_id** | **String**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
  **limit_atm_year** | **Integer**| ATM operations limit for a sliding year. No default value. | [optional] 
  **limit_atm_month** | **Integer**| ATM operations limit for a sliding month. No default value. | [optional] 
  **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000â‚¬. | [optional] 
@@ -1175,6 +1184,7 @@ Name | Type | Description  | Notes
  **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000â‚¬. | [optional] 
  **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000â‚¬. | [optional] 
  **limit_payment_all** | **Integer**| POS operations limit from beginning. No default value. | [optional] 
+ **payment_daily_limit** | **Float**| POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value. | [optional] 
  **pin** | **String**| Card&#39;s PIN code value. Default random PIN. | [optional] 
  **anonymous** | **Integer**| Card is anonymous. If value is 1 there will be no embossed name. | [optional] 
  **send_to_parent** | **Integer**| If you put the value 1 the delivery address will be the parent user&#39;s. | [optional] 

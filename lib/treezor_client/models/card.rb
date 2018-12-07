@@ -116,6 +116,8 @@ module TreezorClient
 
     attr_accessor :limit_payment_all
 
+    attr_accessor :payment_daily_limit
+
     attr_accessor :total_atm_year
 
     attr_accessor :total_atm_month
@@ -222,6 +224,7 @@ module TreezorClient
         :'limit_payment_week' => :'limitPaymentWeek',
         :'limit_payment_day' => :'limitPaymentDay',
         :'limit_payment_all' => :'limitPaymentAll',
+        :'payment_daily_limit' => :'paymentDailyLimit',
         :'total_atm_year' => :'totalAtmYear',
         :'total_atm_month' => :'totalAtmMonth',
         :'total_atm_week' => :'totalAtmWeek',
@@ -292,6 +295,7 @@ module TreezorClient
         :'limit_payment_week' => :'Integer',
         :'limit_payment_day' => :'Integer',
         :'limit_payment_all' => :'Integer',
+        :'payment_daily_limit' => :'Float',
         :'total_atm_year' => :'Integer',
         :'total_atm_month' => :'Integer',
         :'total_atm_week' => :'Integer',
@@ -514,6 +518,10 @@ module TreezorClient
         self.limit_payment_all = attributes[:'limitPaymentAll']
       end
 
+      if attributes.has_key?(:'paymentDailyLimit')
+        self.payment_daily_limit = attributes[:'paymentDailyLimit']
+      end
+
       if attributes.has_key?(:'totalAtmYear')
         self.total_atm_year = attributes[:'totalAtmYear']
       end
@@ -655,6 +663,7 @@ module TreezorClient
           limit_payment_week == o.limit_payment_week &&
           limit_payment_day == o.limit_payment_day &&
           limit_payment_all == o.limit_payment_all &&
+          payment_daily_limit == o.payment_daily_limit &&
           total_atm_year == o.total_atm_year &&
           total_atm_month == o.total_atm_month &&
           total_atm_week == o.total_atm_week &&
@@ -681,7 +690,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [card_id, user_id, wallet_id, wallet_cardtransaction_id, mcc_restriction_group_id, merchant_restriction_group_id, country_restriction_group_id, public_token, card_tag, status_code, is_live, pin_try_exceeds, masked_pan, embossed_name, expiry_date, cvv, start_date, end_date, country_code, currency_code, lang, delivery_title, delivery_lastname, delivery_firstname, delivery_address1, delivery_address2, delivery_address3, delivery_city, delivery_postcode, delivery_country, mobile_sent, limits_group, perms_group, card_design, virtual_converted, option_atm, option_foreign, option_online, option_nfc, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, total_atm_year, total_atm_month, total_atm_week, total_atm_day, total_atm_all, total_payment_year, total_payment_month, total_payment_week, total_payment_day, total_payment_all, created_by, created_date, modified_by, modified_date, total_rows].hash
+      [card_id, user_id, wallet_id, wallet_cardtransaction_id, mcc_restriction_group_id, merchant_restriction_group_id, country_restriction_group_id, public_token, card_tag, status_code, is_live, pin_try_exceeds, masked_pan, embossed_name, expiry_date, cvv, start_date, end_date, country_code, currency_code, lang, delivery_title, delivery_lastname, delivery_firstname, delivery_address1, delivery_address2, delivery_address3, delivery_city, delivery_postcode, delivery_country, mobile_sent, limits_group, perms_group, card_design, virtual_converted, option_atm, option_foreign, option_online, option_nfc, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, payment_daily_limit, total_atm_year, total_atm_month, total_atm_week, total_atm_day, total_atm_all, total_payment_year, total_payment_month, total_payment_week, total_payment_day, total_payment_all, created_by, created_date, modified_by, modified_date, total_rows].hash
     end
 
     # Builds the object from hash

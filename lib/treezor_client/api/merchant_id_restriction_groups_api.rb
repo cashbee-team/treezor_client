@@ -222,7 +222,6 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [Body7] :body 
     # @return [InlineResponse20014]
     def post_merchant_id_restriction_group(opts = {})
@@ -237,7 +236,6 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [Body7] :body 
     # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def post_merchant_id_restriction_group_with_http_info(opts = {})
@@ -253,7 +251,6 @@ module TreezorClient
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
-      query_params[:'fields'] = @api_client.build_collection_param(opts[:'fields'], :csv) if !opts[:'fields'].nil?
 
       # header parameters
       header_params = {}
@@ -289,7 +286,6 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [Body8] :body 
     # @return [InlineResponse20014]
     def put_merchant_id_restriction_groups(id, opts = {})
@@ -305,7 +301,6 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [Body8] :body 
     # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def put_merchant_id_restriction_groups_with_http_info(id, opts = {})
@@ -325,7 +320,6 @@ module TreezorClient
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
-      query_params[:'fields'] = @api_client.build_collection_param(opts[:'fields'], :csv) if !opts[:'fields'].nil?
 
       # header parameters
       header_params = {}
