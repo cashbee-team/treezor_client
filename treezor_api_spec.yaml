@@ -12200,6 +12200,9 @@ definitions:
       tag:
         description: Custom data that could be used by caller to search the instance.
         type: string
+      id:
+        description: Should be named beneficiaryId to conform to the API's naming convention.
+        type: integer
       userId:
         description: Beneficiary's userId
         type: integer
