@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**cards_id_regenerate_put**](CardApi.md#cards_id_regenerate_put) | **PUT** /cards/{id}/Regenerate/ | regenerate card
 [**cards_id_set_pin_put**](CardApi.md#cards_id_set_pin_put) | **PUT** /cards/{id}/setPIN/ | set card&#39;s PIN
 [**cards_id_unblock_pin_put**](CardApi.md#cards_id_unblock_pin_put) | **PUT** /cards/{id}/UnblockPIN/ | unblock card&#39;s PIN
+[**cards_register3_ds_post**](CardApi.md#cards_register3_ds_post) | **POST** /cards/Register3DS | Register 3D secure
 [**cards_request_physical_post**](CardApi.md#cards_request_physical_post) | **POST** /cards/RequestPhysical | create a physical card
 
 
@@ -46,10 +47,10 @@ api_instance = TreezorClient::CardApi.new
 card_id = 56 # Integer | Vitual card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -66,10 +67,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **card_id** | **Integer**| Vitual card&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -116,18 +117,18 @@ perms_group = "perms_group_example" # String | Permissions group of the card. Th
 card_print = "card_print_example" # String | Card appareance code, also used to choose the program ID of the card
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   card_tag: "card_tag_example", # String | Custom field
-  batch_delivery_id: "batch_delivery_id_example", # String | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
+  batch_delivery_id: 56, # Integer | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   limit_atm_year: 56, # Integer | ATM operations limit for a sliding year. No default value.
   limit_atm_month: 56, # Integer | ATM operations limit for a sliding month. No default value.
-  limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000â‚¬.
-  limit_atm_day: 56, # Integer | ATM operations limit for a single day. Default value 1000â‚¬.
+  limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬.
+  limit_atm_day: 56, # Integer | ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬.
   limit_atm_all: 56, # Integer | ATM operations limit from beginning. No default value.
   limit_payment_year: 56, # Integer | POS operations limit for a sliding year. No default value.
   limit_payment_month: 56, # Integer | POS operations limit for a sliding month. No default value.
-  limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000â‚¬.
-  limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000â‚¬.
+  limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬.
+  limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬.
   limit_payment_all: 56, # Integer | POS operations limit from beginning. No default value.
   payment_daily_limit: 3.4, # Float | POS operations limit for a single day including cents. The decimal delimiter must be \".\". No default value.
   pin: "pin_example", # String | Card's PIN code value.
@@ -136,9 +137,9 @@ opts = {
   mcc_restriction_group_id: 56, # Integer | mccRestrictionGroupId you want to apply
   merchant_restriction_group_id: 56, # Integer | merchantRestrictionGroupId you want to apply
   country_restriction_group_id: 56, # Integer | countryRestrictionGroupId you want to apply
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -158,18 +159,18 @@ Name | Type | Description  | Notes
  **wallet_id** | **Integer**| Wallet&#39;s Id in which to create the card | 
  **perms_group** | **String**| Permissions group of the card. There is 4 usages which create 16 possible groups:  | group | NFC | ATM | On-line | Foreign | |-----|-----|-----|-----|------| |TRZ-CU-001|KO|KO|KO|KO| |TRZ-CU-002|KO|KO|KO|OK| |TRZ-CU-003|KO|KO|OK|KO| |TRZ-CU-004|KO|KO|OK|OK| |TRZ-CU-005|KO|OK|KO|KO| |TRZ-CU-006|KO|OK|KO|OK| |TRZ-CU-007|KO|OK|OK|KO| |TRZ-CU-008|KO|OK|OK|OK| |TRZ-CU-009|OK|KO|KO|KO| |TRZ-CU-010|OK|KO|KO|OK| |TRZ-CU-011|OK|KO|OK|KO| |TRZ-CU-012|OK|KO|OK|OK| |TRZ-CU-013|OK|OK|KO|KO| |TRZ-CU-014|OK|OK|KO|OK| |TRZ-CU-015|OK|OK|OK|KO| |TRZ-CU-016|OK|OK|OK|OK|  | 
  **card_print** | **String**| Card appareance code, also used to choose the program ID of the card | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **card_tag** | **String**| Custom field | [optional] 
- **batch_delivery_id** | **String**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
+ **batch_delivery_id** | **Integer**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
  **limit_atm_year** | **Integer**| ATM operations limit for a sliding year. No default value. | [optional] 
  **limit_atm_month** | **Integer**| ATM operations limit for a sliding month. No default value. | [optional] 
- **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000â‚¬. | [optional] 
- **limit_atm_day** | **Integer**| ATM operations limit for a single day. Default value 1000â‚¬. | [optional] 
+ **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬. | [optional] 
+ **limit_atm_day** | **Integer**| ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬. | [optional] 
  **limit_atm_all** | **Integer**| ATM operations limit from beginning. No default value. | [optional] 
  **limit_payment_year** | **Integer**| POS operations limit for a sliding year. No default value. | [optional] 
  **limit_payment_month** | **Integer**| POS operations limit for a sliding month. No default value. | [optional] 
- **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000â‚¬. | [optional] 
- **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000â‚¬. | [optional] 
+ **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬. | [optional] 
+ **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬. | [optional] 
  **limit_payment_all** | **Integer**| POS operations limit from beginning. No default value. | [optional] 
  **payment_daily_limit** | **Float**| POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value. | [optional] 
  **pin** | **String**| Card&#39;s PIN code value. | [optional] 
@@ -178,9 +179,9 @@ Name | Type | Description  | Notes
  **mcc_restriction_group_id** | **Integer**| mccRestrictionGroupId you want to apply | [optional] 
  **merchant_restriction_group_id** | **Integer**| merchantRestrictionGroupId you want to apply | [optional] 
  **country_restriction_group_id** | **Integer**| countryRestrictionGroupId you want to apply | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -217,10 +218,10 @@ end
 api_instance = TreezorClient::CardApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   card_id: 56, # Integer | Card's id
   user_id: 56, # Integer | User's id of cardholder
   embossed_name: "embossed_name_example", # String | Embossed name of the card
@@ -232,14 +233,14 @@ opts = {
   mcc_restriction_group_id: 56, # Integer | mccRestrictionGroupId of the card
   merchant_restriction_group_id: 56, # Integer | merchantRestrictionGroupId of the card
   country_restriction_group_id: 56, # Integer | countryRestrictionGroupId of the card
-  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists).
-  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists).
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
   sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
+  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -255,10 +256,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **card_id** | **Integer**| Card&#39;s id | [optional] 
  **user_id** | **Integer**| User&#39;s id of cardholder | [optional] 
  **embossed_name** | **String**| Embossed name of the card | [optional] 
@@ -270,14 +271,14 @@ Name | Type | Description  | Notes
  **mcc_restriction_group_id** | **Integer**| mccRestrictionGroupId of the card | [optional] 
  **merchant_restriction_group_id** | **Integer**| merchantRestrictionGroupId of the card | [optional] 
  **country_restriction_group_id** | **Integer**| countryRestrictionGroupId of the card | [optional] 
- **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists). | [optional] 
- **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists). | [optional] 
- **sort_by** | **String**| The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). | [optional] 
+ **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **sort_by** | **String**| The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).  | [optional] 
  **sort_order** | **String**| The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists).  | [optional] 
- **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **updated_date_from** | **DateTime**| The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **updated_date_to** | **DateTime**| The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
+ **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **updated_date_from** | **DateTime**| The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **updated_date_to** | **DateTime**| The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
 
 ### Return type
 
@@ -299,7 +300,7 @@ Name | Type | Description  | Notes
 
 activate a card
 
-The Activate endpoint change card status to activate. An activated card can be freely used.
+The Activate endpoint change card status to activate. An activated card can be freely used. 
 
 ### Example
 ```ruby
@@ -318,11 +319,11 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_token: "access_token_example", # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication).
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_token: "access_token_example", # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -339,11 +340,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
- **access_token** | **String**| Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_token** | **String**| Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -390,10 +391,10 @@ new_pin = "new_pin_example" # String | Card's new PIN
 confirm_pin = "confirm_pin_example" # String | Card's new PIN confirmation value
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -413,10 +414,10 @@ Name | Type | Description  | Notes
  **current_pin** | **String**| Card&#39;s current PIN | 
  **new_pin** | **String**| Card&#39;s new PIN | 
  **confirm_pin** | **String**| Card&#39;s new PIN confirmation value | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -438,7 +439,7 @@ Name | Type | Description  | Notes
 
 convert card to virtual
 
-Convert a virtual card into a physical one. The converted card will be both virtual and physical.
+Convert a virtual card into a physical one. The converted card will be both virtual and physical. 
 
 ### Example
 ```ruby
@@ -457,10 +458,10 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -477,10 +478,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -625,7 +626,7 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   limit_atm_year: 56, # Integer | ATM year limit
   limit_atm_month: 56, # Integer | ATM month limit
   limit_atm_week: 56, # Integer | ATM week limit
@@ -637,9 +638,9 @@ opts = {
   limit_payment_day: 56, # Integer | Payment day limit
   limit_payment_all: 56, # Integer | Payment from beginning limit
   payment_daily_limit: 3.4, # Float | Payment day limit including cents. The decimal delimiter must be \".\"
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -656,7 +657,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **limit_atm_year** | **Integer**| ATM year limit | [optional] 
  **limit_atm_month** | **Integer**| ATM month limit | [optional] 
  **limit_atm_week** | **Integer**| ATM week limit | [optional] 
@@ -668,9 +669,9 @@ Name | Type | Description  | Notes
  **limit_payment_day** | **Integer**| Payment day limit | [optional] 
  **limit_payment_all** | **Integer**| Payment from beginning limit | [optional] 
  **payment_daily_limit** | **Float**| Payment day limit including cents. The decimal delimiter must be \&quot;.\&quot; | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -713,10 +714,10 @@ id = 56 # Integer | Card's id.
 lock_status = 56 # Integer | | Value | Type | | --- | --- | | 1 | Block the card| | 0 | Unblock the card | | 2 | Lost card | | 3 | Stolen card | 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -734,10 +735,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
  **lock_status** | **Integer**| | Value | Type | | --- | --- | | 1 | Block the card| | 0 | Unblock the card | | 2 | Lost card | | 3 | Stolen card |  | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -786,10 +787,10 @@ atm = 56 # Integer | Card usable on ATM (withdrawals)
 nfc = 56 # Integer | Card usable on contactless compatible POS machine machine\"
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -810,10 +811,10 @@ Name | Type | Description  | Notes
  **online** | **Integer**| Card usable on-line | 
  **atm** | **Integer**| Card usable on ATM (withdrawals) | 
  **nfc** | **Integer**| Card usable on contactless compatible POS machine machine\&quot; | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -854,13 +855,13 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   mcc_restriction_group_id: 56, # Integer | card's mccRestrictionGroupId
   merchant_restriction_group_id: 56, # Integer | card's merchantRestrictionGroupId
   country_restriction_group_id: 56, # Integer | card's countryRestrictionGroupId
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -877,13 +878,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **mcc_restriction_group_id** | **Integer**| card&#39;s mccRestrictionGroupId | [optional] 
  **merchant_restriction_group_id** | **Integer**| card&#39;s merchantRestrictionGroupId | [optional] 
  **country_restriction_group_id** | **Integer**| card&#39;s countryRestrictionGroupId | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -905,7 +906,7 @@ Name | Type | Description  | Notes
 
 regenerate card
 
-If card is Lost or Stolen (card's status), the card itself will get regenerated. Otherwise only the card image gets recreated.
+If card is Lost or Stolen (card's status), the card itself will get regenerated. Otherwise only the card image gets recreated. 
 
 ### Example
 ```ruby
@@ -924,10 +925,10 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -944,10 +945,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -992,10 +993,10 @@ new_pin = "new_pin_example" # String | Card's new PIN.
 confirm_pin = "confirm_pin_example" # String | Card's new PIN confirmation value
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -1014,10 +1015,10 @@ Name | Type | Description  | Notes
  **id** | **Integer**| Card&#39;s id. | 
  **new_pin** | **String**| Card&#39;s new PIN. | 
  **confirm_pin** | **String**| Card&#39;s new PIN confirmation value | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 
@@ -1058,10 +1059,10 @@ api_instance = TreezorClient::CardApi.new
 id = 56 # Integer | Card's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -1078,10 +1079,68 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Card&#39;s id. | 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+
+### Return type
+
+[**InlineResponse2006**](InlineResponse2006.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **cards_register3_ds_post**
+> InlineResponse2006 cards_register3_ds_post(card_id, opts)
+
+Register 3D secure
+
+Register a card to 3D secure service.
+
+### Example
+```ruby
+# load the gem
+require 'treezor_client'
+# setup authorization
+TreezorClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = TreezorClient::CardApi.new
+
+card_id = 56 # Integer | Card's ID to register
+
+opts = { 
+  access_signature: "access_signature_example" # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+}
+
+begin
+  #Register 3D secure
+  result = api_instance.cards_register3_ds_post(card_id, opts)
+  p result
+rescue TreezorClient::ApiError => e
+  puts "Exception when calling CardApi->cards_register3_ds_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **card_id** | **Integer**| Card&#39;s ID to register | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
 
 ### Return type
 
@@ -1130,17 +1189,17 @@ card_tag = "card_tag_example" # String | Custom field
 card_print = "card_print_example" # String | Card appearance code, also used to choose the program ID of the card
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  batch_delivery_id: "batch_delivery_id_example", # String | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  batch_delivery_id: 56, # Integer | Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   limit_atm_year: 56, # Integer | ATM operations limit for a sliding year. No default value.
   limit_atm_month: 56, # Integer | ATM operations limit for a sliding month. No default value.
-  limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000â‚¬.
-  limit_atm_day: 56, # Integer | ATM operations limit for a single day. Default value 1000â‚¬.
+  limit_atm_week: 56, # Integer | ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬.
+  limit_atm_day: 56, # Integer | ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬.
   limit_atm_all: 56, # Integer | ATM operations limit from beginning. No default value.
   limit_payment_year: 56, # Integer | POS operations limit for a sliding year. No default value.
   limit_payment_month: 56, # Integer | POS operations limit for a sliding month. No default value.
-  limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000â‚¬.
-  limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000â‚¬.
+  limit_payment_week: 56, # Integer | POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬.
+  limit_payment_day: 56, # Integer | POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬.
   limit_payment_all: 56, # Integer | POS operations limit from beginning. No default value.
   payment_daily_limit: 3.4, # Float | POS operations limit for a single day including cents. The decimal delimiter must be \".\". No default value.
   pin: "pin_example", # String | Card's PIN code value. Default random PIN.
@@ -1149,9 +1208,9 @@ opts = {
   mcc_restriction_group_id: 56, # Integer | mccRestrictionGroupId you want to apply
   merchant_restriction_group_id: 56, # Integer | merchantRestrictionGroupId you want to apply
   country_restriction_group_id: 56, # Integer | countryRestrictionGroupId you want to apply
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -1172,17 +1231,17 @@ Name | Type | Description  | Notes
  **perms_group** | **String**| Permissions group of the card. There is 4 usages which create 16 possible groups:  | group | NFC | ATM | On-line | Foreign | |-----|-----|-----|-----|------| |TRZ-CU-001|KO|KO|KO|KO| |TRZ-CU-002|KO|KO|KO|OK| |TRZ-CU-003|KO|KO|OK|KO| |TRZ-CU-004|KO|KO|OK|OK| |TRZ-CU-005|KO|OK|KO|KO| |TRZ-CU-006|KO|OK|KO|OK| |TRZ-CU-007|KO|OK|OK|KO| |TRZ-CU-008|KO|OK|OK|OK| |TRZ-CU-009|OK|KO|KO|KO| |TRZ-CU-010|OK|KO|KO|OK| |TRZ-CU-011|OK|KO|OK|KO| |TRZ-CU-012|OK|KO|OK|OK| |TRZ-CU-013|OK|OK|KO|KO| |TRZ-CU-014|OK|OK|KO|OK| |TRZ-CU-015|OK|OK|OK|KO| |TRZ-CU-016|OK|OK|OK|OK|  | 
  **card_tag** | **String**| Custom field | 
  **card_print** | **String**| Card appearance code, also used to choose the program ID of the card | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **batch_delivery_id** | **String**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **batch_delivery_id** | **Integer**| Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL | [optional] 
  **limit_atm_year** | **Integer**| ATM operations limit for a sliding year. No default value. | [optional] 
  **limit_atm_month** | **Integer**| ATM operations limit for a sliding month. No default value. | [optional] 
- **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000â‚¬. | [optional] 
- **limit_atm_day** | **Integer**| ATM operations limit for a single day. Default value 1000â‚¬. | [optional] 
+ **limit_atm_week** | **Integer**| ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬. | [optional] 
+ **limit_atm_day** | **Integer**| ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬. | [optional] 
  **limit_atm_all** | **Integer**| ATM operations limit from beginning. No default value. | [optional] 
  **limit_payment_year** | **Integer**| POS operations limit for a sliding year. No default value. | [optional] 
  **limit_payment_month** | **Integer**| POS operations limit for a sliding month. No default value. | [optional] 
- **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000â‚¬. | [optional] 
- **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000â‚¬. | [optional] 
+ **limit_payment_week** | **Integer**| POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬. | [optional] 
+ **limit_payment_day** | **Integer**| POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬. | [optional] 
  **limit_payment_all** | **Integer**| POS operations limit from beginning. No default value. | [optional] 
  **payment_daily_limit** | **Float**| POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value. | [optional] 
  **pin** | **String**| Card&#39;s PIN code value. Default random PIN. | [optional] 
@@ -1191,9 +1250,9 @@ Name | Type | Description  | Notes
  **mcc_restriction_group_id** | **Integer**| mccRestrictionGroupId you want to apply | [optional] 
  **merchant_restriction_group_id** | **Integer**| merchantRestrictionGroupId you want to apply | [optional] 
  **country_restriction_group_id** | **Integer**| countryRestrictionGroupId you want to apply | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
 
 ### Return type
 

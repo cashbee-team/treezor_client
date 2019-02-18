@@ -28,7 +28,7 @@ module TreezorClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'transfers' => :'Array<Transferrefund>'
+        :'transfers' => :'Array<Transfer>'
       }
     end
 

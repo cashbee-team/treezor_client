@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardtransaction_id** | **String** |  | [optional] 
-**card_id** | **String** |  | [optional] 
-**wallet_id** | **String** |  | [optional] 
+**cardtransaction_id** | **Integer** |  | [optional] 
+**card_id** | **Integer** |  | [optional] 
+**wallet_id** | **Integer** |  | [optional] 
 **wallet_currency** | **String** |  | [optional] 
 **merchant_id** | **String** |  | [optional] 
 **merchant_name** | **String** |  | [optional] 

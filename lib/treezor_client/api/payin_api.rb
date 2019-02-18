@@ -24,7 +24,7 @@ module TreezorClient
     # Deactivate a payin in the system.
     # @param id Payin&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20017]
     def delete_payin(id, opts = {})
       data, _status_code, _headers = delete_payin_with_http_info(id, opts)
       return data
@@ -34,7 +34,7 @@ module TreezorClient
     # Deactivate a payin in the system.
     # @param id Payin&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
     def delete_payin_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PayinApi.delete_payin ..."
@@ -68,7 +68,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20017')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayinApi#delete_payin\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -79,7 +79,7 @@ module TreezorClient
     # Get a payin from the system by its id.
     # @param id Payin&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20017]
     def get_payin(id, opts = {})
       data, _status_code, _headers = get_payin_with_http_info(id, opts)
       return data
@@ -89,7 +89,7 @@ module TreezorClient
     # Get a payin from the system by its id.
     # @param id Payin&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
     def get_payin_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PayinApi.get_payin ..."
@@ -123,7 +123,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20017')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayinApi#get_payin\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -133,10 +133,10 @@ module TreezorClient
     # search pay ins
     # Get payins that match search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :payin_id Payin&#39;s id.
     # @option opts [Integer] :wallet_id Payin&#39;s wallet id.
     # @option opts [String] :payin_tag Client custom data.
@@ -148,15 +148,15 @@ module TreezorClient
     # @option opts [String] :event_alias Wallet eventAlias of the payin (credited wallet).
     # @option opts [Integer] :wallet_type_id Payin&#39;s wallet type id.
     # @option opts [String] :payment_method_id Payin&#39;s payment method id.
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20017]
     def get_payins(opts = {})
       data, _status_code, _headers = get_payins_with_http_info(opts)
       return data
@@ -165,10 +165,10 @@ module TreezorClient
     # search pay ins
     # Get payins that match search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :payin_id Payin&#39;s id.
     # @option opts [Integer] :wallet_id Payin&#39;s wallet id.
     # @option opts [String] :payin_tag Client custom data.
@@ -180,15 +180,15 @@ module TreezorClient
     # @option opts [String] :event_alias Wallet eventAlias of the payin (credited wallet).
     # @option opts [Integer] :wallet_type_id Payin&#39;s wallet type id.
     # @option opts [String] :payment_method_id Payin&#39;s payment method id.
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
     def get_payins_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PayinApi.get_payins ..."
@@ -241,7 +241,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20017')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayinApi#get_payins\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -256,10 +256,10 @@ module TreezorClient
     # @param amount Pay in amount.
     # @param currency Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s. 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :payin_tag Client custom data.
     # @option opts [Integer] :oneclickcard_id Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise.
     # @option opts [String] :payment_accepted_url Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -273,7 +273,7 @@ module TreezorClient
     # @option opts [String] :created_ip User&#39;s IP address
     # @option opts [String] :payin_date The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
     # @option opts [Integer] :mandate_id The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20017]
     def post_payin(wallet_id, user_id, payment_method_id, amount, currency, opts = {})
       data, _status_code, _headers = post_payin_with_http_info(wallet_id, user_id, payment_method_id, amount, currency, opts)
       return data
@@ -287,10 +287,10 @@ module TreezorClient
     # @param amount Pay in amount.
     # @param currency Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s. 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :payin_tag Client custom data.
     # @option opts [Integer] :oneclickcard_id Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise.
     # @option opts [String] :payment_accepted_url Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -304,7 +304,7 @@ module TreezorClient
     # @option opts [String] :created_ip User&#39;s IP address
     # @option opts [String] :payin_date The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
     # @option opts [Integer] :mandate_id The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
     def post_payin_with_http_info(wallet_id, user_id, payment_method_id, amount, currency, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PayinApi.post_payin ..."
@@ -379,7 +379,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20017')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayinApi#post_payin\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -78,26 +78,88 @@ module TreezorClient
       return data, status_code, headers
     end
 
+    # Deletes a payment Token
+    # Deletes a payment Token
+    # @param id Card digitalization internal id.
+    # @param reason_code The reason code for the action. Possible values are :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | F | Issuer or cardholder confirmed fraudulent token transactions (Deprecated) | | T | Issuer or cardholder confirmed fraudulent token transactions | | C | Account closed | | Z | Other | 
+    # @param [Hash] opts the optional parameters
+    # @return [InlineResponse2008]
+    def deletecard_digitalizations_id(id, reason_code, opts = {})
+      data, _status_code, _headers = deletecard_digitalizations_id_with_http_info(id, reason_code, opts)
+      return data
+    end
+
+    # Deletes a payment Token
+    # Deletes a payment Token
+    # @param id Card digitalization internal id.
+    # @param reason_code The reason code for the action. Possible values are :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | F | Issuer or cardholder confirmed fraudulent token transactions (Deprecated) | | T | Issuer or cardholder confirmed fraudulent token transactions | | C | Account closed | | Z | Other | 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    def deletecard_digitalizations_id_with_http_info(id, reason_code, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: CardDigitalizationsApi.deletecard_digitalizations_id ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling CardDigitalizationsApi.deletecard_digitalizations_id"
+      end
+      # verify the required parameter 'reason_code' is set
+      if @api_client.config.client_side_validation && reason_code.nil?
+        fail ArgumentError, "Missing the required parameter 'reason_code' when calling CardDigitalizationsApi.deletecard_digitalizations_id"
+      end
+      # resource path
+      local_var_path = "/cardDigitalizations/{id}".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'reasonCode'] = reason_code
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'InlineResponse2008')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CardDigitalizationsApi#deletecard_digitalizations_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update the status of a payment Token
     # Update the status of a payment Token
     # @param id Card digitalization internal id.
-    # @param status The new Status for the payment Token. Possible values TODO add values here
+    # @param status The new status for the payment Token. Possible values are : | Status | Description | | ---- | ----------- | | unsuspend | Unsuspend | | suspend | Suspend | 
+    # @param reason_code The reason code for the action. Possible values are : - For a suspension :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | T | Issuer or cardholder confirmed fraudulent token transactions | | Z | Other |  - For an unsuspension :  | Reason code | Description | | ---- | ----------- | | F | Cardholder reported token device found or not stolen | | T | Issuer or cardholder confirmed no fraudulent token transactions | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
     # @return [InlineResponse2008]
-    def putcard_digitalizations_id(id, status, opts = {})
-      data, _status_code, _headers = putcard_digitalizations_id_with_http_info(id, status, opts)
+    def putcard_digitalizations_id(id, status, reason_code, opts = {})
+      data, _status_code, _headers = putcard_digitalizations_id_with_http_info(id, status, reason_code, opts)
       return data
     end
 
     # Update the status of a payment Token
     # Update the status of a payment Token
     # @param id Card digitalization internal id.
-    # @param status The new Status for the payment Token. Possible values TODO add values here
+    # @param status The new status for the payment Token. Possible values are : | Status | Description | | ---- | ----------- | | unsuspend | Unsuspend | | suspend | Suspend | 
+    # @param reason_code The reason code for the action. Possible values are : - For a suspension :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | T | Issuer or cardholder confirmed fraudulent token transactions | | Z | Other |  - For an unsuspension :  | Reason code | Description | | ---- | ----------- | | F | Cardholder reported token device found or not stolen | | T | Issuer or cardholder confirmed no fraudulent token transactions | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
     # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
-    def putcard_digitalizations_id_with_http_info(id, status, opts = {})
+    def putcard_digitalizations_id_with_http_info(id, status, reason_code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CardDigitalizationsApi.putcard_digitalizations_id ..."
       end
@@ -109,13 +171,17 @@ module TreezorClient
       if @api_client.config.client_side_validation && status.nil?
         fail ArgumentError, "Missing the required parameter 'status' when calling CardDigitalizationsApi.putcard_digitalizations_id"
       end
+      # verify the required parameter 'reason_code' is set
+      if @api_client.config.client_side_validation && reason_code.nil?
+        fail ArgumentError, "Missing the required parameter 'reason_code' when calling CardDigitalizationsApi.putcard_digitalizations_id"
+      end
       # resource path
       local_var_path = "/cardDigitalizations/{id}".sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'status'] = status
-      query_params[:'fields'] = opts[:'fields'] if !opts[:'fields'].nil?
+      query_params[:'reasonCode'] = reason_code
 
       # header parameters
       header_params = {}
@@ -146,10 +212,10 @@ module TreezorClient
     # search for card digitalizations
     # Search for card digitalizations.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :filter Filterable fields are : - id - externalId - cardId - status - detailsFromGPS - createdDate - modifiedDate  More info [here](https://agent.treezor.com/filterv2). 
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
     # @return [InlineResponse2008]
@@ -161,10 +227,10 @@ module TreezorClient
     # search for card digitalizations
     # Search for card digitalizations.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :filter Filterable fields are : - id - externalId - cardId - status - detailsFromGPS - createdDate - modifiedDate  More info [here](https://agent.treezor.com/filterv2). 
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
     # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers

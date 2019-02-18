@@ -23,10 +23,10 @@ module TreezorClient
     # Request the issuerInitiatedDigitizationData
     # Create a new issuerInitiatedDigitizationData request
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body] :body 
     # @return [InlineResponse200]
     def tav_request_post(opts = {})
@@ -37,10 +37,10 @@ module TreezorClient
     # Request the issuerInitiatedDigitizationData
     # Create a new issuerInitiatedDigitizationData request
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body] :body 
     # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
     def tav_request_post_with_http_info(opts = {})
@@ -86,15 +86,15 @@ module TreezorClient
     # Search issuerInitiatedDigitizationData requests
     # Search tav issuerInitiatedDigitizationData requests that match search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [String] :filter You can filter the API response by using filter(s). Filterable fields are :  - id  - cardId  - tokenRequestor  - statusId  - createdDate  - modifiedDate  Filters should be separated by a \&quot;;\&quot;. Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \&quot;fieldName criterion expression\&quot;. Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     &gt;    |      greater than      |            alphanumeric string           |         100        |  |    &gt;&#x3D;    | greater or equal than  |            alphanumeric string           |         100        |  |     &lt;    |        less than       |            alphanumeric string           |         100        |  |    &lt;&#x3D;    |   less or equal than   |            alphanumeric string           |         100        |  |    !&#x3D;    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    &#x3D;&#x3D;    |         equals         |            alphanumeric string           |         100        | 
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://www.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://www.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://www.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://www.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://www.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://www.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://www.treezor.com/lists). 
     # @return [InlineResponse200]
     def tavrequestget(opts = {})
@@ -105,15 +105,15 @@ module TreezorClient
     # Search issuerInitiatedDigitizationData requests
     # Search tav issuerInitiatedDigitizationData requests that match search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @option opts [String] :filter You can filter the API response by using filter(s). Filterable fields are :  - id  - cardId  - tokenRequestor  - statusId  - createdDate  - modifiedDate  Filters should be separated by a \&quot;;\&quot;. Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \&quot;fieldName criterion expression\&quot;. Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     &gt;    |      greater than      |            alphanumeric string           |         100        |  |    &gt;&#x3D;    | greater or equal than  |            alphanumeric string           |         100        |  |     &lt;    |        less than       |            alphanumeric string           |         100        |  |    &lt;&#x3D;    |   less or equal than   |            alphanumeric string           |         100        |  |    !&#x3D;    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    &#x3D;&#x3D;    |         equals         |            alphanumeric string           |         100        | 
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://www.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://www.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://www.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://www.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://www.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://www.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://www.treezor.com/lists). 
     # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
     def tavrequestget_with_http_info(opts = {})

@@ -32,7 +32,7 @@ describe 'InlineResponse20024' do
       expect(@instance).to be_instance_of(TreezorClient::InlineResponse20024)
     end
   end
-  describe 'test attribute "users"' do
+  describe 'test attribute "transferrefunds"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

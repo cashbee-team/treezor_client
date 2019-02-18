@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payins** | [**Array&lt;Payin&gt;**](Payin.md) |  | [optional] 
+**bankaccounts** | [**Array&lt;CountryRestrictionGroup&gt;**](CountryRestrictionGroup.md) |  | [optional] 
 
 

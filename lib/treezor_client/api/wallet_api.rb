@@ -25,11 +25,11 @@ module TreezorClient
     # @param id Wallet&#39;s id
     # @param origin Request&#39;s origin. Possible values are: * OPERATOR * USER 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @return [InlineResponse20025]
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @return [InlineResponse20027]
     def delete_wallet(id, origin, opts = {})
       data, _status_code, _headers = delete_wallet_with_http_info(id, origin, opts)
       return data
@@ -40,11 +40,11 @@ module TreezorClient
     # @param id Wallet&#39;s id
     # @param origin Request&#39;s origin. Possible values are: * OPERATOR * USER 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def delete_wallet_with_http_info(id, origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: WalletApi.delete_wallet ..."
@@ -87,7 +87,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#delete_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -98,11 +98,11 @@ module TreezorClient
     # 
     # @param id Object internal id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @return [InlineResponse20025]
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @return [InlineResponse20027]
     def get_wallet(id, opts = {})
       data, _status_code, _headers = get_wallet_with_http_info(id, opts)
       return data
@@ -112,11 +112,11 @@ module TreezorClient
     # 
     # @param id Object internal id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def get_wallet_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: WalletApi.get_wallet ..."
@@ -154,7 +154,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#get_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -164,32 +164,32 @@ module TreezorClient
     # search wallets
     # Get wallets from the system that match the search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :wallet_id Wallet&#39;s unique id.
     # @option opts [String] :wallet_status Wallet&#39;s status:  * **validated**: Wallet is active. It is possible to deposit to or retrieve money from the wallet.  * **cancelled**: Wallet is closed. No action possible, there is no money in the wallet, it was closed by an operator or by the user.  * **pending**: Wallet being validated (e.g. suspected fraud, late submission of documents&#39; validation ... KYC ). In this case, it is not possible to use the wallet for transactions.
     # @option opts [Integer] :user_id Wallet owner&#39;s id.
     # @option opts [Integer] :parent_user_id Parent user id of the wallet owner
     # @option opts [String] :wallet_tag Custom data.
     # @option opts [Integer] :wallet_type_id Wallet type id. The following values are defined:  | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
-    # @option opts [String] :event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y
-    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding
+    # @option opts [String] :event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
+    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding 
     # @option opts [DateTime] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD HH:MM:SS
-    # @option opts [DateTime] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS
+    # @option opts [DateTime] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS 
     # @option opts [Integer] :tariff_id Wallet pricing id.
     # @option opts [Integer] :payin_count Number of payin done on the wallet.
     # @option opts [String] :solde Wallet current balance.
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @return [InlineResponse20025]
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @return [InlineResponse20027]
     def get_wallets(opts = {})
       data, _status_code, _headers = get_wallets_with_http_info(opts)
       return data
@@ -198,32 +198,32 @@ module TreezorClient
     # search wallets
     # Get wallets from the system that match the search criteria.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :wallet_id Wallet&#39;s unique id.
     # @option opts [String] :wallet_status Wallet&#39;s status:  * **validated**: Wallet is active. It is possible to deposit to or retrieve money from the wallet.  * **cancelled**: Wallet is closed. No action possible, there is no money in the wallet, it was closed by an operator or by the user.  * **pending**: Wallet being validated (e.g. suspected fraud, late submission of documents&#39; validation ... KYC ). In this case, it is not possible to use the wallet for transactions.
     # @option opts [Integer] :user_id Wallet owner&#39;s id.
     # @option opts [Integer] :parent_user_id Parent user id of the wallet owner
     # @option opts [String] :wallet_tag Custom data.
     # @option opts [Integer] :wallet_type_id Wallet type id. The following values are defined:  | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
-    # @option opts [String] :event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y
-    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding
+    # @option opts [String] :event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
+    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding 
     # @option opts [DateTime] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD HH:MM:SS
-    # @option opts [DateTime] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS
+    # @option opts [DateTime] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS 
     # @option opts [Integer] :tariff_id Wallet pricing id.
     # @option opts [Integer] :payin_count Number of payin done on the wallet.
     # @option opts [String] :solde Wallet current balance.
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def get_wallets_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: WalletApi.get_wallets ..."
@@ -278,7 +278,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#get_wallets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -290,22 +290,22 @@ module TreezorClient
     # @param wallet_type_id Wallet type id. The following values are defined:  | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
     # @param tariff_id Wallet pricing id.
     # @param user_id Wallet owner&#39;s id.
-    # @param currency The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro &#x3D; EUR ; US Dollar &#x3D; USD Ã¢â‚¬Â¦ Default currency will be same as the wallet
-    # @param event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y
+    # @param currency The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro &#x3D; EUR ; US Dollar &#x3D; USD ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ Default currency will be same as the wallet 
+    # @param event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :joint_user_id Wallet co-owner&#39;s id. This user will not be allowed to collect the money from the wallet.
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :joint_user_id Wallet co-owner&#39;s id. This user will not be allowed to collect the money from the wallet. 
     # @option opts [String] :wallet_tag Custom data
     # @option opts [Float] :load Initial loading amount.
-    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique.
-    # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days.
+    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique. 
+    # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
     # @option opts [String] :event_message It can be a description of the wallet.
-    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
-    # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet
-    # @return [InlineResponse20025]
+    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
+    # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
+    # @return [InlineResponse20027]
     def post_wallets(wallet_type_id, tariff_id, user_id, currency, event_name, opts = {})
       data, _status_code, _headers = post_wallets_with_http_info(wallet_type_id, tariff_id, user_id, currency, event_name, opts)
       return data
@@ -316,22 +316,22 @@ module TreezorClient
     # @param wallet_type_id Wallet type id. The following values are defined:  | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
     # @param tariff_id Wallet pricing id.
     # @param user_id Wallet owner&#39;s id.
-    # @param currency The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro &#x3D; EUR ; US Dollar &#x3D; USD Ã¢â‚¬Â¦ Default currency will be same as the wallet
-    # @param event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y
+    # @param currency The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro &#x3D; EUR ; US Dollar &#x3D; USD ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ Default currency will be same as the wallet 
+    # @param event_name Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :joint_user_id Wallet co-owner&#39;s id. This user will not be allowed to collect the money from the wallet.
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :joint_user_id Wallet co-owner&#39;s id. This user will not be allowed to collect the money from the wallet. 
     # @option opts [String] :wallet_tag Custom data
     # @option opts [Float] :load Initial loading amount.
-    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique.
-    # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days.
+    # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique. 
+    # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
     # @option opts [String] :event_message It can be a description of the wallet.
-    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
-    # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
+    # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def post_wallets_with_http_info(wallet_type_id, tariff_id, user_id, currency, event_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: WalletApi.post_wallets ..."
@@ -398,7 +398,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#post_wallets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -409,10 +409,10 @@ module TreezorClient
     # Modifiy wallet information
     # @param id Object internal id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :wallet_type_id Change wallet type id
     # @option opts [String] :event_name Change event name
     # @option opts [String] :event_alias Change event alias. Please note that the eventAlias must be unique.
@@ -423,7 +423,7 @@ module TreezorClient
     # @option opts [String] :url_image Change URL image
     # @option opts [String] :image_name Change image name
     # @option opts [String] :tariff_id Change tariff id
-    # @return [InlineResponse20025]
+    # @return [InlineResponse20027]
     def put_wallet(id, opts = {})
       data, _status_code, _headers = put_wallet_with_http_info(id, opts)
       return data
@@ -433,10 +433,10 @@ module TreezorClient
     # Modifiy wallet information
     # @param id Object internal id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :wallet_type_id Change wallet type id
     # @option opts [String] :event_name Change event name
     # @option opts [String] :event_alias Change event alias. Please note that the eventAlias must be unique.
@@ -447,7 +447,7 @@ module TreezorClient
     # @option opts [String] :url_image Change URL image
     # @option opts [String] :image_name Change image name
     # @option opts [String] :tariff_id Change tariff id
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def put_wallet_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: WalletApi.put_wallet ..."
@@ -495,7 +495,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#put_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

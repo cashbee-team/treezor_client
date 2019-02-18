@@ -24,7 +24,7 @@ module TreezorClient
     # Get a virtualiban from the system by its id.
     # @param id VirtualIban&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20017]
+    # @return [InlineResponse20018]
     def getvirtualiban(id, opts = {})
       data, _status_code, _headers = getvirtualiban_with_http_info(id, opts)
       return data
@@ -34,7 +34,7 @@ module TreezorClient
     # Get a virtualiban from the system by its id.
     # @param id VirtualIban&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
     def getvirtualiban_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: VirtualibansApi.getvirtualiban ..."
@@ -68,7 +68,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'InlineResponse20018')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: VirtualibansApi#getvirtualiban\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -79,10 +79,10 @@ module TreezorClient
     # Get virtualiban that match search criteria.
     # @param valid_from The beginning date of validity.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :virtual_iban_id VirtualIban&#39;s id.
     # @option opts [Integer] :wallet_id VirtualIban&#39;s wallet id.
     # @option opts [Integer] :type_id VirtualIban&#39;s type id.
@@ -91,15 +91,15 @@ module TreezorClient
     # @option opts [Date] :valid_to The limit date of validity.
     # @option opts [String] :max_usage The maximum number of usage authorized.
     # @option opts [Float] :max_amount The maximum amount authorized.
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [InlineResponse20017]
+    # @return [InlineResponse20018]
     def getvirtualibans(valid_from, opts = {})
       data, _status_code, _headers = getvirtualibans_with_http_info(valid_from, opts)
       return data
@@ -109,10 +109,10 @@ module TreezorClient
     # Get virtualiban that match search criteria.
     # @param valid_from The beginning date of validity.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :virtual_iban_id VirtualIban&#39;s id.
     # @option opts [Integer] :wallet_id VirtualIban&#39;s wallet id.
     # @option opts [Integer] :type_id VirtualIban&#39;s type id.
@@ -121,15 +121,15 @@ module TreezorClient
     # @option opts [Date] :valid_to The limit date of validity.
     # @option opts [String] :max_usage The maximum number of usage authorized.
     # @option opts [Float] :max_amount The maximum amount authorized.
-    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+    # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
     def getvirtualibans_with_http_info(valid_from, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: VirtualibansApi.getvirtualibans ..."
@@ -184,7 +184,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'InlineResponse20018')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: VirtualibansApi#getvirtualibans\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -196,17 +196,17 @@ module TreezorClient
     # @param wallet_id The Id Of the Wallet. The Wallet must be in validated status. The wallet must be of type \&quot;payment\&quot; or \&quot;electronic money\&quot;
     # @param type_id | Type Id | Virtual IBAN Type| | ---| --- | | 1 | DEBIT | | 2 | CREDIT | 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :tag A tag generated by the client
     # @option opts [String] :reference The client&#39;s internal reference of the vitual IBAN. Less than 255 characters.
     # @option opts [Date] :valid_from The beginning date of validity. The beginning date must not be less than today&#39;s date.
     # @option opts [Date] :valid_to The limit date of validity. Cannot be less or equal to the validFrom date.
     # @option opts [Integer] :max_usage The maximum number of usage authorized. If you want to set no maximum usage limitation you can omit the parameter or set it to null. If you want to limit usage please send an integer in that field. This integer cannot be less than 1.
     # @option opts [Float] :max_amount The maximum amount authorized.If you want to set no maximum usage amount limitation you can omit the parameter or set it to null. If you want to limit the amount please send a DECIMAL (with a point as separator) in that field. This decimal cannot be less than 0.00.
-    # @return [InlineResponse20017]
+    # @return [InlineResponse20018]
     def post_virtual_iban(wallet_id, type_id, opts = {})
       data, _status_code, _headers = post_virtual_iban_with_http_info(wallet_id, type_id, opts)
       return data
@@ -217,17 +217,17 @@ module TreezorClient
     # @param wallet_id The Id Of the Wallet. The Wallet must be in validated status. The wallet must be of type \&quot;payment\&quot; or \&quot;electronic money\&quot;
     # @param type_id | Type Id | Virtual IBAN Type| | ---| --- | | 1 | DEBIT | | 2 | CREDIT | 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :tag A tag generated by the client
     # @option opts [String] :reference The client&#39;s internal reference of the vitual IBAN. Less than 255 characters.
     # @option opts [Date] :valid_from The beginning date of validity. The beginning date must not be less than today&#39;s date.
     # @option opts [Date] :valid_to The limit date of validity. Cannot be less or equal to the validFrom date.
     # @option opts [Integer] :max_usage The maximum number of usage authorized. If you want to set no maximum usage limitation you can omit the parameter or set it to null. If you want to limit usage please send an integer in that field. This integer cannot be less than 1.
     # @option opts [Float] :max_amount The maximum amount authorized.If you want to set no maximum usage amount limitation you can omit the parameter or set it to null. If you want to limit the amount please send a DECIMAL (with a point as separator) in that field. This decimal cannot be less than 0.00.
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
     def post_virtual_iban_with_http_info(wallet_id, type_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: VirtualibansApi.post_virtual_iban ..."
@@ -277,7 +277,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'InlineResponse20018')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: VirtualibansApi#post_virtual_iban\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -288,16 +288,16 @@ module TreezorClient
     # Update Virtual IBAN's information.
     # @param id VirtualIban&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :reference The client&#39;s internal reference of the vitual IBAN.
     # @option opts [Date] :valid_from The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint.
     # @option opts [Date] :valid_to The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint.
     # @option opts [Integer] :max_usage The maximum number of usage authorized. It must follow the rules explained in the POST endpoint AND the maximum usage cannot be strictly less than the transaction counter of the Virtual Iban.
     # @option opts [Float] :max_amount The maximum amount authorized. It must follow the rules explained in the POST endpoint AND the maximum amount cannot be strictly less than the cumulated amount of this Virtual Iban.
-    # @return [InlineResponse20017]
+    # @return [InlineResponse20018]
     def put_virtual_iban(id, opts = {})
       data, _status_code, _headers = put_virtual_iban_with_http_info(id, opts)
       return data
@@ -307,16 +307,16 @@ module TreezorClient
     # Update Virtual IBAN&#39;s information.
     # @param id VirtualIban&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :reference The client&#39;s internal reference of the vitual IBAN.
     # @option opts [Date] :valid_from The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint.
     # @option opts [Date] :valid_to The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint.
     # @option opts [Integer] :max_usage The maximum number of usage authorized. It must follow the rules explained in the POST endpoint AND the maximum usage cannot be strictly less than the transaction counter of the Virtual Iban.
     # @option opts [Float] :max_amount The maximum amount authorized. It must follow the rules explained in the POST endpoint AND the maximum amount cannot be strictly less than the cumulated amount of this Virtual Iban.
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
     def put_virtual_iban_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: VirtualibansApi.put_virtual_iban ..."
@@ -359,7 +359,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'InlineResponse20018')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: VirtualibansApi#put_virtual_iban\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

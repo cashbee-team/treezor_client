@@ -182,9 +182,9 @@ module TreezorClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'cardtransaction_id' => :'String',
-        :'card_id' => :'String',
-        :'wallet_id' => :'String',
+        :'cardtransaction_id' => :'Integer',
+        :'card_id' => :'Integer',
+        :'wallet_id' => :'Integer',
         :'wallet_currency' => :'String',
         :'merchant_id' => :'String',
         :'merchant_name' => :'String',

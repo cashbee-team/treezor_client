@@ -38,7 +38,7 @@ describe 'MandateApi' do
   # @param id Mandate&#39;s internal id.
   # @param origin The origin of the request for revocation
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'delete_mandate test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -50,7 +50,7 @@ describe 'MandateApi' do
   # Get a mandate from the system.
   # @param id Mandate&#39;s internal id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'get_mandate test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -61,16 +61,16 @@ describe 'MandateApi' do
   # search mandates
   # Get mandates that match search criteria.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :mandate_id Mandate&#39;s Id
   # @option opts [Integer] :user_id User&#39;s id who initiates the mandate request.
   # @option opts [String] :unique_mandate_reference Unique Mandate Reference (UMR) of the searched mandate. It is a sequence of characters that ensures the mandate traceability. UMR coupled with SCI allows to uniquely identify a creditor and a contract for any mandate. It is provided at the mandate creation.
   # @option opts [String] :mandate_status Mandate&#39;s status. Possible values: * CANCELED * PENDING * VALIDATED 
   # @option opts [String] :filter You can filter the API response by using filter(s). Filters should be separated by a \&quot;;\&quot;. Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \&quot;fieldName criterion expression\&quot;. Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     &gt;    |      greater than      |            alphanumeric string           |         100        |  |    &gt;&#x3D;    | greater or equal than  |            alphanumeric string           |         100        |  |     &lt;    |        less than       |            alphanumeric string           |         100        |  |    &lt;&#x3D;    |   less or equal than   |            alphanumeric string           |         100        |  |    !&#x3D;    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    &#x3D;&#x3D;    |         equals         |            alphanumeric string           |         100        | 
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'get_mandates test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -79,17 +79,17 @@ describe 'MandateApi' do
 
   # unit tests for mandates_id_resend_otp_put
   # send an OTP
-  # Send an OTP to sign a specific mandate. The OTP will be sent to the user&#39;s mobile phone OR to a specific mobile phone number in the request.
+  # Send an OTP to sign a specific mandate. The OTP will be sent to the user&#39;s mobile phone OR to a specific mobile phone number in the request. 
   # @param id Mandate&#39;s id.
-  # @param access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication).
-  # @param access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @param access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+  # @param access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   # @param user_id User&#39;s id who initiates the mandate request.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :debtor_mobile Debtor&#39;s mobile phone number. Used to send the OTP for signature
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'mandates_id_resend_otp_put test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -100,16 +100,16 @@ describe 'MandateApi' do
   # sign a mandate
   # Sign a mandate with the received OTP.
   # @param id Mandate&#39;s id.
-  # @param access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication).
-  # @param access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @param access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+  # @param access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   # @param user_id User&#39;s is who initiates the mandate request.
   # @param otp The One-time password that the user got once mandate created.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :debtor_signature_ip IP address from which the mandate will be signed.
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'mandates_id_sign_put test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -118,7 +118,7 @@ describe 'MandateApi' do
 
   # unit tests for post_mandates
   # create a mandate
-  # Create a new mandate in the system.
+  # Create a new mandate in the system. 
   # @param sdd_type Type of mandate.  | Type | Description | | ---- | ----------- | | core | Sepa Direct Debit Core | | b2b | Sepa Direct Debit Business 2 Business  | 
   # @param is_paper Indicate if it&#39;s a paper mandate or not
   # @param user_id User&#39;s id who initiates the mandate request. The creditor.
@@ -131,13 +131,13 @@ describe 'MandateApi' do
   # @param sequence_type Type of mandate.  | Type | Description | | ---- | ----------- | | one-off | One-off payment | | recurrent | Recurrent payment |  Default value: one-off. 
   # @param created_ip IP address of the system that created mandate.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :debtor_bic Debtor&#39;s BIC (or SWIFT)
   # @option opts [String] :signature_date Signature date of the mandate. Required if is paper.
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20013]
   describe 'post_mandates test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

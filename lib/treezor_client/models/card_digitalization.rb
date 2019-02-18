@@ -17,12 +17,9 @@ module TreezorClient
   class CardDigitalization
     attr_accessor :id
 
-    attr_accessor :external_id
-
     attr_accessor :card_id
 
-    attr_accessor :details_from_gps
-
+    # | Status | Description | | ---- | ----------- | | A | Active | | N | Not tokenized | | S | Suspended | | X | Deactivated (Final status, cannot be changed)| 
     attr_accessor :status
 
     attr_accessor :created_date
@@ -34,9 +31,7 @@ module TreezorClient
     def self.attribute_map
       {
         :'id' => :'id',
-        :'external_id' => :'externalId',
         :'card_id' => :'cardId',
-        :'details_from_gps' => :'detailsFromGPS',
         :'status' => :'status',
         :'created_date' => :'createdDate',
         :'modified_date' => :'modifiedDate'
@@ -47,10 +42,8 @@ module TreezorClient
     def self.swagger_types
       {
         :'id' => :'Integer',
-        :'external_id' => :'Integer',
         :'card_id' => :'String',
-        :'details_from_gps' => :'CardDigitalizationDetailsFromGPS',
-        :'status' => :'Integer',
+        :'status' => :'String',
         :'created_date' => :'String',
         :'modified_date' => :'String'
       }
@@ -68,16 +61,8 @@ module TreezorClient
         self.id = attributes[:'id']
       end
 
-      if attributes.has_key?(:'externalId')
-        self.external_id = attributes[:'externalId']
-      end
-
       if attributes.has_key?(:'cardId')
         self.card_id = attributes[:'cardId']
-      end
-
-      if attributes.has_key?(:'detailsFromGPS')
-        self.details_from_gps = attributes[:'detailsFromGPS']
       end
 
       if attributes.has_key?(:'status')
@@ -113,9 +98,7 @@ module TreezorClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          external_id == o.external_id &&
           card_id == o.card_id &&
-          details_from_gps == o.details_from_gps &&
           status == o.status &&
           created_date == o.created_date &&
           modified_date == o.modified_date
@@ -130,7 +113,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, external_id, card_id, details_from_gps, status, created_date, modified_date].hash
+      [id, card_id, status, created_date, modified_date].hash
     end
 
     # Builds the object from hash

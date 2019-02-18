@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transfers** | [**Array&lt;Transfer&gt;**](Transfer.md) |  | [optional] 
+**payout_refunds** | [**Array&lt;PayoutRefund&gt;**](PayoutRefund.md) |  | [optional] 
 
 

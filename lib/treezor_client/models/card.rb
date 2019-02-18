@@ -307,9 +307,9 @@ module TreezorClient
         :'total_payment_day' => :'Integer',
         :'total_payment_all' => :'Integer',
         :'created_by' => :'Integer',
-        :'created_date' => :'Integer',
+        :'created_date' => :'String',
         :'modified_by' => :'Integer',
-        :'modified_date' => :'Integer',
+        :'modified_date' => :'String',
         :'total_rows' => :'Integer'
       }
     end

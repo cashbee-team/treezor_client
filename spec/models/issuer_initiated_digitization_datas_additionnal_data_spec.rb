@@ -32,7 +32,7 @@ describe 'IssuerInitiatedDigitizationDatasAdditionnalData' do
       expect(@instance).to be_instance_of(TreezorClient::IssuerInitiatedDigitizationDatasAdditionnalData)
     end
   end
-  describe 'test attribute "ecc_public_certificates"' do
+  describe 'test attribute "certificates"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -29,13 +29,13 @@ end
 
 api_instance = TreezorClient::BusinessApi.new
 
-country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   external_id: "external_id_example", # String | External unique business id. As given in businesssearch reponse.
   registration_number: "registration_number_example", # String | Unique business registration number.
   vat_number: "vat_number_example" # String | Unique business VAT number.
@@ -54,11 +54,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **String**| In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **country** | **String**| In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)  | 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **external_id** | **String**| External unique business id. As given in businesssearch reponse. | [optional] 
  **registration_number** | **String**| Unique business registration number. | [optional] 
  **vat_number** | **String**| Unique business VAT number. | [optional] 
@@ -99,16 +99,16 @@ end
 
 api_instance = TreezorClient::BusinessApi.new
 
-country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  name_exact: "name_exact_example", # String | Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords.
-  name_match_beginning: "name_match_beginning_example", # String | Business names begin with. Exclusive with nameExact and nameClosestKeywords.
-  name_closest_keywords: "name_closest_keywords_example", # String | Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning.
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  name_exact: "name_exact_example", # String | Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords. 
+  name_match_beginning: "name_match_beginning_example", # String | Business names begin with. Exclusive with nameExact and nameClosestKeywords. 
+  name_closest_keywords: "name_closest_keywords_example", # String | Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning. 
   registration_number: "registration_number_example", # String | Business registration number.
   vat_number: "vat_number_example", # String | Business VAT number.
   phone_number: "phone_number_example", # String | Business phone number.
@@ -130,14 +130,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **String**| In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **name_exact** | **String**| Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords. | [optional] 
- **name_match_beginning** | **String**| Business names begin with. Exclusive with nameExact and nameClosestKeywords. | [optional] 
- **name_closest_keywords** | **String**| Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning. | [optional] 
+ **country** | **String**| In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)  | 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **name_exact** | **String**| Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords.  | [optional] 
+ **name_match_beginning** | **String**| Business names begin with. Exclusive with nameExact and nameClosestKeywords.  | [optional] 
+ **name_closest_keywords** | **String**| Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning.  | [optional] 
  **registration_number** | **String**| Business registration number. | [optional] 
  **vat_number** | **String**| Business VAT number. | [optional] 
  **phone_number** | **String**| Business phone number. | [optional] 

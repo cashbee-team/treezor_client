@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **String** | Custom data that could be used by caller to search the instance. | [optional] 
+**id** | **Integer** | Should be named beneficiaryId to conform to the API&#39;s naming convention. | [optional] 
 **user_id** | **Integer** | Beneficiary&#39;s userId | [optional] 
 **nick_name** | **String** | Name choosen by end user to easily recognize the beneficiary. | [optional] 
 **name** | **String** | Beneficiary name, linked to bank account. | [optional] 

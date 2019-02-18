@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mandates** | [**Array&lt;Mandate&gt;**](Mandate.md) |  | [optional] 
+**documents** | [**Array&lt;Document&gt;**](Document.md) |  | [optional] 
 
 

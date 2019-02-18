@@ -18,6 +18,9 @@ module TreezorClient
     # Custom data that could be used by caller to search the instance.
     attr_accessor :tag
 
+    # Should be named beneficiaryId to conform to the API's naming convention.
+    attr_accessor :id
+
     # Beneficiary's userId
     attr_accessor :user_id
 
@@ -55,6 +58,7 @@ module TreezorClient
     def self.attribute_map
       {
         :'tag' => :'tag',
+        :'id' => :'id',
         :'user_id' => :'userId',
         :'nick_name' => :'nickName',
         :'name' => :'name',
@@ -73,6 +77,7 @@ module TreezorClient
     def self.swagger_types
       {
         :'tag' => :'String',
+        :'id' => :'Integer',
         :'user_id' => :'Integer',
         :'nick_name' => :'String',
         :'name' => :'String',
@@ -97,6 +102,10 @@ module TreezorClient
 
       if attributes.has_key?(:'tag')
         self.tag = attributes[:'tag']
+      end
+
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
 
       if attributes.has_key?(:'userId')
@@ -172,6 +181,7 @@ module TreezorClient
       return true if self.equal?(o)
       self.class == o.class &&
           tag == o.tag &&
+          id == o.id &&
           user_id == o.user_id &&
           nick_name == o.nick_name &&
           name == o.name &&
@@ -194,7 +204,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tag, user_id, nick_name, name, address, iban, bic, sepa_creditor_identifier, sdd_b2b_whitelist, sdd_core_blacklist, usable_for_sct, sdd_core_known_unique_mandate_reference].hash
+      [tag, id, user_id, nick_name, name, address, iban, bic, sepa_creditor_identifier, sdd_b2b_whitelist, sdd_core_blacklist, usable_for_sct, sdd_core_known_unique_mandate_reference].hash
     end
 
     # Builds the object from hash

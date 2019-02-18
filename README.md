@@ -65,10 +65,10 @@ end
 api_instance = TreezorClient::BalanceApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   wallet_id: 56, # Integer | Wallet's ID of wanted balance
   user_id: 56 # Integer | Wallet's user id of wanted balanced
 }
@@ -115,8 +115,10 @@ Class | Method | HTTP request | Description
 *TreezorClient::CardApi* | [**cards_id_regenerate_put**](docs/CardApi.md#cards_id_regenerate_put) | **PUT** /cards/{id}/Regenerate/ | regenerate card
 *TreezorClient::CardApi* | [**cards_id_set_pin_put**](docs/CardApi.md#cards_id_set_pin_put) | **PUT** /cards/{id}/setPIN/ | set card's PIN
 *TreezorClient::CardApi* | [**cards_id_unblock_pin_put**](docs/CardApi.md#cards_id_unblock_pin_put) | **PUT** /cards/{id}/UnblockPIN/ | unblock card's PIN
+*TreezorClient::CardApi* | [**cards_register3_ds_post**](docs/CardApi.md#cards_register3_ds_post) | **POST** /cards/Register3DS | Register 3D secure
 *TreezorClient::CardApi* | [**cards_request_physical_post**](docs/CardApi.md#cards_request_physical_post) | **POST** /cards/RequestPhysical | create a physical card
 *TreezorClient::CardDigitalizationsApi* | [**card_digitalizations_id**](docs/CardDigitalizationsApi.md#card_digitalizations_id) | **GET** /cardDigitalizations/{id} | Get a card digitalizations based on its internal id
+*TreezorClient::CardDigitalizationsApi* | [**deletecard_digitalizations_id**](docs/CardDigitalizationsApi.md#deletecard_digitalizations_id) | **DELETE** /cardDigitalizations/{id} | Deletes a payment Token
 *TreezorClient::CardDigitalizationsApi* | [**putcard_digitalizations_id**](docs/CardDigitalizationsApi.md#putcard_digitalizations_id) | **PUT** /cardDigitalizations/{id} | Update the status of a payment Token
 *TreezorClient::CardDigitalizationsApi* | [**readcard_digitalizations**](docs/CardDigitalizationsApi.md#readcard_digitalizations) | **GET** /cardDigitalizations | search for card digitalizations
 *TreezorClient::CardReserveApi* | [**card_reserve_add_to**](docs/CardReserveApi.md#card_reserve_add_to) | **POST** /cardReserves/AddTo | add an amount to the reserved amount of a card
@@ -165,6 +167,12 @@ Class | Method | HTTP request | Description
 *TreezorClient::PayoutApi* | [**get_payout**](docs/PayoutApi.md#get_payout) | **GET** /payouts/{id} | get a payout
 *TreezorClient::PayoutApi* | [**get_payouts**](docs/PayoutApi.md#get_payouts) | **GET** /payouts | search pay outs
 *TreezorClient::PayoutApi* | [**post_payout**](docs/PayoutApi.md#post_payout) | **POST** /payouts | create a pay out
+*TreezorClient::PayoutRefundsApi* | [**get_payout_refunds**](docs/PayoutRefundsApi.md#get_payout_refunds) | **GET** /payoutRefunds | search pay outs refund
+*TreezorClient::TaxResidenceApi* | [**tax_residences_get**](docs/TaxResidenceApi.md#tax_residences_get) | **GET** /taxResidences | search a residence
+*TreezorClient::TaxResidenceApi* | [**tax_residences_id_delete**](docs/TaxResidenceApi.md#tax_residences_id_delete) | **DELETE** /taxResidences/{id} | delete a residence
+*TreezorClient::TaxResidenceApi* | [**tax_residences_id_get**](docs/TaxResidenceApi.md#tax_residences_id_get) | **GET** /taxResidences/{id} | read the informations of a residence
+*TreezorClient::TaxResidenceApi* | [**tax_residences_id_put**](docs/TaxResidenceApi.md#tax_residences_id_put) | **PUT** /taxResidences/{id} | update the residence
+*TreezorClient::TaxResidenceApi* | [**tax_residences_post**](docs/TaxResidenceApi.md#tax_residences_post) | **POST** /taxResidences | create a residence
 *TreezorClient::TransactionApi* | [**get_transaction**](docs/TransactionApi.md#get_transaction) | **GET** /transactions/{id} | get a transaction
 *TreezorClient::TransactionApi* | [**get_transactions**](docs/TransactionApi.md#get_transactions) | **GET** /transactions | search transactions
 *TreezorClient::TransferApi* | [**delete_transfer**](docs/TransferApi.md#delete_transfer) | **DELETE** /transfers/{id} | cancel a transfer
@@ -212,7 +220,7 @@ Class | Method | HTTP request | Description
  - [TreezorClient::BusinesssearchsBusinessinformations](docs/BusinesssearchsBusinessinformations.md)
  - [TreezorClient::Card](docs/Card.md)
  - [TreezorClient::CardDigitalization](docs/CardDigitalization.md)
- - [TreezorClient::CardDigitalizationDetailsFromGPS](docs/CardDigitalizationDetailsFromGPS.md)
+ - [TreezorClient::CountryRestrictionGroup](docs/CountryRestrictionGroup.md)
  - [TreezorClient::Document](docs/Document.md)
  - [TreezorClient::Error](docs/Error.md)
  - [TreezorClient::InlineResponse200](docs/InlineResponse200.md)
@@ -220,6 +228,7 @@ Class | Method | HTTP request | Description
  - [TreezorClient::InlineResponse20010](docs/InlineResponse20010.md)
  - [TreezorClient::InlineResponse20010Cardtransactions](docs/InlineResponse20010Cardtransactions.md)
  - [TreezorClient::InlineResponse20011](docs/InlineResponse20011.md)
+ - [TreezorClient::InlineResponse20011Cardtransactions](docs/InlineResponse20011Cardtransactions.md)
  - [TreezorClient::InlineResponse20012](docs/InlineResponse20012.md)
  - [TreezorClient::InlineResponse20013](docs/InlineResponse20013.md)
  - [TreezorClient::InlineResponse20014](docs/InlineResponse20014.md)
@@ -235,6 +244,9 @@ Class | Method | HTTP request | Description
  - [TreezorClient::InlineResponse20023](docs/InlineResponse20023.md)
  - [TreezorClient::InlineResponse20024](docs/InlineResponse20024.md)
  - [TreezorClient::InlineResponse20025](docs/InlineResponse20025.md)
+ - [TreezorClient::InlineResponse20026](docs/InlineResponse20026.md)
+ - [TreezorClient::InlineResponse20027](docs/InlineResponse20027.md)
+ - [TreezorClient::InlineResponse20028](docs/InlineResponse20028.md)
  - [TreezorClient::InlineResponse2003](docs/InlineResponse2003.md)
  - [TreezorClient::InlineResponse2004](docs/InlineResponse2004.md)
  - [TreezorClient::InlineResponse2005](docs/InlineResponse2005.md)
@@ -253,7 +265,9 @@ Class | Method | HTTP request | Description
  - [TreezorClient::Payin](docs/Payin.md)
  - [TreezorClient::Payinrefund](docs/Payinrefund.md)
  - [TreezorClient::Payout](docs/Payout.md)
+ - [TreezorClient::PayoutRefund](docs/PayoutRefund.md)
  - [TreezorClient::Tav](docs/Tav.md)
+ - [TreezorClient::TaxResidence](docs/TaxResidence.md)
  - [TreezorClient::Transaction](docs/Transaction.md)
  - [TreezorClient::Transfer](docs/Transfer.md)
  - [TreezorClient::Transferrefund](docs/Transferrefund.md)

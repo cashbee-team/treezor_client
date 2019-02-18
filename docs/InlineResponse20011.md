@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**documents** | [**Array&lt;Document&gt;**](Document.md) |  | [optional] 
+**cardtransactions** | [**Array&lt;InlineResponse20011Cardtransactions&gt;**](InlineResponse20011Cardtransactions.md) |  | [optional] 
 
 

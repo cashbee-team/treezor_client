@@ -37,7 +37,7 @@ describe 'TransferrefundApi' do
   # Change transfer refund&#39;s status to CANCELED. A validated transfer refund can&#39;t be cancelled.
   # @param id Transferrefunds internal id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20022]
+  # @return [InlineResponse20024]
   describe 'delete_transferrefund test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -49,7 +49,7 @@ describe 'TransferrefundApi' do
   # Get a transfer refund from the system.
   # @param id Trasnfert refund internal id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20022]
+  # @return [InlineResponse20024]
   describe 'get_transferrefund test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -60,28 +60,28 @@ describe 'TransferrefundApi' do
   # search transfer refunds
   # Get transfer refunds that match search criteria.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :transferrefund_id Transfer refund id.
   # @option opts [String] :transferrefund_tag Custom data.
   # @option opts [String] :transferrefund_status Transfer refund status. Possible values: * PENDING * CANCELED * VALIDATED 
   # @option opts [Integer] :wallet_id Refunded wallet&#39;s id.
   # @option opts [Integer] :transfer_id Initial transfer&#39;s id.
-  # @option opts [Integer] :transferrefund_date transfert refund&#39;s date. Format: YYYY-MM-DD HH:MM:SS
+  # @option opts [Integer] :transferrefund_date transfert refund&#39;s date. Format: YYYY-MM-DD HH:MM:SS 
   # @option opts [Integer] :user_id User&#39;s id of who has made the transfer refund.
   # @option opts [String] :amount Refund amount.
   # @option opts [String] :currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
-  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
   # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @return [InlineResponse20022]
+  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @return [InlineResponse20024]
   describe 'get_transferrefunds test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -93,15 +93,15 @@ describe 'TransferrefundApi' do
   # Create a new transfer refund in the system.
   # @param transfer_id transfer&#39;s id to refund.
   # @param amount Refund amount
-  # @param currency Transfert&#39;s currency. Debited wallet and credited wallet must share same currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217).
+  # @param currency Transfert&#39;s currency. Debited wallet and credited wallet must share same currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :transferrefund_tag Custom data.
   # @option opts [String] :comment End user, client or issuer comment.
-  # @return [InlineResponse20023]
+  # @return [InlineResponse20025]
   describe 'post_transferrefunds test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

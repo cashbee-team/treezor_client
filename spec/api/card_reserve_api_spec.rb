@@ -36,10 +36,10 @@ describe 'CardReserveApi' do
   # add an amount to the reserved amount of a card
   # add an amount to the reserved amount of a card
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
   # @option opts [Body3] :body 
   # @return [Float]
   describe 'card_reserve_add_to test' do
@@ -52,10 +52,10 @@ describe 'CardReserveApi' do
   # check reserved amount
   # Check if an amount can be substract to the reserved amount
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
   # @option opts [Body4] :body 
   # @return [BOOLEAN]
   describe 'card_reserve_check test' do
@@ -69,10 +69,10 @@ describe 'CardReserveApi' do
   # get the reserved amount of a card
   # @param id the cardId of the reserved amount you want to pick up
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
   # @return [InlineResponse2009]
   describe 'card_reserve_get test' do
     it "should work" do

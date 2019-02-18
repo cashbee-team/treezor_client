@@ -15,20 +15,20 @@ require 'date'
 module TreezorClient
 
   class InlineResponse20021
-    attr_accessor :transfers
+    attr_accessor :payout_refunds
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'transfers' => :'transfers'
+        :'payout_refunds' => :'payoutRefunds'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'transfers' => :'Array<Transfer>'
+        :'payout_refunds' => :'Array<PayoutRefund>'
       }
     end
 
@@ -40,9 +40,9 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'transfers')
-        if (value = attributes[:'transfers']).is_a?(Array)
-          self.transfers = value
+      if attributes.has_key?(:'payoutRefunds')
+        if (value = attributes[:'payoutRefunds']).is_a?(Array)
+          self.payout_refunds = value
         end
       end
 
@@ -66,7 +66,7 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          transfers == o.transfers
+          payout_refunds == o.payout_refunds
     end
 
     # @see the `==` method
@@ -78,7 +78,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [transfers].hash
+      [payout_refunds].hash
     end
 
     # Builds the object from hash

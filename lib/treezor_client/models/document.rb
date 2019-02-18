@@ -25,6 +25,8 @@ module TreezorClient
 
     attr_accessor :document_type
 
+    attr_accessor :residence_id
+
     attr_accessor :client_id
 
     attr_accessor :user_id
@@ -77,6 +79,7 @@ module TreezorClient
         :'document_status' => :'documentStatus',
         :'document_type_id' => :'documentTypeId',
         :'document_type' => :'documentType',
+        :'residence_id' => :'residenceId',
         :'client_id' => :'clientId',
         :'user_id' => :'userId',
         :'user_lastname' => :'userLastname',
@@ -98,6 +101,7 @@ module TreezorClient
         :'document_status' => :'String',
         :'document_type_id' => :'Integer',
         :'document_type' => :'String',
+        :'residence_id' => :'Integer',
         :'client_id' => :'Integer',
         :'user_id' => :'Integer',
         :'user_lastname' => :'String',
@@ -137,6 +141,10 @@ module TreezorClient
 
       if attributes.has_key?(:'documentType')
         self.document_type = attributes[:'documentType']
+      end
+
+      if attributes.has_key?(:'residenceId')
+        self.residence_id = attributes[:'residenceId']
       end
 
       if attributes.has_key?(:'clientId')
@@ -216,6 +224,7 @@ module TreezorClient
           document_status == o.document_status &&
           document_type_id == o.document_type_id &&
           document_type == o.document_type &&
+          residence_id == o.residence_id &&
           client_id == o.client_id &&
           user_id == o.user_id &&
           user_lastname == o.user_lastname &&
@@ -237,7 +246,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_id, document_tag, document_status, document_type_id, document_type, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, created_date, modified_date, total_rows].hash
+      [document_id, document_tag, document_status, document_type_id, document_type, residence_id, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, created_date, modified_date, total_rows].hash
     end
 
     # Builds the object from hash

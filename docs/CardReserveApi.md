@@ -31,10 +31,10 @@ end
 api_instance = TreezorClient::CardReserveApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
   body: TreezorClient::Body3.new # Body3 | 
 }
 
@@ -51,10 +51,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
  **body** | [**Body3**](Body3.md)|  | [optional] 
 
 ### Return type
@@ -94,10 +94,10 @@ end
 api_instance = TreezorClient::CardReserveApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
   body: TreezorClient::Body4.new # Body4 | 
 }
 
@@ -114,10 +114,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
  **body** | [**Body4**](Body4.md)|  | [optional] 
 
 ### Return type
@@ -159,10 +159,10 @@ api_instance = TreezorClient::CardReserveApi.new
 id = 789 # Integer | the cardId of the reserved amount you want to pick up
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics).
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://www.treezor.com/basics). 
 }
 
 begin
@@ -179,10 +179,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| the cardId of the reserved amount you want to pick up | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://www.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
 
 ### Return type
 

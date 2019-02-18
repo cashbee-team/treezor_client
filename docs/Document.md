@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **document_status** | **String** |  | [optional] 
 **document_type_id** | **Integer** |  | [optional] 
 **document_type** | **String** |  | [optional] 
+**residence_id** | **Integer** |  | [optional] 
 **client_id** | **Integer** |  | [optional] 
 **user_id** | **Integer** |  | [optional] 
 **user_lastname** | **String** |  | [optional] 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_transaction**
-> InlineResponse20020 get_transaction(id)
+> InlineResponse20022 get_transaction(id)
 
 get a transaction
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **get_transactions**
-> InlineResponse20020 get_transactions(opts)
+> InlineResponse20022 get_transactions(opts)
 
 search transactions
 
@@ -84,10 +84,10 @@ end
 api_instance = TreezorClient::TransactionApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   transaction_id: 56, # Integer | Transaction's Id
   transaction_type: "transaction_type_example", # String | Transaction types. Possible values: * Payin * Payout * Transfer * Transfer Refund * Payin Refund * Discount * Bill 
   wallet_id: 56, # Integer | Transactions' wallet id.
@@ -98,12 +98,12 @@ opts = {
   currency: "currency_example", # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   value_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The value date of the transaction (date applied for the payment) Format : YYYY-MM-DD HH:MM:SS
   execution_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | Date of the execution of the transaction Format : YYYY-MM-DD HH:MM:SS
-  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists).
-  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists).
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
   sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
+  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -119,10 +119,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **transaction_id** | **Integer**| Transaction&#39;s Id | [optional] 
  **transaction_type** | **String**| Transaction types. Possible values: * Payin * Payout * Transfer * Transfer Refund * Payin Refund * Discount * Bill  | [optional] 
  **wallet_id** | **Integer**| Transactions&#39; wallet id. | [optional] 
@@ -133,16 +133,16 @@ Name | Type | Description  | Notes
  **currency** | **String**| Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217).  | [optional] 
  **value_date** | **DateTime**| The value date of the transaction (date applied for the payment) Format : YYYY-MM-DD HH:MM:SS | [optional] 
  **execution_date** | **DateTime**| Date of the execution of the transaction Format : YYYY-MM-DD HH:MM:SS | [optional] 
- **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists). | [optional] 
- **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists). | [optional] 
- **sort_by** | **String**| The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). | [optional] 
+ **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **sort_by** | **String**| The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).  | [optional] 
  **sort_order** | **String**| The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists).  | [optional] 
- **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
+ **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 

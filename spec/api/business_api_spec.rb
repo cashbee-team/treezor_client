@@ -35,12 +35,12 @@ describe 'BusinessApi' do
   # unit tests for businessinformations_get
   # get business information
   # The get business information endpoint returns all already known business information. End user will have then to verify/correct it. 
-  # @param country In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+  # @param country In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :external_id External unique business id. As given in businesssearch reponse.
   # @option opts [String] :registration_number Unique business registration number.
   # @option opts [String] :vat_number Unique business VAT number.
@@ -54,15 +54,15 @@ describe 'BusinessApi' do
   # unit tests for businesssearchs_get
   # search businesses
   # The search endpoint returns some business information. 
-  # @param country In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+  # @param country In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :name_exact Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords.
-  # @option opts [String] :name_match_beginning Business names begin with. Exclusive with nameExact and nameClosestKeywords.
-  # @option opts [String] :name_closest_keywords Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning.
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :name_exact Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords. 
+  # @option opts [String] :name_match_beginning Business names begin with. Exclusive with nameExact and nameClosestKeywords. 
+  # @option opts [String] :name_closest_keywords Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning. 
   # @option opts [String] :registration_number Business registration number.
   # @option opts [String] :vat_number Business VAT number.
   # @option opts [String] :phone_number Business phone number.

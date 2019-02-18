@@ -27,6 +27,12 @@ module TreezorClient
 
     attr_accessor :parent_type
 
+    attr_accessor :controlling_person_type
+
+    attr_accessor :employee_type
+
+    attr_accessor :specified_us_person
+
     attr_accessor :title
 
     attr_accessor :firstname
@@ -161,6 +167,9 @@ module TreezorClient
         :'user_tag' => :'userTag',
         :'parent_user_id' => :'parentUserId',
         :'parent_type' => :'parentType',
+        :'controlling_person_type' => :'controllingPersonType',
+        :'employee_type' => :'employeeType',
+        :'specified_us_person' => :'specifiedUSPerson',
         :'title' => :'title',
         :'firstname' => :'firstname',
         :'lastname' => :'lastname',
@@ -222,6 +231,9 @@ module TreezorClient
         :'user_tag' => :'String',
         :'parent_user_id' => :'Integer',
         :'parent_type' => :'String',
+        :'controlling_person_type' => :'Integer',
+        :'employee_type' => :'Integer',
+        :'specified_us_person' => :'Integer',
         :'title' => :'String',
         :'firstname' => :'String',
         :'lastname' => :'String',
@@ -304,6 +316,18 @@ module TreezorClient
 
       if attributes.has_key?(:'parentType')
         self.parent_type = attributes[:'parentType']
+      end
+
+      if attributes.has_key?(:'controllingPersonType')
+        self.controlling_person_type = attributes[:'controllingPersonType']
+      end
+
+      if attributes.has_key?(:'employeeType')
+        self.employee_type = attributes[:'employeeType']
+      end
+
+      if attributes.has_key?(:'specifiedUSPerson')
+        self.specified_us_person = attributes[:'specifiedUSPerson']
       end
 
       if attributes.has_key?(:'title')
@@ -552,6 +576,9 @@ module TreezorClient
           user_tag == o.user_tag &&
           parent_user_id == o.parent_user_id &&
           parent_type == o.parent_type &&
+          controlling_person_type == o.controlling_person_type &&
+          employee_type == o.employee_type &&
+          specified_us_person == o.specified_us_person &&
           title == o.title &&
           firstname == o.firstname &&
           lastname == o.lastname &&
@@ -612,7 +639,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, place_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
+      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, place_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
     end
 
     # Builds the object from hash

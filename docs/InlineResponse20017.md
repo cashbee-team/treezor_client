@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**virtualibans** | [**Array&lt;Virtualiban&gt;**](Virtualiban.md) |  | [optional] 
+**payins** | [**Array&lt;Payin&gt;**](Payin.md) |  | [optional] 
 
 

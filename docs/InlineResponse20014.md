@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bankaccounts** | [**Array&lt;MerchantIdRestrictionGroup&gt;**](MerchantIdRestrictionGroup.md) |  | [optional] 
+**bankaccounts** | [**Array&lt;MccRestrictionGroup&gt;**](MccRestrictionGroup.md) |  | [optional] 
 
 

@@ -37,7 +37,7 @@ describe 'TransactionApi' do
   # Get a transaction from the system.
   # @param id Transaction&#39;s internal id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20020]
+  # @return [InlineResponse20022]
   describe 'get_transaction test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -48,10 +48,10 @@ describe 'TransactionApi' do
   # search transactions
   # Get transactions that match search criteria.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :transaction_id Transaction&#39;s Id
   # @option opts [String] :transaction_type Transaction types. Possible values: * Payin * Payout * Transfer * Transfer Refund * Payin Refund * Discount * Bill 
   # @option opts [Integer] :wallet_id Transactions&#39; wallet id.
@@ -62,13 +62,13 @@ describe 'TransactionApi' do
   # @option opts [String] :currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   # @option opts [DateTime] :value_date The value date of the transaction (date applied for the payment) Format : YYYY-MM-DD HH:MM:SS
   # @option opts [DateTime] :execution_date Date of the execution of the transaction Format : YYYY-MM-DD HH:MM:SS
-  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
   # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @return [InlineResponse20020]
+  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @return [InlineResponse20022]
   describe 'get_transactions test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

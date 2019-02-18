@@ -45,13 +45,26 @@ describe 'CardDigitalizationsApi' do
     end
   end
 
+  # unit tests for deletecard_digitalizations_id
+  # Deletes a payment Token
+  # Deletes a payment Token
+  # @param id Card digitalization internal id.
+  # @param reason_code The reason code for the action. Possible values are :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | F | Issuer or cardholder confirmed fraudulent token transactions (Deprecated) | | T | Issuer or cardholder confirmed fraudulent token transactions | | C | Account closed | | Z | Other | 
+  # @param [Hash] opts the optional parameters
+  # @return [InlineResponse2008]
+  describe 'deletecard_digitalizations_id test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for putcard_digitalizations_id
   # Update the status of a payment Token
   # Update the status of a payment Token
   # @param id Card digitalization internal id.
-  # @param status The new Status for the payment Token. Possible values TODO add values here
+  # @param status The new status for the payment Token. Possible values are : | Status | Description | | ---- | ----------- | | unsuspend | Unsuspend | | suspend | Suspend | 
+  # @param reason_code The reason code for the action. Possible values are : - For a suspension :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | T | Issuer or cardholder confirmed fraudulent token transactions | | Z | Other |  - For an unsuspension :  | Reason code | Description | | ---- | ----------- | | F | Cardholder reported token device found or not stolen | | T | Issuer or cardholder confirmed no fraudulent token transactions | | Z | Other | 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
   # @return [InlineResponse2008]
   describe 'putcard_digitalizations_id test' do
     it "should work" do
@@ -63,10 +76,10 @@ describe 'CardDigitalizationsApi' do
   # search for card digitalizations
   # Search for card digitalizations.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :filter Filterable fields are : - id - externalId - cardId - status - detailsFromGPS - createdDate - modifiedDate  More info [here](https://agent.treezor.com/filterv2). 
   # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
   # @return [InlineResponse2008]

@@ -37,10 +37,10 @@ describe 'CardApi' do
   # Return virtual card&#39;s image
   # @param card_id Vitual card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2007]
   describe 'cardimages_get test' do
     it "should work" do
@@ -56,27 +56,29 @@ describe 'CardApi' do
   # @param perms_group Permissions group of the card. There is 4 usages which create 16 possible groups:  | group | NFC | ATM | On-line | Foreign | |-----|-----|-----|-----|------| |TRZ-CU-001|KO|KO|KO|KO| |TRZ-CU-002|KO|KO|KO|OK| |TRZ-CU-003|KO|KO|OK|KO| |TRZ-CU-004|KO|KO|OK|OK| |TRZ-CU-005|KO|OK|KO|KO| |TRZ-CU-006|KO|OK|KO|OK| |TRZ-CU-007|KO|OK|OK|KO| |TRZ-CU-008|KO|OK|OK|OK| |TRZ-CU-009|OK|KO|KO|KO| |TRZ-CU-010|OK|KO|KO|OK| |TRZ-CU-011|OK|KO|OK|KO| |TRZ-CU-012|OK|KO|OK|OK| |TRZ-CU-013|OK|OK|KO|KO| |TRZ-CU-014|OK|OK|KO|OK| |TRZ-CU-015|OK|OK|OK|KO| |TRZ-CU-016|OK|OK|OK|OK| 
   # @param card_print Card appareance code, also used to choose the program ID of the card
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   # @option opts [String] :card_tag Custom field
+  # @option opts [Integer] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
   # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
-  # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
-  # @option opts [Integer] :limit_atm_day ATM operations limit for a single day. Default value 1000â‚¬.
+  # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬.
+  # @option opts [Integer] :limit_atm_day ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬.
   # @option opts [Integer] :limit_atm_all ATM operations limit from beginning. No default value.
   # @option opts [Integer] :limit_payment_year POS operations limit for a sliding year. No default value.
   # @option opts [Integer] :limit_payment_month POS operations limit for a sliding month. No default value.
-  # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
-  # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
+  # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬.
+  # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬.
   # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+  # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
   # @option opts [String] :pin Card&#39;s PIN code value.
   # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
   # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
   # @option opts [Integer] :mcc_restriction_group_id mccRestrictionGroupId you want to apply
   # @option opts [Integer] :merchant_restriction_group_id merchantRestrictionGroupId you want to apply
   # @option opts [Integer] :country_restriction_group_id countryRestrictionGroupId you want to apply
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_create_virtual_post test' do
     it "should work" do
@@ -88,10 +90,10 @@ describe 'CardApi' do
   # search cards
   # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :card_id Card&#39;s id
   # @option opts [Integer] :user_id User&#39;s id of cardholder
   # @option opts [String] :embossed_name Embossed name of the card
@@ -103,14 +105,14 @@ describe 'CardApi' do
   # @option opts [Integer] :mcc_restriction_group_id mccRestrictionGroupId of the card
   # @option opts [Integer] :merchant_restriction_group_id merchantRestrictionGroupId of the card
   # @option opts [Integer] :country_restriction_group_id countryRestrictionGroupId of the card
-  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists).
+  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
   # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
+  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
   # @return [InlineResponse2006]
   describe 'cards_get test' do
     it "should work" do
@@ -120,14 +122,14 @@ describe 'CardApi' do
 
   # unit tests for cards_id_activate_put
   # activate a card
-  # The Activate endpoint change card status to activate. An activated card can be freely used.
+  # The Activate endpoint change card status to activate. An activated card can be freely used. 
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_token Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_activate_put test' do
     it "should work" do
@@ -143,10 +145,10 @@ describe 'CardApi' do
   # @param new_pin Card&#39;s new PIN
   # @param confirm_pin Card&#39;s new PIN confirmation value
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_change_pin_put test' do
     it "should work" do
@@ -156,13 +158,13 @@ describe 'CardApi' do
 
   # unit tests for cards_id_convert_virtual_put
   # convert card to virtual
-  # Convert a virtual card into a physical one. The converted card will be both virtual and physical.
+  # Convert a virtual card into a physical one. The converted card will be both virtual and physical. 
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_convert_virtual_put test' do
     it "should work" do
@@ -199,7 +201,7 @@ describe 'CardApi' do
   # Update of the card limits.
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   # @option opts [Integer] :limit_atm_year ATM year limit
   # @option opts [Integer] :limit_atm_month ATM month limit
   # @option opts [Integer] :limit_atm_week ATM week limit
@@ -210,9 +212,10 @@ describe 'CardApi' do
   # @option opts [Integer] :limit_payment_week Payment week limit
   # @option opts [Integer] :limit_payment_day Payment day limit
   # @option opts [Integer] :limit_payment_all Payment from beginning limit
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [Float] :payment_daily_limit Payment day limit including cents. The decimal delimiter must be \&quot;.\&quot;
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_limits_put test' do
     it "should work" do
@@ -226,10 +229,10 @@ describe 'CardApi' do
   # @param id Card&#39;s id.
   # @param lock_status | Value | Type | | --- | --- | | 1 | Block the card| | 0 | Unblock the card | | 2 | Lost card | | 3 | Stolen card | 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_lock_unlock_put test' do
     it "should work" do
@@ -246,10 +249,10 @@ describe 'CardApi' do
   # @param atm Card usable on ATM (withdrawals)
   # @param nfc Card usable on contactless compatible POS machine machine\&quot;
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_options_put test' do
     it "should work" do
@@ -262,13 +265,13 @@ describe 'CardApi' do
   # Actually update mccRestrictionGroupId and merchantRestrictionGroupId of a card
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   # @option opts [Integer] :mcc_restriction_group_id card&#39;s mccRestrictionGroupId
   # @option opts [Integer] :merchant_restriction_group_id card&#39;s merchantRestrictionGroupId
   # @option opts [Integer] :country_restriction_group_id card&#39;s countryRestrictionGroupId
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_put test' do
     it "should work" do
@@ -278,13 +281,13 @@ describe 'CardApi' do
 
   # unit tests for cards_id_regenerate_put
   # regenerate card
-  # If card is Lost or Stolen (card&#39;s status), the card itself will get regenerated. Otherwise only the card image gets recreated.
+  # If card is Lost or Stolen (card&#39;s status), the card itself will get regenerated. Otherwise only the card image gets recreated. 
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_regenerate_put test' do
     it "should work" do
@@ -299,10 +302,10 @@ describe 'CardApi' do
   # @param new_pin Card&#39;s new PIN.
   # @param confirm_pin Card&#39;s new PIN confirmation value
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_set_pin_put test' do
     it "should work" do
@@ -315,12 +318,25 @@ describe 'CardApi' do
   # Unblock card&#39;s PIN code.
   # @param id Card&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_id_unblock_pin_put test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for cards_register3_ds_post
+  # Register 3D secure
+  # Register a card to 3D secure service.
+  # @param card_id Card&#39;s ID to register
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @return [InlineResponse2006]
+  describe 'cards_register3_ds_post test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -335,26 +351,28 @@ describe 'CardApi' do
   # @param card_tag Custom field
   # @param card_print Card appearance code, also used to choose the program ID of the card
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [Integer] :batch_delivery_id Batch regroupement identifier (must be between 1 and 238327) NOT YET OPERATIONAL
   # @option opts [Integer] :limit_atm_year ATM operations limit for a sliding year. No default value.
   # @option opts [Integer] :limit_atm_month ATM operations limit for a sliding month. No default value.
-  # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000â‚¬.
-  # @option opts [Integer] :limit_atm_day ATM operations limit for a single day. Default value 1000â‚¬.
+  # @option opts [Integer] :limit_atm_week ATM operations limit for a sliding week. Default value 2000Ã¢â€šÂ¬.
+  # @option opts [Integer] :limit_atm_day ATM operations limit for a single day. Default value 1000Ã¢â€šÂ¬.
   # @option opts [Integer] :limit_atm_all ATM operations limit from beginning. No default value.
   # @option opts [Integer] :limit_payment_year POS operations limit for a sliding year. No default value.
   # @option opts [Integer] :limit_payment_month POS operations limit for a sliding month. No default value.
-  # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000â‚¬.
-  # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000â‚¬.
+  # @option opts [Integer] :limit_payment_week POS operations limit for a sliding week. Default value 3000Ã¢â€šÂ¬.
+  # @option opts [Integer] :limit_payment_day POS operations limit for a single day. Default value 2000Ã¢â€šÂ¬.
   # @option opts [Integer] :limit_payment_all POS operations limit from beginning. No default value.
+  # @option opts [Float] :payment_daily_limit POS operations limit for a single day including cents. The decimal delimiter must be \&quot;.\&quot;. No default value.
   # @option opts [String] :pin Card&#39;s PIN code value. Default random PIN.
   # @option opts [Integer] :anonymous Card is anonymous. If value is 1 there will be no embossed name.
   # @option opts [Integer] :send_to_parent If you put the value 1 the delivery address will be the parent user&#39;s.
   # @option opts [Integer] :mcc_restriction_group_id mccRestrictionGroupId you want to apply
   # @option opts [Integer] :merchant_restriction_group_id merchantRestrictionGroupId you want to apply
   # @option opts [Integer] :country_restriction_group_id countryRestrictionGroupId you want to apply
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @return [InlineResponse2006]
   describe 'cards_request_physical_post test' do
     it "should work" do

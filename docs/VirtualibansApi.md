@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getvirtualiban**
-> InlineResponse20017 getvirtualiban(id)
+> InlineResponse20018 getvirtualiban(id)
 
 get a virtualiban by Id
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 
 # **getvirtualibans**
-> InlineResponse20017 getvirtualibans(valid_from, opts)
+> InlineResponse20018 getvirtualibans(valid_from, opts)
 
 search virtualibans
 
@@ -88,10 +88,10 @@ api_instance = TreezorClient::VirtualibansApi.new
 valid_from = Date.parse("2013-10-20") # Date | The beginning date of validity.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   virtual_iban_id: 56, # Integer | VirtualIban's id.
   wallet_id: 56, # Integer | VirtualIban's wallet id.
   type_id: 56, # Integer | VirtualIban's type id.
@@ -100,13 +100,13 @@ opts = {
   valid_to: Date.parse("2013-10-20"), # Date | The limit date of validity.
   max_usage: "max_usage_example", # String | The maximum number of usage authorized.
   max_amount: 3.4, # Float | The maximum amount authorized.
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists).
-  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists).
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
   sort_order: "sort_order_example" # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
 }
 
@@ -124,10 +124,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **valid_from** | **Date**| The beginning date of validity. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **Integer**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **Integer**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **virtual_iban_id** | **Integer**| VirtualIban&#39;s id. | [optional] 
  **wallet_id** | **Integer**| VirtualIban&#39;s wallet id. | [optional] 
  **type_id** | **Integer**| VirtualIban&#39;s type id. | [optional] 
@@ -136,18 +136,18 @@ Name | Type | Description  | Notes
  **valid_to** | **Date**| The limit date of validity. | [optional] 
  **max_usage** | **String**| The maximum number of usage authorized. | [optional] 
  **max_amount** | **Float**| The maximum amount authorized. | [optional] 
- **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **updated_date_from** | **DateTime**| The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **updated_date_to** | **DateTime**| The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) | [optional] 
- **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists). | [optional] 
- **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists). | [optional] 
- **sort_by** | **String**| The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). | [optional] 
+ **created_date_from** | **DateTime**| The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **created_date_to** | **DateTime**| The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **updated_date_from** | **DateTime**| The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **updated_date_to** | **DateTime**| The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)  | [optional] 
+ **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **sort_by** | **String**| The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).  | [optional] 
  **sort_order** | **String**| The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists).  | [optional] 
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 
 # **post_virtual_iban**
-> InlineResponse20017 post_virtual_iban(wallet_id, type_id, opts)
+> InlineResponse20018 post_virtual_iban(wallet_id, type_id, opts)
 
 create a virtual IBAN
 
@@ -186,10 +186,10 @@ wallet_id = 56 # Integer | The Id Of the Wallet. The Wallet must be in validated
 type_id = 56 # Integer | | Type Id | Virtual IBAN Type| | ---| --- | | 1 | DEBIT | | 2 | CREDIT | 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   tag: 56, # Integer | A tag generated by the client
   reference: "reference_example", # String | The client's internal reference of the vitual IBAN. Less than 255 characters.
   valid_from: Date.parse("2013-10-20"), # Date | The beginning date of validity. The beginning date must not be less than today's date.
@@ -213,10 +213,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wallet_id** | **Integer**| The Id Of the Wallet. The Wallet must be in validated status. The wallet must be of type \&quot;payment\&quot; or \&quot;electronic money\&quot; | 
  **type_id** | **Integer**| | Type Id | Virtual IBAN Type| | ---| --- | | 1 | DEBIT | | 2 | CREDIT |  | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **tag** | **Integer**| A tag generated by the client | [optional] 
  **reference** | **String**| The client&#39;s internal reference of the vitual IBAN. Less than 255 characters. | [optional] 
  **valid_from** | **Date**| The beginning date of validity. The beginning date must not be less than today&#39;s date. | [optional] 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 
 # **put_virtual_iban**
-> InlineResponse20017 put_virtual_iban(id, opts)
+> InlineResponse20018 put_virtual_iban(id, opts)
 
 update a Virtual IBAN
 
@@ -263,10 +263,10 @@ api_instance = TreezorClient::VirtualibansApi.new
 id = 56 # Integer | VirtualIban's id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   reference: "reference_example", # String | The client's internal reference of the vitual IBAN.
   valid_from: Date.parse("2013-10-20"), # Date | The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint.
   valid_to: Date.parse("2013-10-20"), # Date | The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint.
@@ -288,10 +288,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| VirtualIban&#39;s id. | 
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **reference** | **String**| The client&#39;s internal reference of the vitual IBAN. | [optional] 
  **valid_from** | **Date**| The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint. | [optional] 
  **valid_to** | **Date**| The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint. | [optional] 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 

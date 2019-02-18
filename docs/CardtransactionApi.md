@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_cardtransaction**
-> InlineResponse20010 get_cardtransaction(id)
+> InlineResponse20011 get_cardtransaction(id)
 
 get a card transaction
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -84,18 +84,19 @@ end
 api_instance = TreezorClient::CardtransactionApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   cardtransaction_id: 56, # Integer | Card transaction's Id
   card_id: 56, # Integer | Card's Id
   wallet_id: 56, # Integer | Card's wallet Id
   merchant_id: 56, # Integer | Merchant's Id
   public_token: "public_token_example", # String | Card's public token
   payment_id: 56, # Integer | Payment's Id
-  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists).
-  page_count: 56 # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists).
+  page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  sort_by: "sort_by_example" # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
 }
 
 begin
@@ -111,18 +112,19 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). | [optional] 
- **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
- **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). | [optional] 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **cardtransaction_id** | **Integer**| Card transaction&#39;s Id | [optional] 
  **card_id** | **Integer**| Card&#39;s Id | [optional] 
  **wallet_id** | **Integer**| Card&#39;s wallet Id | [optional] 
  **merchant_id** | **Integer**| Merchant&#39;s Id | [optional] 
  **public_token** | **String**| Card&#39;s public token | [optional] 
  **payment_id** | **Integer**| Payment&#39;s Id | [optional] 
- **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists). | [optional] 
- **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists). | [optional] 
+ **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **page_count** | **Integer**| The number of items per page. More info [here](https://agent.treezor.com/lists).  | [optional] 
+ **sort_by** | **String**| The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false | [optional] 
 
 ### Return type
 

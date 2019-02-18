@@ -33,10 +33,10 @@ module TreezorClient
     # Business sector code. NAF code in France
     attr_accessor :legal_sector
 
-    # Business annual turnover range in k€. 
+    # Business annual turnover range in kâ‚¬. 
     attr_accessor :legal_annual_turn_over
 
-    # Business annual netincome in k€. 
+    # Business annual netincome in kâ‚¬. 
     attr_accessor :legal_net_income_range
 
     # Business workforce. 

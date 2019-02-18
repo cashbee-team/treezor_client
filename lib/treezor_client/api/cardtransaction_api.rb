@@ -24,7 +24,7 @@ module TreezorClient
     # get a card transaction
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [InlineResponse20011]
     def get_cardtransaction(id, opts = {})
       data, _status_code, _headers = get_cardtransaction_with_http_info(id, opts)
       return data
@@ -34,7 +34,7 @@ module TreezorClient
     # get a card transaction
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def get_cardtransaction_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: CardtransactionApi.get_cardtransaction ..."
@@ -68,7 +68,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardtransactionApi#get_cardtransaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -78,18 +78,19 @@ module TreezorClient
     # search for card transactions
     # Search for documents.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :cardtransaction_id Card transaction&#39;s Id
     # @option opts [Integer] :card_id Card&#39;s Id
     # @option opts [Integer] :wallet_id Card&#39;s wallet Id
     # @option opts [Integer] :merchant_id Merchant&#39;s Id
     # @option opts [String] :public_token Card&#39;s public token
     # @option opts [Integer] :payment_id Payment&#39;s Id
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
     # @return [InlineResponse20010]
     def read_card_transaction(opts = {})
       data, _status_code, _headers = read_card_transaction_with_http_info(opts)
@@ -99,18 +100,19 @@ module TreezorClient
     # search for card transactions
     # Search for documents.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :cardtransaction_id Card transaction&#39;s Id
     # @option opts [Integer] :card_id Card&#39;s Id
     # @option opts [Integer] :wallet_id Card&#39;s wallet Id
     # @option opts [Integer] :merchant_id Merchant&#39;s Id
     # @option opts [String] :public_token Card&#39;s public token
     # @option opts [Integer] :payment_id Payment&#39;s Id
-    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
+    # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+    # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
     # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
     def read_card_transaction_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -133,6 +135,7 @@ module TreezorClient
       query_params[:'paymentId'] = opts[:'payment_id'] if !opts[:'payment_id'].nil?
       query_params[:'pageNumber'] = opts[:'page_number'] if !opts[:'page_number'].nil?
       query_params[:'pageCount'] = opts[:'page_count'] if !opts[:'page_count'].nil?
+      query_params[:'sortBy'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
 
       # header parameters
       header_params = {}

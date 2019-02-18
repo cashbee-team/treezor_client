@@ -50,7 +50,7 @@ describe 'MerchantIdRestrictionGroup' do
     end
   end
 
-  describe 'test attribute "mcc"' do
+  describe 'test attribute "merchants"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -37,7 +37,7 @@ describe 'PayinApi' do
   # Deactivate a payin in the system.
   # @param id Payin&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20016]
+  # @return [InlineResponse20017]
   describe 'delete_payin test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -49,7 +49,7 @@ describe 'PayinApi' do
   # Get a payin from the system by its id.
   # @param id Payin&#39;s id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20016]
+  # @return [InlineResponse20017]
   describe 'get_payin test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -60,10 +60,10 @@ describe 'PayinApi' do
   # search pay ins
   # Get payins that match search criteria.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :payin_id Payin&#39;s id.
   # @option opts [Integer] :wallet_id Payin&#39;s wallet id.
   # @option opts [String] :payin_tag Client custom data.
@@ -75,15 +75,15 @@ describe 'PayinApi' do
   # @option opts [String] :event_alias Wallet eventAlias of the payin (credited wallet).
   # @option opts [Integer] :wallet_type_id Payin&#39;s wallet type id.
   # @option opts [String] :payment_method_id Payin&#39;s payment method id.
-  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists)
-  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
-  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists).
+  # @option opts [DateTime] :created_date_from The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
   # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  # @return [InlineResponse20016]
+  # @return [InlineResponse20017]
   describe 'get_payins test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -99,10 +99,10 @@ describe 'PayinApi' do
   # @param amount Pay in amount.
   # @param currency Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s. 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [String] :payin_tag Client custom data.
   # @option opts [Integer] :oneclickcard_id Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise.
   # @option opts [String] :payment_accepted_url Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -116,7 +116,7 @@ describe 'PayinApi' do
   # @option opts [String] :created_ip User&#39;s IP address
   # @option opts [String] :payin_date The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
   # @option opts [Integer] :mandate_id The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
-  # @return [InlineResponse20016]
+  # @return [InlineResponse20017]
   describe 'post_payin test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

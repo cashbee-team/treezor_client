@@ -37,7 +37,7 @@ describe 'CardtransactionApi' do
   # get a card transaction
   # @param id Card transactions&#39;s internal id.
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20010]
+  # @return [InlineResponse20011]
   describe 'get_cardtransaction test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -48,18 +48,19 @@ describe 'CardtransactionApi' do
   # search for card transactions
   # Search for documents.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
-  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
-  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
   # @option opts [Integer] :cardtransaction_id Card transaction&#39;s Id
   # @option opts [Integer] :card_id Card&#39;s Id
   # @option opts [Integer] :wallet_id Card&#39;s wallet Id
   # @option opts [Integer] :merchant_id Merchant&#39;s Id
   # @option opts [String] :public_token Card&#39;s public token
   # @option opts [Integer] :payment_id Payment&#39;s Id
-  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists).
-  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists).
+  # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
+  # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
   # @return [InlineResponse20010]
   describe 'read_card_transaction test' do
     it "should work" do

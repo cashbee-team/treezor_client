@@ -28,7 +28,7 @@ module TreezorClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'bankaccounts' => :'Array<CountryRestrictionGroup>'
+        :'bankaccounts' => :'Array<MerchantIdRestrictionGroup>'
       }
     end
 

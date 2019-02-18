@@ -64,9 +64,9 @@ Name | Type | Description | Notes
 **total_payment_day** | **Integer** |  | [optional] 
 **total_payment_all** | **Integer** |  | [optional] 
 **created_by** | **Integer** |  | [optional] 
-**created_date** | **Integer** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+**created_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
 **modified_by** | **Integer** |  | [optional] 
-**modified_date** | **Integer** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+**modified_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
 **total_rows** | **Integer** |  | [optional] 
 
 
