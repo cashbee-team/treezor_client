@@ -6826,9 +6826,9 @@ paths:
         - name: userId
           in: query
           description: >
-            User's id who makes the pay in.
+            User's id who makes the pay in. Required unless paymentMethodId = 21.
             NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system.
-          required: true
+          required: false
           type: integer
         - name: paymentMethodId
           in: query

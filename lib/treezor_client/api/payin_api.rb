@@ -251,7 +251,6 @@ module TreezorClient
     # create a pay in
     # Create a new pay in in the system.
     # @param wallet_id Credited wallet&#39;s ID
-    # @param user_id User&#39;s id who makes the pay in. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
     # @param payment_method_id | Id | Payment by | | ---| --- | | 3 | Check | | 11 | Card | | 14 | Oneclick card (without payment form) | | 21 | Sepa Direct Debit Core | | 23 | Full Hosted HTML Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized | | 24 | IFrame Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized| | 25 | Payment made through an SDK - You cannot directly create a payin directly with this method id. The payin will be automatically created by the system. | 
     # @param amount Pay in amount.
     # @param currency Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s. 
@@ -261,6 +260,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :payin_tag Client custom data.
+    # @option opts [Integer] :user_id User&#39;s id who makes the pay in. Required unless paymentMethodId &#x3D; 21. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
     # @option opts [Integer] :oneclickcard_id Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise.
     # @option opts [String] :payment_accepted_url Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
     # @option opts [String] :payment_waiting_url Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -274,15 +274,14 @@ module TreezorClient
     # @option opts [String] :payin_date The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
     # @option opts [Integer] :mandate_id The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
     # @return [InlineResponse20017]
-    def post_payin(wallet_id, user_id, payment_method_id, amount, currency, opts = {})
-      data, _status_code, _headers = post_payin_with_http_info(wallet_id, user_id, payment_method_id, amount, currency, opts)
+    def post_payin(wallet_id, payment_method_id, amount, currency, opts = {})
+      data, _status_code, _headers = post_payin_with_http_info(wallet_id, payment_method_id, amount, currency, opts)
       return data
     end
 
     # create a pay in
     # Create a new pay in in the system.
     # @param wallet_id Credited wallet&#39;s ID
-    # @param user_id User&#39;s id who makes the pay in. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
     # @param payment_method_id | Id | Payment by | | ---| --- | | 3 | Check | | 11 | Card | | 14 | Oneclick card (without payment form) | | 21 | Sepa Direct Debit Core | | 23 | Full Hosted HTML Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized | | 24 | IFrame Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized| | 25 | Payment made through an SDK - You cannot directly create a payin directly with this method id. The payin will be automatically created by the system. | 
     # @param amount Pay in amount.
     # @param currency Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s. 
@@ -292,6 +291,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :payin_tag Client custom data.
+    # @option opts [Integer] :user_id User&#39;s id who makes the pay in. Required unless paymentMethodId &#x3D; 21. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
     # @option opts [Integer] :oneclickcard_id Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise.
     # @option opts [String] :payment_accepted_url Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
     # @option opts [String] :payment_waiting_url Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -305,17 +305,13 @@ module TreezorClient
     # @option opts [String] :payin_date The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
     # @option opts [Integer] :mandate_id The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
     # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
-    def post_payin_with_http_info(wallet_id, user_id, payment_method_id, amount, currency, opts = {})
+    def post_payin_with_http_info(wallet_id, payment_method_id, amount, currency, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PayinApi.post_payin ..."
       end
       # verify the required parameter 'wallet_id' is set
       if @api_client.config.client_side_validation && wallet_id.nil?
         fail ArgumentError, "Missing the required parameter 'wallet_id' when calling PayinApi.post_payin"
-      end
-      # verify the required parameter 'user_id' is set
-      if @api_client.config.client_side_validation && user_id.nil?
-        fail ArgumentError, "Missing the required parameter 'user_id' when calling PayinApi.post_payin"
       end
       # verify the required parameter 'payment_method_id' is set
       if @api_client.config.client_side_validation && payment_method_id.nil?
@@ -338,7 +334,6 @@ module TreezorClient
       # query parameters
       query_params = {}
       query_params[:'walletId'] = wallet_id
-      query_params[:'userId'] = user_id
       query_params[:'paymentMethodId'] = payment_method_id
       query_params[:'amount'] = amount
       query_params[:'currency'] = currency
@@ -347,6 +342,7 @@ module TreezorClient
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
       query_params[:'payinTag'] = opts[:'payin_tag'] if !opts[:'payin_tag'].nil?
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
       query_params[:'oneclickcardId'] = opts[:'oneclickcard_id'] if !opts[:'oneclickcard_id'].nil?
       query_params[:'paymentAcceptedUrl'] = opts[:'payment_accepted_url'] if !opts[:'payment_accepted_url'].nil?
       query_params[:'paymentWaitingUrl'] = opts[:'payment_waiting_url'] if !opts[:'payment_waiting_url'].nil?

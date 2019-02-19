@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 
 # **post_payin**
-> InlineResponse20017 post_payin(wallet_id, user_id, payment_method_id, amount, currency, opts)
+> InlineResponse20017 post_payin(wallet_id, payment_method_id, amount, currency, opts)
 
 create a pay in
 
@@ -240,8 +240,6 @@ api_instance = TreezorClient::PayinApi.new
 
 wallet_id = 56 # Integer | Credited wallet's ID
 
-user_id = 56 # Integer | User's id who makes the pay in. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
-
 payment_method_id = 56 # Integer | | Id | Payment by | | ---| --- | | 3 | Check | | 11 | Card | | 14 | Oneclick card (without payment form) | | 21 | Sepa Direct Debit Core | | 23 | Full Hosted HTML Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized | | 24 | IFrame Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized| | 25 | Payment made through an SDK - You cannot directly create a payin directly with this method id. The payin will be automatically created by the system. | 
 
 amount = 3.4 # Float | Pay in amount.
@@ -254,6 +252,7 @@ opts = {
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   payin_tag: "payin_tag_example", # String | Client custom data.
+  user_id: 56, # Integer | User's id who makes the pay in. Required unless paymentMethodId = 21. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
   oneclickcard_id: 56, # Integer | Oneclick card's id. Mandatory if payment method is 14. Useless otherwise.
   payment_accepted_url: "payment_accepted_url_example", # String | Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
   payment_waiting_url: "payment_waiting_url_example", # String | Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
@@ -270,7 +269,7 @@ opts = {
 
 begin
   #create a pay in
-  result = api_instance.post_payin(wallet_id, user_id, payment_method_id, amount, currency, opts)
+  result = api_instance.post_payin(wallet_id, payment_method_id, amount, currency, opts)
   p result
 rescue TreezorClient::ApiError => e
   puts "Exception when calling PayinApi->post_payin: #{e}"
@@ -282,7 +281,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wallet_id** | **Integer**| Credited wallet&#39;s ID | 
- **user_id** | **Integer**| User&#39;s id who makes the pay in. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system.  | 
  **payment_method_id** | **Integer**| | Id | Payment by | | ---| --- | | 3 | Check | | 11 | Card | | 14 | Oneclick card (without payment form) | | 21 | Sepa Direct Debit Core | | 23 | Full Hosted HTML Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized | | 24 | IFrame Payment Form. Please note that if you use this paymentMethodId the flieds paymentAcceptedUrl, paymentRefusedUrl, paymentWaitingUrl, paymentCanceledUrl and paymentExceptionUrl are mandatory. CSS of the payment page can be customized| | 25 | Payment made through an SDK - You cannot directly create a payin directly with this method id. The payin will be automatically created by the system. |  | 
  **amount** | **Float**| Pay in amount. | 
  **currency** | **String**| Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet&#39;s.  | 
@@ -291,6 +289,7 @@ Name | Type | Description  | Notes
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **payin_tag** | **String**| Client custom data. | [optional] 
+ **user_id** | **Integer**| User&#39;s id who makes the pay in. Required unless paymentMethodId &#x3D; 21. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system.  | [optional] 
  **oneclickcard_id** | **Integer**| Oneclick card&#39;s id. Mandatory if payment method is 14. Useless otherwise. | [optional] 
  **payment_accepted_url** | **String**| Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory. | [optional] 
  **payment_waiting_url** | **String**| Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory. | [optional] 
