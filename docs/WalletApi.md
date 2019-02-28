@@ -34,13 +34,13 @@ api_instance = TreezorClient::WalletApi.new
 
 id = 56 # Integer | Wallet's id
 
-origin = "origin_example" # String | Request's origin. Possible values are: * OPERATOR * USER 
+origin = 'origin_example' # String | Request's origin. Possible values are: * OPERATOR * USER 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example' # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -102,10 +102,10 @@ api_instance = TreezorClient::WalletApi.new
 id = 789 # Integer | Object internal id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example" # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example' # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
 }
 
 begin
@@ -164,31 +164,31 @@ end
 api_instance = TreezorClient::WalletApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   wallet_id: 56, # Integer | Wallet's unique id.
-  wallet_status: "wallet_status_example", # String | Wallet's status:  * **validated**: Wallet is active. It is possible to deposit to or retrieve money from the wallet.  * **cancelled**: Wallet is closed. No action possible, there is no money in the wallet, it was closed by an operator or by the user.  * **pending**: Wallet being validated (e.g. suspected fraud, late submission of documents' validation ... KYC ). In this case, it is not possible to use the wallet for transactions.
+  wallet_status: 'wallet_status_example', # String | Wallet's status:  * **validated**: Wallet is active. It is possible to deposit to or retrieve money from the wallet.  * **cancelled**: Wallet is closed. No action possible, there is no money in the wallet, it was closed by an operator or by the user.  * **pending**: Wallet being validated (e.g. suspected fraud, late submission of documents' validation ... KYC ). In this case, it is not possible to use the wallet for transactions.
   user_id: 56, # Integer | Wallet owner's id.
   parent_user_id: 56, # Integer | Parent user id of the wallet owner
-  wallet_tag: "wallet_tag_example", # String | Custom data.
+  wallet_tag: 'wallet_tag_example', # String | Custom data.
   wallet_type_id: 56, # Integer | Wallet type id. The following values are defined:  | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
-  event_name: "event_name_example", # String | Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
-  event_alias: "event_alias_example", # String | Short url wallet name. It's automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet=mywedding 
-  event_payin_start_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime |  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD HH:MM:SS
-  event_payin_end_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS 
+  event_name: 'event_name_example', # String | Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
+  event_alias: 'event_alias_example', # String | Short url wallet name. It's automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet=mywedding 
+  event_payin_start_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime |  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD HH:MM:SS
+  event_payin_end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Deadline to money deposit on the wallet. Format : YYYY-MM-DD HH:MM:SS 
   tariff_id: 56, # Integer | Wallet pricing id.
   payin_count: 56, # Integer | Number of payin done on the wallet.
-  solde: "solde_example", # String | Wallet current balance.
+  solde: 'solde_example', # String | Wallet current balance.
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
   page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
-  sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  sort_by: 'sort_by_example', # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
+  sort_order: 'sort_order_example', # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
+  created_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -272,23 +272,23 @@ tariff_id = 56 # Integer | Wallet pricing id.
 
 user_id = 56 # Integer | Wallet owner's id.
 
-currency = "currency_example" # String | The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro = EUR ; US Dollar = USD ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ Default currency will be same as the wallet 
+currency = 'currency_example' # String | The currency that will be used for all wallet money transactions format : ISO 4217 3-letter code for each currency : Euro = EUR ; US Dollar = USD ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ Default currency will be same as the wallet 
 
-event_name = "event_name_example" # String | Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
+event_name = 'event_name_example' # String | Event name that will be used as wallet name. For example, in a wedding list: Wedding of X and Y 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   joint_user_id: 56, # Integer | Wallet co-owner's id. This user will not be allowed to collect the money from the wallet. 
-  wallet_tag: "wallet_tag_example", # String | Custom data
+  wallet_tag: 'wallet_tag_example', # String | Custom data
   load: 3.4, # Float | Initial loading amount.
-  event_alias: "event_alias_example", # String | Short url wallet name. It's automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet=mywedding. Please note that the eventAlias must be unique. 
-  event_date: Date.parse("2013-10-20"), # Date | Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
-  event_message: "event_message_example", # String | It can be a description of the wallet.
-  event_payin_start_date: Date.parse("2013-10-20"), # Date |  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
-  event_payin_end_date: Date.parse("2013-10-20") # Date | Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
+  event_alias: 'event_alias_example', # String | Short url wallet name. It's automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet=mywedding. Please note that the eventAlias must be unique. 
+  event_date: Date.parse('2013-10-20'), # Date | Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
+  event_message: 'event_message_example', # String | It can be a description of the wallet.
+  event_payin_start_date: Date.parse('2013-10-20'), # Date |  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
+  event_payin_end_date: Date.parse('2013-10-20') # Date | Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
 }
 
 begin
@@ -361,20 +361,20 @@ api_instance = TreezorClient::WalletApi.new
 id = 789 # Integer | Object internal id.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  wallet_type_id: "wallet_type_id_example", # String | Change wallet type id
-  event_name: "event_name_example", # String | Change event name
-  event_alias: "event_alias_example", # String | Change event alias. Please note that the eventAlias must be unique.
-  event_date: "event_date_example", # String | Change event date
-  event_message: "event_message_example", # String | Change event message
-  event_payin_start_date: "event_payin_start_date_example", # String | Change event payin starting date
-  event_payin_end_date: "event_payin_end_date_example", # String | Change event payin end date
-  url_image: "url_image_example", # String | Change URL image
-  image_name: "image_name_example", # String | Change image name
-  tariff_id: "tariff_id_example" # String | Change tariff id
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  wallet_type_id: 'wallet_type_id_example', # String | Change wallet type id
+  event_name: 'event_name_example', # String | Change event name
+  event_alias: 'event_alias_example', # String | Change event alias. Please note that the eventAlias must be unique.
+  event_date: 'event_date_example', # String | Change event date
+  event_message: 'event_message_example', # String | Change event message
+  event_payin_start_date: 'event_payin_start_date_example', # String | Change event payin starting date
+  event_payin_end_date: 'event_payin_end_date_example', # String | Change event payin end date
+  url_image: 'url_image_example', # String | Change URL image
+  image_name: 'image_name_example', # String | Change image name
+  tariff_id: 'tariff_id_example' # String | Change tariff id
 }
 
 begin

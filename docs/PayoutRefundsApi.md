@@ -29,14 +29,14 @@ end
 api_instance = TreezorClient::PayoutRefundsApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics).
   id: 56, # Integer | PayoutRefund id
-  tag: "tag_example", # String | PayoutRefund tag
-  code_status: "code_status_example", # String | PayoutRefund Code Status
-  information_status: "information_status_example", # String | PayoutRefund Information Status
+  tag: 'tag_example', # String | PayoutRefund tag
+  code_status: 'code_status_example', # String | PayoutRefund Code Status
+  information_status: 'information_status_example', # String | PayoutRefund Information Status
   payout_id: 56, # Integer | Payout Id
   page_number: 56 # Integer | The page number
 }

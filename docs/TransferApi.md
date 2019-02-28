@@ -140,34 +140,34 @@ end
 api_instance = TreezorClient::TransferApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   transfer_id: 56, # Integer | Transfer's id.
-  transfer_tag: "transfer_tag_example", # String | Custom data.
-  transfer_status: "transfer_status_example", # String | Transfer's status. Possible values: * PENDING * CANCELED * VALIDATED 
-  label: "label_example", # String | Transfer's label.
+  transfer_tag: 'transfer_tag_example', # String | Custom data.
+  transfer_status: 'transfer_status_example', # String | Transfer's status. Possible values: * PENDING * CANCELED * VALIDATED 
+  label: 'label_example', # String | Transfer's label.
   wallet_id: 56, # Integer | Debited wallet's id.
-  wallet_name: "wallet_name_example", # String | Debited wallet's name.
+  wallet_name: 'wallet_name_example', # String | Debited wallet's name.
   wallet_type_id: 56, # Integer | Debited wallet's type id.
   beneficiary_wallet_id: 56, # Integer | Credited wallet's id.
-  beneficiary_wallet_name: "beneficiary_wallet_name_example", # String | Credited wallet's name.
+  beneficiary_wallet_name: 'beneficiary_wallet_name_example', # String | Credited wallet's name.
   beneficiary_wallet_type_id: 56, # Integer | Credited wallet's type id.
   user_id: 56, # Integer | Debited wallet user's id.
   beneficiary_user_id: 56, # Integer | Credited wallet user's id.
-  transfer_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | Transfer's date. Format : YYYY-MM-DD HH:MM:SS 
-  amount: "amount_example", # String | Transfert's amount.
-  currency: "currency_example", # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
+  transfer_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Transfer's date. Format : YYYY-MM-DD HH:MM:SS 
+  amount: 'amount_example', # String | Transfert's amount.
+  currency: 'currency_example', # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   transfer_type_id: 56, # Integer | The Type Id of the Transfer:  | ID | Description | |-----|-----| | 1 | Wallet to wallet | | 2 | Card transaction | | 3 | Client fees | | 4 | Credit note | 
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
   page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
-  sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  sort_by: 'sort_by_example', # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
+  sort_order: 'sort_order_example', # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
+  created_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -254,15 +254,15 @@ beneficiary_wallet_id = 56 # Integer | Credited wallet's ID
 
 amount = 56 # Integer | Transfer's amount
 
-currency = "currency_example" # String | Transfert's currency. Debited wallet and credited wallet must share same currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
+currency = 'currency_example' # String | Transfert's currency. Debited wallet and credited wallet must share same currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  transfer_tag: "transfer_tag_example", # String | Custom data.
-  label: "label_example", # String | Custom data.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  transfer_tag: 'transfer_tag_example', # String | Custom data.
+  label: 'label_example', # String | Custom data.
   transfer_type_id: 56 # Integer | The Type Id of the Transfer:  | ID | Description | |-----|-----| | 1 | Wallet to wallet (default value) | | 3 | Client fees | | 4 | Credit note | 
 }
 

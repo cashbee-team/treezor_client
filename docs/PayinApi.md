@@ -140,29 +140,29 @@ end
 api_instance = TreezorClient::PayinApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   payin_id: 56, # Integer | Payin's id.
   wallet_id: 56, # Integer | Payin's wallet id.
-  payin_tag: "payin_tag_example", # String | Client custom data.
-  payin_status: "payin_status_example", # String | Payins's status.
+  payin_tag: 'payin_tag_example', # String | Client custom data.
+  payin_status: 'payin_status_example', # String | Payins's status.
   user_id: 56, # Integer | User's id who performed the operation (debited).
-  user_name: "user_name_example", # String | User's name who performed the operation (debited).
-  user_email: "user_email_example", # String | User's email who performed the operation (debited).
+  user_name: 'user_name_example', # String | User's name who performed the operation (debited).
+  user_email: 'user_email_example', # String | User's email who performed the operation (debited).
   beneficiary_user_id: 56, # Integer | User's id who received the operation (credited).
-  event_alias: "event_alias_example", # String | Wallet eventAlias of the payin (credited wallet).
+  event_alias: 'event_alias_example', # String | Wallet eventAlias of the payin (credited wallet).
   wallet_type_id: 56, # Integer | Payin's wallet type id.
-  payment_method_id: "payment_method_id_example", # String | Payin's payment method id.
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  payment_method_id: 'payment_method_id_example', # String | Payin's payment method id.
+  created_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
   page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
-  sort_order: "sort_order_example" # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
+  sort_by: 'sort_by_example', # String | The transaction element you want to sort the list with. Default value : createdDate. More info [here](https://agent.treezor.com/lists). 
+  sort_order: 'sort_order_example' # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
 }
 
 begin
@@ -244,26 +244,26 @@ payment_method_id = 56 # Integer | | Id | Payment by | | ---| --- | | 3 | Check 
 
 amount = 3.4 # Float | Pay in amount.
 
-currency = "currency_example" # String | Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet's. 
+currency = 'currency_example' # String | Payin currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). Must be the same as the wallet's. 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  payin_tag: "payin_tag_example", # String | Client custom data.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  payin_tag: 'payin_tag_example', # String | Client custom data.
   user_id: 56, # Integer | User's id who makes the pay in. Required unless paymentMethodId = 21. NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system. 
   oneclickcard_id: 56, # Integer | Oneclick card's id. Mandatory if payment method is 14. Useless otherwise.
-  payment_accepted_url: "payment_accepted_url_example", # String | Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
-  payment_waiting_url: "payment_waiting_url_example", # String | Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
-  payment_refused_url: "payment_refused_url_example", # String | Url where cardholder is redirected if payment is refused. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
-  payment_canceled_url: "payment_canceled_url_example", # String | Url where cardholder is redirected if payment is canceled. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
-  payment_exception_url: "payment_exception_url_example", # String | Url where cardholder is redirected if the payment process raised an exception. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
+  payment_accepted_url: 'payment_accepted_url_example', # String | Url where cardholder is redirected if payment is successful. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
+  payment_waiting_url: 'payment_waiting_url_example', # String | Url where cardholder is redirected to wait payment processing. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
+  payment_refused_url: 'payment_refused_url_example', # String | Url where cardholder is redirected if payment is refused. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
+  payment_canceled_url: 'payment_canceled_url_example', # String | Url where cardholder is redirected if payment is canceled. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
+  payment_exception_url: 'payment_exception_url_example', # String | Url where cardholder is redirected if the payment process raised an exception. When using paymentMethodId 23 and 24 an HTTPS URL is mandatory.
   distributor_fee: 3.4, # Float | Distributor fee
-  message_to_user: "message_to_user_example", # String | Message to send to wallet's user. In the case of a Sepa Direct Debit Core payment method this parameter will be the reconciliation information transmitted to the Debtor (ie. Invoice number ...). In this case it cannot be more than 140 characters.
-  language: "language_example", # String | Language for the third party interface.
-  created_ip: "created_ip_example", # String | User's IP address
-  payin_date: "payin_date_example", # String | The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
+  message_to_user: 'message_to_user_example', # String | Message to send to wallet's user. In the case of a Sepa Direct Debit Core payment method this parameter will be the reconciliation information transmitted to the Debtor (ie. Invoice number ...). In this case it cannot be more than 140 characters.
+  language: 'language_example', # String | Language for the third party interface.
+  created_ip: 'created_ip_example', # String | User's IP address
+  payin_date: 'payin_date_example', # String | The date at which the SDD should be presented. This parameter is mandatory when performing a payin of method SDD Core. Format is YYYY-MM-DD The date should follow some requirements (Traget 2 working day) :    - Be a weekday (Monday to Friday)   - January 1st is excluded   - May 1st is excluded   - December 25 is excluded   - December 26th is excluded   - Easter day is excluded   - Easter Monday is excluded   - Good Friday is excluded 
   mandate_id: 56 # Integer | The id of the mandate. This parameter is mandatory when performing a payin with method SDD Core.
 }
 

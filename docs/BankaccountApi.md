@@ -140,22 +140,22 @@ end
 api_instance = TreezorClient::BankaccountApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   bankaccount_id: 56, # Integer | bank account id.
-  bankaccount_status: "bankaccount_status_example", # String | bank account status. Possible values: * CANCELED * PENDING * VALIDATED 
+  bankaccount_status: 'bankaccount_status_example', # String | bank account status. Possible values: * CANCELED * PENDING * VALIDATED 
   user_id: 56, # Integer | Bank account owner user's id
-  bankaccount_iban: "bankaccount_iban_example", # String | Bank account IBAN
+  bankaccount_iban: 'bankaccount_iban_example', # String | Bank account IBAN
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
   page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
-  sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  sort_by: 'sort_by_example', # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
+  sort_order: 'sort_order_example', # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
+  created_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -226,23 +226,23 @@ api_instance = TreezorClient::BankaccountApi.new
 
 user_id = 56 # Integer | Owner user's id.
 
-bankaccount_owner_name = "bankaccount_owner_name_example" # String | Bank account owner's name.
+bankaccount_owner_name = 'bankaccount_owner_name_example' # String | Bank account owner's name.
 
-bankaccount_owner_address = "bankaccount_owner_address_example" # String | Bank account owner's address.
+bankaccount_owner_address = 'bankaccount_owner_address_example' # String | Bank account owner's address.
 
-bankaccount_iban = "bankaccount_iban_example" # String | Beneficiary bank account's IBAN.
+bankaccount_iban = 'bankaccount_iban_example' # String | Beneficiary bank account's IBAN.
 
-bankaccount_bic = "bankaccount_bic_example" # String | Beneficiary bank account's BIC (or SWIFT).
+bankaccount_bic = 'bankaccount_bic_example' # String | Beneficiary bank account's BIC (or SWIFT).
 
-bankaccount_type = "bankaccount_type_example" # String | Beneficiary bank account's type.
+bankaccount_type = 'bankaccount_type_example' # String | Beneficiary bank account's type.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  bankaccount_tag: "bankaccount_tag_example", # String | Custom data.
-  name: "name_example" # String | Bank account's name.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  bankaccount_tag: 'bankaccount_tag_example', # String | Custom data.
+  name: 'name_example' # String | Bank account's name.
 }
 
 begin

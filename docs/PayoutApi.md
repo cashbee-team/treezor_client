@@ -140,34 +140,34 @@ end
 api_instance = TreezorClient::PayoutApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   payout_id: 56, # Integer | Payout's Id
-  payout_tag: "payout_tag_example", # String | Custom data.
-  payout_status: "payout_status_example", # String | pay out status; Possible values: * CANCELED * PENDING * VALIDATED 
+  payout_tag: 'payout_tag_example', # String | Custom data.
+  payout_status: 'payout_status_example', # String | pay out status; Possible values: * CANCELED * PENDING * VALIDATED 
   payout_type_id: 56, # Integer | Pay out type's id.
-  payout_type: "payout_type_example", # String | Pay out type; Possible values: * Credit Transfer * Direct Debit 
+  payout_type: 'payout_type_example', # String | Pay out type; Possible values: * Credit Transfer * Direct Debit 
   wallet_id: 56, # Integer | Pay out wallet's id.
-  event_alias: "event_alias_example", # String | Pay out wallet's event alias.
+  event_alias: 'event_alias_example', # String | Pay out wallet's event alias.
   user_id: 56, # Integer | Pay out user's id.
-  user_name: "user_name_example", # String | Pay out user's name.
-  user_email: "user_email_example", # String | Pay out user's email.
-  payout_date: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | pay out execution date. Format: YYYY-MM-DD HH:MM:SS' 
+  user_name: 'user_name_example', # String | Pay out user's name.
+  user_email: 'user_email_example', # String | Pay out user's email.
+  payout_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | pay out execution date. Format: YYYY-MM-DD HH:MM:SS' 
   bankaccount_id: 56, # Integer | Pay out bank account id.
-  bankaccount_iban: "bankaccount_iban_example", # String | Pay out bank account IBAN.
-  label: "label_example", # String | Pay out label that will be displayed in the receiver's account.
-  amount: "amount_example", # String | Pay out amount.
-  currency: "currency_example", # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
+  bankaccount_iban: 'bankaccount_iban_example', # String | Pay out bank account IBAN.
+  label: 'label_example', # String | Pay out label that will be displayed in the receiver's account.
+  amount: 'amount_example', # String | Pay out amount.
+  currency: 'currency_example', # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
   page_count: 56, # Integer | The number of items per page. More info [here](https://agent.treezor.com/lists). 
-  sort_by: "sort_by_example", # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
-  sort_order: "sort_order_example", # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-  created_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  created_date_to: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_from: DateTime.parse("2013-10-20T19:20:30+01:00"), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-  updated_date_to: DateTime.parse("2013-10-20T19:20:30+01:00") # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  sort_by: 'sort_by_example', # String | The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
+  sort_order: 'sort_order_example', # String | The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
+  created_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  created_date_to: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_from: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
+  updated_date_to: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
 }
 
 begin
@@ -252,18 +252,18 @@ wallet_id = 56 # Integer | Pay out wallet id.
 
 amount = 56 # Integer | Pay out amount.
 
-currency = "currency_example" # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
+currency = 'currency_example' # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  payout_tag: "payout_tag_example", # String | Custom data.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  payout_tag: 'payout_tag_example', # String | Custom data.
   bankaccount_id: 56, # Integer | Pay out bank account's id. Mandatory id beneficiaryId is not provided. If bankaccountId and beneficiaryId are both provided, the beneficiaryId will be used.
   beneficiary_id: 56, # Integer | Pay out beneficiary's id. Mandatory id bankaccountId is not provided. If bankaccountId and beneficiaryId are both provided, the beneficiaryId will be used.
-  label: "label_example", # String | Pay out label that will be displayed in the receiver's account (140 chars max).
-  supporting_file_link: "supporting_file_link_example" # String | Support file link
+  label: 'label_example', # String | Pay out label that will be displayed in the receiver's account (140 chars max).
+  supporting_file_link: 'supporting_file_link_example' # String | Support file link
 }
 
 begin
