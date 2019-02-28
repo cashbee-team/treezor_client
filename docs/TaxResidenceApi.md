@@ -33,7 +33,7 @@ end
 api_instance = TreezorClient::TaxResidenceApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
   id: 56, # Integer | id of the residence
   user_id: 56 # Integer | User's id residence
 }
@@ -94,7 +94,7 @@ api_instance = TreezorClient::TaxResidenceApi.new
 id = 56 # Integer | id of the residence
 
 opts = { 
-  access_signature: "access_signature_example" # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
+  access_signature: 'access_signature_example' # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
 }
 
 begin
@@ -152,7 +152,7 @@ api_instance = TreezorClient::TaxResidenceApi.new
 id = 56 # Integer | id of the residence
 
 opts = { 
-  access_signature: "access_signature_example" # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
+  access_signature: 'access_signature_example' # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
 }
 
 begin
@@ -210,10 +210,10 @@ api_instance = TreezorClient::TaxResidenceApi.new
 id = 56 # Integer | residence id
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
   user_id: 56, # Integer | User's id residence
-  country: "country_example", # String | country of the resident
-  tax_payer_id: "tax_payer_id_example", # String | Tax payer's id
+  country: 'country_example', # String | country of the resident
+  tax_payer_id: 'tax_payer_id_example', # String | Tax payer's id
   liability_waiver: true # BOOLEAN | Tax declaration
 }
 
@@ -275,11 +275,11 @@ api_instance = TreezorClient::TaxResidenceApi.new
 
 user_id = 56 # Integer | User's id residence
 
-country = "country_example" # String | country of the resident
+country = 'country_example' # String | country of the resident
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-  tax_payer_id: "tax_payer_id_example", # String | Tax payer's id
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
+  tax_payer_id: 'tax_payer_id_example', # String | Tax payer's id
   liability_waiver: true # BOOLEAN | When there is no taxPayerId for a residence, this field shall be set to true.
 }
 

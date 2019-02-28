@@ -4541,12 +4541,12 @@ paths:
       description: Search for documents.
       operationId: createDocuments
       consumes:
-        - application/json
+        - multipart/form-data
       produces:
         - application/json
       parameters:
         - name: accessSignature
-          in: query
+          in: formData
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
@@ -4554,45 +4554,45 @@ paths:
           required: false
           type: string
         - name: accessTag
-          in: query
+          in: formData
           description: |
             Access tag is used for idem potency query. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: accessUserId
-          in: query
+          in: formData
           description: |
             Access user's id is used for user's action restriction. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: integer
         - name: accessUserIp
-          in: query
+          in: formData
           description: |
             Access user's ip is used for user's action restriction. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: documentTag
-          in: query
+          in: formData
           description: Custom data.
           required: false
           type: integer
         - name: userId
-          in: query
+          in: formData
           description: Document user's id.
           required: true
           type: string
         - name: residenceId
-          in: query
+          in: formData
           description: Document residence Id. The field is mandatory when the document is of type id 24 or 25. Otherwise it should not be provided.
           required: false
           type: integer
           format: int64
           minimum: 1
         - name: documentTypeId
-          in: query
+          in: formData
           description: |
             Type of document.
 
@@ -4622,12 +4622,12 @@ paths:
           required: true
           type: integer
         - name: name
-          in: query
+          in: formData
           description: Document's name.
           required: true
           type: string
         - name: fileContentBase64
-          in: query
+          in: formData
           description: Document file content. base64 encoded.
           required: true
           type: string

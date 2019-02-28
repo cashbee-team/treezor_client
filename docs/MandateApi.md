@@ -35,7 +35,7 @@ api_instance = TreezorClient::MandateApi.new
 
 id = 56 # Integer | Mandate's internal id.
 
-origin = "origin_example" # String | The origin of the request for revocation
+origin = 'origin_example' # String | The origin of the request for revocation
 
 
 begin
@@ -145,15 +145,15 @@ end
 api_instance = TreezorClient::MandateApi.new
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   mandate_id: 56, # Integer | Mandate's Id
   user_id: 56, # Integer | User's id who initiates the mandate request.
-  unique_mandate_reference: "unique_mandate_reference_example", # String | Unique Mandate Reference (UMR) of the searched mandate. It is a sequence of characters that ensures the mandate traceability. UMR coupled with SCI allows to uniquely identify a creditor and a contract for any mandate. It is provided at the mandate creation.
-  mandate_status: "mandate_status_example", # String | Mandate's status. Possible values: * CANCELED * PENDING * VALIDATED 
-  filter: "filter_example" # String | You can filter the API response by using filter(s). Filters should be separated by a \";\". Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \"fieldName criterion expression\". Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     >    |      greater than      |            alphanumeric string           |         100        |  |    >=    | greater or equal than  |            alphanumeric string           |         100        |  |     <    |        less than       |            alphanumeric string           |         100        |  |    <=    |   less or equal than   |            alphanumeric string           |         100        |  |    !=    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    ==    |         equals         |            alphanumeric string           |         100        | 
+  unique_mandate_reference: 'unique_mandate_reference_example', # String | Unique Mandate Reference (UMR) of the searched mandate. It is a sequence of characters that ensures the mandate traceability. UMR coupled with SCI allows to uniquely identify a creditor and a contract for any mandate. It is provided at the mandate creation.
+  mandate_status: 'mandate_status_example', # String | Mandate's status. Possible values: * CANCELED * PENDING * VALIDATED 
+  filter: 'filter_example' # String | You can filter the API response by using filter(s). Filters should be separated by a \";\". Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \"fieldName criterion expression\". Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     >    |      greater than      |            alphanumeric string           |         100        |  |    >=    | greater or equal than  |            alphanumeric string           |         100        |  |     <    |        less than       |            alphanumeric string           |         100        |  |    <=    |   less or equal than   |            alphanumeric string           |         100        |  |    !=    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    ==    |         equals         |            alphanumeric string           |         100        | 
 }
 
 begin
@@ -217,17 +217,17 @@ api_instance = TreezorClient::MandateApi.new
 
 id = 56 # Integer | Mandate's id.
 
-access_token = "access_token_example" # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+access_token = 'access_token_example' # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
 
-access_signature = "access_signature_example" # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+access_signature = 'access_signature_example' # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
 
 user_id = 56 # Integer | User's id who initiates the mandate request.
 
 opts = { 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  debtor_mobile: "debtor_mobile_example" # String | Debtor's mobile phone number. Used to send the OTP for signature
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  debtor_mobile: 'debtor_mobile_example' # String | Debtor's mobile phone number. Used to send the OTP for signature
 }
 
 begin
@@ -290,19 +290,19 @@ api_instance = TreezorClient::MandateApi.new
 
 id = 56 # Integer | Mandate's id.
 
-access_token = "access_token_example" # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
+access_token = 'access_token_example' # String | Access token must be defined here or in Authorization HTTP header. More info [here](https://agent.treezor.com/security-authentication). 
 
-access_signature = "access_signature_example" # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+access_signature = 'access_signature_example' # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
 
 user_id = 56 # Integer | User's is who initiates the mandate request.
 
-otp = "otp_example" # String | The One-time password that the user got once mandate created.
+otp = 'otp_example' # String | The One-time password that the user got once mandate created.
 
 opts = { 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  debtor_signature_ip: "debtor_signature_ip_example" # String | IP address from which the mandate will be signed.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  debtor_signature_ip: 'debtor_signature_ip_example' # String | IP address from which the mandate will be signed.
 }
 
 begin
@@ -364,35 +364,35 @@ end
 
 api_instance = TreezorClient::MandateApi.new
 
-sdd_type = "sdd_type_example" # String | Type of mandate.  | Type | Description | | ---- | ----------- | | core | Sepa Direct Debit Core | | b2b | Sepa Direct Debit Business 2 Business  | 
+sdd_type = 'sdd_type_example' # String | Type of mandate.  | Type | Description | | ---- | ----------- | | core | Sepa Direct Debit Core | | b2b | Sepa Direct Debit Business 2 Business  | 
 
 is_paper = true # BOOLEAN | Indicate if it's a paper mandate or not
 
-user_id = "user_id_example" # String | User's id who initiates the mandate request. The creditor.
+user_id = 'user_id_example' # String | User's id who initiates the mandate request. The creditor.
 
-debtor_name = "debtor_name_example" # String | Debtor's full name
+debtor_name = 'debtor_name_example' # String | Debtor's full name
 
-debtor_address = "debtor_address_example" # String | Debtor's address.
+debtor_address = 'debtor_address_example' # String | Debtor's address.
 
-debtor_city = "debtor_city_example" # String | Debtor's city.
+debtor_city = 'debtor_city_example' # String | Debtor's city.
 
-debtor_zip_code = "debtor_zip_code_example" # String | Debtor's zip code
+debtor_zip_code = 'debtor_zip_code_example' # String | Debtor's zip code
 
-debtor_country = "debtor_country_example" # String | Debtor's country
+debtor_country = 'debtor_country_example' # String | Debtor's country
 
-debtor_iban = "debtor_iban_example" # String | Debtor's IBAN
+debtor_iban = 'debtor_iban_example' # String | Debtor's IBAN
 
-sequence_type = "sequence_type_example" # String | Type of mandate.  | Type | Description | | ---- | ----------- | | one-off | One-off payment | | recurrent | Recurrent payment |  Default value: one-off. 
+sequence_type = 'sequence_type_example' # String | Type of mandate.  | Type | Description | | ---- | ----------- | | one-off | One-off payment | | recurrent | Recurrent payment |  Default value: one-off. 
 
-created_ip = "created_ip_example" # String | IP address of the system that created mandate.
+created_ip = 'created_ip_example' # String | IP address of the system that created mandate.
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  debtor_bic: "debtor_bic_example", # String | Debtor's BIC (or SWIFT)
-  signature_date: "signature_date_example" # String | Signature date of the mandate. Required if is paper.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  debtor_bic: 'debtor_bic_example', # String | Debtor's BIC (or SWIFT)
+  signature_date: 'signature_date_example' # String | Signature date of the mandate. Required if is paper.
 }
 
 begin

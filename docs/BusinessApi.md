@@ -29,16 +29,16 @@ end
 
 api_instance = TreezorClient::BusinessApi.new
 
-country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
+country = 'country_example' # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  external_id: "external_id_example", # String | External unique business id. As given in businesssearch reponse.
-  registration_number: "registration_number_example", # String | Unique business registration number.
-  vat_number: "vat_number_example" # String | Unique business VAT number.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  external_id: 'external_id_example', # String | External unique business id. As given in businesssearch reponse.
+  registration_number: 'registration_number_example', # String | Unique business registration number.
+  vat_number: 'vat_number_example' # String | Unique business VAT number.
 }
 
 begin
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 
 # **businesssearchs_get**
-> Array&lt;InlineResponse2004&gt; businesssearchs_get(country, opts)
+> Array&lt;Object&gt; businesssearchs_get(country, opts)
 
 search businesses
 
@@ -99,22 +99,22 @@ end
 
 api_instance = TreezorClient::BusinessApi.new
 
-country = "country_example" # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
+country = 'country_example' # String | In which country to search. Format [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) 
 
 opts = { 
-  access_signature: "access_signature_example", # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
-  access_tag: "access_tag_example", # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  access_user_ip: "access_user_ip_example", # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  name_exact: "name_exact_example", # String | Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords. 
-  name_match_beginning: "name_match_beginning_example", # String | Business names begin with. Exclusive with nameExact and nameClosestKeywords. 
-  name_closest_keywords: "name_closest_keywords_example", # String | Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning. 
-  registration_number: "registration_number_example", # String | Business registration number.
-  vat_number: "vat_number_example", # String | Business VAT number.
-  phone_number: "phone_number_example", # String | Business phone number.
-  address_street: "address_street_example", # String | Business' street address.
-  address_city: "address_city_example", # String | Business' city address.
-  address_postal_code: "address_postal_code_example" # String | Business' postal code address.
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  name_exact: 'name_exact_example', # String | Business exact name. Exclusive with nameMatchBeginning and nameClosestKeywords. 
+  name_match_beginning: 'name_match_beginning_example', # String | Business names begin with. Exclusive with nameExact and nameClosestKeywords. 
+  name_closest_keywords: 'name_closest_keywords_example', # String | Business names closed to keywords. Exclusive with nameExact and nameMatchBeginning. 
+  registration_number: 'registration_number_example', # String | Business registration number.
+  vat_number: 'vat_number_example', # String | Business VAT number.
+  phone_number: 'phone_number_example', # String | Business phone number.
+  address_street: 'address_street_example', # String | Business' street address.
+  address_city: 'address_city_example', # String | Business' city address.
+  address_postal_code: 'address_postal_code_example' # String | Business' postal code address.
 }
 
 begin
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+**Array&lt;Object&gt;**
 
 ### Authorization
 
