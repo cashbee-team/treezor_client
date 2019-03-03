@@ -81,26 +81,26 @@ module TreezorClient
 
       # query parameters
       query_params = {}
+      query_params[:'userId'] = user_id
+      query_params[:'documentTypeId'] = document_type_id
+      query_params[:'name'] = name
+      query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
+      query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
+      query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
+      query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
+      query_params[:'documentTag'] = opts[:'document_tag'] if !opts[:'document_tag'].nil?
+      query_params[:'residenceId'] = opts[:'residence_id'] if !opts[:'residence_id'].nil?
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/x-www-form-urlencoded'])
 
       # form parameters
       form_params = {}
-      form_params['userId'] = user_id
-      form_params['documentTypeId'] = document_type_id
-      form_params['name'] = name
       form_params['fileContentBase64'] = file_content_base64
-      form_params['accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
-      form_params['accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
-      form_params['accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
-      form_params['accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
-      form_params['documentTag'] = opts[:'document_tag'] if !opts[:'document_tag'].nil?
-      form_params['residenceId'] = opts[:'residence_id'] if !opts[:'residence_id'].nil?
 
       # http body (model)
       post_body = nil

@@ -3943,12 +3943,13 @@ paths:
           required: false
           type: string
         - name: id
+          in: query
           description: the cardId of the reserved amount you want to pick up
           required: true
           type: integer
           format: int64
-        - in: body
-          name: body
+        - name: body
+          in: body
           schema:
             required:
               - cardId
@@ -4025,12 +4026,13 @@ paths:
           required: false
           type: string
         - name: id
+          in: query
           description: the cardId of the reserved amount you want to pick up
           required: true
           type: integer
           format: int64
-        - in: body
-          name: body
+        - name: body
+          in: body
           schema:
             required:
               - cardId
@@ -4541,12 +4543,12 @@ paths:
       description: Search for documents.
       operationId: createDocuments
       consumes:
-        - multipart/form-data
+        - application/x-www-form-urlencoded
       produces:
         - application/json
       parameters:
         - name: accessSignature
-          in: formData
+          in: query
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
@@ -4554,45 +4556,45 @@ paths:
           required: false
           type: string
         - name: accessTag
-          in: formData
+          in: query
           description: |
             Access tag is used for idem potency query. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: accessUserId
-          in: formData
+          in: query
           description: |
             Access user's id is used for user's action restriction. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: integer
         - name: accessUserIp
-          in: formData
+          in: query
           description: |
             Access user's ip is used for user's action restriction. More info
             [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: documentTag
-          in: formData
+          in: query
           description: Custom data.
           required: false
           type: integer
         - name: userId
-          in: formData
+          in: query
           description: Document user's id.
           required: true
           type: string
         - name: residenceId
-          in: formData
+          in: query
           description: Document residence Id. The field is mandatory when the document is of type id 24 or 25. Otherwise it should not be provided.
           required: false
           type: integer
           format: int64
           minimum: 1
         - name: documentTypeId
-          in: formData
+          in: query
           description: |
             Type of document.
 
@@ -4622,7 +4624,7 @@ paths:
           required: true
           type: integer
         - name: name
-          in: formData
+          in: query
           description: Document's name.
           required: true
           type: string
