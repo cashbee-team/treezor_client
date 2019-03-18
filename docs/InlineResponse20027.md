@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallets** | [**Array&lt;Wallet&gt;**](Wallet.md) |  | [optional] 
+**virtualibans** | [**Array&lt;Virtualiban&gt;**](Virtualiban.md) |  | [optional] 
 
 

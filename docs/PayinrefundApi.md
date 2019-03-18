@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **delete_payinrefund**
-> InlineResponse20019 delete_payinrefund(id)
+> InlineResponse20018 delete_payinrefund(id)
 
 cancel a pay in refund
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 
 # **get_payinrefund**
-> InlineResponse20019 get_payinrefund(id)
+> InlineResponse20018 get_payinrefund(id)
 
 get a pay in refund
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 
 # **get_payinrefunds**
-> InlineResponse20019 get_payinrefunds(opts)
+> InlineResponse20018 get_payinrefunds(opts)
 
 search pay in refunds
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 
 # **post_payinrefunds**
-> InlineResponse20019 post_payinrefunds(payin_id, amount, currency, opts)
+> InlineResponse20018 post_payinrefunds(payin_id, amount, currency, opts)
 
 create a pay in refund
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 

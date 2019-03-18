@@ -14,19 +14,30 @@ require 'date'
 
 module TreezorClient
   class InlineResponse2008
-    attr_accessor :cards
+    # ID of the card
+    attr_accessor :card_id
+
+    # reserved amount of the card
+    attr_accessor :amount
+
+    # last calculation date
+    attr_accessor :calculation_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cards' => :'cards'
+        :'card_id' => :'cardId',
+        :'amount' => :'amount',
+        :'calculation_date' => :'calculationDate'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'cards' => :'Array<CardDigitalization>'
+        :'card_id' => :'Integer',
+        :'amount' => :'Float',
+        :'calculation_date' => :'DateTime'
       }
     end
 
@@ -38,10 +49,16 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cards')
-        if (value = attributes[:'cards']).is_a?(Array)
-          self.cards = value
-        end
+      if attributes.has_key?(:'cardId')
+        self.card_id = attributes[:'cardId']
+      end
+
+      if attributes.has_key?(:'amount')
+        self.amount = attributes[:'amount']
+      end
+
+      if attributes.has_key?(:'calculationDate')
+        self.calculation_date = attributes[:'calculationDate']
       end
     end
 
@@ -63,7 +80,9 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cards == o.cards
+          card_id == o.card_id &&
+          amount == o.amount &&
+          calculation_date == o.calculation_date
     end
 
     # @see the `==` method
@@ -75,7 +94,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cards].hash
+      [card_id, amount, calculation_date].hash
     end
 
     # Builds the object from hash

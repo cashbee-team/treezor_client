@@ -30,7 +30,7 @@ module TreezorClient
     # @option opts [String] :external_id External unique business id. As given in businesssearch reponse.
     # @option opts [String] :registration_number Unique business registration number.
     # @option opts [String] :vat_number Unique business VAT number.
-    # @return [InlineResponse2005]
+    # @return [InlineResponse2004]
     def businessinformations_get(country, opts = {})
       data, _status_code, _headers = businessinformations_get_with_http_info(country, opts)
       data
@@ -47,7 +47,7 @@ module TreezorClient
     # @option opts [String] :external_id External unique business id. As given in businesssearch reponse.
     # @option opts [String] :registration_number Unique business registration number.
     # @option opts [String] :vat_number Unique business VAT number.
-    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
+    # @return [Array<(InlineResponse2004, Fixnum, Hash)>] InlineResponse2004 data, response status code and response headers
     def businessinformations_get_with_http_info(country, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BusinessApi.businessinformations_get ...'
@@ -85,7 +85,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :return_type => 'InlineResponse2004')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BusinessApi#businessinformations_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mandates** | [**Array&lt;Mandate&gt;**](Mandate.md) |  | [optional] 
+**issuer_initiated_digitization_datas** | [**Array&lt;IssuerInitiatedDigitizationData&gt;**](IssuerInitiatedDigitizationData.md) |  | [optional] 
 
 

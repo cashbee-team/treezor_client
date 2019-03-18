@@ -26,7 +26,7 @@ module TreezorClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'businessinformations' => :'Array<BusinesssearchsBusinessinformations>'
+        :'businessinformations' => :'Array<InlineResponse2004Businessinformations>'
       }
     end
 

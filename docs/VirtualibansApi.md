@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getvirtualiban**
-> InlineResponse20018 getvirtualiban(id)
+> InlineResponse20027 getvirtualiban(id)
 
 get a virtualiban by Id
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 
 # **getvirtualibans**
-> InlineResponse20018 getvirtualibans(valid_from, opts)
+> InlineResponse20027 getvirtualibans(valid_from, opts)
 
 search virtualibans
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 
 # **post_virtual_iban**
-> InlineResponse20018 post_virtual_iban(wallet_id, type_id, opts)
+> InlineResponse20027 post_virtual_iban(wallet_id, type_id, opts)
 
 create a virtual IBAN
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 
 # **put_virtual_iban**
-> InlineResponse20018 put_virtual_iban(id, opts)
+> InlineResponse20027 put_virtual_iban(id, opts)
 
 update a Virtual IBAN
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 

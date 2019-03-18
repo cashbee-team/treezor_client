@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardtransactions** | [**Array&lt;InlineResponse20011Cardtransactions&gt;**](InlineResponse20011Cardtransactions.md) |  | [optional] 
+**bankaccounts** | [**Array&lt;CountryRestrictionGroup&gt;**](CountryRestrictionGroup.md) |  | [optional] 
 
 

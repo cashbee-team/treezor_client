@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payouts** | [**Array&lt;Payout&gt;**](Payout.md) |  | [optional] 
+**payout_refunds** | [**Array&lt;PayoutRefund&gt;**](PayoutRefund.md) |  | [optional] 
 
 

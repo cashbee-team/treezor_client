@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_beneficiaries**
-> InlineResponse2001 get_beneficiaries(opts)
+> InlineResponse2002 get_beneficiaries(opts)
 
 search beneficiary bank accounts
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 
 # **get_beneficiary**
-> InlineResponse2001 get_beneficiary(id, opts)
+> InlineResponse2002 get_beneficiary(id, opts)
 
 get a beneficiary bank account
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 
 # **post_beneficiary**
-> InlineResponse2001 post_beneficiary(opts)
+> InlineResponse2002 post_beneficiary(opts)
 
 create a beneficiary
 
@@ -179,7 +179,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body1.new # Body1 | 
+  body: TreezorClient::Body.new # Body | 
 }
 
 begin
@@ -199,11 +199,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body1**](Body1.md)|  | [optional] 
+ **body** | [**Body**](Body.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 
 # **put_beneficiary**
-> InlineResponse2001 put_beneficiary(id, opts)
+> InlineResponse2002 put_beneficiary(id, opts)
 
 edit a beneficiary
 
@@ -244,7 +244,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body2.new # Body2 | 
+  body: TreezorClient::Body1.new # Body1 | 
 }
 
 begin
@@ -265,11 +265,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body2**](Body2.md)|  | [optional] 
+ **body** | [**Body1**](Body1.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

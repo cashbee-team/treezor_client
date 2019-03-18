@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_payout_refunds**
-> InlineResponse20021 get_payout_refunds(opts)
+> InlineResponse20020 get_payout_refunds(opts)
 
 search pay outs refund
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 

@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cards** | [**Array&lt;CardDigitalization&gt;**](CardDigitalization.md) |  | [optional] 
+**card_id** | **Integer** | ID of the card | [optional] 
+**amount** | **Float** | reserved amount of the card | [optional] 
+**calculation_date** | **DateTime** | last calculation date | [optional] 
 
 

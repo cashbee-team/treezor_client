@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**businessinformations** | [**Array&lt;BusinesssearchsBusinessinformations&gt;**](BusinesssearchsBusinessinformations.md) |  | [optional] 
+**businessinformations** | [**Array&lt;InlineResponse2004Businessinformations&gt;**](InlineResponse2004Businessinformations.md) |  | [optional] 
 
 

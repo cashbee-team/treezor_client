@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **delete_mcc_restriction_groups**
-> InlineResponse20014 delete_mcc_restriction_groups(id, opts)
+> InlineResponse20015 delete_mcc_restriction_groups(id, opts)
 
 cancel a mcc group
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 
 # **get_mcc_restriction_groups**
-> InlineResponse20014 get_mcc_restriction_groups(opts)
+> InlineResponse20015 get_mcc_restriction_groups(opts)
 
 search mcc restriction groups
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 
 # **get_mcc_restriction_groups_id**
-> InlineResponse20014 get_mcc_restriction_groups_id(id, opts)
+> InlineResponse20015 get_mcc_restriction_groups_id(id, opts)
 
 get a mcc group
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 
 # **post_mcc_restriction_group**
-> InlineResponse20014 post_mcc_restriction_group(opts)
+> InlineResponse20015 post_mcc_restriction_group(opts)
 
 create a mccRestrictionGroup
 
@@ -227,7 +227,7 @@ opts = {
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   fields: ['fields_example'], # Array<String> | List of the object's properties you want to pick up.
-  body: TreezorClient::Body5.new # Body5 | 
+  body: TreezorClient::Body7.new # Body7 | 
 }
 
 begin
@@ -248,11 +248,11 @@ Name | Type | Description  | Notes
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **fields** | [**Array&lt;String&gt;**](String.md)| List of the object&#39;s properties you want to pick up. | [optional] 
- **body** | [**Body5**](Body5.md)|  | [optional] 
+ **body** | [**Body7**](Body7.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 
 # **put_mcc_restriction_groups**
-> InlineResponse20014 put_mcc_restriction_groups(id, opts)
+> InlineResponse20015 put_mcc_restriction_groups(id, opts)
 
 edit a mcc restriction group
 
@@ -293,7 +293,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body6.new # Body6 | 
+  body: TreezorClient::Body8.new # Body8 | 
 }
 
 begin
@@ -314,11 +314,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body6**](Body6.md)|  | [optional] 
+ **body** | [**Body8**](Body8.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 

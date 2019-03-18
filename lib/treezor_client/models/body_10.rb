@@ -14,23 +14,20 @@ require 'date'
 
 module TreezorClient
   class Body10
-    # Name of the country restriction group
+    # Name of the merchant ID restriction group
     attr_accessor :name
 
-    # Status of the country group
+    # Status of the merchant ID restriction group
     attr_accessor :status
 
     # determines whether it will be a black or a white list
     attr_accessor :is_whitelist
 
-    # Array of countries
-    attr_accessor :countries
+    # Array of merchant ID
+    attr_accessor :merchants
 
-    # The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+    # The date at which the merchant ID group will be take into account. Format YYYY-MM-DD HH:MM:SS
     attr_accessor :start_date
-
-    # List of the object's properties you want to pick up.
-    attr_accessor :fields
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -60,9 +57,8 @@ module TreezorClient
         :'name' => :'name',
         :'status' => :'status',
         :'is_whitelist' => :'isWhitelist',
-        :'countries' => :'countries',
-        :'start_date' => :'startDate',
-        :'fields' => :'fields'
+        :'merchants' => :'merchants',
+        :'start_date' => :'startDate'
       }
     end
 
@@ -72,9 +68,8 @@ module TreezorClient
         :'name' => :'String',
         :'status' => :'String',
         :'is_whitelist' => :'BOOLEAN',
-        :'countries' => :'Array<Integer>',
-        :'start_date' => :'String',
-        :'fields' => :'Array<String>'
+        :'merchants' => :'Array<String>',
+        :'start_date' => :'String'
       }
     end
 
@@ -100,20 +95,14 @@ module TreezorClient
         self.is_whitelist = true
       end
 
-      if attributes.has_key?(:'countries')
-        if (value = attributes[:'countries']).is_a?(Array)
-          self.countries = value
+      if attributes.has_key?(:'merchants')
+        if (value = attributes[:'merchants']).is_a?(Array)
+          self.merchants = value
         end
       end
 
       if attributes.has_key?(:'startDate')
         self.start_date = attributes[:'startDate']
-      end
-
-      if attributes.has_key?(:'fields')
-        if (value = attributes[:'fields']).is_a?(Array)
-          self.fields = value
-        end
       end
     end
 
@@ -150,9 +139,8 @@ module TreezorClient
           name == o.name &&
           status == o.status &&
           is_whitelist == o.is_whitelist &&
-          countries == o.countries &&
-          start_date == o.start_date &&
-          fields == o.fields
+          merchants == o.merchants &&
+          start_date == o.start_date
     end
 
     # @see the `==` method
@@ -164,7 +152,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, status, is_whitelist, countries, start_date, fields].hash
+      [name, status, is_whitelist, merchants, start_date].hash
     end
 
     # Builds the object from hash

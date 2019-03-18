@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_balances**
-> InlineResponse2002 get_balances(opts)
+> InlineResponse200 get_balances(opts)
 
 search balances
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

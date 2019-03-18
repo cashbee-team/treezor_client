@@ -32,7 +32,7 @@ module TreezorClient
     # @option opts [String] :information_status PayoutRefund Information Status
     # @option opts [Integer] :payout_id Payout Id
     # @option opts [Integer] :page_number The page number
-    # @return [InlineResponse20021]
+    # @return [InlineResponse20020]
     def get_payout_refunds(opts = {})
       data, _status_code, _headers = get_payout_refunds_with_http_info(opts)
       data
@@ -51,7 +51,7 @@ module TreezorClient
     # @option opts [String] :information_status PayoutRefund Information Status
     # @option opts [Integer] :payout_id Payout Id
     # @option opts [Integer] :page_number The page number
-    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
+    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
     def get_payout_refunds_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutRefundsApi.get_payout_refunds ...'
@@ -91,7 +91,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :return_type => 'InlineResponse20020')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutRefundsApi#get_payout_refunds\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

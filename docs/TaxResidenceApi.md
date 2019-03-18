@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **tax_residences_get**
-> InlineResponse20028 tax_residences_get(opts)
+> InlineResponse20021 tax_residences_get(opts)
 
 search a residence
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 
 # **tax_residences_id_delete**
-> InlineResponse20028 tax_residences_id_delete(id, opts)
+> InlineResponse20021 tax_residences_id_delete(id, opts)
 
 delete a residence
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 
 # **tax_residences_id_get**
-> InlineResponse20028 tax_residences_id_get(id, opts)
+> InlineResponse20021 tax_residences_id_get(id, opts)
 
 read the informations of a residence
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 
 # **tax_residences_id_put**
-> InlineResponse20028 tax_residences_id_put(id, opts)
+> InlineResponse20021 tax_residences_id_put(id, opts)
 
 update the residence
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 
 # **tax_residences_post**
-> InlineResponse20028 tax_residences_post(user_id, country, opts)
+> InlineResponse20021 tax_residences_post(user_id, country, opts)
 
 create a residence
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 

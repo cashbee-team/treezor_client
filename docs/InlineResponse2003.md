@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bankaccounts** | [**Array&lt;Bankaccount&gt;**](Bankaccount.md) |  | [optional] 
+**businessinformations** | [**Array&lt;BusinesssearchsBusinessinformations&gt;**](BusinesssearchsBusinessinformations.md) |  | [optional] 
 
 

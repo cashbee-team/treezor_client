@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_cardtransaction**
-> InlineResponse20011 get_cardtransaction(id)
+> InlineResponse20010 get_cardtransaction(id)
 
 get a card transaction
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **read_card_transaction**
-> InlineResponse20010 read_card_transaction(opts)
+> InlineResponse2009 read_card_transaction(opts)
 
 search for card transactions
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 

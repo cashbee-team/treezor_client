@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **cardimages_get**
-> InlineResponse2007 cardimages_get(card_id, opts)
+> InlineResponse2006 cardimages_get(card_id, opts)
 
 get a card image
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_create_virtual_post**
-> InlineResponse2006 cards_create_virtual_post(user_id, wallet_id, perms_group, card_print, opts)
+> InlineResponse2005 cards_create_virtual_post(user_id, wallet_id, perms_group, card_print, opts)
 
 create a virtual card
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_get**
-> InlineResponse2006 cards_get(opts)
+> InlineResponse2005 cards_get(opts)
 
 search cards
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_activate_put**
-> InlineResponse2006 cards_id_activate_put(id, opts)
+> InlineResponse2005 cards_id_activate_put(id, opts)
 
 activate a card
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_change_pin_put**
-> InlineResponse2006 cards_id_change_pin_put(id, current_pin, new_pin, confirm_pin, opts)
+> InlineResponse2005 cards_id_change_pin_put(id, current_pin, new_pin, confirm_pin, opts)
 
 change card's PIN
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_convert_virtual_put**
-> InlineResponse2006 cards_id_convert_virtual_put(id, opts)
+> InlineResponse2005 cards_id_convert_virtual_put(id, opts)
 
 convert card to virtual
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_delete**
-> InlineResponse2006 cards_id_delete(id)
+> InlineResponse2005 cards_id_delete(id)
 
 deactivate a card
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_get**
-> InlineResponse2006 cards_id_get(id)
+> InlineResponse2005 cards_id_get(id)
 
 get a card
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_limits_put**
-> InlineResponse2006 cards_id_limits_put(id, opts)
+> InlineResponse2005 cards_id_limits_put(id, opts)
 
 update card's limits
 
@@ -675,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_lock_unlock_put**
-> InlineResponse2006 cards_id_lock_unlock_put(id, lock_status, opts)
+> InlineResponse2005 cards_id_lock_unlock_put(id, lock_status, opts)
 
 update card's blocking status
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_options_put**
-> InlineResponse2006 cards_id_options_put(id, foreign, online, atm, nfc, opts)
+> InlineResponse2005 cards_id_options_put(id, foreign, online, atm, nfc, opts)
 
 update card's options
 
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -832,7 +832,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_put**
-> InlineResponse2006 cards_id_put(id, opts)
+> InlineResponse2005 cards_id_put(id, opts)
 
 update card informations
 
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -902,7 +902,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_regenerate_put**
-> InlineResponse2006 cards_id_regenerate_put(id, opts)
+> InlineResponse2005 cards_id_regenerate_put(id, opts)
 
 regenerate card
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_set_pin_put**
-> InlineResponse2006 cards_id_set_pin_put(id, new_pin, confirm_pin, opts)
+> InlineResponse2005 cards_id_set_pin_put(id, new_pin, confirm_pin, opts)
 
 set card's PIN
 
@@ -1022,7 +1022,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -1036,7 +1036,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_id_unblock_pin_put**
-> InlineResponse2006 cards_id_unblock_pin_put(id, opts)
+> InlineResponse2005 cards_id_unblock_pin_put(id, opts)
 
 unblock card's PIN
 
@@ -1086,7 +1086,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -1100,11 +1100,11 @@ Name | Type | Description  | Notes
 
 
 # **cards_register3_ds_post**
-> InlineResponse2006 cards_register3_ds_post(card_id, opts)
+> InlineResponse2005 cards_register3_ds_post(card_id, opts)
 
 Register 3D secure
 
-Register a card to 3D secure service.
+Register a card to 3D secure service. The user's mobile number must begin by \"+\", or \"00\", and the country dialing code.
 
 ### Example
 ```ruby
@@ -1144,7 +1144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -1158,7 +1158,7 @@ Name | Type | Description  | Notes
 
 
 # **cards_request_physical_post**
-> InlineResponse2006 cards_request_physical_post(user_id, wallet_id, perms_group, card_tag, card_print, opts)
+> InlineResponse2005 cards_request_physical_post(user_id, wallet_id, perms_group, card_tag, card_print, opts)
 
 create a physical card
 
@@ -1256,7 +1256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

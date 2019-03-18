@@ -28,7 +28,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :wallet_id Wallet&#39;s ID of wanted balance
     # @option opts [Integer] :user_id Wallet&#39;s user id of wanted balanced
-    # @return [InlineResponse2002]
+    # @return [InlineResponse200]
     def get_balances(opts = {})
       data, _status_code, _headers = get_balances_with_http_info(opts)
       data
@@ -43,7 +43,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :wallet_id Wallet&#39;s ID of wanted balance
     # @option opts [Integer] :user_id Wallet&#39;s user id of wanted balanced
-    # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
+    # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
     def get_balances_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BalanceApi.get_balances ...'
@@ -79,7 +79,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :return_type => 'InlineResponse200')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BalanceApi#get_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

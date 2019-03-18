@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **delete_country_restriction_groups**
-> InlineResponse20016 delete_country_restriction_groups(id, opts)
+> InlineResponse20011 delete_country_restriction_groups(id, opts)
 
 cancel a country group
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 
 # **get_country_restriction_groups**
-> InlineResponse20016 get_country_restriction_groups(opts)
+> InlineResponse20011 get_country_restriction_groups(opts)
 
 search country restriction groups
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 
 # **get_country_restriction_groups_id**
-> InlineResponse20016 get_country_restriction_groups_id(id, opts)
+> InlineResponse20011 get_country_restriction_groups_id(id, opts)
 
 get a country group
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 
 # **post_country_restriction_group**
-> InlineResponse20016 post_country_restriction_group(opts)
+> InlineResponse20011 post_country_restriction_group(opts)
 
 create a countryRestrictionGroup
 
@@ -227,7 +227,7 @@ opts = {
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   fields: ['fields_example'], # Array<String> | List of the object's properties you want to pick up.
-  body: TreezorClient::Body9.new # Body9 | 
+  body: TreezorClient::Body4.new # Body4 | 
 }
 
 begin
@@ -248,11 +248,11 @@ Name | Type | Description  | Notes
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **fields** | [**Array&lt;String&gt;**](String.md)| List of the object&#39;s properties you want to pick up. | [optional] 
- **body** | [**Body9**](Body9.md)|  | [optional] 
+ **body** | [**Body4**](Body4.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 
 # **put_country_restriction_groups**
-> InlineResponse20016 put_country_restriction_groups(id, opts)
+> InlineResponse20011 put_country_restriction_groups(id, opts)
 
 edit a country restriction group
 
@@ -293,7 +293,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body10.new # Body10 | 
+  body: TreezorClient::Body5.new # Body5 | 
 }
 
 begin
@@ -314,11 +314,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body10**](Body10.md)|  | [optional] 
+ **body** | [**Body5**](Body5.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

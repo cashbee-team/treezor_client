@@ -24,7 +24,7 @@ module TreezorClient
     # @param id Merchant ID restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [InlineResponse20015]
+    # @return [InlineResponse20016]
     def delete_merchant_id_restriction_groups(id, opts = {})
       data, _status_code, _headers = delete_merchant_id_restriction_groups_with_http_info(id, opts)
       data
@@ -35,7 +35,7 @@ module TreezorClient
     # @param id Merchant ID restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def delete_merchant_id_restriction_groups_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.delete_merchant_id_restriction_groups ...'
@@ -70,7 +70,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#delete_merchant_id_restriction_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -89,7 +89,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [InlineResponse20015]
+    # @return [InlineResponse20016]
     def get_merchant_id_restriction_group(opts = {})
       data, _status_code, _headers = get_merchant_id_restriction_group_with_http_info(opts)
       data
@@ -108,7 +108,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def get_merchant_id_restriction_group_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.get_merchant_id_restriction_group ...'
@@ -148,7 +148,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#get_merchant_id_restriction_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -159,7 +159,7 @@ module TreezorClient
     # @param id Merchant ID restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [InlineResponse20015]
+    # @return [InlineResponse20016]
     def get_merchant_id_restriction_groups_id(id, opts = {})
       data, _status_code, _headers = get_merchant_id_restriction_groups_id_with_http_info(id, opts)
       data
@@ -170,7 +170,7 @@ module TreezorClient
     # @param id Merchant ID restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def get_merchant_id_restriction_groups_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.get_merchant_id_restriction_groups_id ...'
@@ -205,7 +205,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#get_merchant_id_restriction_groups_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -218,8 +218,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body7] :body 
-    # @return [InlineResponse20015]
+    # @option opts [Body9] :body 
+    # @return [InlineResponse20016]
     def post_merchant_id_restriction_group(opts = {})
       data, _status_code, _headers = post_merchant_id_restriction_group_with_http_info(opts)
       data
@@ -232,8 +232,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body7] :body 
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @option opts [Body9] :body 
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def post_merchant_id_restriction_group_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.post_merchant_id_restriction_group ...'
@@ -267,7 +267,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#post_merchant_id_restriction_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -281,8 +281,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body8] :body 
-    # @return [InlineResponse20015]
+    # @option opts [Body10] :body 
+    # @return [InlineResponse20016]
     def put_merchant_id_restriction_groups(id, opts = {})
       data, _status_code, _headers = put_merchant_id_restriction_groups_with_http_info(id, opts)
       data
@@ -296,8 +296,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body8] :body 
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @option opts [Body10] :body 
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def put_merchant_id_restriction_groups_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.put_merchant_id_restriction_groups ...'
@@ -335,7 +335,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#put_merchant_id_restriction_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

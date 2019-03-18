@@ -28,7 +28,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20028]
     def delete_wallet(id, origin, opts = {})
       data, _status_code, _headers = delete_wallet_with_http_info(id, origin, opts)
       data
@@ -43,7 +43,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def delete_wallet_with_http_info(id, origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WalletApi.delete_wallet ...'
@@ -86,7 +86,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#delete_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -100,7 +100,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20028]
     def get_wallet(id, opts = {})
       data, _status_code, _headers = get_wallet_with_http_info(id, opts)
       data
@@ -114,7 +114,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def get_wallet_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WalletApi.get_wallet ...'
@@ -152,7 +152,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#get_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -186,7 +186,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20028]
     def get_wallets(opts = {})
       data, _status_code, _headers = get_wallets_with_http_info(opts)
       data
@@ -220,7 +220,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def get_wallets_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WalletApi.get_wallets ...'
@@ -275,7 +275,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#get_wallets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -299,9 +299,9 @@ module TreezorClient
     # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique. 
     # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
     # @option opts [String] :event_message It can be a description of the wallet.
-    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
+    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
     # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20028]
     def post_wallets(wallet_type_id, tariff_id, user_id, currency, event_name, opts = {})
       data, _status_code, _headers = post_wallets_with_http_info(wallet_type_id, tariff_id, user_id, currency, event_name, opts)
       data
@@ -325,9 +325,9 @@ module TreezorClient
     # @option opts [String] :event_alias Short url wallet name. It&#39;s automatically generated by the system, but it could be modified and customised by the user. For example: www.domain.com/wallet&#x3D;mywedding. Please note that the eventAlias must be unique. 
     # @option opts [Date] :event_date Wallet event date. Format : YYYY-MM-DD. Default: Created date + 7 days. 
     # @option opts [String] :event_message It can be a description of the wallet.
-    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
+    # @option opts [Date] :event_payin_start_date  Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.
     # @option opts [Date] :event_payin_end_date Deadline to money deposit on the wallet. Format : YYYY-MM-DD. If null, the money can be deposited indefinitely on the wallet 
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def post_wallets_with_http_info(wallet_type_id, tariff_id, user_id, currency, event_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WalletApi.post_wallets ...'
@@ -394,7 +394,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#post_wallets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -418,7 +418,7 @@ module TreezorClient
     # @option opts [String] :url_image Change URL image
     # @option opts [String] :image_name Change image name
     # @option opts [String] :tariff_id Change tariff id
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20028]
     def put_wallet(id, opts = {})
       data, _status_code, _headers = put_wallet_with_http_info(id, opts)
       data
@@ -442,7 +442,7 @@ module TreezorClient
     # @option opts [String] :url_image Change URL image
     # @option opts [String] :image_name Change image name
     # @option opts [String] :tariff_id Change tariff id
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def put_wallet_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WalletApi.put_wallet ...'
@@ -490,7 +490,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletApi#put_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -14,20 +14,23 @@ require 'date'
 
 module TreezorClient
   class Body5
-    # Name of the MCC restriction group
+    # Name of the country restriction group
     attr_accessor :name
 
-    # Status of the MCC group
+    # Status of the country group
     attr_accessor :status
 
     # determines whether it will be a black or a white list
     attr_accessor :is_whitelist
 
-    # Array of MCC
-    attr_accessor :mcc
+    # Array of countries
+    attr_accessor :countries
 
-    # The date at which the MCC restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+    # The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
     attr_accessor :start_date
+
+    # List of the object's properties you want to pick up.
+    attr_accessor :fields
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -57,8 +60,9 @@ module TreezorClient
         :'name' => :'name',
         :'status' => :'status',
         :'is_whitelist' => :'isWhitelist',
-        :'mcc' => :'mcc',
-        :'start_date' => :'startDate'
+        :'countries' => :'countries',
+        :'start_date' => :'startDate',
+        :'fields' => :'fields'
       }
     end
 
@@ -68,8 +72,9 @@ module TreezorClient
         :'name' => :'String',
         :'status' => :'String',
         :'is_whitelist' => :'BOOLEAN',
-        :'mcc' => :'Array<Integer>',
-        :'start_date' => :'String'
+        :'countries' => :'Array<Integer>',
+        :'start_date' => :'String',
+        :'fields' => :'Array<String>'
       }
     end
 
@@ -95,14 +100,20 @@ module TreezorClient
         self.is_whitelist = true
       end
 
-      if attributes.has_key?(:'mcc')
-        if (value = attributes[:'mcc']).is_a?(Array)
-          self.mcc = value
+      if attributes.has_key?(:'countries')
+        if (value = attributes[:'countries']).is_a?(Array)
+          self.countries = value
         end
       end
 
       if attributes.has_key?(:'startDate')
         self.start_date = attributes[:'startDate']
+      end
+
+      if attributes.has_key?(:'fields')
+        if (value = attributes[:'fields']).is_a?(Array)
+          self.fields = value
+        end
       end
     end
 
@@ -110,24 +121,14 @@ module TreezorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @mcc.nil?
-        invalid_properties.push('invalid value for "mcc", mcc cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       status_validator = EnumAttributeValidator.new('String', ['VALIDATED', 'PENDING', 'CANCELED'])
       return false unless status_validator.valid?(@status)
-      return false if @mcc.nil?
       true
     end
 
@@ -149,8 +150,9 @@ module TreezorClient
           name == o.name &&
           status == o.status &&
           is_whitelist == o.is_whitelist &&
-          mcc == o.mcc &&
-          start_date == o.start_date
+          countries == o.countries &&
+          start_date == o.start_date &&
+          fields == o.fields
     end
 
     # @see the `==` method
@@ -162,7 +164,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, status, is_whitelist, mcc, start_date].hash
+      [name, status, is_whitelist, countries, start_date, fields].hash
     end
 
     # Builds the object from hash

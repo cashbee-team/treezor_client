@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tax_residences** | [**Array&lt;TaxResidence&gt;**](TaxResidence.md) |  | [optional] 
+**wallets** | [**Array&lt;Wallet&gt;**](Wallet.md) |  | [optional] 
 
 

@@ -14,25 +14,62 @@ require 'date'
 
 module TreezorClient
   class Body4
-    # ID of the card
-    attr_accessor :card_id
+    # Name of the country restriction group
+    attr_accessor :name
 
-    # Amout you want to check
-    attr_accessor :amount
+    # Status of the country group
+    attr_accessor :status
+
+    # determines whether it will be a black or a white list
+    attr_accessor :is_whitelist
+
+    # Array of countries
+    attr_accessor :countries
+
+    # The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+    attr_accessor :start_date
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'card_id' => :'cardId',
-        :'amount' => :'amount'
+        :'name' => :'name',
+        :'status' => :'status',
+        :'is_whitelist' => :'isWhitelist',
+        :'countries' => :'countries',
+        :'start_date' => :'startDate'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'card_id' => :'Integer',
-        :'amount' => :'Float'
+        :'name' => :'String',
+        :'status' => :'String',
+        :'is_whitelist' => :'BOOLEAN',
+        :'countries' => :'Array<Integer>',
+        :'start_date' => :'String'
       }
     end
 
@@ -44,12 +81,28 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cardId')
-        self.card_id = attributes[:'cardId']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'isWhitelist')
+        self.is_whitelist = attributes[:'isWhitelist']
+      else
+        self.is_whitelist = true
+      end
+
+      if attributes.has_key?(:'countries')
+        if (value = attributes[:'countries']).is_a?(Array)
+          self.countries = value
+        end
+      end
+
+      if attributes.has_key?(:'startDate')
+        self.start_date = attributes[:'startDate']
       end
     end
 
@@ -57,12 +110,12 @@ module TreezorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @card_id.nil?
-        invalid_properties.push('invalid value for "card_id", card_id cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @amount.nil?
-        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      if @countries.nil?
+        invalid_properties.push('invalid value for "countries", countries cannot be nil.')
       end
 
       invalid_properties
@@ -71,9 +124,21 @@ module TreezorClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @card_id.nil?
-      return false if @amount.nil?
+      return false if @name.nil?
+      status_validator = EnumAttributeValidator.new('String', ['VALIDATED', 'PENDING', 'CANCELED'])
+      return false unless status_validator.valid?(@status)
+      return false if @countries.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ['VALIDATED', 'PENDING', 'CANCELED'])
+      unless validator.valid?(status)
+        fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -81,8 +146,11 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          card_id == o.card_id &&
-          amount == o.amount
+          name == o.name &&
+          status == o.status &&
+          is_whitelist == o.is_whitelist &&
+          countries == o.countries &&
+          start_date == o.start_date
     end
 
     # @see the `==` method
@@ -94,7 +162,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [card_id, amount].hash
+      [name, status, is_whitelist, countries, start_date].hash
     end
 
     # Builds the object from hash

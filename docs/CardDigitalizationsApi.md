@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **card_digitalizations_id**
-> InlineResponse2008 card_digitalizations_id(id, opts)
+> InlineResponse2007 card_digitalizations_id(id, opts)
 
 Get a card digitalizations based on its internal id
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 
 # **deletecard_digitalizations_id**
-> InlineResponse2008 deletecard_digitalizations_id(id, reason_code)
+> InlineResponse2007 deletecard_digitalizations_id(id, reason_code)
 
 Deletes a payment Token
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 
 # **putcard_digitalizations_id**
-> InlineResponse2008 putcard_digitalizations_id(id, status, reason_code)
+> InlineResponse2007 putcard_digitalizations_id(id, status, reason_code)
 
 Update the status of a payment Token
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 
 # **readcard_digitalizations**
-> InlineResponse2008 readcard_digitalizations(opts)
+> InlineResponse2007 readcard_digitalizations(opts)
 
 search for card digitalizations
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

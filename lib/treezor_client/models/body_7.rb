@@ -14,19 +14,19 @@ require 'date'
 
 module TreezorClient
   class Body7
-    # Name of the Merchant ID group
+    # Name of the MCC restriction group
     attr_accessor :name
 
-    # Status of the Merchant ID group
+    # Status of the MCC group
     attr_accessor :status
 
     # determines whether it will be a black or a white list
     attr_accessor :is_whitelist
 
-    # Array of Merchant ID
-    attr_accessor :merchants
+    # Array of MCC
+    attr_accessor :mcc
 
-    # The date at which the Merchant ID restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+    # The date at which the MCC restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
     attr_accessor :start_date
 
     class EnumAttributeValidator
@@ -57,7 +57,7 @@ module TreezorClient
         :'name' => :'name',
         :'status' => :'status',
         :'is_whitelist' => :'isWhitelist',
-        :'merchants' => :'merchants',
+        :'mcc' => :'mcc',
         :'start_date' => :'startDate'
       }
     end
@@ -68,7 +68,7 @@ module TreezorClient
         :'name' => :'String',
         :'status' => :'String',
         :'is_whitelist' => :'BOOLEAN',
-        :'merchants' => :'Array<String>',
+        :'mcc' => :'Array<Integer>',
         :'start_date' => :'String'
       }
     end
@@ -95,9 +95,9 @@ module TreezorClient
         self.is_whitelist = true
       end
 
-      if attributes.has_key?(:'merchants')
-        if (value = attributes[:'merchants']).is_a?(Array)
-          self.merchants = value
+      if attributes.has_key?(:'mcc')
+        if (value = attributes[:'mcc']).is_a?(Array)
+          self.mcc = value
         end
       end
 
@@ -114,8 +114,8 @@ module TreezorClient
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @merchants.nil?
-        invalid_properties.push('invalid value for "merchants", merchants cannot be nil.')
+      if @mcc.nil?
+        invalid_properties.push('invalid value for "mcc", mcc cannot be nil.')
       end
 
       invalid_properties
@@ -127,7 +127,7 @@ module TreezorClient
       return false if @name.nil?
       status_validator = EnumAttributeValidator.new('String', ['VALIDATED', 'PENDING', 'CANCELED'])
       return false unless status_validator.valid?(@status)
-      return false if @merchants.nil?
+      return false if @mcc.nil?
       true
     end
 
@@ -149,7 +149,7 @@ module TreezorClient
           name == o.name &&
           status == o.status &&
           is_whitelist == o.is_whitelist &&
-          merchants == o.merchants &&
+          mcc == o.mcc &&
           start_date == o.start_date
     end
 
@@ -162,7 +162,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, status, is_whitelist, merchants, start_date].hash
+      [name, status, is_whitelist, mcc, start_date].hash
     end
 
     # Builds the object from hash
