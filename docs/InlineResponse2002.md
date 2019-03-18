@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**balances** | [**Array&lt;Balance&gt;**](Balance.md) |  | [optional] 
+**beneficiaries** | [**Array&lt;Beneficiary&gt;**](Beneficiary.md) |  | [optional] 
 
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **delete_bankaccount**
-> InlineResponse2003 delete_bankaccount(id)
+> InlineResponse2001 delete_bankaccount(id)
 
 deactivate a bank account
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 
 # **get_bankaccount**
-> InlineResponse2003 get_bankaccount(id)
+> InlineResponse2001 get_bankaccount(id)
 
 get a bank account
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 
 # **get_bankaccounts**
-> InlineResponse2003 get_bankaccounts(opts)
+> InlineResponse2001 get_bankaccounts(opts)
 
 search bank accounts
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 
 # **post_bankaccount**
-> InlineResponse2003 post_bankaccount(user_id, bankaccount_owner_name, bankaccount_owner_address, bankaccount_iban, bankaccount_bic, bankaccount_type, opts)
+> InlineResponse2001 post_bankaccount(user_id, bankaccount_owner_name, bankaccount_owner_address, bankaccount_iban, bankaccount_bic, bankaccount_type, opts)
 
 create a bank account
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

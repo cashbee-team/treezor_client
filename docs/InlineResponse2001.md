@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**beneficiaries** | [**Array&lt;Beneficiary&gt;**](Beneficiary.md) |  | [optional] 
+**bankaccounts** | [**Array&lt;Bankaccount&gt;**](Bankaccount.md) |  | [optional] 
 
 

@@ -17,9 +17,6 @@ module TreezorClient
     # Custom data that could be used by caller to search the instance.
     attr_accessor :tag
 
-    # Beneficiary's userId
-    attr_accessor :user_id
-
     # Name choosen by end user to easily recognize the beneficiary.
     attr_accessor :nick_name
 
@@ -38,10 +35,10 @@ module TreezorClient
     # Beneficiary SEPA Creditor Identifier. Mandatory to validate incoming direct debit, useless other wise. Between 8 and 35 caracters. If sddB2bWhitelist or sddCoreBlacklist is provided then sepaCreditorIdentifier is mandatory.
     attr_accessor :sepa_creditor_identifier
 
-    # Each unique mandate reference, with its frequency type, must be explicitely allowed when doing B2B Direct Debit. Furthermore, a mandate not used during more than 36 months will be automatically rejected even if in the white list. If provided, sepaCreditorIdentifier is mandatory.
+    # Each unique mandate reference, with its frequency type, must be explicitely allowed when doing B2B Direct Debit. Furthermore, a mandate not used during more than 36 months will be automatically rejected even if in the white list.
     attr_accessor :sdd_b2b_whitelist
 
-    # Core Direct Debit are accepted by default. If a Core mandate is to be refused on reception, it has to be added to this list. If wild char * (star) is used instead of a UMR, all Direct Debit from this beneficiary will be refused. If provided, sepaCreditorIdentifier is mandatory.
+    # Core Direct Debit are accepted by default. If a Core mandate is to be refused on reception, it has to be added to this list. If wild char * (star) is used instead of a UMR, all Direct Debit from this beneficiary will be refused.
     attr_accessor :sdd_core_blacklist
 
     # Indicated if the beneficiary can be used for SEPA Credit Transfer. This field is a conveniant way to filter all beneficiaries for a user that would like to do a Credit Transfer. Indeed, beneficaries are created automatically when receiving a Core Direct Debit and therefor by looking at the list you won't be able to idnetify which beneficary to use on SCT.
@@ -54,7 +51,6 @@ module TreezorClient
     def self.attribute_map
       {
         :'tag' => :'tag',
-        :'user_id' => :'userId',
         :'nick_name' => :'nickName',
         :'name' => :'name',
         :'address' => :'address',
@@ -72,7 +68,6 @@ module TreezorClient
     def self.swagger_types
       {
         :'tag' => :'String',
-        :'user_id' => :'Integer',
         :'nick_name' => :'String',
         :'name' => :'String',
         :'address' => :'String',
@@ -96,10 +91,6 @@ module TreezorClient
 
       if attributes.has_key?(:'tag')
         self.tag = attributes[:'tag']
-      end
-
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
       end
 
       if attributes.has_key?(:'nickName')
@@ -155,22 +146,12 @@ module TreezorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user_id.nil?
-        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user_id.nil?
-      return false if @name.nil?
       true
     end
 
@@ -180,7 +161,6 @@ module TreezorClient
       return true if self.equal?(o)
       self.class == o.class &&
           tag == o.tag &&
-          user_id == o.user_id &&
           nick_name == o.nick_name &&
           name == o.name &&
           address == o.address &&
@@ -202,7 +182,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tag, user_id, nick_name, name, address, iban, bic, sepa_creditor_identifier, sdd_b2b_whitelist, sdd_core_blacklist, usable_for_sct, fields].hash
+      [tag, nick_name, name, address, iban, bic, sepa_creditor_identifier, sdd_b2b_whitelist, sdd_core_blacklist, usable_for_sct, fields].hash
     end
 
     # Builds the object from hash

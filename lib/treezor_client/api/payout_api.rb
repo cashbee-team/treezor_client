@@ -23,7 +23,7 @@ module TreezorClient
     # Change pay out status to CANCELED. A VALIDATED pay out can't be canceled.
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20020]
+    # @return [InlineResponse20019]
     def delete_payout(id, opts = {})
       data, _status_code, _headers = delete_payout_with_http_info(id, opts)
       data
@@ -33,7 +33,7 @@ module TreezorClient
     # Change pay out status to CANCELED. A VALIDATED pay out can&#39;t be canceled.
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
     def delete_payout_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.delete_payout ...'
@@ -67,7 +67,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#delete_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -77,7 +77,7 @@ module TreezorClient
     # Get a pay out from the system.
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20020]
+    # @return [InlineResponse20019]
     def get_payout(id, opts = {})
       data, _status_code, _headers = get_payout_with_http_info(id, opts)
       data
@@ -87,7 +87,7 @@ module TreezorClient
     # Get a pay out from the system.
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
     def get_payout_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.get_payout ...'
@@ -121,7 +121,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#get_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -158,7 +158,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [InlineResponse20020]
+    # @return [InlineResponse20019]
     def get_payouts(opts = {})
       data, _status_code, _headers = get_payouts_with_http_info(opts)
       data
@@ -195,7 +195,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
     def get_payouts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.get_payouts ...'
@@ -253,7 +253,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#get_payouts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -274,7 +274,7 @@ module TreezorClient
     # @option opts [Integer] :beneficiary_id Pay out beneficiary&#39;s id. Mandatory id bankaccountId is not provided. If bankaccountId and beneficiaryId are both provided, the beneficiaryId will be used.
     # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account (140 chars max).
     # @option opts [String] :supporting_file_link Support file link
-    # @return [InlineResponse20020]
+    # @return [InlineResponse20019]
     def post_payout(wallet_id, amount, currency, opts = {})
       data, _status_code, _headers = post_payout_with_http_info(wallet_id, amount, currency, opts)
       data
@@ -295,7 +295,7 @@ module TreezorClient
     # @option opts [Integer] :beneficiary_id Pay out beneficiary&#39;s id. Mandatory id bankaccountId is not provided. If bankaccountId and beneficiaryId are both provided, the beneficiaryId will be used.
     # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account (140 chars max).
     # @option opts [String] :supporting_file_link Support file link
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
     def post_payout_with_http_info(wallet_id, amount, currency, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.post_payout ...'
@@ -349,7 +349,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#post_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

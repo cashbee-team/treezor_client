@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **delete_payout**
-> InlineResponse20020 delete_payout(id)
+> InlineResponse20019 delete_payout(id)
 
 cancel a payout
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 
 # **get_payout**
-> InlineResponse20020 get_payout(id)
+> InlineResponse20019 get_payout(id)
 
 get a payout
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 
 # **get_payouts**
-> InlineResponse20020 get_payouts(opts)
+> InlineResponse20019 get_payouts(opts)
 
 search pay outs
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 
 # **post_payout**
-> InlineResponse20020 post_payout(wallet_id, amount, currency, opts)
+> InlineResponse20019 post_payout(wallet_id, amount, currency, opts)
 
 create a pay out
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 

@@ -14,70 +14,25 @@ require 'date'
 
 module TreezorClient
   class Body2
-    # Custom data that could be used by caller to search the instance.
-    attr_accessor :tag
+    # ID of the card
+    attr_accessor :card_id
 
-    # Name choosen by end user to easily recognize the beneficiary.
-    attr_accessor :nick_name
-
-    # Beneficiary name, linked to bank account.
-    attr_accessor :name
-
-    # Beneficiary address, linked to bank account.
-    attr_accessor :address
-
-    # Beneficiary International Bank Account Number. Mandatory if usableForSct is true.
-    attr_accessor :iban
-
-    # Beneficiary Bank Identifier Code. Mandatory if usableForSct is true.
-    attr_accessor :bic
-
-    # Beneficiary SEPA Creditor Identifier. Mandatory to validate incoming direct debit, useless other wise. Between 8 and 35 caracters. If sddB2bWhitelist or sddCoreBlacklist is provided then sepaCreditorIdentifier is mandatory.
-    attr_accessor :sepa_creditor_identifier
-
-    # Each unique mandate reference, with its frequency type, must be explicitely allowed when doing B2B Direct Debit. Furthermore, a mandate not used during more than 36 months will be automatically rejected even if in the white list.
-    attr_accessor :sdd_b2b_whitelist
-
-    # Core Direct Debit are accepted by default. If a Core mandate is to be refused on reception, it has to be added to this list. If wild char * (star) is used instead of a UMR, all Direct Debit from this beneficiary will be refused.
-    attr_accessor :sdd_core_blacklist
-
-    # Indicated if the beneficiary can be used for SEPA Credit Transfer. This field is a conveniant way to filter all beneficiaries for a user that would like to do a Credit Transfer. Indeed, beneficaries are created automatically when receiving a Core Direct Debit and therefor by looking at the list you won't be able to idnetify which beneficary to use on SCT.
-    attr_accessor :usable_for_sct
-
-    # List of the object's properties you want to pick up.
-    attr_accessor :fields
+    # Amout you want to add
+    attr_accessor :amount
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'tag' => :'tag',
-        :'nick_name' => :'nickName',
-        :'name' => :'name',
-        :'address' => :'address',
-        :'iban' => :'iban',
-        :'bic' => :'bic',
-        :'sepa_creditor_identifier' => :'sepaCreditorIdentifier',
-        :'sdd_b2b_whitelist' => :'sddB2bWhitelist',
-        :'sdd_core_blacklist' => :'sddCoreBlacklist',
-        :'usable_for_sct' => :'usableForSct',
-        :'fields' => :'fields'
+        :'card_id' => :'cardId',
+        :'amount' => :'amount'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'tag' => :'String',
-        :'nick_name' => :'String',
-        :'name' => :'String',
-        :'address' => :'String',
-        :'iban' => :'String',
-        :'bic' => :'String',
-        :'sepa_creditor_identifier' => :'String',
-        :'sdd_b2b_whitelist' => :'Array<BeneficiariesSddB2bWhitelist>',
-        :'sdd_core_blacklist' => :'Array<String>',
-        :'usable_for_sct' => :'BOOLEAN',
-        :'fields' => :'Array<String>'
+        :'card_id' => :'Integer',
+        :'amount' => :'Float'
       }
     end
 
@@ -89,56 +44,12 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'tag')
-        self.tag = attributes[:'tag']
+      if attributes.has_key?(:'cardId')
+        self.card_id = attributes[:'cardId']
       end
 
-      if attributes.has_key?(:'nickName')
-        self.nick_name = attributes[:'nickName']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'iban')
-        self.iban = attributes[:'iban']
-      end
-
-      if attributes.has_key?(:'bic')
-        self.bic = attributes[:'bic']
-      end
-
-      if attributes.has_key?(:'sepaCreditorIdentifier')
-        self.sepa_creditor_identifier = attributes[:'sepaCreditorIdentifier']
-      end
-
-      if attributes.has_key?(:'sddB2bWhitelist')
-        if (value = attributes[:'sddB2bWhitelist']).is_a?(Array)
-          self.sdd_b2b_whitelist = value
-        end
-      end
-
-      if attributes.has_key?(:'sddCoreBlacklist')
-        if (value = attributes[:'sddCoreBlacklist']).is_a?(Array)
-          self.sdd_core_blacklist = value
-        end
-      end
-
-      if attributes.has_key?(:'usableForSct')
-        self.usable_for_sct = attributes[:'usableForSct']
-      else
-        self.usable_for_sct = false
-      end
-
-      if attributes.has_key?(:'fields')
-        if (value = attributes[:'fields']).is_a?(Array)
-          self.fields = value
-        end
+      if attributes.has_key?(:'amount')
+        self.amount = attributes[:'amount']
       end
     end
 
@@ -146,12 +57,22 @@ module TreezorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @card_id.nil?
+        invalid_properties.push('invalid value for "card_id", card_id cannot be nil.')
+      end
+
+      if @amount.nil?
+        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @card_id.nil?
+      return false if @amount.nil?
       true
     end
 
@@ -160,17 +81,8 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          tag == o.tag &&
-          nick_name == o.nick_name &&
-          name == o.name &&
-          address == o.address &&
-          iban == o.iban &&
-          bic == o.bic &&
-          sepa_creditor_identifier == o.sepa_creditor_identifier &&
-          sdd_b2b_whitelist == o.sdd_b2b_whitelist &&
-          sdd_core_blacklist == o.sdd_core_blacklist &&
-          usable_for_sct == o.usable_for_sct &&
-          fields == o.fields
+          card_id == o.card_id &&
+          amount == o.amount
     end
 
     # @see the `==` method
@@ -182,7 +94,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tag, nick_name, name, address, iban, bic, sepa_creditor_identifier, sdd_b2b_whitelist, sdd_core_blacklist, usable_for_sct, fields].hash
+      [card_id, amount].hash
     end
 
     # Builds the object from hash

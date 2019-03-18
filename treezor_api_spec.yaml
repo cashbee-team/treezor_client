@@ -1,4 +1,3 @@
-
 swagger: '2.0'
 info:
   description: |
@@ -18,13 +17,14 @@ schemes:
   - https
   - http
 paths:
-  /issuerInitiatedDigitizationDatas:
-    post:
+
+  /balances:
+    get:
       tags:
-        - issuerInitiatedDigitizationData
-      summary: Request the issuerInitiatedDigitizationData
-      description: Create a new issuerInitiatedDigitizationData request
-      operationId: tavRequestPOST
+        - balance
+      summary: search balances
+      description: Get balances that match search criteria.
+      operationId: getBalances
       consumes:
         - application/json
       produces:
@@ -35,70 +35,156 @@ paths:
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
-            [here](https://www.treezor.com/security-authentication).
+            [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
         - name: accessTag
           in: query
           description: |
             Access tag is used for idem potency query. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: accessUserId
           in: query
           description: |
             Access user's id is used for user's action restriction. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: integer
         - name: accessUserIp
           in: query
           description: |
             Access user's ip is used for user's action restriction. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: string
-        - in: body
-          name: body
-          schema:
-            required:
-              - cardId
-              - tokenRequestor
-            properties:
-              cardId:
-                description: The id of the card on which to create an issuerInitiatedDigitizationData request
-                type: integer
-              tokenRequestor:
-                description: The Token Requestor also named wallet provider.
-                type: string
-                enum: ["APPLE", "SAMSUNG", "GOOGLE"]
-              additionnalData:
-                type: object
-                description: This parameter is required in the case of APPLE tokenRequestor
-                properties:
-                  certificates:
-                    type: array
-                    description: The certificate chain. Required when tokenRequestor is APPLE. The first element of array is the leaf certificate and the last should be the root certificate. There can be 0 or several sub certificates inbetween the first element of array and the last. All certificates are of type string (base64 encoded of DER format)
-                    items:
-                      type: string
-                  nonce:
-                    type: string
-                    description: The nonce as provided by the Apple SDK. Required when tokenRequestor is APPLE
-                  nonceSignature:
-                    type: string
-                    format: byte
-                    description: The nonce signature as provided by the Apple SDK. Required when tokenRequestor is APPLE
+        - name: walletId
+          in: query
+          description: Wallet's ID of wanted balance
+          required: false
+          type: integer
+        - name: userId
+          in: query
+          description: Wallet's user id of wanted balanced
+          required: false
+          type: integer
       responses:
         '200':
           description: OK
           schema:
             type: object
             properties:
-              tavs:
+              balances:
                 type: array
                 items:
-                  $ref: '#/definitions/Tav'
+                  $ref: '#/definitions/Balance'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  /bankaccounts:
+    post:
+      tags:
+        - bankaccount
+      summary: create a bank account
+      description: Create a new benefeciary bank account in the system.
+      operationId: postBankaccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: bankaccountTag
+          in: query
+          description: Custom data.
+          required: false
+          type: string
+        - name: userId
+          in: query
+          description: Owner user's id.
+          required: true
+          type: integer
+        - name: name
+          in: query
+          description: Bank account's name.
+          required: false
+          type: string
+        - name: bankaccountOwnerName
+          in: query
+          description: Bank account owner's name.
+          required: true
+          type: string
+        - name: bankaccountOwnerAddress
+          in: query
+          description: Bank account owner's address.
+          required: true
+          type: string
+        - name: bankaccountIBAN
+          in: query
+          description: Beneficiary bank account's IBAN.
+          required: true
+          type: string
+        - name: bankaccountBIC
+          in: query
+          description: Beneficiary bank account's BIC (or SWIFT).
+          required: true
+          type: string
+        - name: bankaccountType
+          in: query
+          description: Beneficiary bank account's type.
+          required: true
+          type: string
+          enum: ["sct", "sdd_core", "sdd_b2b"]
+
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/Bankaccount'
         '405':
           description: Invalid input
         default:
@@ -114,10 +200,10 @@ paths:
         - api_key: []
     get:
       tags:
-        - issuerInitiatedDigitizationData
-      summary: Search issuerInitiatedDigitizationData requests
-      description: Search tav issuerInitiatedDigitizationData requests that match search criteria.
-      operationId: tavrequestget
+        - bankaccount
+      summary: search bank accounts
+      description: Get bank accounts that match search criteria.
+      operationId: getBankaccounts
       consumes:
         - application/json
       produces:
@@ -128,88 +214,66 @@ paths:
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
-            [here](https://www.treezor.com/security-authentication).
+            [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
         - name: accessTag
           in: query
           description: |
             Access tag is used for idem potency query. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: string
         - name: accessUserId
           in: query
           description: |
             Access user's id is used for user's action restriction. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: integer
         - name: accessUserIp
           in: query
           description: |
             Access user's ip is used for user's action restriction. More info
-            [here](https://www.treezor.com/basics).
+            [here](https://agent.treezor.com/basics).
           required: false
           type: string
-        - name: fields
+        - name: bankaccountId
           in: query
-          description: List of the object's properties you want to pick up.
+          description: bank account id.
           required: false
-          type: array
-          items:
-            type: string
-        - name: filter
+          type: integer
+        - name: bankaccountStatus
           in: query
-          description: >
-            You can filter the API response by using filter(s).
-
-            Filterable fields are :
-             - id
-             - cardId
-             - tokenRequestor
-             - statusId
-             - createdDate
-             - modifiedDate
-
-            Filters should be separated by a ";". Example for 3 filters : FILTER1;FILTER2;FILTER3.
-
-            A single filter has the following syntax : "fieldName criterion expression".
-
-            Where :
-             - fieldName : the name of a filterable field of this object.
-
-             - expression : the values to be included or excluded (see the table below for more information)
-
-             - criterion : a filter criterion.
-
-            Here are the possible values for criterion :
-
-             | Criteria |         Description    |                   Type                   | Expression Example |
-             |----------|------------------------|------------------------------------------|--------------------|
-             |     >    |      greater than      |            alphanumeric string           |         100        |
-             |    >=    | greater or equal than  |            alphanumeric string           |         100        |
-             |     <    |        less than       |            alphanumeric string           |         100        |
-             |    <=    |   less or equal than   |            alphanumeric string           |         100        |
-             |    !=    |      not equal to      |            alphanumeric string           |         100        |
-             |   like   |          like          |            alphanumeric string           |         100        |
-             |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |
-             |    ==    |         equals         |            alphanumeric string           |         100        |
-
+          description: |
+            bank account status. Possible values:
+            * CANCELED
+            * PENDING
+            * VALIDATED
+          required: false
+          type: string
+        - name: userId
+          in: query
+          description: Bank account owner user's id
+          required: false
+          type: integer
+        - name: bankaccountIBAN
+          in: query
+          description: Bank account IBAN
           required: false
           type: string
         - name: pageNumber
           in: query
           description: |
             Pagination page number. More info
-            [here](https://www.treezor.com/lists).
+            [here](https://agent.treezor.com/lists).
           required: false
           type: integer
         - name: pageCount
           in: query
           description: |
             The number of items per page. More info
-            [here](https://www.treezor.com/lists).
+            [here](https://agent.treezor.com/lists).
           required: false
           type: integer
         - name: sortBy
@@ -217,7 +281,7 @@ paths:
           description: |
             The transaction element you want to sort the list with. Default
             value : _createdDate_. More info
-            [here](https://www.treezor.com/lists).
+            [here](https://agent.treezor.com/lists).
           required: false
           type: string
         - name: sortOrder
@@ -228,19 +292,136 @@ paths:
             * **ASC** for a ascending sort.
 
             Default value : DESC.
-            More info [here](https://www.treezor.com/lists).
+            More info [here](https://agent.treezor.com/lists).
           required: false
           type: string
+        - name: createdDateFrom
+          in: query
+          description: |
+            The creation date from which you want to filter the request result.
+            Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: createdDateTo
+          in: query
+          description: |
+            The creation date up to which you want to filter the request result.
+            Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: updatedDateFrom
+          in: query
+          description: |
+            The modification date from which you want to filter the request
+            result. Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: updatedDateTo
+          in: query
+          description: |
+            The modification date up to which you want to filter the request
+            result. Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
       responses:
         '200':
           description: OK
           schema:
             type: object
             properties:
-              tavs:
+              bankaccounts:
                 type: array
                 items:
-                  $ref: '#/definitions/Tav'
+                  $ref: '#/definitions/Bankaccount'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  '/bankaccounts/{id}':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: Bank Accounts internal id.
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - bankaccount
+      summary: get a bank account
+      description: Get a bank account from the system.
+      operationId: getBankaccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/Bankaccount'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    delete:
+      parameters:
+        - name: id
+          in: path
+          description: Bank Accounts internal id.
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - bankaccount
+      summary: deactivate a bank account
+      description: Change bank account's status to CANCELED. If a payout is being validated on this bank account, it can not be canceled.
+      operationId: deleteBankaccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/Bankaccount'
         '405':
           description: Invalid input
         default:
@@ -720,480 +901,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/Beneficiary'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  /heartbeats:
-    get:
-      tags:
-        - heartbeat
-      summary: Get the status of the API
-      description: Get Heartbeat of Treezor API
-      operationId: getHeartbeat
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-      responses:
-        '200':
-          description: OK
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  /balances:
-    get:
-      tags:
-        - balance
-      summary: search balances
-      description: Get balances that match search criteria.
-      operationId: getBalances
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: walletId
-          in: query
-          description: Wallet's ID of wanted balance
-          required: false
-          type: integer
-        - name: userId
-          in: query
-          description: Wallet's user id of wanted balanced
-          required: false
-          type: integer
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              balances:
-                type: array
-                items:
-                  $ref: '#/definitions/Balance'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  /bankaccounts:
-    post:
-      tags:
-        - bankaccount
-      summary: create a bank account
-      description: Create a new benefeciary bank account in the system.
-      operationId: postBankaccount
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: bankaccountTag
-          in: query
-          description: Custom data.
-          required: false
-          type: string
-        - name: userId
-          in: query
-          description: Owner user's id.
-          required: true
-          type: integer
-        - name: name
-          in: query
-          description: Bank account's name.
-          required: false
-          type: string
-        - name: bankaccountOwnerName
-          in: query
-          description: Bank account owner's name.
-          required: true
-          type: string
-        - name: bankaccountOwnerAddress
-          in: query
-          description: Bank account owner's address.
-          required: true
-          type: string
-        - name: bankaccountIBAN
-          in: query
-          description: Beneficiary bank account's IBAN.
-          required: true
-          type: string
-        - name: bankaccountBIC
-          in: query
-          description: Beneficiary bank account's BIC (or SWIFT).
-          required: true
-          type: string
-        - name: bankaccountType
-          in: query
-          description: Beneficiary bank account's type.
-          required: true
-          type: string
-          enum: ["sct", "sdd_core", "sdd_b2b"]
-
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/Bankaccount'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    get:
-      tags:
-        - bankaccount
-      summary: search bank accounts
-      description: Get bank accounts that match search criteria.
-      operationId: getBankaccounts
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: bankaccountId
-          in: query
-          description: bank account id.
-          required: false
-          type: integer
-        - name: bankaccountStatus
-          in: query
-          description: |
-            bank account status. Possible values:
-            * CANCELED
-            * PENDING
-            * VALIDATED
-          required: false
-          type: string
-        - name: userId
-          in: query
-          description: Bank account owner user's id
-          required: false
-          type: integer
-        - name: bankaccountIBAN
-          in: query
-          description: Bank account IBAN
-          required: false
-          type: string
-        - name: pageNumber
-          in: query
-          description: |
-            Pagination page number. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: pageCount
-          in: query
-          description: |
-            The number of items per page. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: sortBy
-          in: query
-          description: |
-            The transaction element you want to sort the list with. Default
-            value : _createdDate_. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-        - name: sortOrder
-          in: query
-          description: |
-            The order you want to sort the list.
-            * **DESC** for a descending sort
-            * **ASC** for a ascending sort.
-
-            Default value : DESC.
-            More info [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-        - name: createdDateFrom
-          in: query
-          description: |
-            The creation date from which you want to filter the request result.
-            Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: createdDateTo
-          in: query
-          description: |
-            The creation date up to which you want to filter the request result.
-            Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: updatedDateFrom
-          in: query
-          description: |
-            The modification date from which you want to filter the request
-            result. Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: updatedDateTo
-          in: query
-          description: |
-            The modification date up to which you want to filter the request
-            result. Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/Bankaccount'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  '/bankaccounts/{id}':
-    get:
-      parameters:
-        - name: id
-          in: path
-          description: Bank Accounts internal id.
-          required: true
-          type: integer
-          format: int64
-      tags:
-        - bankaccount
-      summary: get a bank account
-      description: Get a bank account from the system.
-      operationId: getBankaccount
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/Bankaccount'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    delete:
-      parameters:
-        - name: id
-          in: path
-          description: Bank Accounts internal id.
-          required: true
-          type: integer
-          format: int64
-      tags:
-        - bankaccount
-      summary: deactivate a bank account
-      description: Change bank account's status to CANCELED. If a payout is being validated on this bank account, it can not be canceled.
-      operationId: deleteBankaccount
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/Bankaccount'
         '405':
           description: Invalid input
         default:
@@ -2722,7 +2429,7 @@ paths:
   /cards/Register3DS:
     post:
       summary: Register 3D secure
-      description: Register a card to 3D secure service.
+      description: Register a card to 3D secure service. The user's mobile number must begin by "+", or "00", and the country dialing code.
       parameters:
         - name: accessSignature
           in: query
@@ -3844,7 +3551,7 @@ paths:
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
-            [here](https://www.treezor.com/security-authentication).
+            [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
         - name: accessTag
@@ -3918,7 +3625,7 @@ paths:
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
-            [here](https://www.treezor.com/security-authentication).
+            [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
         - name: accessTag
@@ -3948,8 +3655,8 @@ paths:
           required: true
           type: integer
           format: int64
-        - name: body
-          in: body
+        - in: body
+          name: body
           schema:
             required:
               - cardId
@@ -4001,7 +3708,7 @@ paths:
           description: |
             Access signature can be mandatory for specific context. Treezor will
             contact you if so. More info
-            [here](https://www.treezor.com/security-authentication).
+            [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
         - name: accessTag
@@ -4031,8 +3738,8 @@ paths:
           required: true
           type: integer
           format: int64
-        - name: body
-          in: body
+        - in: body
+          name: body
           schema:
             required:
               - cardId
@@ -4535,6 +4242,437 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
+  /countryRestrictionGroups:
+    post:
+      tags:
+        - countryRestrictionGroups
+      summary: create a countryRestrictionGroup
+      description: Create a new country restriction group in the system.
+      operationId: postCountryRestrictionGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: fields
+          in: query
+          description: List of the object's properties you want to pick up.
+          required: false
+          type: array
+          items:
+            type: string
+        - in: body
+          name: body
+          schema:
+            required:
+              - name
+              - countries
+            properties:
+              name:
+                description: Name of the country restriction group
+                type: string
+              status:
+                description: Status of the country group
+                type: string
+                enum: ["VALIDATED", "PENDING", "CANCELED"]
+              isWhitelist:
+                description: determines whether it will be a black or a white list
+                type: boolean
+                default: true
+              countries:
+                description: Array of countries
+                type: array
+                items:
+                  type: integer
+              startDate:
+                description: The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+                type: string
+                format: datetime
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/CountryRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    get:
+      tags:
+        - countryRestrictionGroups
+      summary: search country restriction groups
+      description: Get country restriction groups that match search criteria.
+      operationId: getCountryRestrictionGroups
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: fields
+          in: query
+          description: List of the object's properties you want to pick up.
+          required: false
+          type: array
+          items:
+            type: string
+        - name: filter
+          in: query
+          description: >
+            You can filter the API response by using filter(s).
+
+            Filterable fields are :
+              - id
+              - name
+              - isWhitelist
+              - status
+              - startDate
+              - createdDate
+
+              Filters should be separated by a ";". Example for 3 filters : FILTER1;FILTER2;FILTER3.
+
+              A single filter has the following syntax : "fieldName criterion expression".
+
+              Where :
+                - fieldName : the name of a filterable field of this object.
+
+                - expression : the values to be included or excluded (see the table below for more information)
+
+                - criterion : a filter criterion.
+
+              Here are the possible values for criterion :
+              | Criteria |         Description    |                   Type                   | Expression Example |
+              |----------|------------------------|------------------------------------------|--------------------|
+              |     >    |      greater than      |            alphanumeric string           |         100        |
+              |    >=    | greater or equal than  |            alphanumeric string           |         100        |
+              |     <    |        less than       |            alphanumeric string           |         100        |
+              |    <=    |   less or equal than   |            alphanumeric string           |         100        |
+              |    !=    |      not equal to      |            alphanumeric string           |         100        |
+              |   like   |          like          |            alphanumeric string           |         100        |
+              |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |
+              |    ==    |         equals         |            alphanumeric string           |         100        |
+
+          required: false
+          type: string
+        - name: pageNumber
+          in: query
+          description: |
+            Pagination page number. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: pageCount
+          in: query
+          description: |
+            The number of items per page. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: sortBy
+          in: query
+          description: |
+            The transaction element you want to sort the list with. Default
+            value : _createdDate_. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+        - name: sortOrder
+          in: query
+          description: |
+            The order you want to sort the list.
+            * **DESC** for a descending sort
+            * **ASC** for a ascending sort.
+
+            Default value : DESC.
+            More info [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/CountryRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  '/countryRestrictionGroups/{id}':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: country restriction Group internal id.
+          required: true
+          type: integer
+          format: int64
+        - name: fields
+          in: query
+          description: List of the object's properties you want to pick up.
+          required: false
+          type: array
+          items:
+            type: string
+      tags:
+        - countryRestrictionGroups
+      summary: get a country group
+      description: Get a country group from the system.
+      operationId: getCountryRestrictionGroupsId
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/CountryRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    put:
+      tags:
+        - countryRestrictionGroups
+      summary: edit a country restriction group
+      description: Edit a country restriction group in the system.
+      operationId: putCountryRestrictionGroups
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: country group's id.
+          required: true
+          type: integer
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - in: body
+          name: body
+          schema:
+            properties:
+              name:
+                description: Name of the country restriction group
+                type: string
+              status:
+                description: Status of the country group
+                type: string
+                enum: ["VALIDATED", "PENDING", "CANCELED"]
+              isWhitelist:
+                description: determines whether it will be a black or a white list
+                type: boolean
+                default: true
+              countries:
+                description: Array of countries
+                type: array
+                items:
+                  type: integer
+              startDate:
+                description: The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
+                type: string
+                format: datetime
+              fields:
+                description: List of the object's properties you want to pick up.
+                type: array
+                items:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/CountryRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    delete:
+      parameters:
+        - name: id
+          in: path
+          description: country restriction Group internal id.
+          required: true
+          type: integer
+          format: int64
+        - name: fields
+          in: query
+          description: List of the object's properties you want to pick up.
+          required: false
+          type: array
+          items:
+            type: string
+      tags:
+        - countryRestrictionGroups
+      summary: cancel a country group
+      description: Cancel a country restriction group from the system.
+      operationId: deleteCountryRestrictionGroups
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              bankaccounts:
+                type: array
+                items:
+                  $ref: '#/definitions/CountryRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
   /documents:
     post:
       tags:
@@ -4975,6 +5113,299 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
+  /heartbeats:
+    get:
+      tags:
+        - heartbeat
+      summary: Get the status of the API
+      description: Get Heartbeat of Treezor API
+      operationId: getHeartbeat
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  /issuerInitiatedDigitizationDatas:
+    post:
+      tags:
+        - issuerInitiatedDigitizationData
+      summary: Request the issuerInitiatedDigitizationData
+      description: Create a new issuerInitiatedDigitizationData request
+      operationId: tavRequestPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://www.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://www.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://www.treezor.com/basics).
+          required: false
+          type: string
+        - in: body
+          name: body
+          schema:
+            required:
+              - cardId
+              - tokenRequestor
+            properties:
+              cardId:
+                description: The id of the card on which to create an issuerInitiatedDigitizationData request
+                type: integer
+              tokenRequestor:
+                description: The Token Requestor also named wallet provider.
+                type: string
+                enum: ["APPLE", "SAMSUNG", "GOOGLE"]
+              additionnalData:
+                type: object
+                description: This parameter is required in the case of APPLE tokenRequestor
+                properties:
+                  certificates:
+                    type: array
+                    description: The certificate chain. Required when tokenRequestor is APPLE. The first element of array is the leaf certificate and the last should be the root certificate. There can be 0 or several sub certificates inbetween the first element of array and the last. All certificates are of type string (base64 encoded of DER format)
+                    items:
+                      type: string
+                  nonce:
+                    type: string
+                    description: The nonce as provided by the Apple SDK. Required when tokenRequestor is APPLE
+                  nonceSignature:
+                    type: string
+                    format: byte
+                    description: The nonce signature as provided by the Apple SDK. Required when tokenRequestor is APPLE
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              issuerInitiatedDigitizationDatas:
+                type: array
+                items:
+                  $ref: '#/definitions/IssuerInitiatedDigitizationData'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    get:
+      tags:
+        - issuerInitiatedDigitizationData
+      summary: Search issuerInitiatedDigitizationData requests
+      description: Search tav issuerInitiatedDigitizationData requests that match search criteria.
+      operationId: tavrequestget
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: fields
+          in: query
+          description: List of the object's properties you want to pick up.
+          required: false
+          type: array
+          items:
+            type: string
+        - name: filter
+          in: query
+          description: >
+            You can filter the API response by using filter(s).
+
+            Filterable fields are :
+             - id
+             - cardId
+             - tokenRequestor
+             - statusId
+             - createdDate
+             - modifiedDate
+
+            Filters should be separated by a ";". Example for 3 filters : FILTER1;FILTER2;FILTER3.
+
+            A single filter has the following syntax : "fieldName criterion expression".
+
+            Where :
+             - fieldName : the name of a filterable field of this object.
+
+             - expression : the values to be included or excluded (see the table below for more information)
+
+             - criterion : a filter criterion.
+
+            Here are the possible values for criterion :
+
+             | Criteria |         Description    |                   Type                   | Expression Example |
+             |----------|------------------------|------------------------------------------|--------------------|
+             |     >    |      greater than      |            alphanumeric string           |         100        |
+             |    >=    | greater or equal than  |            alphanumeric string           |         100        |
+             |     <    |        less than       |            alphanumeric string           |         100        |
+             |    <=    |   less or equal than   |            alphanumeric string           |         100        |
+             |    !=    |      not equal to      |            alphanumeric string           |         100        |
+             |   like   |          like          |            alphanumeric string           |         100        |
+             |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |
+             |    ==    |         equals         |            alphanumeric string           |         100        |
+
+          required: false
+          type: string
+        - name: pageNumber
+          in: query
+          description: |
+            Pagination page number. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: pageCount
+          in: query
+          description: |
+            The number of items per page. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: sortBy
+          in: query
+          description: |
+            The transaction element you want to sort the list with. Default
+            value : _createdDate_. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+        - name: sortOrder
+          in: query
+          description: |
+            The order you want to sort the list.
+            * **DESC** for a descending sort
+            * **ASC** for a ascending sort.
+
+            Default value : DESC.
+            More info [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              issuerInitiatedDigitizationDatas:
+                type: array
+                items:
+                  $ref: '#/definitions/IssuerInitiatedDigitizationData'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
   /mandates:
     post:
       tags:
@@ -5098,6 +5529,11 @@ paths:
           required: false
           type: string
           format: YYYY-MM-DD
+        - name: userIdUltimateCreditor
+          in: query
+          description: For SDDE Core third party credior mode
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -6343,437 +6779,7 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
-  /countryRestrictionGroups:
-    post:
-      tags:
-        - countryRestrictionGroups
-      summary: create a countryRestrictionGroup
-      description: Create a new country restriction group in the system.
-      operationId: postCountryRestrictionGroup
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: fields
-          in: query
-          description: List of the object's properties you want to pick up.
-          required: false
-          type: array
-          items:
-            type: string
-        - in: body
-          name: body
-          schema:
-            required:
-              - name
-              - countries
-            properties:
-              name:
-                description: Name of the country restriction group
-                type: string
-              status:
-                description: Status of the country group
-                type: string
-                enum: ["VALIDATED", "PENDING", "CANCELED"]
-              isWhitelist:
-                description: determines whether it will be a black or a white list
-                type: boolean
-                default: true
-              countries:
-                description: Array of countries
-                type: array
-                items:
-                  type: integer
-              startDate:
-                description: The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
-                type: string
-                format: datetime
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/CountryRestrictionGroup'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    get:
-      tags:
-        - countryRestrictionGroups
-      summary: search country restriction groups
-      description: Get country restriction groups that match search criteria.
-      operationId: getCountryRestrictionGroups
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: fields
-          in: query
-          description: List of the object's properties you want to pick up.
-          required: false
-          type: array
-          items:
-            type: string
-        - name: filter
-          in: query
-          description: >
-            You can filter the API response by using filter(s).
 
-            Filterable fields are :
-              - id
-              - name
-              - isWhitelist
-              - status
-              - startDate
-              - createdDate
-
-              Filters should be separated by a ";". Example for 3 filters : FILTER1;FILTER2;FILTER3.
-
-              A single filter has the following syntax : "fieldName criterion expression".
-
-              Where :
-                - fieldName : the name of a filterable field of this object.
-
-                - expression : the values to be included or excluded (see the table below for more information)
-
-                - criterion : a filter criterion.
-
-              Here are the possible values for criterion :
-              | Criteria |         Description    |                   Type                   | Expression Example |
-              |----------|------------------------|------------------------------------------|--------------------|
-              |     >    |      greater than      |            alphanumeric string           |         100        |
-              |    >=    | greater or equal than  |            alphanumeric string           |         100        |
-              |     <    |        less than       |            alphanumeric string           |         100        |
-              |    <=    |   less or equal than   |            alphanumeric string           |         100        |
-              |    !=    |      not equal to      |            alphanumeric string           |         100        |
-              |   like   |          like          |            alphanumeric string           |         100        |
-              |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |
-              |    ==    |         equals         |            alphanumeric string           |         100        |
-
-          required: false
-          type: string
-        - name: pageNumber
-          in: query
-          description: |
-            Pagination page number. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: pageCount
-          in: query
-          description: |
-            The number of items per page. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: sortBy
-          in: query
-          description: |
-            The transaction element you want to sort the list with. Default
-            value : _createdDate_. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-        - name: sortOrder
-          in: query
-          description: |
-            The order you want to sort the list.
-            * **DESC** for a descending sort
-            * **ASC** for a ascending sort.
-
-            Default value : DESC.
-            More info [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/CountryRestrictionGroup'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  '/countryRestrictionGroups/{id}':
-    get:
-      parameters:
-        - name: id
-          in: path
-          description: country restriction Group internal id.
-          required: true
-          type: integer
-          format: int64
-        - name: fields
-          in: query
-          description: List of the object's properties you want to pick up.
-          required: false
-          type: array
-          items:
-            type: string
-      tags:
-        - countryRestrictionGroups
-      summary: get a country group
-      description: Get a country group from the system.
-      operationId: getCountryRestrictionGroupsId
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/CountryRestrictionGroup'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    put:
-      tags:
-        - countryRestrictionGroups
-      summary: edit a country restriction group
-      description: Edit a country restriction group in the system.
-      operationId: putCountryRestrictionGroups
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: id
-          in: path
-          description: country group's id.
-          required: true
-          type: integer
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - in: body
-          name: body
-          schema:
-            properties:
-              name:
-                description: Name of the country restriction group
-                type: string
-              status:
-                description: Status of the country group
-                type: string
-                enum: ["VALIDATED", "PENDING", "CANCELED"]
-              isWhitelist:
-                description: determines whether it will be a black or a white list
-                type: boolean
-                default: true
-              countries:
-                description: Array of countries
-                type: array
-                items:
-                  type: integer
-              startDate:
-                description: The date at which the country restriction group will be take into account. Format YYYY-MM-DD HH:MM:SS
-                type: string
-                format: datetime
-              fields:
-                description: List of the object's properties you want to pick up.
-                type: array
-                items:
-                  type: string
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/CountryRestrictionGroup'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    delete:
-      parameters:
-        - name: id
-          in: path
-          description: country restriction Group internal id.
-          required: true
-          type: integer
-          format: int64
-        - name: fields
-          in: query
-          description: List of the object's properties you want to pick up.
-          required: false
-          type: array
-          items:
-            type: string
-      tags:
-        - countryRestrictionGroups
-      summary: cancel a country group
-      description: Cancel a country restriction group from the system.
-      operationId: deleteCountryRestrictionGroups
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              bankaccounts:
-                type: array
-                items:
-                  $ref: '#/definitions/CountryRestrictionGroup'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
   /payins:
     post:
       tags:
@@ -7132,434 +7138,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/Payin'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  /virtualibans:
-    post:
-      tags:
-        - virtualibans
-      summary: create a virtual IBAN
-      description: Create a new virtual IBAN in in the system.
-      operationId: postVirtualIban
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: walletId
-          in: query
-          description: The Id Of the Wallet. The Wallet must be in validated status. The wallet must be of type "payment" or "electronic money"
-          required: true
-          type: integer
-        - name: typeId
-          in: query
-          description: |
-            | Type Id | Virtual IBAN Type|
-            | ---| --- |
-            | 1 | DEBIT |
-            | 2 | CREDIT |
-          required: true
-          type: integer
-        - name: tag
-          in: query
-          description: A tag generated by the client
-          required: false
-          type: integer
-        - name: reference
-          in: query
-          description: The client's internal reference of the vitual IBAN. Less than 255 characters.
-          required: false
-          type: string
-        - name: validFrom
-          in: query
-          description: The beginning date of validity. The beginning date must not be less than today's date.
-          required: false
-          type: string
-          format: date
-        - name: validTo
-          in: query
-          description: The limit date of validity. Cannot be less or equal to the validFrom date.
-          required: false
-          type: string
-          format: date
-        - name: maxUsage
-          in: query
-          description: The maximum number of usage authorized. If you want to set no maximum usage limitation you can omit the parameter or set it to null. If you want to limit usage please send an integer in that field. This integer cannot be less than 1.
-          required: false
-          type: integer
-        - name: maxAmount
-          in: query
-          description: The maximum amount authorized.If you want to set no maximum usage amount limitation you can omit the parameter or set it to null. If you want to limit the amount please send a DECIMAL (with a point as separator) in that field. This decimal cannot be less than 0.00.
-          required: false
-          type: number
-          format: float
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              virtualibans:
-                type: array
-                items:
-                  $ref: '#/definitions/Virtualiban'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    get:
-      tags:
-        - virtualibans
-      summary: search virtualibans
-      description: Get virtualiban that match search criteria.
-      operationId: getvirtualibans
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIP
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: virtualIbanId
-          in: query
-          description: VirtualIban's id.
-          required: false
-          type: integer
-        - name: walletId
-          in: query
-          description: VirtualIban's wallet id.
-          required: false
-          type: integer
-        - name: typeId
-          in: query
-          description: VirtualIban's type id.
-          required: false
-          type: integer
-        - name: tag
-          in: query
-          description: A tag generated by the client
-          required: false
-          type: integer
-        - name: reference
-          in: query
-          description: The client's internal reference of the vitual IBAN.
-          required: false
-          type: string
-        - name: validFrom
-          in: query
-          description: The beginning date of validity.
-          required: true
-          type: string
-          format: date
-        - name: validTo
-          in: query
-          description: The limit date of validity.
-          required: false
-          type: string
-          format: date
-        - name: maxUsage
-          in: query
-          description: The maximum number of usage authorized.
-          required: false
-          type: string
-        - name: maxAmount
-          in: query
-          description: The maximum amount authorized.
-          required: false
-          type: number
-          format: float
-        - name: createdDateFrom
-          in: query
-          description: |
-            The creation date from which you want to filter the request result.
-            Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: createdDateTo
-          in: query
-          description: |
-            The creation date up to which you want to filter the request result.
-            Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: updatedDateFrom
-          in: query
-          description: |
-            The modification date from which you want to filter the request
-            result. Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: updatedDateTo
-          in: query
-          description: |
-            The modification date up to which you want to filter the request
-            result. Format YYYY-MM-DD HH:MM:SS. More info
-            [here](https://agent.treezor.com/lists)
-          required: false
-          type: string
-          format: date-time
-        - name: pageNumber
-          in: query
-          description: |
-            Pagination page number. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: pageCount
-          in: query
-          description: |
-            The number of items per page. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: integer
-        - name: sortBy
-          in: query
-          description: |
-            The transaction element you want to sort the list with. Default
-            value : createdDate. More info
-            [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-        - name: sortOrder
-          in: query
-          description: |
-            The order you want to sort the list.
-            * **DESC** for a descending sort
-            * **ASC** for a ascending sort.
-
-            Default value : DESC.
-            More info [here](https://agent.treezor.com/lists).
-          required: false
-          type: string
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              virtualibans:
-                type: array
-                items:
-                  $ref: '#/definitions/Virtualiban'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-  '/virtualibans/{id}':
-    get:
-      parameters:
-        - name: id
-          in: path
-          description: VirtualIban's id.
-          required: true
-          type: integer
-          format: int64
-      tags:
-        - virtualibans
-      summary: get a virtualiban by Id
-      description: Get a virtualiban from the system by its id.
-      operationId: getvirtualiban
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              virtualibans:
-                type: array
-                items:
-                  $ref: '#/definitions/Virtualiban'
-        '405':
-          description: Invalid input
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-    put:
-      parameters:
-        - name: id
-          in: path
-          description: VirtualIban's id.
-          required: true
-          type: integer
-        - name: accessSignature
-          in: query
-          description: |
-            Access signature can be mandatory for specific context. Treezor will
-            contact you if so. More info
-            [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: accessTag
-          in: query
-          description: |
-            Access tag is used for idem potency query. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: accessUserId
-          in: query
-          description: |
-            Access user's id is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: integer
-        - name: accessUserIp
-          in: query
-          description: |
-            Access user's ip is used for user's action restriction. More info
-            [here](https://agent.treezor.com/basics).
-          required: false
-          type: string
-        - name: reference
-          in: query
-          description: The client's internal reference of the vitual IBAN.
-          required: false
-          type: string
-        - name: validFrom
-          in: query
-          description: The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint.
-          required: false
-          type: string
-          format: date
-        - name: validTo
-          in: query
-          description: The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint.
-          required: false
-          type: string
-          format: date
-        - name: maxUsage
-          in: query
-          description: The maximum number of usage authorized. It must follow the rules explained in the POST endpoint AND the maximum usage cannot be strictly less than the transaction counter of the Virtual Iban.
-          required: false
-          type: integer
-        - name: maxAmount
-          in: query
-          description: The maximum amount authorized. It must follow the rules explained in the POST endpoint AND the maximum amount cannot be strictly less than the cumulated amount of this Virtual Iban.
-          required: false
-          type: number
-          format: float
-      tags:
-        - virtualibans
-      summary: update a Virtual IBAN
-      description: Update Virtual IBAN's information.
-      operationId: putVirtualIban
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              virtualibans:
-                type: array
-                items:
-                  $ref: '#/definitions/Virtualiban'
         '405':
           description: Invalid input
         default:
@@ -8513,6 +8091,268 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
+  /taxResidences:
+    post:
+      summary: create a residence
+      description: Create a new tax residence.
+      parameters:
+        - name: accessSignature
+          in: query
+          description: >-
+            Access signature can be mandatory for specific context. Treezor will
+             contact you if so. More info
+             [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: userId
+          in: query
+          description: User's id residence
+          required: true
+          type: integer
+        - name: country
+          in: query
+          description: country of the resident
+          required: true
+          type: string
+        - name: taxPayerId
+          in: query
+          description: Tax payer's id
+          required: false
+          type: string
+        - name: liabilityWaiver
+          in: query
+          description:  When there is no taxPayerId for a residence, this field shall be set to true.
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  $ref: '#/definitions/TaxResidence'
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+      tags:
+        - taxResidence
+    get:
+      summary: search a residence
+      description: Search a residence that match search criteria
+      parameters:
+        - name: accessSignature
+          in: query
+          description: >-
+            Access signature can be mandatory for specific context. Treezor will
+             contact you if so. More info
+             [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: id
+          in: query
+          description: id of the residence
+          required: false
+          type: integer
+        - name: userId
+          in: query
+          description: User's id residence
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  $ref: '#/definitions/TaxResidence'
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+      tags:
+        - taxResidence
+  /taxResidences/{id}:
+    put:
+      summary: update the residence
+      description: Update a residence already created.
+      parameters:
+        - name: accessSignature
+          in: query
+          description: >-
+            Access signature can be mandatory for specific context. Treezor will
+             contact you if so. More info
+             [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: residence id
+          required: true
+          type: integer
+        - name: userId
+          in: query
+          description: User's id residence
+          required: false
+          type: integer
+        - name: country
+          in: query
+          description: country of the resident
+          required: false
+          type: string
+        - name: taxPayerId
+          in: query
+          description: Tax payer's id
+          required: false
+          type: string
+        - name: liabilityWaiver
+          in: query
+          description: Tax declaration
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  $ref: '#/definitions/TaxResidence'
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+      tags:
+        - taxResidence
+    get:
+      summary: read the informations of a residence
+      description: Read the informations of a residence that match with id
+      parameters:
+        - name: accessSignature
+          in: query
+          description: >-
+            Access signature can be mandatory for specific context. Treezor will
+             contact you if so. More info
+             [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: id of the residence
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  $ref: '#/definitions/TaxResidence'
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+      tags:
+        - taxResidence
+    delete:
+      summary: delete a residence
+      description: Delete a residence that match id
+      parameters:
+        - name: accessSignature
+          in: query
+          description: >-
+            Access signature can be mandatory for specific context. Treezor will
+             contact you if so. More info
+             [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: id of the residence
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  $ref: '#/definitions/TaxResidence'
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+      tags:
+        - taxResidence
   /transactions:
     get:
       tags:
@@ -11117,6 +10957,434 @@ paths:
         - api_key: []
       tags:
         - user
+  /virtualibans:
+    post:
+      tags:
+        - virtualibans
+      summary: create a virtual IBAN
+      description: Create a new virtual IBAN in in the system.
+      operationId: postVirtualIban
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: walletId
+          in: query
+          description: The Id Of the Wallet. The Wallet must be in validated status. The wallet must be of type "payment" or "electronic money"
+          required: true
+          type: integer
+        - name: typeId
+          in: query
+          description: |
+            | Type Id | Virtual IBAN Type|
+            | ---| --- |
+            | 1 | DEBIT |
+            | 2 | CREDIT |
+          required: true
+          type: integer
+        - name: tag
+          in: query
+          description: A tag generated by the client
+          required: false
+          type: integer
+        - name: reference
+          in: query
+          description: The client's internal reference of the vitual IBAN. Less than 255 characters.
+          required: false
+          type: string
+        - name: validFrom
+          in: query
+          description: The beginning date of validity. The beginning date must not be less than today's date.
+          required: false
+          type: string
+          format: date
+        - name: validTo
+          in: query
+          description: The limit date of validity. Cannot be less or equal to the validFrom date.
+          required: false
+          type: string
+          format: date
+        - name: maxUsage
+          in: query
+          description: The maximum number of usage authorized. If you want to set no maximum usage limitation you can omit the parameter or set it to null. If you want to limit usage please send an integer in that field. This integer cannot be less than 1.
+          required: false
+          type: integer
+        - name: maxAmount
+          in: query
+          description: The maximum amount authorized.If you want to set no maximum usage amount limitation you can omit the parameter or set it to null. If you want to limit the amount please send a DECIMAL (with a point as separator) in that field. This decimal cannot be less than 0.00.
+          required: false
+          type: number
+          format: float
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              virtualibans:
+                type: array
+                items:
+                  $ref: '#/definitions/Virtualiban'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    get:
+      tags:
+        - virtualibans
+      summary: search virtualibans
+      description: Get virtualiban that match search criteria.
+      operationId: getvirtualibans
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIP
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: virtualIbanId
+          in: query
+          description: VirtualIban's id.
+          required: false
+          type: integer
+        - name: walletId
+          in: query
+          description: VirtualIban's wallet id.
+          required: false
+          type: integer
+        - name: typeId
+          in: query
+          description: VirtualIban's type id.
+          required: false
+          type: integer
+        - name: tag
+          in: query
+          description: A tag generated by the client
+          required: false
+          type: integer
+        - name: reference
+          in: query
+          description: The client's internal reference of the vitual IBAN.
+          required: false
+          type: string
+        - name: validFrom
+          in: query
+          description: The beginning date of validity.
+          required: true
+          type: string
+          format: date
+        - name: validTo
+          in: query
+          description: The limit date of validity.
+          required: false
+          type: string
+          format: date
+        - name: maxUsage
+          in: query
+          description: The maximum number of usage authorized.
+          required: false
+          type: string
+        - name: maxAmount
+          in: query
+          description: The maximum amount authorized.
+          required: false
+          type: number
+          format: float
+        - name: createdDateFrom
+          in: query
+          description: |
+            The creation date from which you want to filter the request result.
+            Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: createdDateTo
+          in: query
+          description: |
+            The creation date up to which you want to filter the request result.
+            Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: updatedDateFrom
+          in: query
+          description: |
+            The modification date from which you want to filter the request
+            result. Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: updatedDateTo
+          in: query
+          description: |
+            The modification date up to which you want to filter the request
+            result. Format YYYY-MM-DD HH:MM:SS. More info
+            [here](https://agent.treezor.com/lists)
+          required: false
+          type: string
+          format: date-time
+        - name: pageNumber
+          in: query
+          description: |
+            Pagination page number. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: pageCount
+          in: query
+          description: |
+            The number of items per page. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: integer
+        - name: sortBy
+          in: query
+          description: |
+            The transaction element you want to sort the list with. Default
+            value : createdDate. More info
+            [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+        - name: sortOrder
+          in: query
+          description: |
+            The order you want to sort the list.
+            * **DESC** for a descending sort
+            * **ASC** for a ascending sort.
+
+            Default value : DESC.
+            More info [here](https://agent.treezor.com/lists).
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              virtualibans:
+                type: array
+                items:
+                  $ref: '#/definitions/Virtualiban'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  '/virtualibans/{id}':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: VirtualIban's id.
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - virtualibans
+      summary: get a virtualiban by Id
+      description: Get a virtualiban from the system by its id.
+      operationId: getvirtualiban
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              virtualibans:
+                type: array
+                items:
+                  $ref: '#/definitions/Virtualiban'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+    put:
+      parameters:
+        - name: id
+          in: path
+          description: VirtualIban's id.
+          required: true
+          type: integer
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: reference
+          in: query
+          description: The client's internal reference of the vitual IBAN.
+          required: false
+          type: string
+        - name: validFrom
+          in: query
+          description: The beginning date of validity. Date of validity can be changed. It must follow the rules explained in the POST endpoint.
+          required: false
+          type: string
+          format: date
+        - name: validTo
+          in: query
+          description: The limit date of validity. It must follow the rules of creation. It must follow the rules explained in the POST endpoint.
+          required: false
+          type: string
+          format: date
+        - name: maxUsage
+          in: query
+          description: The maximum number of usage authorized. It must follow the rules explained in the POST endpoint AND the maximum usage cannot be strictly less than the transaction counter of the Virtual Iban.
+          required: false
+          type: integer
+        - name: maxAmount
+          in: query
+          description: The maximum amount authorized. It must follow the rules explained in the POST endpoint AND the maximum amount cannot be strictly less than the cumulated amount of this Virtual Iban.
+          required: false
+          type: number
+          format: float
+      tags:
+        - virtualibans
+      summary: update a Virtual IBAN
+      description: Update Virtual IBAN's information.
+      operationId: putVirtualIban
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              virtualibans:
+                type: array
+                items:
+                  $ref: '#/definitions/Virtualiban'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
   /wallets:
     post:
       tags:
@@ -11237,7 +11505,7 @@ paths:
           type: string
         - name: eventPayinStartDate
           in: query
-          description: ' Wallet activation date. The date ferom which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.'
+          description: ' Wallet activation date. The date from which you can deposit money on the wallet. Format : YYYY-MM-DD. If null, the default date will be the created date of the wallet.'
           required: false
           type: string
           format: date
@@ -11751,268 +12019,7 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
-  /taxResidences:
-    post:
-      summary: create a residence
-      description: Create a new tax residence.
-      parameters:
-        - name: accessSignature
-          in: query
-          description: >-
-            Access signature can be mandatory for specific context. Treezor will
-             contact you if so. More info
-             [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: userId
-          in: query
-          description: User's id residence
-          required: true
-          type: integer
-        - name: country
-          in: query
-          description: country of the resident
-          required: true
-          type: string
-        - name: taxPayerId
-          in: query
-          description: Tax payer's id
-          required: false
-          type: string
-        - name: liabilityWaiver
-          in: query
-          description:  When there is no taxPayerId for a residence, this field shall be set to true.
-          required: false
-          type: boolean
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              taxResidences:
-                type: array
-                items:
-                  $ref: '#/definitions/TaxResidence'
-        '400':
-          description: Bad Request
-        '403':
-          description: Forbidden
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - taxResidence
-    get:
-      summary: search a residence
-      description: Search a residence that match search criteria
-      parameters:
-        - name: accessSignature
-          in: query
-          description: >-
-            Access signature can be mandatory for specific context. Treezor will
-             contact you if so. More info
-             [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: id
-          in: query
-          description: id of the residence
-          required: false
-          type: integer
-        - name: userId
-          in: query
-          description: User's id residence
-          required: false
-          type: integer
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              taxResidences:
-                type: array
-                items:
-                  $ref: '#/definitions/TaxResidence'
-        '400':
-          description: Bad Request
-        '403':
-          description: Forbidden
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - taxResidence
-  /taxResidences/{id}:
-    put:
-      summary: update the residence
-      description: Update a residence already created.
-      parameters:
-        - name: accessSignature
-          in: query
-          description: >-
-            Access signature can be mandatory for specific context. Treezor will
-             contact you if so. More info
-             [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: id
-          in: path
-          description: residence id
-          required: true
-          type: integer
-        - name: userId
-          in: query
-          description: User's id residence
-          required: false
-          type: integer
-        - name: country
-          in: query
-          description: country of the resident
-          required: false
-          type: string
-        - name: taxPayerId
-          in: query
-          description: Tax payer's id
-          required: false
-          type: string
-        - name: liabilityWaiver
-          in: query
-          description: Tax declaration
-          required: false
-          type: boolean
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              taxResidences:
-                type: array
-                items:
-                  $ref: '#/definitions/TaxResidence'
-        '400':
-          description: Bad Request
-        '403':
-          description: Forbidden
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - taxResidence
-    get:
-      summary: read the informations of a residence
-      description: Read the informations of a residence that match with id
-      parameters:
-        - name: accessSignature
-          in: query
-          description: >-
-            Access signature can be mandatory for specific context. Treezor will
-             contact you if so. More info
-             [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: id
-          in: path
-          description: id of the residence
-          required: true
-          type: integer
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              taxResidences:
-                type: array
-                items:
-                  $ref: '#/definitions/TaxResidence'
-        '400':
-          description: Bad Request
-        '403':
-          description: Forbidden
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - taxResidence
-    delete:
-      summary: delete a residence
-      description: Delete a residence that match id
-      parameters:
-        - name: accessSignature
-          in: query
-          description: >-
-            Access signature can be mandatory for specific context. Treezor will
-             contact you if so. More info
-             [here](https://agent.treezor.com/security-authentication).
-          required: false
-          type: string
-        - name: id
-          in: path
-          description: id of the residence
-          required: true
-          type: integer
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              taxResidences:
-                type: array
-                items:
-                  $ref: '#/definitions/TaxResidence'
-        '400':
-          description: Bad Request
-        '403':
-          description: Forbidden
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - taxResidence
+
 securityDefinitions:
   api_key:
     type: apiKey
@@ -13091,7 +13098,7 @@ definitions:
       createdDate:
         type: string
         description: Date YYYY-MM-DD HH:MM:SS
-  Tav:
+  IssuerInitiatedDigitizationData:
     type: object
     properties:
       id:
@@ -13100,13 +13107,18 @@ definitions:
       cardId:
         description: The id of the card
         type: integer
-      tokenRequestor:
-        description: The token requestor also named wallet provider.
-        type: string
       statusId:
         description: The status ID of the TAV request; "1" means the "issuerInitiatedDigitizationData have been requested", "2" means that the data object can be retrieved.
         type: integer
       credential:
+        type: string
+      additionnalData:
+        type: array
+        items:
+          type: string
+        description: We do not persist this information for security reasons
+      tokenRequestor:
+        description: The token requestor also named wallet provider.
         type: string
       createdDate:
         type: string

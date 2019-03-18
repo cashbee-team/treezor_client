@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardimages** | [**Array&lt;InlineResponse2007Cardimages&gt;**](InlineResponse2007Cardimages.md) |  | [optional] 
+**cards** | [**Array&lt;CardDigitalization&gt;**](CardDigitalization.md) |  | [optional] 
 
 

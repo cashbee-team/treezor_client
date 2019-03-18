@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bankaccounts** | [**Array&lt;MccRestrictionGroup&gt;**](MccRestrictionGroup.md) |  | [optional] 
+**mandates** | [**Array&lt;Mandate&gt;**](Mandate.md) |  | [optional] 
 
 

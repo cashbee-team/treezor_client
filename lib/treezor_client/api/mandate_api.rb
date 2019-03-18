@@ -24,7 +24,7 @@ module TreezorClient
     # @param id Mandate&#39;s internal id.
     # @param origin The origin of the request for revocation
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20014]
     def delete_mandate(id, origin, opts = {})
       data, _status_code, _headers = delete_mandate_with_http_info(id, origin, opts)
       data
@@ -35,7 +35,7 @@ module TreezorClient
     # @param id Mandate&#39;s internal id.
     # @param origin The origin of the request for revocation
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def delete_mandate_with_http_info(id, origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.delete_mandate ...'
@@ -78,7 +78,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#delete_mandate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -88,7 +88,7 @@ module TreezorClient
     # Get a mandate from the system.
     # @param id Mandate&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20014]
     def get_mandate(id, opts = {})
       data, _status_code, _headers = get_mandate_with_http_info(id, opts)
       data
@@ -98,7 +98,7 @@ module TreezorClient
     # Get a mandate from the system.
     # @param id Mandate&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def get_mandate_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.get_mandate ...'
@@ -132,7 +132,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#get_mandate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -150,7 +150,7 @@ module TreezorClient
     # @option opts [String] :unique_mandate_reference Unique Mandate Reference (UMR) of the searched mandate. It is a sequence of characters that ensures the mandate traceability. UMR coupled with SCI allows to uniquely identify a creditor and a contract for any mandate. It is provided at the mandate creation.
     # @option opts [String] :mandate_status Mandate&#39;s status. Possible values: * CANCELED * PENDING * VALIDATED 
     # @option opts [String] :filter You can filter the API response by using filter(s). Filters should be separated by a \&quot;;\&quot;. Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \&quot;fieldName criterion expression\&quot;. Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     &gt;    |      greater than      |            alphanumeric string           |         100        |  |    &gt;&#x3D;    | greater or equal than  |            alphanumeric string           |         100        |  |     &lt;    |        less than       |            alphanumeric string           |         100        |  |    &lt;&#x3D;    |   less or equal than   |            alphanumeric string           |         100        |  |    !&#x3D;    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    &#x3D;&#x3D;    |         equals         |            alphanumeric string           |         100        | 
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20014]
     def get_mandates(opts = {})
       data, _status_code, _headers = get_mandates_with_http_info(opts)
       data
@@ -168,7 +168,7 @@ module TreezorClient
     # @option opts [String] :unique_mandate_reference Unique Mandate Reference (UMR) of the searched mandate. It is a sequence of characters that ensures the mandate traceability. UMR coupled with SCI allows to uniquely identify a creditor and a contract for any mandate. It is provided at the mandate creation.
     # @option opts [String] :mandate_status Mandate&#39;s status. Possible values: * CANCELED * PENDING * VALIDATED 
     # @option opts [String] :filter You can filter the API response by using filter(s). Filters should be separated by a \&quot;;\&quot;. Example for 3 filters : FILTER1;FILTER2;FILTER3. A single filter has the following syntax : \&quot;fieldName criterion expression\&quot;. Where :  - fieldName : the name of a filterable field of this object.   - expression : the values to be included or excluded (see the table below for more information)   - criterion : a filter criterion.  Here are the possible values for criterion :   | Criteria |         Description    |                   Type                   | Expression Example |  |----------|------------------------|------------------------------------------|--------------------|  |     &gt;    |      greater than      |            alphanumeric string           |         100        |  |    &gt;&#x3D;    | greater or equal than  |            alphanumeric string           |         100        |  |     &lt;    |        less than       |            alphanumeric string           |         100        |  |    &lt;&#x3D;    |   less or equal than   |            alphanumeric string           |         100        |  |    !&#x3D;    |      not equal to      |            alphanumeric string           |         100        |  |   like   |          like          |            alphanumeric string           |         100        |  |    in    |           in           | alphanumeric strings separated by commas |      100,30,25     |  |    &#x3D;&#x3D;    |         equals         |            alphanumeric string           |         100        | 
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def get_mandates_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.get_mandates ...'
@@ -207,7 +207,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#get_mandates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -224,7 +224,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_mobile Debtor&#39;s mobile phone number. Used to send the OTP for signature
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20014]
     def mandates_id_resend_otp_put(id, access_token, access_signature, user_id, opts = {})
       data, _status_code, _headers = mandates_id_resend_otp_put_with_http_info(id, access_token, access_signature, user_id, opts)
       data
@@ -241,7 +241,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_mobile Debtor&#39;s mobile phone number. Used to send the OTP for signature
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def mandates_id_resend_otp_put_with_http_info(id, access_token, access_signature, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.mandates_id_resend_otp_put ...'
@@ -290,7 +290,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#mandates_id_resend_otp_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -308,7 +308,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_signature_ip IP address from which the mandate will be signed.
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20014]
     def mandates_id_sign_put(id, access_token, access_signature, user_id, otp, opts = {})
       data, _status_code, _headers = mandates_id_sign_put_with_http_info(id, access_token, access_signature, user_id, otp, opts)
       data
@@ -326,7 +326,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_signature_ip IP address from which the mandate will be signed.
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def mandates_id_sign_put_with_http_info(id, access_token, access_signature, user_id, otp, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.mandates_id_sign_put ...'
@@ -380,7 +380,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#mandates_id_sign_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -406,7 +406,8 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_bic Debtor&#39;s BIC (or SWIFT)
     # @option opts [String] :signature_date Signature date of the mandate. Required if is paper.
-    # @return [InlineResponse20013]
+    # @option opts [String] :user_id_ultimate_creditor For SDDE Core third party credior mode
+    # @return [InlineResponse20014]
     def post_mandates(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts = {})
       data, _status_code, _headers = post_mandates_with_http_info(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts)
       data
@@ -432,7 +433,8 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_bic Debtor&#39;s BIC (or SWIFT)
     # @option opts [String] :signature_date Signature date of the mandate. Required if is paper.
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @option opts [String] :user_id_ultimate_creditor For SDDE Core third party credior mode
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def post_mandates_with_http_info(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MandateApi.post_mandates ...'
@@ -507,6 +509,7 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
       query_params[:'debtorBic'] = opts[:'debtor_bic'] if !opts[:'debtor_bic'].nil?
       query_params[:'signatureDate'] = opts[:'signature_date'] if !opts[:'signature_date'].nil?
+      query_params[:'userIdUltimateCreditor'] = opts[:'user_id_ultimate_creditor'] if !opts[:'user_id_ultimate_creditor'].nil?
 
       # header parameters
       header_params = {}
@@ -527,7 +530,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MandateApi#post_mandates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

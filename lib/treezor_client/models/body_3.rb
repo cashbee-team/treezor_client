@@ -17,7 +17,7 @@ module TreezorClient
     # ID of the card
     attr_accessor :card_id
 
-    # Amout you want to add
+    # Amout you want to check
     attr_accessor :amount
 
     # Attribute mapping from ruby-style variable name to JSON key.

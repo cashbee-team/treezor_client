@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tavs** | [**Array&lt;Tav&gt;**](Tav.md) |  | [optional] 
+**balances** | [**Array&lt;Balance&gt;**](Balance.md) |  | [optional] 
 
 

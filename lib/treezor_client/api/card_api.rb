@@ -27,7 +27,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2007]
+    # @return [InlineResponse2006]
     def cardimages_get(card_id, opts = {})
       data, _status_code, _headers = cardimages_get_with_http_info(card_id, opts)
       data
@@ -41,7 +41,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
+    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
     def cardimages_get_with_http_info(card_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cardimages_get ...'
@@ -76,7 +76,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2007')
+        :return_type => 'InlineResponse2006')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cardimages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -112,7 +112,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_create_virtual_post(user_id, wallet_id, perms_group, card_print, opts = {})
       data, _status_code, _headers = cards_create_virtual_post_with_http_info(user_id, wallet_id, perms_group, card_print, opts)
       data
@@ -148,7 +148,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_create_virtual_post_with_http_info(user_id, wallet_id, perms_group, card_print, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_create_virtual_post ...'
@@ -217,7 +217,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_create_virtual_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -248,7 +248,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_get(opts = {})
       data, _status_code, _headers = cards_get_with_http_info(opts)
       data
@@ -279,7 +279,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_get ...'
@@ -328,7 +328,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -343,7 +343,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_activate_put(id, opts = {})
       data, _status_code, _headers = cards_id_activate_put_with_http_info(id, opts)
       data
@@ -358,7 +358,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_activate_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_activate_put ...'
@@ -393,7 +393,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_activate_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -410,7 +410,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_change_pin_put(id, current_pin, new_pin, confirm_pin, opts = {})
       data, _status_code, _headers = cards_id_change_pin_put_with_http_info(id, current_pin, new_pin, confirm_pin, opts)
       data
@@ -427,7 +427,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_change_pin_put_with_http_info(id, current_pin, new_pin, confirm_pin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_change_pin_put ...'
@@ -476,7 +476,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_change_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -490,7 +490,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_convert_virtual_put(id, opts = {})
       data, _status_code, _headers = cards_id_convert_virtual_put_with_http_info(id, opts)
       data
@@ -504,7 +504,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_convert_virtual_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_convert_virtual_put ...'
@@ -538,7 +538,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_convert_virtual_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -547,7 +547,7 @@ module TreezorClient
     # deactivate a card
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_delete(id, opts = {})
       data, _status_code, _headers = cards_id_delete_with_http_info(id, opts)
       data
@@ -556,7 +556,7 @@ module TreezorClient
     # deactivate a card
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_delete ...'
@@ -586,7 +586,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -595,7 +595,7 @@ module TreezorClient
     # get a card
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_get(id, opts = {})
       data, _status_code, _headers = cards_id_get_with_http_info(id, opts)
       data
@@ -604,7 +604,7 @@ module TreezorClient
     # get a card
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_get ...'
@@ -634,7 +634,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -659,7 +659,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_limits_put(id, opts = {})
       data, _status_code, _headers = cards_id_limits_put_with_http_info(id, opts)
       data
@@ -684,7 +684,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_limits_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_limits_put ...'
@@ -729,7 +729,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_limits_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -744,7 +744,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_lock_unlock_put(id, lock_status, opts = {})
       data, _status_code, _headers = cards_id_lock_unlock_put_with_http_info(id, lock_status, opts)
       data
@@ -759,7 +759,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_lock_unlock_put_with_http_info(id, lock_status, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_lock_unlock_put ...'
@@ -798,7 +798,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_lock_unlock_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -816,7 +816,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_options_put(id, foreign, online, atm, nfc, opts = {})
       data, _status_code, _headers = cards_id_options_put_with_http_info(id, foreign, online, atm, nfc, opts)
       data
@@ -834,7 +834,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_options_put_with_http_info(id, foreign, online, atm, nfc, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_options_put ...'
@@ -888,7 +888,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_options_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -905,7 +905,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_put(id, opts = {})
       data, _status_code, _headers = cards_id_put_with_http_info(id, opts)
       data
@@ -922,7 +922,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_put ...'
@@ -959,7 +959,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -973,7 +973,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_regenerate_put(id, opts = {})
       data, _status_code, _headers = cards_id_regenerate_put_with_http_info(id, opts)
       data
@@ -987,7 +987,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_regenerate_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_regenerate_put ...'
@@ -1021,7 +1021,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_regenerate_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1037,7 +1037,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_set_pin_put(id, new_pin, confirm_pin, opts = {})
       data, _status_code, _headers = cards_id_set_pin_put_with_http_info(id, new_pin, confirm_pin, opts)
       data
@@ -1053,7 +1053,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_set_pin_put_with_http_info(id, new_pin, confirm_pin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_set_pin_put ...'
@@ -1097,7 +1097,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_set_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1111,7 +1111,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_id_unblock_pin_put(id, opts = {})
       data, _status_code, _headers = cards_id_unblock_pin_put_with_http_info(id, opts)
       data
@@ -1125,7 +1125,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_id_unblock_pin_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_unblock_pin_put ...'
@@ -1159,29 +1159,29 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_unblock_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
     # Register 3D secure
-    # Register a card to 3D secure service.
+    # Register a card to 3D secure service. The user's mobile number must begin by \"+\", or \"00\", and the country dialing code.
     # @param card_id Card&#39;s ID to register
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_register3_ds_post(card_id, opts = {})
       data, _status_code, _headers = cards_register3_ds_post_with_http_info(card_id, opts)
       data
     end
 
     # Register 3D secure
-    # Register a card to 3D secure service.
+    # Register a card to 3D secure service. The user&#39;s mobile number must begin by \&quot;+\&quot;, or \&quot;00\&quot;, and the country dialing code.
     # @param card_id Card&#39;s ID to register
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_register3_ds_post_with_http_info(card_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_register3_ds_post ...'
@@ -1213,7 +1213,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_register3_ds_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1249,7 +1249,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [InlineResponse2006]
+    # @return [InlineResponse2005]
     def cards_request_physical_post(user_id, wallet_id, perms_group, card_tag, card_print, opts = {})
       data, _status_code, _headers = cards_request_physical_post_with_http_info(user_id, wallet_id, perms_group, card_tag, card_print, opts)
       data
@@ -1285,7 +1285,7 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def cards_request_physical_post_with_http_info(user_id, wallet_id, perms_group, card_tag, card_print, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_request_physical_post ...'
@@ -1358,7 +1358,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_request_physical_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

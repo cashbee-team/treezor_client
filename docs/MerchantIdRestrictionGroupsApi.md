@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **delete_merchant_id_restriction_groups**
-> InlineResponse20015 delete_merchant_id_restriction_groups(id, opts)
+> InlineResponse20016 delete_merchant_id_restriction_groups(id, opts)
 
 cancel a merchant id restriction group
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 
 # **get_merchant_id_restriction_group**
-> InlineResponse20015 get_merchant_id_restriction_group(opts)
+> InlineResponse20016 get_merchant_id_restriction_group(opts)
 
 search merchant id restriction  groups
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 
 # **get_merchant_id_restriction_groups_id**
-> InlineResponse20015 get_merchant_id_restriction_groups_id(id, opts)
+> InlineResponse20016 get_merchant_id_restriction_groups_id(id, opts)
 
 get a merchant ID restriction group
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 
 # **post_merchant_id_restriction_group**
-> InlineResponse20015 post_merchant_id_restriction_group(opts)
+> InlineResponse20016 post_merchant_id_restriction_group(opts)
 
 create a merchantIdRestrictionGroup
 
@@ -226,7 +226,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body7.new # Body7 | 
+  body: TreezorClient::Body9.new # Body9 | 
 }
 
 begin
@@ -246,11 +246,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body7**](Body7.md)|  | [optional] 
+ **body** | [**Body9**](Body9.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 
 # **put_merchant_id_restriction_groups**
-> InlineResponse20015 put_merchant_id_restriction_groups(id, opts)
+> InlineResponse20016 put_merchant_id_restriction_groups(id, opts)
 
 edit a merchant id restriction group
 
@@ -291,7 +291,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  body: TreezorClient::Body8.new # Body8 | 
+  body: TreezorClient::Body10.new # Body10 | 
 }
 
 begin
@@ -312,11 +312,11 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **body** | [**Body8**](Body8.md)|  | [optional] 
+ **body** | [**Body10**](Body10.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 

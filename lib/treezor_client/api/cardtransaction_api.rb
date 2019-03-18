@@ -23,7 +23,7 @@ module TreezorClient
     # get a card transaction
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [InlineResponse20010]
     def get_cardtransaction(id, opts = {})
       data, _status_code, _headers = get_cardtransaction_with_http_info(id, opts)
       data
@@ -33,7 +33,7 @@ module TreezorClient
     # get a card transaction
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
     def get_cardtransaction_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardtransactionApi.get_cardtransaction ...'
@@ -67,7 +67,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20011')
+        :return_type => 'InlineResponse20010')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardtransactionApi#get_cardtransaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -89,7 +89,7 @@ module TreezorClient
     # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
-    # @return [InlineResponse20010]
+    # @return [InlineResponse2009]
     def read_card_transaction(opts = {})
       data, _status_code, _headers = read_card_transaction_with_http_info(opts)
       data
@@ -111,7 +111,7 @@ module TreezorClient
     # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
     def read_card_transaction_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardtransactionApi.read_card_transaction ...'
@@ -154,7 +154,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'InlineResponse2009')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardtransactionApi#read_card_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

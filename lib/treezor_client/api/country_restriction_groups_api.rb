@@ -24,7 +24,7 @@ module TreezorClient
     # @param id country restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20011]
     def delete_country_restriction_groups(id, opts = {})
       data, _status_code, _headers = delete_country_restriction_groups_with_http_info(id, opts)
       data
@@ -35,7 +35,7 @@ module TreezorClient
     # @param id country restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def delete_country_restriction_groups_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CountryRestrictionGroupsApi.delete_country_restriction_groups ...'
@@ -70,7 +70,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CountryRestrictionGroupsApi#delete_country_restriction_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -89,7 +89,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20011]
     def get_country_restriction_groups(opts = {})
       data, _status_code, _headers = get_country_restriction_groups_with_http_info(opts)
       data
@@ -108,7 +108,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def get_country_restriction_groups_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CountryRestrictionGroupsApi.get_country_restriction_groups ...'
@@ -148,7 +148,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CountryRestrictionGroupsApi#get_country_restriction_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -159,7 +159,7 @@ module TreezorClient
     # @param id country restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20011]
     def get_country_restriction_groups_id(id, opts = {})
       data, _status_code, _headers = get_country_restriction_groups_id_with_http_info(id, opts)
       data
@@ -170,7 +170,7 @@ module TreezorClient
     # @param id country restriction Group internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def get_country_restriction_groups_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CountryRestrictionGroupsApi.get_country_restriction_groups_id ...'
@@ -205,7 +205,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CountryRestrictionGroupsApi#get_country_restriction_groups_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -219,8 +219,8 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @option opts [Body9] :body 
-    # @return [InlineResponse20016]
+    # @option opts [Body4] :body 
+    # @return [InlineResponse20011]
     def post_country_restriction_group(opts = {})
       data, _status_code, _headers = post_country_restriction_group_with_http_info(opts)
       data
@@ -234,8 +234,8 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
-    # @option opts [Body9] :body 
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @option opts [Body4] :body 
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def post_country_restriction_group_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CountryRestrictionGroupsApi.post_country_restriction_group ...'
@@ -270,7 +270,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CountryRestrictionGroupsApi#post_country_restriction_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -284,8 +284,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body10] :body 
-    # @return [InlineResponse20016]
+    # @option opts [Body5] :body 
+    # @return [InlineResponse20011]
     def put_country_restriction_groups(id, opts = {})
       data, _status_code, _headers = put_country_restriction_groups_with_http_info(id, opts)
       data
@@ -299,8 +299,8 @@ module TreezorClient
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
-    # @option opts [Body10] :body 
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @option opts [Body5] :body 
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def put_country_restriction_groups_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CountryRestrictionGroupsApi.put_country_restriction_groups ...'
@@ -338,7 +338,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CountryRestrictionGroupsApi#put_country_restriction_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

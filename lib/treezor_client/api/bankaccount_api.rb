@@ -23,7 +23,7 @@ module TreezorClient
     # Change bank account's status to CANCELED. If a payout is being validated on this bank account, it can not be canceled.
     # @param id Bank Accounts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2003]
+    # @return [InlineResponse2001]
     def delete_bankaccount(id, opts = {})
       data, _status_code, _headers = delete_bankaccount_with_http_info(id, opts)
       data
@@ -33,7 +33,7 @@ module TreezorClient
     # Change bank account&#39;s status to CANCELED. If a payout is being validated on this bank account, it can not be canceled.
     # @param id Bank Accounts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
     def delete_bankaccount_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BankaccountApi.delete_bankaccount ...'
@@ -67,7 +67,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'InlineResponse2001')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BankaccountApi#delete_bankaccount\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -77,7 +77,7 @@ module TreezorClient
     # Get a bank account from the system.
     # @param id Bank Accounts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2003]
+    # @return [InlineResponse2001]
     def get_bankaccount(id, opts = {})
       data, _status_code, _headers = get_bankaccount_with_http_info(id, opts)
       data
@@ -87,7 +87,7 @@ module TreezorClient
     # Get a bank account from the system.
     # @param id Bank Accounts internal id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
     def get_bankaccount_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BankaccountApi.get_bankaccount ...'
@@ -121,7 +121,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'InlineResponse2001')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BankaccountApi#get_bankaccount\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -146,7 +146,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [InlineResponse2003]
+    # @return [InlineResponse2001]
     def get_bankaccounts(opts = {})
       data, _status_code, _headers = get_bankaccounts_with_http_info(opts)
       data
@@ -171,7 +171,7 @@ module TreezorClient
     # @option opts [DateTime] :created_date_to The creation date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
     def get_bankaccounts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BankaccountApi.get_bankaccounts ...'
@@ -217,7 +217,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'InlineResponse2001')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BankaccountApi#get_bankaccounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -238,7 +238,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :bankaccount_tag Custom data.
     # @option opts [String] :name Bank account&#39;s name.
-    # @return [InlineResponse2003]
+    # @return [InlineResponse2001]
     def post_bankaccount(user_id, bankaccount_owner_name, bankaccount_owner_address, bankaccount_iban, bankaccount_bic, bankaccount_type, opts = {})
       data, _status_code, _headers = post_bankaccount_with_http_info(user_id, bankaccount_owner_name, bankaccount_owner_address, bankaccount_iban, bankaccount_bic, bankaccount_type, opts)
       data
@@ -259,7 +259,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :bankaccount_tag Custom data.
     # @option opts [String] :name Bank account&#39;s name.
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
     def post_bankaccount_with_http_info(user_id, bankaccount_owner_name, bankaccount_owner_address, bankaccount_iban, bankaccount_bic, bankaccount_type, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BankaccountApi.post_bankaccount ...'
@@ -329,7 +329,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'InlineResponse2001')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BankaccountApi#post_bankaccount\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

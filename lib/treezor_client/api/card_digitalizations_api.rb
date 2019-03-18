@@ -24,7 +24,7 @@ module TreezorClient
     # @param id Card digitalization internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
-    # @return [InlineResponse2008]
+    # @return [InlineResponse2007]
     def card_digitalizations_id(id, opts = {})
       data, _status_code, _headers = card_digitalizations_id_with_http_info(id, opts)
       data
@@ -35,7 +35,7 @@ module TreezorClient
     # @param id Card digitalization internal id.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
     def card_digitalizations_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardDigitalizationsApi.card_digitalizations_id ...'
@@ -70,7 +70,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse2007')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardDigitalizationsApi#card_digitalizations_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -81,7 +81,7 @@ module TreezorClient
     # @param id Card digitalization internal id.
     # @param reason_code The reason code for the action. Possible values are :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | F | Issuer or cardholder confirmed fraudulent token transactions (Deprecated) | | T | Issuer or cardholder confirmed fraudulent token transactions | | C | Account closed | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [InlineResponse2007]
     def deletecard_digitalizations_id(id, reason_code, opts = {})
       data, _status_code, _headers = deletecard_digitalizations_id_with_http_info(id, reason_code, opts)
       data
@@ -92,7 +92,7 @@ module TreezorClient
     # @param id Card digitalization internal id.
     # @param reason_code The reason code for the action. Possible values are :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | F | Issuer or cardholder confirmed fraudulent token transactions (Deprecated) | | T | Issuer or cardholder confirmed fraudulent token transactions | | C | Account closed | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
     def deletecard_digitalizations_id_with_http_info(id, reason_code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardDigitalizationsApi.deletecard_digitalizations_id ...'
@@ -131,7 +131,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse2007')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardDigitalizationsApi#deletecard_digitalizations_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -143,7 +143,7 @@ module TreezorClient
     # @param status The new status for the payment Token. Possible values are : | Status | Description | | ---- | ----------- | | unsuspend | Unsuspend | | suspend | Suspend | 
     # @param reason_code The reason code for the action. Possible values are : - For a suspension :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | T | Issuer or cardholder confirmed fraudulent token transactions | | Z | Other |  - For an unsuspension :  | Reason code | Description | | ---- | ----------- | | F | Cardholder reported token device found or not stolen | | T | Issuer or cardholder confirmed no fraudulent token transactions | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [InlineResponse2007]
     def putcard_digitalizations_id(id, status, reason_code, opts = {})
       data, _status_code, _headers = putcard_digitalizations_id_with_http_info(id, status, reason_code, opts)
       data
@@ -155,7 +155,7 @@ module TreezorClient
     # @param status The new status for the payment Token. Possible values are : | Status | Description | | ---- | ----------- | | unsuspend | Unsuspend | | suspend | Suspend | 
     # @param reason_code The reason code for the action. Possible values are : - For a suspension :  | Reason code | Description | | ---- | ----------- | | L | Cardholder confirmed token device lost | | S | Cardholder confirmed token device stolen | | T | Issuer or cardholder confirmed fraudulent token transactions | | Z | Other |  - For an unsuspension :  | Reason code | Description | | ---- | ----------- | | F | Cardholder reported token device found or not stolen | | T | Issuer or cardholder confirmed no fraudulent token transactions | | Z | Other | 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
     def putcard_digitalizations_id_with_http_info(id, status, reason_code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardDigitalizationsApi.putcard_digitalizations_id ...'
@@ -199,7 +199,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse2007')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardDigitalizationsApi#putcard_digitalizations_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -214,7 +214,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :filter Filterable fields are : - id - externalId - cardId - status - detailsFromGPS - createdDate - modifiedDate  More info [here](https://agent.treezor.com/filterv2). 
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
-    # @return [InlineResponse2008]
+    # @return [InlineResponse2007]
     def readcard_digitalizations(opts = {})
       data, _status_code, _headers = readcard_digitalizations_with_http_info(opts)
       data
@@ -229,7 +229,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :filter Filterable fields are : - id - externalId - cardId - status - detailsFromGPS - createdDate - modifiedDate  More info [here](https://agent.treezor.com/filterv2). 
     # @option opts [String] :fields fields to output separated by commas. Possible fields are id, externalId, cardId, detailsFromGPS, status, createdDate, modifiedDate
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
     def readcard_digitalizations_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardDigitalizationsApi.readcard_digitalizations ...'
@@ -265,7 +265,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse2007')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardDigitalizationsApi#readcard_digitalizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

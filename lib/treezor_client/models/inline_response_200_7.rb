@@ -14,19 +14,19 @@ require 'date'
 
 module TreezorClient
   class InlineResponse2007
-    attr_accessor :cardimages
+    attr_accessor :cards
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cardimages' => :'cardimages'
+        :'cards' => :'cards'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'cardimages' => :'Array<InlineResponse2007Cardimages>'
+        :'cards' => :'Array<CardDigitalization>'
       }
     end
 
@@ -38,9 +38,9 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cardimages')
-        if (value = attributes[:'cardimages']).is_a?(Array)
-          self.cardimages = value
+      if attributes.has_key?(:'cards')
+        if (value = attributes[:'cards']).is_a?(Array)
+          self.cards = value
         end
       end
     end
@@ -63,7 +63,7 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cardimages == o.cardimages
+          cards == o.cards
     end
 
     # @see the `==` method
@@ -75,7 +75,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cardimages].hash
+      [cards].hash
     end
 
     # Builds the object from hash

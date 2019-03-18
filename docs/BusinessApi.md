@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **businessinformations_get**
-> InlineResponse2005 businessinformations_get(country, opts)
+> InlineResponse2004 businessinformations_get(country, opts)
 
 get business information
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

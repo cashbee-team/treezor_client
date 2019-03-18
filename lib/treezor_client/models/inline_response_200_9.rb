@@ -14,30 +14,19 @@ require 'date'
 
 module TreezorClient
   class InlineResponse2009
-    # ID of the card
-    attr_accessor :card_id
-
-    # reserved amount of the card
-    attr_accessor :amount
-
-    # last calculation date
-    attr_accessor :calculation_date
+    attr_accessor :cardtransactions
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'card_id' => :'cardId',
-        :'amount' => :'amount',
-        :'calculation_date' => :'calculationDate'
+        :'cardtransactions' => :'cardtransactions'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'card_id' => :'Integer',
-        :'amount' => :'Float',
-        :'calculation_date' => :'DateTime'
+        :'cardtransactions' => :'Array<InlineResponse2009Cardtransactions>'
       }
     end
 
@@ -49,16 +38,10 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cardId')
-        self.card_id = attributes[:'cardId']
-      end
-
-      if attributes.has_key?(:'amount')
-        self.amount = attributes[:'amount']
-      end
-
-      if attributes.has_key?(:'calculationDate')
-        self.calculation_date = attributes[:'calculationDate']
+      if attributes.has_key?(:'cardtransactions')
+        if (value = attributes[:'cardtransactions']).is_a?(Array)
+          self.cardtransactions = value
+        end
       end
     end
 
@@ -80,9 +63,7 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          card_id == o.card_id &&
-          amount == o.amount &&
-          calculation_date == o.calculation_date
+          cardtransactions == o.cardtransactions
     end
 
     # @see the `==` method
@@ -94,7 +75,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [card_id, amount, calculation_date].hash
+      [cardtransactions].hash
     end
 
     # Builds the object from hash

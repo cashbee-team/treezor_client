@@ -25,7 +25,7 @@ module TreezorClient
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @option opts [Integer] :id id of the residence
     # @option opts [Integer] :user_id User&#39;s id residence
-    # @return [InlineResponse20028]
+    # @return [InlineResponse20021]
     def tax_residences_get(opts = {})
       data, _status_code, _headers = tax_residences_get_with_http_info(opts)
       data
@@ -37,7 +37,7 @@ module TreezorClient
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @option opts [Integer] :id id of the residence
     # @option opts [Integer] :user_id User&#39;s id residence
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def tax_residences_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_get ...'
@@ -66,7 +66,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -77,7 +77,7 @@ module TreezorClient
     # @param id id of the residence
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @return [InlineResponse20028]
+    # @return [InlineResponse20021]
     def tax_residences_id_delete(id, opts = {})
       data, _status_code, _headers = tax_residences_id_delete_with_http_info(id, opts)
       data
@@ -88,7 +88,7 @@ module TreezorClient
     # @param id id of the residence
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def tax_residences_id_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_delete ...'
@@ -119,7 +119,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -130,7 +130,7 @@ module TreezorClient
     # @param id id of the residence
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @return [InlineResponse20028]
+    # @return [InlineResponse20021]
     def tax_residences_id_get(id, opts = {})
       data, _status_code, _headers = tax_residences_id_get_with_http_info(id, opts)
       data
@@ -141,7 +141,7 @@ module TreezorClient
     # @param id id of the residence
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def tax_residences_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_get ...'
@@ -172,7 +172,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -187,7 +187,7 @@ module TreezorClient
     # @option opts [String] :country country of the resident
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver Tax declaration
-    # @return [InlineResponse20028]
+    # @return [InlineResponse20021]
     def tax_residences_id_put(id, opts = {})
       data, _status_code, _headers = tax_residences_id_put_with_http_info(id, opts)
       data
@@ -202,7 +202,7 @@ module TreezorClient
     # @option opts [String] :country country of the resident
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver Tax declaration
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def tax_residences_id_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_put ...'
@@ -237,7 +237,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -251,7 +251,7 @@ module TreezorClient
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
-    # @return [InlineResponse20028]
+    # @return [InlineResponse20021]
     def tax_residences_post(user_id, country, opts = {})
       data, _status_code, _headers = tax_residences_post_with_http_info(user_id, country, opts)
       data
@@ -265,7 +265,7 @@ module TreezorClient
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def tax_residences_post_with_http_info(user_id, country, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_post ...'
@@ -304,7 +304,7 @@ module TreezorClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
