@@ -3650,7 +3650,6 @@ paths:
           required: false
           type: string
         - name: id
-          in: query
           description: the cardId of the reserved amount you want to pick up
           required: true
           type: integer
@@ -3733,7 +3732,6 @@ paths:
           required: false
           type: string
         - name: id
-          in: query
           description: the cardId of the reserved amount you want to pick up
           required: true
           type: integer
@@ -4681,7 +4679,7 @@ paths:
       description: Search for documents.
       operationId: createDocuments
       consumes:
-        - application/x-www-form-urlencoded
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4767,7 +4765,7 @@ paths:
           required: true
           type: string
         - name: fileContentBase64
-          in: formData
+          in: query
           description: Document file content. base64 encoded.
           required: true
           type: string
@@ -5529,11 +5527,6 @@ paths:
           required: false
           type: string
           format: YYYY-MM-DD
-        - name: userIdUltimateCreditor
-          in: query
-          description: For SDDE Core third party credior mode
-          required: false
-          type: string
       responses:
         '200':
           description: OK
@@ -6834,9 +6827,9 @@ paths:
         - name: userId
           in: query
           description: >
-            User's id who makes the pay in. Required unless paymentMethodId = 21.
+            User's id who makes the pay in.
             NB : this parameter should should not be transmitted in the case of payin of method Sepa Direct Debit Core (21). It will be set automatically by the system.
-          required: false
+          required: true
           type: integer
         - name: paymentMethodId
           in: query
@@ -8790,7 +8783,7 @@ paths:
         - name: transferDate
           in: query
           description: >
-            Transfer's date. Format : YYYY-MM-DD
+            Transfert's date. Format : YYYY-MM-DD
             HH:MM:SS
           required: false
           type: string
@@ -12209,9 +12202,6 @@ definitions:
       tag:
         description: Custom data that could be used by caller to search the instance.
         type: string
-      id:
-        description: Should be named beneficiaryId to conform to the API's naming convention.
-        type: integer
       userId:
         description: Beneficiary's userId
         type: integer
