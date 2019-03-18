@@ -5098,6 +5098,11 @@ paths:
           required: false
           type: string
           format: YYYY-MM-DD
+        - name: userIdUltimateCreditor
+          in: query
+          description: For SDDE Core third party credior mode
+          required: false
+          type: string
       responses:
         '200':
           description: OK

@@ -406,6 +406,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_bic Debtor&#39;s BIC (or SWIFT)
     # @option opts [String] :signature_date Signature date of the mandate. Required if is paper.
+    # @option opts [String] :user_id_ultimate_creditor For SDDE Core third party credior mode
     # @return [InlineResponse20013]
     def post_mandates(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts = {})
       data, _status_code, _headers = post_mandates_with_http_info(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts)
@@ -432,6 +433,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :debtor_bic Debtor&#39;s BIC (or SWIFT)
     # @option opts [String] :signature_date Signature date of the mandate. Required if is paper.
+    # @option opts [String] :user_id_ultimate_creditor For SDDE Core third party credior mode
     # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
     def post_mandates_with_http_info(sdd_type, is_paper, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, sequence_type, created_ip, opts = {})
       if @api_client.config.debugging
@@ -507,6 +509,7 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
       query_params[:'debtorBic'] = opts[:'debtor_bic'] if !opts[:'debtor_bic'].nil?
       query_params[:'signatureDate'] = opts[:'signature_date'] if !opts[:'signature_date'].nil?
+      query_params[:'userIdUltimateCreditor'] = opts[:'user_id_ultimate_creditor'] if !opts[:'user_id_ultimate_creditor'].nil?
 
       # header parameters
       header_params = {}

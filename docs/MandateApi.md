@@ -392,7 +392,8 @@ opts = {
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   debtor_bic: 'debtor_bic_example', # String | Debtor's BIC (or SWIFT)
-  signature_date: 'signature_date_example' # String | Signature date of the mandate. Required if is paper.
+  signature_date: 'signature_date_example', # String | Signature date of the mandate. Required if is paper.
+  user_id_ultimate_creditor: 'user_id_ultimate_creditor_example' # String | For SDDE Core third party credior mode
 }
 
 begin
@@ -425,6 +426,7 @@ Name | Type | Description  | Notes
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **debtor_bic** | **String**| Debtor&#39;s BIC (or SWIFT) | [optional] 
  **signature_date** | **String**| Signature date of the mandate. Required if is paper. | [optional] 
+ **user_id_ultimate_creditor** | **String**| For SDDE Core third party credior mode | [optional] 
 
 ### Return type
 
