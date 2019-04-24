@@ -9426,22 +9426,22 @@ paths:
         - name: specifiedUSPerson
           in: query
           description: |
-            Est considÉrÉ comme ayant la nationalitÉ ou la citoyennetÉ amÉricaine :
-            Tout citoyen des Ã‰tats-Unis : une personne est prÉsumÉe citoyen des Etats-Unis dÃ¨s lors
-            quâ€™elle possÃ¨de un passeport amÉricain ou quâ€™elle est nÉe sur le territoire des Etats-Unis,
-            mÃªme lorsquâ€™un tel lieu de naissance figure sur un passeport dâ€™un autre pays, ou que la
-            personne possÃ¨de Également une autre nationalitÉ ou a sa rÉsidence dans un autre pays.
-            Une condition nÉanmoins : la personne ne doit pas avoir renoncÉ Ã  la citoyennetÉ
-            amÉricaine ;
-            â€¢ Tout rÉsident lÉgal des Ã‰tats-Unis, quelle que soit sa nationalitÉ :
-            (i) quiconque est considÉrÉ comme rÉsident fiscal aux Etats-Unis aux termes de la loi
-            fÉdÉrale amÉricaine,
-            (ii) quiconque demande Ã  Ãªtre traitÉ comme rÉsident fiscal aux Etats-Unis, ou
-            (iii) quiconque est considÉrÉ comme rÉsident fiscal aux termes de la loi de cet Etat
-            amÉricain.
-            â€¢ Toute personne titulaire dâ€™une carte de sÉjour permanent (green card) aux Etats-Unis ou
-            rÉsidant de faÃ§on permanente aux Etats-Unis ou y ayant passÉ une pÉriode suffisamment
-            longue au cours des trois derniÃ¨res annÉes :
+            Est considéré comme ayant la nationalité ou la citoyenneté américaine :
+            Tout citoyen des États-Unis : une personne est présumée citoyen des États-Unis dès lors
+            qu’elle possède un passeport américain ou qu’elle est née sur le territoire des Etats-Unis,
+            même lorsqu’un tel lieu de naissance figure sur un passeport d’un autre pays, ou que la
+            personne possède également une autre nationalité ou a sa résidence dans un autre pays.
+            Une condition néanmoins : la personne ne doit pas avoir renoncé à la citoyenneté
+            américaine ;
+            • Tout résident légal des États-Unis, quelle que soit sa nationalité :
+            (i) quiconque est considéré comme résident fiscal aux États-Unis aux termes de la loi
+            fédérale américaine,
+            (ii) quiconque demande à être traité comme résident fiscal aux États-Unis, ou
+            (iii) quiconque est considéré comme résident fiscal aux termes de la loi de cet État
+            américain.
+            • Toute personne titulaire d’une carte de séjour permanent (green card) aux États-Unis ou
+            résidant de façon permanente aux États-Unis ou y ayant passé une période suffisamment
+            longue au cours des trois dernières années.
 
             | Value | Type |
             | --- | --- |
@@ -9472,6 +9472,19 @@ paths:
             | 1 | Leader |
             | 2 | Employee |
             | 3 | None (default)|
+          required: false
+          type: integer
+        - name: entityType
+          in: query
+          description: |
+            Type of user's entity type
+                | Value | Type |
+                | --- | --- |
+                | 1 | Reporting Financial Institution |
+                | 2 | Non-Reporting Financial Institution |
+                | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |
+                | 4 | Active Non-Financial Entity - Other |
+                | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI |
           required: false
           type: integer
         - name: title
@@ -10021,20 +10034,20 @@ paths:
           in: query
           description: |
             Est considéré comme ayant la nationalité ou la citoyenneté américaine :
-            Tout citoyen des États-Unis : une personne est présumée citoyen des Etats-Unis dès lors
+            Tout citoyen des États-Unis : une personne est présumée citoyen des États-Unis dès lors
             qu’elle possède un passeport américain ou qu’elle est née sur le territoire des Etats-Unis,
             même lorsqu’un tel lieu de naissance figure sur un passeport d’un autre pays, ou que la
             personne possède également une autre nationalité ou a sa résidence dans un autre pays.
             Une condition néanmoins : la personne ne doit pas avoir renoncé à la citoyenneté
             américaine ;
             • Tout résident légal des États-Unis, quelle que soit sa nationalité :
-            (i) quiconque est considéré comme résident fiscal aux Etats-Unis aux termes de la loi
+            (i) quiconque est considéré comme résident fiscal aux États-Unis aux termes de la loi
             fédérale américaine,
-            (ii) quiconque demande à être traité comme résident fiscal aux Etats-Unis, ou
-            (iii) quiconque est considéré comme résident fiscal aux termes de la loi de cet Etat
+            (ii) quiconque demande à être traité comme résident fiscal aux États-Unis, ou
+            (iii) quiconque est considéré comme résident fiscal aux termes de la loi de cet État
             américain.
-            • Toute personne titulaire d’une carte de séjour permanent (green card) aux Etats-Unis ou
-            résidant de faÃ§on permanente aux Etats-Unis ou y ayant passé une période suffisamment
+            • Toute personne titulaire d’une carte de séjour permanent (green card) aux États-Unis ou
+            résidant de façon permanente aux États-Unis ou y ayant passé une période suffisamment
             longue au cours des trois dernières années.
           required: false
           type: integer
@@ -10273,22 +10286,22 @@ paths:
         - name: specifiedUSPerson
           in: query
           description: |
-            Est considÉrÉ comme ayant la nationalitÉ ou la citoyennetÉ amÉricaine :
-            Tout citoyen des Ã‰tats-Unis : une personne est prÉsumÉe citoyen des Etats-Unis dÃ¨s lors
-            quâ€™elle possÃ¨de un passeport amÉricain ou quâ€™elle est nÉe sur le territoire des Etats-Unis,
-            mÃªme lorsquâ€™un tel lieu de naissance figure sur un passeport dâ€™un autre pays, ou que la
-            personne possÃ¨de Également une autre nationalitÉ ou a sa rÉsidence dans un autre pays.
-            Une condition nÉanmoins : la personne ne doit pas avoir renoncÉ Ã  la citoyennetÉ
-            amÉricaine ;
-            â€¢ Tout rÉsident lÉgal des Ã‰tats-Unis, quelle que soit sa nationalitÉ :
-            (i) quiconque est considÉrÉ comme rÉsident fiscal aux Etats-Unis aux termes de la loi
-            fÉdÉrale amÉricaine,
-            (ii) quiconque demande Ã  Ãªtre traitÉ comme rÉsident fiscal aux Etats-Unis, ou
-            (iii) quiconque est considÉrÉ comme rÉsident fiscal aux termes de la loi de cet Etat
-            amÉricain.
-            â€¢ Toute personne titulaire dâ€™une carte de sÉjour permanent (green card) aux Etats-Unis ou
-            rÉsidant de faÃ§on permanente aux Etats-Unis ou y ayant passÉ une pÉriode suffisamment
-            longue au cours des trois derniÃ¨res annÉes.
+            Est considéré comme ayant la nationalité ou la citoyenneté américaine :
+            Tout citoyen des États-Unis : une personne est présumée citoyen des États-Unis dès lors
+            qu’elle possède un passeport américain ou qu’elle est née sur le territoire des Etats-Unis,
+            même lorsqu’un tel lieu de naissance figure sur un passeport d’un autre pays, ou que la
+            personne possède également une autre nationalité ou a sa résidence dans un autre pays.
+            Une condition néanmoins : la personne ne doit pas avoir renoncé à la citoyenneté
+            américaine ;
+            • Tout résident légal des États-Unis, quelle que soit sa nationalité :
+            (i) quiconque est considéré comme résident fiscal aux États-Unis aux termes de la loi
+            fédérale américaine,
+            (ii) quiconque demande à être traité comme résident fiscal aux États-Unis, ou
+            (iii) quiconque est considéré comme résident fiscal aux termes de la loi de cet État
+            américain.
+            • Toute personne titulaire d’une carte de séjour permanent (green card) aux États-Unis ou
+            résidant de façon permanente aux États-Unis ou y ayant passé une période suffisamment
+            longue au cours des trois dernières années.
             | Value | Type |
             | --- | --- |
             | 0 | No |
@@ -10770,7 +10783,7 @@ paths:
           type: string
         - name: personalAssets
           in: query
-          description: User's personal assets range exprimed in K€.
+          description: User's personal assets range expressed in k€.
           required: false
           type: string
           enum: ["0-2", "3-22", "23-128", "129-319", "320-464", "465-"]
@@ -12427,15 +12440,15 @@ definitions:
       embossedName:
         type: string
       expiryDate:
-        type: integer
+        type: string
         description: Date YYYY-MM-DD
       CVV:
         type: string
       startDate:
-        type: integer
+        type: string
         description: Date YYYY-MM-DD
       endDate:
-        type: integer
+        type: string
         description: Date YYYY-MM-DD
       countryCode:
         type: string
@@ -12636,6 +12649,9 @@ definitions:
       modifiedDate:
         type: string
         description: Date YYYY-MM-DD HH:MM:SS
+      userIdUltimateCreditor:
+        type: integer
+        description: For SDDE Core third party credior mode
   User:
     type: object
     properties:
@@ -12695,7 +12711,7 @@ definitions:
         type: string
       placeOfBirth:
         type: string
-      placeCountry:
+      birthCountry:
         type: string
       occupation:
         type: string
