@@ -39,5 +39,6 @@ Name | Type | Description | Notes
 **created_ip** | **String** |  | [optional] 
 **created_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
 **modified_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
+**user_id_ultimate_creditor** | **Integer** | For SDDE Core third party credior mode | [optional] 
 
 

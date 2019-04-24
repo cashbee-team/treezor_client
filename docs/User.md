@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **nationality** | **String** |  | [optional] 
 **nationality_other** | **String** |  | [optional] 
 **place_of_birth** | **String** |  | [optional] 
-**place_country** | **String** |  | [optional] 
+**birth_country** | **String** |  | [optional] 
 **occupation** | **String** |  | [optional] 
 **income_range** | **String** |  | [optional] 
 **legal_name** | **String** |  | [optional] 
