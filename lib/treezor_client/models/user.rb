@@ -68,7 +68,7 @@ module TreezorClient
 
     attr_accessor :place_of_birth
 
-    attr_accessor :place_country
+    attr_accessor :birth_country
 
     attr_accessor :occupation
 
@@ -187,7 +187,7 @@ module TreezorClient
         :'nationality' => :'nationality',
         :'nationality_other' => :'nationalityOther',
         :'place_of_birth' => :'placeOfBirth',
-        :'place_country' => :'placeCountry',
+        :'birth_country' => :'birthCountry',
         :'occupation' => :'occupation',
         :'income_range' => :'incomeRange',
         :'legal_name' => :'legalName',
@@ -251,7 +251,7 @@ module TreezorClient
         :'nationality' => :'String',
         :'nationality_other' => :'String',
         :'place_of_birth' => :'String',
-        :'place_country' => :'String',
+        :'birth_country' => :'String',
         :'occupation' => :'String',
         :'income_range' => :'String',
         :'legal_name' => :'String',
@@ -401,8 +401,8 @@ module TreezorClient
         self.place_of_birth = attributes[:'placeOfBirth']
       end
 
-      if attributes.has_key?(:'placeCountry')
-        self.place_country = attributes[:'placeCountry']
+      if attributes.has_key?(:'birthCountry')
+        self.birth_country = attributes[:'birthCountry']
       end
 
       if attributes.has_key?(:'occupation')
@@ -595,7 +595,7 @@ module TreezorClient
           nationality == o.nationality &&
           nationality_other == o.nationality_other &&
           place_of_birth == o.place_of_birth &&
-          place_country == o.place_country &&
+          birth_country == o.birth_country &&
           occupation == o.occupation &&
           income_range == o.income_range &&
           legal_name == o.legal_name &&
@@ -637,7 +637,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, place_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
+      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, birth_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
     end
 
     # Builds the object from hash

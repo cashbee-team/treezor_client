@@ -90,6 +90,9 @@ module TreezorClient
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :modified_date
 
+    # For SDDE Core third party credior mode
+    attr_accessor :user_id_ultimate_creditor
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -150,7 +153,8 @@ module TreezorClient
         :'revocation_signature_date' => :'revocationSignatureDate',
         :'created_ip' => :'createdIp',
         :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate'
+        :'modified_date' => :'modifiedDate',
+        :'user_id_ultimate_creditor' => :'userIdUltimateCreditor'
       }
     end
 
@@ -192,7 +196,8 @@ module TreezorClient
         :'revocation_signature_date' => :'String',
         :'created_ip' => :'String',
         :'created_date' => :'String',
-        :'modified_date' => :'String'
+        :'modified_date' => :'String',
+        :'user_id_ultimate_creditor' => :'Integer'
       }
     end
 
@@ -347,6 +352,10 @@ module TreezorClient
       if attributes.has_key?(:'modifiedDate')
         self.modified_date = attributes[:'modifiedDate']
       end
+
+      if attributes.has_key?(:'userIdUltimateCreditor')
+        self.user_id_ultimate_creditor = attributes[:'userIdUltimateCreditor']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -438,7 +447,8 @@ module TreezorClient
           revocation_signature_date == o.revocation_signature_date &&
           created_ip == o.created_ip &&
           created_date == o.created_date &&
-          modified_date == o.modified_date
+          modified_date == o.modified_date &&
+          user_id_ultimate_creditor == o.user_id_ultimate_creditor
     end
 
     # @see the `==` method
@@ -450,7 +460,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [mandate_id, title, legal_informations, unique_mandate_reference, mandate_status, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, debtor_bic, sequence_type, creditor_name, sepa_creditor_identifier, creditor_address, creditor_city, creditor_zip_code, creditor_country, signature_date, debtor_signature_ip, signed, debtor_identification_code, debtor_reference_party_name, debtor_reference_identification_code, creditor_reference_party_name, creditor_reference_identification_code, contract_identification_number, contract_description, is_paper, sdd_type, revocation_signature_date, created_ip, created_date, modified_date].hash
+      [mandate_id, title, legal_informations, unique_mandate_reference, mandate_status, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, debtor_bic, sequence_type, creditor_name, sepa_creditor_identifier, creditor_address, creditor_city, creditor_zip_code, creditor_country, signature_date, debtor_signature_ip, signed, debtor_identification_code, debtor_reference_party_name, debtor_reference_identification_code, creditor_reference_party_name, creditor_reference_identification_code, contract_identification_number, contract_description, is_paper, sdd_type, revocation_signature_date, created_ip, created_date, modified_date, user_id_ultimate_creditor].hash
     end
 
     # Builds the object from hash
