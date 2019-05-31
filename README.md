@@ -165,7 +165,7 @@ Class | Method | HTTP request | Description
 *TreezorClient::PayinrefundApi* | [**post_payinrefunds**](docs/PayinrefundApi.md#post_payinrefunds) | **POST** /payinrefunds | create a pay in refund
 *TreezorClient::PayoutApi* | [**delete_payout**](docs/PayoutApi.md#delete_payout) | **DELETE** /payouts/{id} | cancel a payout
 *TreezorClient::PayoutApi* | [**get_payout**](docs/PayoutApi.md#get_payout) | **GET** /payouts/{id} | get a payout
-*TreezorClient::PayoutApi* | [**get_payouts**](docs/PayoutApi.md#get_payouts) | **GET** /payouts | search pay outs
+*TreezorClient::PayoutApi* | [**get_payouts**](docs/PayoutApi.md#get_payouts) | **GET** /payouts | search payout(s)
 *TreezorClient::PayoutApi* | [**post_payout**](docs/PayoutApi.md#post_payout) | **POST** /payouts | create a pay out
 *TreezorClient::PayoutRefundsApi* | [**get_payout_refunds**](docs/PayoutRefundsApi.md#get_payout_refunds) | **GET** /payoutRefunds | search pay outs refund
 *TreezorClient::TaxResidenceApi* | [**tax_residences_get**](docs/TaxResidenceApi.md#tax_residences_get) | **GET** /taxResidences | search a residence

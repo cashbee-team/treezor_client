@@ -127,8 +127,8 @@ module TreezorClient
       end
       return data, status_code, headers
     end
-    # search pay outs
-    # Get pay out that match search criteria.
+    # search payout(s)
+    # Get payout(s) that match search criteria. The request must contains at least one of those inputs  payoutId, bankaccountId, beneficiaryId, payoutTypeId, payoutTag
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
@@ -137,17 +137,12 @@ module TreezorClient
     # @option opts [Integer] :payout_id Payout&#39;s Id
     # @option opts [String] :payout_tag Custom data.
     # @option opts [String] :payout_status pay out status; Possible values: * CANCELED * PENDING * VALIDATED 
-    # @option opts [Integer] :payout_type_id Pay out type&#39;s id.
-    # @option opts [String] :payout_type Pay out type; Possible values: * Credit Transfer * Direct Debit 
+    # @option opts [Integer] :payout_type_id Pay out type&#39;s id :  | ID | Description | |-----|-----| | 1 | Credit Transfer | | 2 | Direct Debit | 
     # @option opts [Integer] :wallet_id Pay out wallet&#39;s id.
-    # @option opts [String] :event_alias Pay out wallet&#39;s event alias.
     # @option opts [Integer] :user_id Pay out user&#39;s id.
-    # @option opts [String] :user_name Pay out user&#39;s name.
-    # @option opts [String] :user_email Pay out user&#39;s email.
     # @option opts [DateTime] :payout_date pay out execution date. Format: YYYY-MM-DD HH:MM:SS&#39; 
     # @option opts [Integer] :bankaccount_id Pay out bank account id.
-    # @option opts [String] :bankaccount_iban Pay out bank account IBAN.
-    # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account.
+    # @option opts [Integer] :beneficiary_id Pay out beneficiary id.
     # @option opts [String] :amount Pay out amount.
     # @option opts [String] :currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
     # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
@@ -164,8 +159,8 @@ module TreezorClient
       data
     end
 
-    # search pay outs
-    # Get pay out that match search criteria.
+    # search payout(s)
+    # Get payout(s) that match search criteria. The request must contains at least one of those inputs  payoutId, bankaccountId, beneficiaryId, payoutTypeId, payoutTag
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
@@ -174,17 +169,12 @@ module TreezorClient
     # @option opts [Integer] :payout_id Payout&#39;s Id
     # @option opts [String] :payout_tag Custom data.
     # @option opts [String] :payout_status pay out status; Possible values: * CANCELED * PENDING * VALIDATED 
-    # @option opts [Integer] :payout_type_id Pay out type&#39;s id.
-    # @option opts [String] :payout_type Pay out type; Possible values: * Credit Transfer * Direct Debit 
+    # @option opts [Integer] :payout_type_id Pay out type&#39;s id :  | ID | Description | |-----|-----| | 1 | Credit Transfer | | 2 | Direct Debit | 
     # @option opts [Integer] :wallet_id Pay out wallet&#39;s id.
-    # @option opts [String] :event_alias Pay out wallet&#39;s event alias.
     # @option opts [Integer] :user_id Pay out user&#39;s id.
-    # @option opts [String] :user_name Pay out user&#39;s name.
-    # @option opts [String] :user_email Pay out user&#39;s email.
     # @option opts [DateTime] :payout_date pay out execution date. Format: YYYY-MM-DD HH:MM:SS&#39; 
     # @option opts [Integer] :bankaccount_id Pay out bank account id.
-    # @option opts [String] :bankaccount_iban Pay out bank account IBAN.
-    # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account.
+    # @option opts [Integer] :beneficiary_id Pay out beneficiary id.
     # @option opts [String] :amount Pay out amount.
     # @option opts [String] :currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
     # @option opts [Integer] :page_number Pagination page number. More info [here](https://agent.treezor.com/lists). 
@@ -213,16 +203,11 @@ module TreezorClient
       query_params[:'payoutTag'] = opts[:'payout_tag'] if !opts[:'payout_tag'].nil?
       query_params[:'payoutStatus'] = opts[:'payout_status'] if !opts[:'payout_status'].nil?
       query_params[:'payoutTypeId'] = opts[:'payout_type_id'] if !opts[:'payout_type_id'].nil?
-      query_params[:'payoutType'] = opts[:'payout_type'] if !opts[:'payout_type'].nil?
       query_params[:'walletId'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
-      query_params[:'eventAlias'] = opts[:'event_alias'] if !opts[:'event_alias'].nil?
       query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
-      query_params[:'userName'] = opts[:'user_name'] if !opts[:'user_name'].nil?
-      query_params[:'userEmail'] = opts[:'user_email'] if !opts[:'user_email'].nil?
       query_params[:'payoutDate'] = opts[:'payout_date'] if !opts[:'payout_date'].nil?
       query_params[:'bankaccountId'] = opts[:'bankaccount_id'] if !opts[:'bankaccount_id'].nil?
-      query_params[:'bankaccountIBAN'] = opts[:'bankaccount_iban'] if !opts[:'bankaccount_iban'].nil?
-      query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
+      query_params[:'beneficiaryId'] = opts[:'beneficiary_id'] if !opts[:'beneficiary_id'].nil?
       query_params[:'amount'] = opts[:'amount'] if !opts[:'amount'].nil?
       query_params[:'currency'] = opts[:'currency'] if !opts[:'currency'].nil?
       query_params[:'pageNumber'] = opts[:'page_number'] if !opts[:'page_number'].nil?

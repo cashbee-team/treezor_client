@@ -128,7 +128,7 @@ module TreezorClient
       return data, status_code, headers
     end
     # search transfers
-    # Search for transfers in the system.
+    # Search for transfers in the system. The request must contains at least one of those inputs  walletId, beneficiaryWalletId, userId, beneficiaryUserId, transferId, transferTag
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
@@ -137,13 +137,8 @@ module TreezorClient
     # @option opts [Integer] :transfer_id Transfer&#39;s id.
     # @option opts [String] :transfer_tag Custom data.
     # @option opts [String] :transfer_status Transfer&#39;s status. Possible values: * PENDING * CANCELED * VALIDATED 
-    # @option opts [String] :label Transfer&#39;s label.
     # @option opts [Integer] :wallet_id Debited wallet&#39;s id.
-    # @option opts [String] :wallet_name Debited wallet&#39;s name.
-    # @option opts [Integer] :wallet_type_id Debited wallet&#39;s type id.
     # @option opts [Integer] :beneficiary_wallet_id Credited wallet&#39;s id.
-    # @option opts [String] :beneficiary_wallet_name Credited wallet&#39;s name.
-    # @option opts [Integer] :beneficiary_wallet_type_id Credited wallet&#39;s type id.
     # @option opts [Integer] :user_id Debited wallet user&#39;s id.
     # @option opts [Integer] :beneficiary_user_id Credited wallet user&#39;s id.
     # @option opts [DateTime] :transfer_date Transfer&#39;s date. Format : YYYY-MM-DD HH:MM:SS 
@@ -165,7 +160,7 @@ module TreezorClient
     end
 
     # search transfers
-    # Search for transfers in the system.
+    # Search for transfers in the system. The request must contains at least one of those inputs  walletId, beneficiaryWalletId, userId, beneficiaryUserId, transferId, transferTag
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
@@ -174,13 +169,8 @@ module TreezorClient
     # @option opts [Integer] :transfer_id Transfer&#39;s id.
     # @option opts [String] :transfer_tag Custom data.
     # @option opts [String] :transfer_status Transfer&#39;s status. Possible values: * PENDING * CANCELED * VALIDATED 
-    # @option opts [String] :label Transfer&#39;s label.
     # @option opts [Integer] :wallet_id Debited wallet&#39;s id.
-    # @option opts [String] :wallet_name Debited wallet&#39;s name.
-    # @option opts [Integer] :wallet_type_id Debited wallet&#39;s type id.
     # @option opts [Integer] :beneficiary_wallet_id Credited wallet&#39;s id.
-    # @option opts [String] :beneficiary_wallet_name Credited wallet&#39;s name.
-    # @option opts [Integer] :beneficiary_wallet_type_id Credited wallet&#39;s type id.
     # @option opts [Integer] :user_id Debited wallet user&#39;s id.
     # @option opts [Integer] :beneficiary_user_id Credited wallet user&#39;s id.
     # @option opts [DateTime] :transfer_date Transfer&#39;s date. Format : YYYY-MM-DD HH:MM:SS 
@@ -212,13 +202,8 @@ module TreezorClient
       query_params[:'transferId'] = opts[:'transfer_id'] if !opts[:'transfer_id'].nil?
       query_params[:'transferTag'] = opts[:'transfer_tag'] if !opts[:'transfer_tag'].nil?
       query_params[:'transferStatus'] = opts[:'transfer_status'] if !opts[:'transfer_status'].nil?
-      query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'walletId'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
-      query_params[:'walletName'] = opts[:'wallet_name'] if !opts[:'wallet_name'].nil?
-      query_params[:'walletTypeId'] = opts[:'wallet_type_id'] if !opts[:'wallet_type_id'].nil?
       query_params[:'beneficiaryWalletId'] = opts[:'beneficiary_wallet_id'] if !opts[:'beneficiary_wallet_id'].nil?
-      query_params[:'beneficiaryWalletName'] = opts[:'beneficiary_wallet_name'] if !opts[:'beneficiary_wallet_name'].nil?
-      query_params[:'beneficiaryWalletTypeId'] = opts[:'beneficiary_wallet_type_id'] if !opts[:'beneficiary_wallet_type_id'].nil?
       query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
       query_params[:'beneficiaryUserId'] = opts[:'beneficiary_user_id'] if !opts[:'beneficiary_user_id'].nil?
       query_params[:'transferDate'] = opts[:'transfer_date'] if !opts[:'transfer_date'].nil?

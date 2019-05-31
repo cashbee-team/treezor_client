@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_payout**](PayoutApi.md#delete_payout) | **DELETE** /payouts/{id} | cancel a payout
 [**get_payout**](PayoutApi.md#get_payout) | **GET** /payouts/{id} | get a payout
-[**get_payouts**](PayoutApi.md#get_payouts) | **GET** /payouts | search pay outs
+[**get_payouts**](PayoutApi.md#get_payouts) | **GET** /payouts | search payout(s)
 [**post_payout**](PayoutApi.md#post_payout) | **POST** /payouts | create a pay out
 
 
@@ -121,9 +121,9 @@ Name | Type | Description  | Notes
 # **get_payouts**
 > InlineResponse20019 get_payouts(opts)
 
-search pay outs
+search payout(s)
 
-Get pay out that match search criteria.
+Get payout(s) that match search criteria. The request must contains at least one of those inputs  payoutId, bankaccountId, beneficiaryId, payoutTypeId, payoutTag
 
 ### Example
 ```ruby
@@ -147,17 +147,12 @@ opts = {
   payout_id: 56, # Integer | Payout's Id
   payout_tag: 'payout_tag_example', # String | Custom data.
   payout_status: 'payout_status_example', # String | pay out status; Possible values: * CANCELED * PENDING * VALIDATED 
-  payout_type_id: 56, # Integer | Pay out type's id.
-  payout_type: 'payout_type_example', # String | Pay out type; Possible values: * Credit Transfer * Direct Debit 
+  payout_type_id: 56, # Integer | Pay out type's id :  | ID | Description | |-----|-----| | 1 | Credit Transfer | | 2 | Direct Debit | 
   wallet_id: 56, # Integer | Pay out wallet's id.
-  event_alias: 'event_alias_example', # String | Pay out wallet's event alias.
   user_id: 56, # Integer | Pay out user's id.
-  user_name: 'user_name_example', # String | Pay out user's name.
-  user_email: 'user_email_example', # String | Pay out user's email.
   payout_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | pay out execution date. Format: YYYY-MM-DD HH:MM:SS' 
   bankaccount_id: 56, # Integer | Pay out bank account id.
-  bankaccount_iban: 'bankaccount_iban_example', # String | Pay out bank account IBAN.
-  label: 'label_example', # String | Pay out label that will be displayed in the receiver's account.
+  beneficiary_id: 56, # Integer | Pay out beneficiary id.
   amount: 'amount_example', # String | Pay out amount.
   currency: 'currency_example', # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
   page_number: 56, # Integer | Pagination page number. More info [here](https://agent.treezor.com/lists). 
@@ -171,7 +166,7 @@ opts = {
 }
 
 begin
-  #search pay outs
+  #search payout(s)
   result = api_instance.get_payouts(opts)
   p result
 rescue TreezorClient::ApiError => e
@@ -190,17 +185,12 @@ Name | Type | Description  | Notes
  **payout_id** | **Integer**| Payout&#39;s Id | [optional] 
  **payout_tag** | **String**| Custom data. | [optional] 
  **payout_status** | **String**| pay out status; Possible values: * CANCELED * PENDING * VALIDATED  | [optional] 
- **payout_type_id** | **Integer**| Pay out type&#39;s id. | [optional] 
- **payout_type** | **String**| Pay out type; Possible values: * Credit Transfer * Direct Debit  | [optional] 
+ **payout_type_id** | **Integer**| Pay out type&#39;s id :  | ID | Description | |-----|-----| | 1 | Credit Transfer | | 2 | Direct Debit |  | [optional] 
  **wallet_id** | **Integer**| Pay out wallet&#39;s id. | [optional] 
- **event_alias** | **String**| Pay out wallet&#39;s event alias. | [optional] 
  **user_id** | **Integer**| Pay out user&#39;s id. | [optional] 
- **user_name** | **String**| Pay out user&#39;s name. | [optional] 
- **user_email** | **String**| Pay out user&#39;s email. | [optional] 
  **payout_date** | **DateTime**| pay out execution date. Format: YYYY-MM-DD HH:MM:SS&#39;  | [optional] 
  **bankaccount_id** | **Integer**| Pay out bank account id. | [optional] 
- **bankaccount_iban** | **String**| Pay out bank account IBAN. | [optional] 
- **label** | **String**| Pay out label that will be displayed in the receiver&#39;s account. | [optional] 
+ **beneficiary_id** | **Integer**| Pay out beneficiary id. | [optional] 
  **amount** | **String**| Pay out amount. | [optional] 
  **currency** | **String**| Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217).  | [optional] 
  **page_number** | **Integer**| Pagination page number. More info [here](https://agent.treezor.com/lists).  | [optional] 

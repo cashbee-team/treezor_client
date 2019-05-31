@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 search transfers
 
-Search for transfers in the system.
+Search for transfers in the system. The request must contains at least one of those inputs  walletId, beneficiaryWalletId, userId, beneficiaryUserId, transferId, transferTag
 
 ### Example
 ```ruby
@@ -147,13 +147,8 @@ opts = {
   transfer_id: 56, # Integer | Transfer's id.
   transfer_tag: 'transfer_tag_example', # String | Custom data.
   transfer_status: 'transfer_status_example', # String | Transfer's status. Possible values: * PENDING * CANCELED * VALIDATED 
-  label: 'label_example', # String | Transfer's label.
   wallet_id: 56, # Integer | Debited wallet's id.
-  wallet_name: 'wallet_name_example', # String | Debited wallet's name.
-  wallet_type_id: 56, # Integer | Debited wallet's type id.
   beneficiary_wallet_id: 56, # Integer | Credited wallet's id.
-  beneficiary_wallet_name: 'beneficiary_wallet_name_example', # String | Credited wallet's name.
-  beneficiary_wallet_type_id: 56, # Integer | Credited wallet's type id.
   user_id: 56, # Integer | Debited wallet user's id.
   beneficiary_user_id: 56, # Integer | Credited wallet user's id.
   transfer_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Transfer's date. Format : YYYY-MM-DD HH:MM:SS 
@@ -190,13 +185,8 @@ Name | Type | Description  | Notes
  **transfer_id** | **Integer**| Transfer&#39;s id. | [optional] 
  **transfer_tag** | **String**| Custom data. | [optional] 
  **transfer_status** | **String**| Transfer&#39;s status. Possible values: * PENDING * CANCELED * VALIDATED  | [optional] 
- **label** | **String**| Transfer&#39;s label. | [optional] 
  **wallet_id** | **Integer**| Debited wallet&#39;s id. | [optional] 
- **wallet_name** | **String**| Debited wallet&#39;s name. | [optional] 
- **wallet_type_id** | **Integer**| Debited wallet&#39;s type id. | [optional] 
  **beneficiary_wallet_id** | **Integer**| Credited wallet&#39;s id. | [optional] 
- **beneficiary_wallet_name** | **String**| Credited wallet&#39;s name. | [optional] 
- **beneficiary_wallet_type_id** | **Integer**| Credited wallet&#39;s type id. | [optional] 
  **user_id** | **Integer**| Debited wallet user&#39;s id. | [optional] 
  **beneficiary_user_id** | **Integer**| Credited wallet user&#39;s id. | [optional] 
  **transfer_date** | **DateTime**| Transfer&#39;s date. Format : YYYY-MM-DD HH:MM:SS  | [optional] 
