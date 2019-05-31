@@ -112,6 +112,8 @@ module TreezorClient
 
     attr_accessor :virtual_iban_reference
 
+    attr_accessor :dbtr_iban
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -184,7 +186,8 @@ module TreezorClient
         :'creditor_iban' => :'creditorIban',
         :'creditor_bic' => :'creditorBIC',
         :'virtual_iban_id' => :'virtualIbanId',
-        :'virtual_iban_reference' => :'virtualIbanReference'
+        :'virtual_iban_reference' => :'virtualIbanReference',
+        :'dbtr_iban' => :'DbtrIBAN'
       }
     end
 
@@ -238,7 +241,8 @@ module TreezorClient
         :'creditor_iban' => :'String',
         :'creditor_bic' => :'String',
         :'virtual_iban_id' => :'Integer',
-        :'virtual_iban_reference' => :'String'
+        :'virtual_iban_reference' => :'String',
+        :'dbtr_iban' => :'String'
       }
     end
 
@@ -441,6 +445,10 @@ module TreezorClient
       if attributes.has_key?(:'virtualIbanReference')
         self.virtual_iban_reference = attributes[:'virtualIbanReference']
       end
+
+      if attributes.has_key?(:'DbtrIBAN')
+        self.dbtr_iban = attributes[:'DbtrIBAN']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -520,7 +528,8 @@ module TreezorClient
           creditor_iban == o.creditor_iban &&
           creditor_bic == o.creditor_bic &&
           virtual_iban_id == o.virtual_iban_id &&
-          virtual_iban_reference == o.virtual_iban_reference
+          virtual_iban_reference == o.virtual_iban_reference &&
+          dbtr_iban == o.dbtr_iban
     end
 
     # @see the `==` method
@@ -532,7 +541,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [payin_id, payin_tag, payin_status, code_status, information_status, wallet_id, user_id, cart_id, wallet_event_name, wallet_alias, user_firstname, user_lastname, message_to_user, payment_method_id, subtotal_items, subtotal_services, subtotal_tax, amount, currency, distributor_fee, created_date, created_ip, payment_html, payment_language, payment_post_url, payment_post_data_url, payment_accepted_url, payment_waiting_url, payment_refused_url, payment_canceled_url, payment_exception_url, iban_fullname, iban_id, iban_bic, iban_tx_end_to_end_id, iban_tx_id, refund_amount, total_rows, forward_url, payin_date, mandate_id, creditor_name, creditor_address_line, creditor_country, creditor_iban, creditor_bic, virtual_iban_id, virtual_iban_reference].hash
+      [payin_id, payin_tag, payin_status, code_status, information_status, wallet_id, user_id, cart_id, wallet_event_name, wallet_alias, user_firstname, user_lastname, message_to_user, payment_method_id, subtotal_items, subtotal_services, subtotal_tax, amount, currency, distributor_fee, created_date, created_ip, payment_html, payment_language, payment_post_url, payment_post_data_url, payment_accepted_url, payment_waiting_url, payment_refused_url, payment_canceled_url, payment_exception_url, iban_fullname, iban_id, iban_bic, iban_tx_end_to_end_id, iban_tx_id, refund_amount, total_rows, forward_url, payin_date, mandate_id, creditor_name, creditor_address_line, creditor_country, creditor_iban, creditor_bic, virtual_iban_id, virtual_iban_reference, dbtr_iban].hash
     end
 
     # Builds the object from hash

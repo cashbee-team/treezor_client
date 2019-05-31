@@ -12918,6 +12918,8 @@ definitions:
         type: integer
       virtualIbanReference:
         type: string
+      DbtrIBAN:
+        type: string
   PayoutRefund:
     type: object
     properties:

@@ -51,5 +51,6 @@ Name | Type | Description | Notes
 **creditor_bic** | **String** |  | [optional] 
 **virtual_iban_id** | **Integer** |  | [optional] 
 **virtual_iban_reference** | **String** |  | [optional] 
+**dbtr_iban** | **String** |  | [optional] 
 
 
