@@ -1,4 +1,4 @@
-swagger: '2.0'
+﻿swagger: '2.0'
 info:
   description: |
     Treezor API.
@@ -7690,8 +7690,8 @@ paths:
     get:
       tags:
         - payout
-      summary: search pay outs
-      description: Get pay out that match search criteria.
+      summary: search payout(s)
+      description: Get payout(s) that match search criteria. The request must contains at least one of those inputs  payoutId, bankaccountId, beneficiaryId, payoutTypeId, payoutTag
       operationId: getPayouts
       consumes:
         - application/json
@@ -7748,42 +7748,25 @@ paths:
           type: string
         - name: payoutTypeId
           in: query
-          description: Pay out type's id.
+          description: |
+            Pay out type's id :
+
+            | ID | Description |
+            |-----|-----|
+            | 1 | Credit Transfer |
+            | 2 | Direct Debit |
           required: false
           type: integer
-        - name: payoutType
-          in: query
-          description: |
-            Pay out type; Possible values:
-            * Credit Transfer
-            * Direct Debit
-          required: false
-          type: string
         - name: walletId
           in: query
           description: Pay out wallet's id.
           required: false
           type: integer
-        - name: eventAlias
-          in: query
-          description: Pay out wallet's event alias.
-          required: false
-          type: string
         - name: userId
           in: query
           description: Pay out user's id.
           required: false
           type: integer
-        - name: userName
-          in: query
-          description: Pay out user's name.
-          required: false
-          type: string
-        - name: userEmail
-          in: query
-          description: Pay out user's email.
-          required: false
-          type: string
         - name: payoutDate
           in: query
           description: |
@@ -7796,16 +7779,11 @@ paths:
           description: Pay out bank account id.
           required: false
           type: integer
-        - name: bankaccountIBAN
+        - name: beneficiaryId
           in: query
-          description: Pay out bank account IBAN.
+          description: Pay out beneficiary id.
           required: false
-          type: string
-        - name: label
-          in: query
-          description: Pay out label that will be displayed in the receiver's account.
-          required: false
-          type: string
+          type: integer
         - name: amount
           in: query
           description: Pay out amount.
@@ -8680,7 +8658,7 @@ paths:
       tags:
         - transfer
       summary: search transfers
-      description: Search for transfers in the system.
+      description: Search for transfers in the system. The request must contains at least one of those inputs  walletId, beneficiaryWalletId, userId, beneficiaryUserId, transferId, transferTag
       operationId: getTransfers
       consumes:
         - application/json
@@ -8735,39 +8713,14 @@ paths:
             * VALIDATED
           required: false
           type: string
-        - name: label
-          in: query
-          description: Transfer's label.
-          required: false
-          type: string
         - name: walletId
           in: query
           description: Debited wallet's id.
           required: false
           type: integer
-        - name: walletName
-          in: query
-          description: Debited wallet's name.
-          required: false
-          type: string
-        - name: walletTypeId
-          in: query
-          description: Debited wallet's type id.
-          required: false
-          type: integer
         - name: beneficiaryWalletId
           in: query
           description: Credited wallet's id.
-          required: false
-          type: integer
-        - name: beneficiaryWalletName
-          in: query
-          description: Credited wallet's name.
-          required: false
-          type: string
-        - name: beneficiaryWalletTypeId
-          in: query
-          description: Credited wallet's type id.
           required: false
           type: integer
         - name: userId
@@ -9434,7 +9387,7 @@ paths:
             américain.
             • Toute personne titulaire d’une carte de séjour permanent (green card) aux États-Unis ou
             résidant de façon permanente aux États-Unis ou y ayant passé une période suffisamment
-            longue au cours des trois dernières années.
+            longue au cours des trois dernières années :
 
             | Value | Type |
             | --- | --- |
@@ -11475,12 +11428,6 @@ paths:
             Dollar = USD ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ Default currency will be same as the wallet
           required: true
           type: string
-        - name: load
-          in: query
-          description: Initial loading amount.
-          required: false
-          type: number
-          format: float
         - name: eventName
           in: query
           description: |
