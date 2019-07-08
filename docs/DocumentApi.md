@@ -224,7 +224,7 @@ opts = {
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   document_id: 56, # Integer | Document's unique id.
   document_tag: 'document_tag_example', # String | Custom data.
-  document_status: 'document_status_example', # String | The status of the document. Possible values: * PENDING * CANCELED * VALIDATED 
+  document_status: 'document_status_example', # String | The status of the document. Possible values: * PENDING * CANCELED * VALIDATED * REFUSED 
   document_type_id: 56, # Integer | Document type id.
   document_type: 'document_type_example', # String | Document's type.
   user_id: 56, # Integer | Document user's id.
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **document_id** | **Integer**| Document&#39;s unique id. | [optional] 
  **document_tag** | **String**| Custom data. | [optional] 
- **document_status** | **String**| The status of the document. Possible values: * PENDING * CANCELED * VALIDATED  | [optional] 
+ **document_status** | **String**| The status of the document. Possible values: * PENDING * CANCELED * VALIDATED * REFUSED  | [optional] 
  **document_type_id** | **Integer**| Document type id. | [optional] 
  **document_type** | **String**| Document&#39;s type. | [optional] 
  **user_id** | **Integer**| Document user&#39;s id. | [optional] 

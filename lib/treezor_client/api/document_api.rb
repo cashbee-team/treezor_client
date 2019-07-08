@@ -234,7 +234,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :document_id Document&#39;s unique id.
     # @option opts [String] :document_tag Custom data.
-    # @option opts [String] :document_status The status of the document. Possible values: * PENDING * CANCELED * VALIDATED 
+    # @option opts [String] :document_status The status of the document. Possible values: * PENDING * CANCELED * VALIDATED * REFUSED 
     # @option opts [Integer] :document_type_id Document type id.
     # @option opts [String] :document_type Document&#39;s type.
     # @option opts [Integer] :user_id Document user&#39;s id.
@@ -267,7 +267,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :document_id Document&#39;s unique id.
     # @option opts [String] :document_tag Custom data.
-    # @option opts [String] :document_status The status of the document. Possible values: * PENDING * CANCELED * VALIDATED 
+    # @option opts [String] :document_status The status of the document. Possible values: * PENDING * CANCELED * VALIDATED * REFUSED 
     # @option opts [Integer] :document_type_id Document type id.
     # @option opts [String] :document_type Document&#39;s type.
     # @option opts [Integer] :user_id Document user&#39;s id.
