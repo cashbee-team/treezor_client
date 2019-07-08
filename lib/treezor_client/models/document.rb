@@ -40,6 +40,8 @@ module TreezorClient
 
     attr_accessor :temporary_url_thumb
 
+    attr_accessor :information_status
+
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
 
@@ -86,6 +88,7 @@ module TreezorClient
         :'file_name' => :'fileName',
         :'temporary_url' => :'temporaryUrl',
         :'temporary_url_thumb' => :'temporaryUrlThumb',
+        :'information_status' => :'informationStatus',
         :'created_date' => :'createdDate',
         :'modified_date' => :'modifiedDate',
         :'total_rows' => :'totalRows'
@@ -108,6 +111,7 @@ module TreezorClient
         :'file_name' => :'String',
         :'temporary_url' => :'String',
         :'temporary_url_thumb' => :'String',
+        :'information_status' => :'String',
         :'created_date' => :'String',
         :'modified_date' => :'String',
         :'total_rows' => :'Integer'
@@ -174,6 +178,10 @@ module TreezorClient
         self.temporary_url_thumb = attributes[:'temporaryUrlThumb']
       end
 
+      if attributes.has_key?(:'informationStatus')
+        self.information_status = attributes[:'informationStatus']
+      end
+
       if attributes.has_key?(:'createdDate')
         self.created_date = attributes[:'createdDate']
       end
@@ -230,6 +238,7 @@ module TreezorClient
           file_name == o.file_name &&
           temporary_url == o.temporary_url &&
           temporary_url_thumb == o.temporary_url_thumb &&
+          information_status == o.information_status &&
           created_date == o.created_date &&
           modified_date == o.modified_date &&
           total_rows == o.total_rows
@@ -244,7 +253,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_id, document_tag, document_status, document_type_id, document_type, residence_id, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, created_date, modified_date, total_rows].hash
+      [document_id, document_tag, document_status, document_type_id, document_type, residence_id, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, information_status, created_date, modified_date, total_rows].hash
     end
 
     # Builds the object from hash
