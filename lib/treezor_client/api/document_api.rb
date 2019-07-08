@@ -290,8 +290,8 @@ module TreezorClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentApi.get_documents ...'
       end
-      if @api_client.config.client_side_validation && opts[:'document_status'] && !['PENDING', 'CANCELED', 'VALIDATED'].include?(opts[:'document_status'])
-        fail ArgumentError, 'invalid value for "document_status", must be one of PENDING, CANCELED, VALIDATED'
+      if @api_client.config.client_side_validation && opts[:'document_status'] && !['PENDING', 'CANCELED', 'VALIDATED', 'REFUSED'].include?(opts[:'document_status'])
+        fail ArgumentError, 'invalid value for "document_status", must be one of PENDING, CANCELED, VALIDATED, REFUSED'
       end
       # resource path
       local_var_path = '/documents'
