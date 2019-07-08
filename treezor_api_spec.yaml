@@ -4854,7 +4854,7 @@ paths:
             * VALIDATED
           required: false
           type: string
-          enum: ["PENDING", "CANCELED", "VALIDATED"]
+          enum: ["PENDING", "CANCELED", "VALIDATED", "REFUSED"]
         - name: documentTypeId
           in: query
           description: Document type id.
