@@ -12311,6 +12311,8 @@ definitions:
         type: string
       temporaryUrlThumb:
         type: string
+      informationStatus:
+        type: string
       createdDate:
         type: string
         description: Date YYYY-MM-DD HH:MM:SS
