@@ -4852,9 +4852,10 @@ paths:
             * PENDING
             * CANCELED
             * VALIDATED
+            * REFUSED
           required: false
           type: string
-          enum: ["PENDING", "CANCELED", "VALIDATED"]
+          enum: ["PENDING", "CANCELED", "VALIDATED", "REFUSED"]
         - name: documentTypeId
           in: query
           description: Document type id.
@@ -12289,7 +12290,7 @@ definitions:
         type: string
       documentStatus:
         type: string
-        enum: ['PENDING', 'CANCELED', 'VALIDATED']
+        enum: ['PENDING', 'CANCELED', 'VALIDATED', 'REFUSED']
       documentTypeId:
         type: integer
       documentType:

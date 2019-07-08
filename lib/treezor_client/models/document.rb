@@ -197,7 +197,7 @@ module TreezorClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      document_status_validator = EnumAttributeValidator.new('String', ['PENDING', 'CANCELED', 'VALIDATED'])
+      document_status_validator = EnumAttributeValidator.new('String', ['PENDING', 'CANCELED', 'VALIDATED', 'REFUSED'])
       return false unless document_status_validator.valid?(@document_status)
       true
     end
@@ -205,7 +205,7 @@ module TreezorClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] document_status Object to be assigned
     def document_status=(document_status)
-      validator = EnumAttributeValidator.new('String', ['PENDING', 'CANCELED', 'VALIDATED'])
+      validator = EnumAttributeValidator.new('String', ['PENDING', 'CANCELED', 'VALIDATED', 'REFUSED'])
       unless validator.valid?(document_status)
         fail ArgumentError, 'invalid value for "document_status", must be one of #{validator.allowable_values}.'
       end
