@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **file_name** | **String** |  | [optional] 
 **temporary_url** | **String** |  | [optional] 
 **temporary_url_thumb** | **String** |  | [optional] 
+**information_status** | **String** |  | [optional] 
 **created_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
 **modified_date** | **String** | Date YYYY-MM-DD HH:MM:SS | [optional] 
 **total_rows** | **Integer** |  | [optional] 
