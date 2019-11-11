@@ -12848,7 +12848,7 @@ definitions:
         type: string
       payinStatus:
         type: string
-        enum: ['PENDING', 'CANCELED', 'VALIDATED']
+        enum: ['PENDING', 'CANCELED', 'CANCELLED', 'VALIDATED']
       codeStatus:
         type: integer
       informationStatus:
