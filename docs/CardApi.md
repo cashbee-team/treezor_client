@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**cards_id_activate_put**](CardApi.md#cards_id_activate_put) | **PUT** /cards/{id}/Activate/ | activate a card
 [**cards_id_change_pin_put**](CardApi.md#cards_id_change_pin_put) | **PUT** /cards/{id}/ChangePIN/ | change card&#39;s PIN
 [**cards_id_convert_virtual_put**](CardApi.md#cards_id_convert_virtual_put) | **PUT** /cards/{id}/ConvertVirtual/ | convert card to virtual
-[**cards_id_delete**](CardApi.md#cards_id_delete) | **DELETE** /cards/{id} | deactivate a card
 [**cards_id_get**](CardApi.md#cards_id_get) | **GET** /cards/{id} | get a card
 [**cards_id_limits_put**](CardApi.md#cards_id_limits_put) | **PUT** /cards/{id}/Limits/ | update card&#39;s limits
 [**cards_id_lock_unlock_put**](CardApi.md#cards_id_lock_unlock_put) | **PUT** /cards/{id}/LockUnlock/ | update card&#39;s blocking status
@@ -482,58 +481,6 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
-
-### Return type
-
-[**InlineResponse2005**](InlineResponse2005.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-
-# **cards_id_delete**
-> InlineResponse2005 cards_id_delete(id)
-
-deactivate a card
-
-### Example
-```ruby
-# load the gem
-require 'treezor_client'
-# setup authorization
-TreezorClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = TreezorClient::CardApi.new
-
-id = 789 # Integer | Card's id.
-
-
-begin
-  #deactivate a card
-  result = api_instance.cards_id_delete(id)
-  p result
-rescue TreezorClient::ApiError => e
-  puts "Exception when calling CardApi->cards_id_delete: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| Card&#39;s id. | 
 
 ### Return type
 

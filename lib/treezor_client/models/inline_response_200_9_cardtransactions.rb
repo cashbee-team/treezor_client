@@ -20,6 +20,8 @@ module TreezorClient
 
     attr_accessor :wallet_id
 
+    attr_accessor :acquirer_id
+
     attr_accessor :wallet_currency
 
     attr_accessor :merchant_id
@@ -126,6 +128,7 @@ module TreezorClient
         :'cardtransaction_id' => :'cardtransactionId',
         :'card_id' => :'cardId',
         :'wallet_id' => :'walletId',
+        :'acquirer_id' => :'acquirerId',
         :'wallet_currency' => :'walletCurrency',
         :'merchant_id' => :'merchantId',
         :'merchant_name' => :'merchantName',
@@ -183,6 +186,7 @@ module TreezorClient
         :'cardtransaction_id' => :'Integer',
         :'card_id' => :'Integer',
         :'wallet_id' => :'Integer',
+        :'acquirer_id' => :'Integer',
         :'wallet_currency' => :'String',
         :'merchant_id' => :'String',
         :'merchant_name' => :'String',
@@ -252,6 +256,10 @@ module TreezorClient
 
       if attributes.has_key?(:'walletId')
         self.wallet_id = attributes[:'walletId']
+      end
+
+      if attributes.has_key?(:'acquirerId')
+        self.acquirer_id = attributes[:'acquirerId']
       end
 
       if attributes.has_key?(:'walletCurrency')
@@ -468,6 +476,7 @@ module TreezorClient
           cardtransaction_id == o.cardtransaction_id &&
           card_id == o.card_id &&
           wallet_id == o.wallet_id &&
+          acquirer_id == o.acquirer_id &&
           wallet_currency == o.wallet_currency &&
           merchant_id == o.merchant_id &&
           merchant_name == o.merchant_name &&
@@ -527,7 +536,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cardtransaction_id, card_id, wallet_id, wallet_currency, merchant_id, merchant_name, merchant_city, merchant_country, mcc_code, payment_local_time, public_token, payment_amount, payment_currency, fees, payment_country, payment_id, payment_status, payment_local_amount, pos_cardholder_presence, pos_postcode, pos_country, pos_terminal_id, pos_card_presence, pan_entry_method, authorization_note, authorization_response_code, authorization_issuer_id, authorization_issuer_time, authorization_mti, authorized_balance, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, total_limit_atm_year, total_limit_atm_month, total_limit_atm_week, total_limit_atm_day, total_limit_atm_all, total_limit_payment_year, total_limit_payment_month, total_limit_payment_week, total_limit_payment_day, total_limit_payment_all, total_rows].hash
+      [cardtransaction_id, card_id, wallet_id, acquirer_id, wallet_currency, merchant_id, merchant_name, merchant_city, merchant_country, mcc_code, payment_local_time, public_token, payment_amount, payment_currency, fees, payment_country, payment_id, payment_status, payment_local_amount, pos_cardholder_presence, pos_postcode, pos_country, pos_terminal_id, pos_card_presence, pan_entry_method, authorization_note, authorization_response_code, authorization_issuer_id, authorization_issuer_time, authorization_mti, authorized_balance, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, total_limit_atm_year, total_limit_atm_month, total_limit_atm_week, total_limit_atm_day, total_limit_atm_all, total_limit_payment_year, total_limit_payment_month, total_limit_payment_week, total_limit_payment_day, total_limit_payment_all, total_rows].hash
     end
 
     # Builds the object from hash

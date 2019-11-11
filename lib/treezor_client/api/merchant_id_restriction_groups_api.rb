@@ -211,6 +211,74 @@ module TreezorClient
       end
       return data, status_code, headers
     end
+    # edit the merchant ID list for a restriction group
+    # Edit the merchant ID list for a restriction group in the system.
+    # @param id Merchant ID restriction group&#39;s id.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Body11] :body 
+    # @return [InlineResponse20016]
+    def merchant_id_restriction_groups_id_delta_update_put(id, opts = {})
+      data, _status_code, _headers = merchant_id_restriction_groups_id_delta_update_put_with_http_info(id, opts)
+      data
+    end
+
+    # edit the merchant ID list for a restriction group
+    # Edit the merchant ID list for a restriction group in the system.
+    # @param id Merchant ID restriction group&#39;s id.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+    # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
+    # @option opts [Body11] :body 
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    def merchant_id_restriction_groups_id_delta_update_put_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MerchantIdRestrictionGroupsApi.merchant_id_restriction_groups_id_delta_update_put ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling MerchantIdRestrictionGroupsApi.merchant_id_restriction_groups_id_delta_update_put"
+      end
+      # resource path
+      local_var_path = '/merchantIdRestrictionGroups/{id}/DeltaUpdate/'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
+      query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
+      query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
+      query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'InlineResponse20016')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MerchantIdRestrictionGroupsApi#merchant_id_restriction_groups_id_delta_update_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # create a merchantIdRestrictionGroup
     # Create a new merchant ID restriction group in the system.
     # @param [Hash] opts the optional parameters

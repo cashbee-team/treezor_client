@@ -308,7 +308,7 @@ opts = {
   language: 'language_example', # String | User's prefered language (ISO 639-1)
   tax_number: 'tax_number_example', # String | User's tax identification number. If the taxResidence is not set to FR, the field is mandatory.
   tax_residence: 'tax_residence_example', # String | User's tax residence country code (2 char code following ISO 3166 norm).
-  position: 'position_example', # String | User's position.
+  position: 'position_example', # String | User's position  (deprecated, you must use the parameter occupation).
   personal_assets: 'personal_assets_example' # String | User's personal assets range expressed in k€.
 }
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
  **language** | **String**| User&#39;s prefered language (ISO 639-1) | [optional] 
  **tax_number** | **String**| User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory. | [optional] 
  **tax_residence** | **String**| User&#39;s tax residence country code (2 char code following ISO 3166 norm). | [optional] 
- **position** | **String**| User&#39;s position. | [optional] 
+ **position** | **String**| User&#39;s position  (deprecated, you must use the parameter occupation). | [optional] 
  **personal_assets** | **String**| User&#39;s personal assets range expressed in k€. | [optional] 
 
 ### Return type
@@ -422,7 +422,7 @@ opts = {
   parent_type: 'parent_type_example', # String | Type of bound between parent and current user : * shareholder * employee * leader  (deprecated you must use the controllingPersonType and employeeType parameters) 
   controlling_person_type: 56, # Integer | Type of relationship :  | Value | Type | | --- | --- | | 1 | Shareholder | | 2 | Other_relationship | | 3 | Director | | 4 | None (default) | 
   employee_type: 56, # Integer | Type of user's role :  | Value | Type | | --- | --- | | 1 | Leader | | 2 | Employee | | 3 | None (default)| 
-  entity_type: 56, # Integer | Type of user's entity type     | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
+  entity_type: 56, # Integer | Type of user's entity type :      | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
   title: 'title_example', # String | User's title. Possible values: * M * MME * MLLE 
   firstname: 'firstname_example', # String | User's first name
   lastname: 'lastname_example', # String | User's last name
@@ -456,7 +456,7 @@ opts = {
   language: 'language_example', # String | User's prefered language (ISO 639-1)
   tax_number: 'tax_number_example', # String | User's tax identification number. If the taxResidence is set to another country than France, the field is mandatory. (deprecated, you must use the TaxResidence endpoint) 
   tax_residence: 'tax_residence_example', # String | User's tax residence country code (2 char code following ISO 3166 norm). (deprecated, you must use the TaxResidence endpoint) 
-  position: 'position_example', # String | User's position.
+  position: 'position_example', # String | User's position (deprecated, you must use the parameter occupation).
   personal_assets: 'personal_assets_example' # String | User's personal assets range exprimed in Kâ‚¬.
 }
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
  **parent_type** | **String**| Type of bound between parent and current user : * shareholder * employee * leader  (deprecated you must use the controllingPersonType and employeeType parameters)  | [optional] 
  **controlling_person_type** | **Integer**| Type of relationship :  | Value | Type | | --- | --- | | 1 | Shareholder | | 2 | Other_relationship | | 3 | Director | | 4 | None (default) |  | [optional] 
  **employee_type** | **Integer**| Type of user&#39;s role :  | Value | Type | | --- | --- | | 1 | Leader | | 2 | Employee | | 3 | None (default)|  | [optional] 
- **entity_type** | **Integer**| Type of user&#39;s entity type     | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI |  | [optional] 
+ **entity_type** | **Integer**| Type of user&#39;s entity type :      | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI |  | [optional] 
  **title** | **String**| User&#39;s title. Possible values: * M * MME * MLLE  | [optional] 
  **firstname** | **String**| User&#39;s first name | [optional] 
  **lastname** | **String**| User&#39;s last name | [optional] 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
  **language** | **String**| User&#39;s prefered language (ISO 639-1) | [optional] 
  **tax_number** | **String**| User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory. (deprecated, you must use the TaxResidence endpoint)  | [optional] 
  **tax_residence** | **String**| User&#39;s tax residence country code (2 char code following ISO 3166 norm). (deprecated, you must use the TaxResidence endpoint)  | [optional] 
- **position** | **String**| User&#39;s position. | [optional] 
+ **position** | **String**| User&#39;s position (deprecated, you must use the parameter occupation). | [optional] 
  **personal_assets** | **String**| User&#39;s personal assets range exprimed in Kâ‚¬. | [optional] 
 
 ### Return type

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete_merchant_id_restriction_groups**](MerchantIdRestrictionGroupsApi.md#delete_merchant_id_restriction_groups) | **DELETE** /merchantIdRestrictionGroups/{id} | cancel a merchant id restriction group
 [**get_merchant_id_restriction_group**](MerchantIdRestrictionGroupsApi.md#get_merchant_id_restriction_group) | **GET** /merchantIdRestrictionGroups | search merchant id restriction  groups
 [**get_merchant_id_restriction_groups_id**](MerchantIdRestrictionGroupsApi.md#get_merchant_id_restriction_groups_id) | **GET** /merchantIdRestrictionGroups/{id} | get a merchant ID restriction group
+[**merchant_id_restriction_groups_id_delta_update_put**](MerchantIdRestrictionGroupsApi.md#merchant_id_restriction_groups_id_delta_update_put) | **PUT** /merchantIdRestrictionGroups/{id}/DeltaUpdate/ | edit the merchant ID list for a restriction group
 [**post_merchant_id_restriction_group**](MerchantIdRestrictionGroupsApi.md#post_merchant_id_restriction_group) | **POST** /merchantIdRestrictionGroups | create a merchantIdRestrictionGroup
 [**put_merchant_id_restriction_groups**](MerchantIdRestrictionGroupsApi.md#put_merchant_id_restriction_groups) | **PUT** /merchantIdRestrictionGroups/{id} | edit a merchant id restriction group
 
@@ -184,6 +185,72 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Merchant ID restriction Group internal id. | 
  **fields** | [**Array&lt;String&gt;**](String.md)| List of the object&#39;s properties you want to pick up. | [optional] 
+
+### Return type
+
+[**InlineResponse20016**](InlineResponse20016.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **merchant_id_restriction_groups_id_delta_update_put**
+> InlineResponse20016 merchant_id_restriction_groups_id_delta_update_put(id, opts)
+
+edit the merchant ID list for a restriction group
+
+Edit the merchant ID list for a restriction group in the system.
+
+### Example
+```ruby
+# load the gem
+require 'treezor_client'
+# setup authorization
+TreezorClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = TreezorClient::MerchantIdRestrictionGroupsApi.new
+
+id = 56 # Integer | Merchant ID restriction group's id.
+
+opts = { 
+  access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
+  access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
+  access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
+  body: TreezorClient::Body11.new # Body11 | 
+}
+
+begin
+  #edit the merchant ID list for a restriction group
+  result = api_instance.merchant_id_restriction_groups_id_delta_update_put(id, opts)
+  p result
+rescue TreezorClient::ApiError => e
+  puts "Exception when calling MerchantIdRestrictionGroupsApi->merchant_id_restriction_groups_id_delta_update_put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Merchant ID restriction group&#39;s id. | 
+ **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
+ **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
+ **body** | [**Body11**](Body11.md)|  | [optional] 
 
 ### Return type
 

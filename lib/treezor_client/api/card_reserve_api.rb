@@ -21,7 +21,6 @@ module TreezorClient
     end
     # add an amount to the reserved amount of a card
     # add an amount to the reserved amount of a card
-    # @param id the cardId of the reserved amount you want to pick up
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -29,14 +28,13 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body2] :body 
     # @return [Float]
-    def card_reserve_add_to(id, opts = {})
-      data, _status_code, _headers = card_reserve_add_to_with_http_info(id, opts)
+    def card_reserve_add_to(opts = {})
+      data, _status_code, _headers = card_reserve_add_to_with_http_info(opts)
       data
     end
 
     # add an amount to the reserved amount of a card
     # add an amount to the reserved amount of a card
-    # @param id the cardId of the reserved amount you want to pick up
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -44,20 +42,15 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body2] :body 
     # @return [Array<(Float, Fixnum, Hash)>] Float data, response status code and response headers
-    def card_reserve_add_to_with_http_info(id, opts = {})
+    def card_reserve_add_to_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardReserveApi.card_reserve_add_to ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling CardReserveApi.card_reserve_add_to"
       end
       # resource path
       local_var_path = '/cardReserves/AddTo'
 
       # query parameters
       query_params = {}
-      query_params[:'id'] = id
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -90,7 +83,6 @@ module TreezorClient
     end
     # check reserved amount
     # Check if an amount can be substract to the reserved amount
-    # @param id the cardId of the reserved amount you want to pick up
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -98,14 +90,13 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body3] :body 
     # @return [BOOLEAN]
-    def card_reserve_check(id, opts = {})
-      data, _status_code, _headers = card_reserve_check_with_http_info(id, opts)
+    def card_reserve_check(opts = {})
+      data, _status_code, _headers = card_reserve_check_with_http_info(opts)
       data
     end
 
     # check reserved amount
     # Check if an amount can be substract to the reserved amount
-    # @param id the cardId of the reserved amount you want to pick up
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -113,20 +104,15 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body3] :body 
     # @return [Array<(BOOLEAN, Fixnum, Hash)>] BOOLEAN data, response status code and response headers
-    def card_reserve_check_with_http_info(id, opts = {})
+    def card_reserve_check_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardReserveApi.card_reserve_check ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling CardReserveApi.card_reserve_check"
       end
       # resource path
       local_var_path = '/cardReserves/Check'
 
       # query parameters
       query_params = {}
-      query_params[:'id'] = id
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
