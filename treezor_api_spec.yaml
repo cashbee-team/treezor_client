@@ -1958,42 +1958,6 @@ paths:
         - api_key: []
       tags:
         - card
-    delete:
-      summary: deactivate a card
-      parameters:
-        - name: id
-          in: path
-          description: Card's id.
-          required: true
-          type: integer
-          format: int64
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            properties:
-              cards:
-                type: array
-                items:
-                  $ref: '#/definitions/Card'
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        default:
-          description: Unexpected error
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  $ref: '#/definitions/Error'
-      security:
-        - api_key: []
-      tags:
-        - card
   /cards/CreateVirtual:
     post:
       summary: create a virtual card
@@ -3649,12 +3613,6 @@ paths:
             [here](https://www.treezor.com/basics).
           required: false
           type: string
-        - name: id
-          in: query
-          description: the cardId of the reserved amount you want to pick up
-          required: true
-          type: integer
-          format: int64
         - in: body
           name: body
           schema:
@@ -3732,12 +3690,6 @@ paths:
             [here](https://www.treezor.com/basics).
           required: false
           type: string
-        - name: id
-          in: query
-          description: the cardId of the reserved amount you want to pick up
-          required: true
-          type: integer
-          format: int64
         - in: body
           name: body
           schema:
@@ -3778,7 +3730,7 @@ paths:
       tags:
         - cardtransaction
       summary: search for card transactions
-      description: Search for documents.
+      description: Search for documents. The request must contain at least one of those inputs - cardId, paymentId, publicToken, walletId
       operationId: readCardTransaction
       consumes:
         - application/json
@@ -3883,6 +3835,8 @@ paths:
                     cardId:
                       type: integer
                     walletId:
+                      type: integer
+                    acquirerId:
                       type: integer
                     walletCurrency:
                       type: string
@@ -4080,6 +4034,8 @@ paths:
                     cardId:
                       type: string
                     walletId:
+                      type: string
+                    acquirerId:
                       type: string
                     walletCurrency:
                       type: string
@@ -6434,7 +6390,7 @@ paths:
           schema:
             type: object
             properties:
-              bankaccounts:
+              merchantIdRestrictionGroups:
                 type: array
                 items:
                   $ref: '#/definitions/MerchantIdRestrictionGroup'
@@ -6575,7 +6531,7 @@ paths:
           schema:
             type: object
             properties:
-              bankaccounts:
+              merchantIdRestrictionGroups:
                 type: array
                 items:
                   $ref: '#/definitions/MerchantIdRestrictionGroup'
@@ -6623,7 +6579,7 @@ paths:
           schema:
             type: object
             properties:
-              bankaccounts:
+              merchantIdRestrictionGroups:
                 type: array
                 items:
                   $ref: '#/definitions/MerchantIdRestrictionGroup'
@@ -6715,7 +6671,7 @@ paths:
           schema:
             type: object
             properties:
-              bankaccounts:
+              merchantIdRestrictionGroups:
                 type: array
                 items:
                   $ref: '#/definitions/MerchantIdRestrictionGroup'
@@ -6762,7 +6718,88 @@ paths:
           schema:
             type: object
             properties:
-              bankaccounts:
+              merchantIdRestrictionGroups:
+                type: array
+                items:
+                  $ref: '#/definitions/MerchantIdRestrictionGroup'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
+  '/merchantIdRestrictionGroups/{id}/DeltaUpdate/':
+    put:
+      tags:
+        - merchantIdRestrictionGroups
+      summary: edit the merchant ID list for a restriction group
+      description: Edit the merchant ID list for a restriction group in the system.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: Merchant ID restriction group's id.
+          required: true
+          type: integer
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - in: body
+          name: body
+          schema:
+            properties:
+              merchants:
+                description: Array of merchant ID
+                type: array
+                items:
+                  type: string
+              merchantsOperation:
+                description: Action to do with merchants id list
+                type: string
+                enum: ["add", "remove"]
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              merchantIdRestrictionGroups:
                 type: array
                 items:
                   $ref: '#/definitions/MerchantIdRestrictionGroup'
@@ -9430,7 +9467,8 @@ paths:
         - name: entityType
           in: query
           description: |
-            Type of user's entity type
+            Type of user's entity type :
+
                 | Value | Type |
                 | --- | --- |
                 | 1 | Reporting Financial Institution |
@@ -9891,7 +9929,7 @@ paths:
           type: string
         - name: position
           in: query
-          description: User's position.
+          description: User's position (deprecated, you must use the parameter occupation).
           required: false
           type: string
         - name: personalAssets
@@ -10731,7 +10769,7 @@ paths:
           type: string
         - name: position
           in: query
-          description: User's position.
+          description: User's position  (deprecated, you must use the parameter occupation).
           required: false
           type: string
         - name: personalAssets
@@ -11504,7 +11542,7 @@ paths:
       tags:
         - wallet
       summary: search wallets
-      description: Get wallets from the system that match the search criteria.
+      description: 'Get wallets from the system that match the search criteria. The request must contains at least one of those inputs :walletId eventAlias, userId, walletTypeId, walletTag'
       operationId: getWallets
       consumes:
         - application/json
@@ -11578,13 +11616,6 @@ paths:
             | 14 | Electronic Money Card (Internal only) |
           required: false
           type: integer
-        - name: eventName
-          in: query
-          description: |
-            Event name that will be used as wallet name. For example, in a
-            wedding list: Wedding of X and Y
-          required: false
-          type: string
         - name: eventAlias
           in: query
           description: |
@@ -11617,11 +11648,6 @@ paths:
           description: Number of payin done on the wallet.
           required: false
           type: integer
-        - name: solde
-          in: query
-          description: Wallet current balance.
-          required: false
-          type: string
         - name: pageNumber
           in: query
           description: |
@@ -12169,9 +12195,6 @@ definitions:
       tag:
         description: Custom data that could be used by caller to search the instance.
         type: string
-      id:
-        description: Should be named beneficiaryId to conform to the API's naming convention.
-        type: integer
       userId:
         description: Beneficiary's userId
         type: integer
@@ -12507,9 +12530,9 @@ definitions:
           | Status | Description |
           | ---- | ----------- |
           | A | Active |
-          | N | Not tokenized |
+          | U | Not tokenized |
           | S | Suspended |
-          | X | Deactivated (Final status, cannot be changed)|
+          | D | Deactivated (Final status, cannot be changed)|
       createdDate:
         type: string
       modifiedDate:
