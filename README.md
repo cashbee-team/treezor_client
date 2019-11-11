@@ -106,7 +106,6 @@ Class | Method | HTTP request | Description
 *TreezorClient::CardApi* | [**cards_id_activate_put**](docs/CardApi.md#cards_id_activate_put) | **PUT** /cards/{id}/Activate/ | activate a card
 *TreezorClient::CardApi* | [**cards_id_change_pin_put**](docs/CardApi.md#cards_id_change_pin_put) | **PUT** /cards/{id}/ChangePIN/ | change card's PIN
 *TreezorClient::CardApi* | [**cards_id_convert_virtual_put**](docs/CardApi.md#cards_id_convert_virtual_put) | **PUT** /cards/{id}/ConvertVirtual/ | convert card to virtual
-*TreezorClient::CardApi* | [**cards_id_delete**](docs/CardApi.md#cards_id_delete) | **DELETE** /cards/{id} | deactivate a card
 *TreezorClient::CardApi* | [**cards_id_get**](docs/CardApi.md#cards_id_get) | **GET** /cards/{id} | get a card
 *TreezorClient::CardApi* | [**cards_id_limits_put**](docs/CardApi.md#cards_id_limits_put) | **PUT** /cards/{id}/Limits/ | update card's limits
 *TreezorClient::CardApi* | [**cards_id_lock_unlock_put**](docs/CardApi.md#cards_id_lock_unlock_put) | **PUT** /cards/{id}/LockUnlock/ | update card's blocking status
@@ -153,6 +152,7 @@ Class | Method | HTTP request | Description
 *TreezorClient::MerchantIdRestrictionGroupsApi* | [**delete_merchant_id_restriction_groups**](docs/MerchantIdRestrictionGroupsApi.md#delete_merchant_id_restriction_groups) | **DELETE** /merchantIdRestrictionGroups/{id} | cancel a merchant id restriction group
 *TreezorClient::MerchantIdRestrictionGroupsApi* | [**get_merchant_id_restriction_group**](docs/MerchantIdRestrictionGroupsApi.md#get_merchant_id_restriction_group) | **GET** /merchantIdRestrictionGroups | search merchant id restriction  groups
 *TreezorClient::MerchantIdRestrictionGroupsApi* | [**get_merchant_id_restriction_groups_id**](docs/MerchantIdRestrictionGroupsApi.md#get_merchant_id_restriction_groups_id) | **GET** /merchantIdRestrictionGroups/{id} | get a merchant ID restriction group
+*TreezorClient::MerchantIdRestrictionGroupsApi* | [**merchant_id_restriction_groups_id_delta_update_put**](docs/MerchantIdRestrictionGroupsApi.md#merchant_id_restriction_groups_id_delta_update_put) | **PUT** /merchantIdRestrictionGroups/{id}/DeltaUpdate/ | edit the merchant ID list for a restriction group
 *TreezorClient::MerchantIdRestrictionGroupsApi* | [**post_merchant_id_restriction_group**](docs/MerchantIdRestrictionGroupsApi.md#post_merchant_id_restriction_group) | **POST** /merchantIdRestrictionGroups | create a merchantIdRestrictionGroup
 *TreezorClient::MerchantIdRestrictionGroupsApi* | [**put_merchant_id_restriction_groups**](docs/MerchantIdRestrictionGroupsApi.md#put_merchant_id_restriction_groups) | **PUT** /merchantIdRestrictionGroups/{id} | edit a merchant id restriction group
 *TreezorClient::PayinApi* | [**delete_payin**](docs/PayinApi.md#delete_payin) | **DELETE** /payins/{id} | delete a pay in
@@ -209,6 +209,7 @@ Class | Method | HTTP request | Description
  - [TreezorClient::Body](docs/Body.md)
  - [TreezorClient::Body1](docs/Body1.md)
  - [TreezorClient::Body10](docs/Body10.md)
+ - [TreezorClient::Body11](docs/Body11.md)
  - [TreezorClient::Body2](docs/Body2.md)
  - [TreezorClient::Body3](docs/Body3.md)
  - [TreezorClient::Body4](docs/Body4.md)

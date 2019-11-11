@@ -13,37 +13,48 @@ Swagger Codegen version: 2.4.1
 require 'date'
 
 module TreezorClient
-  class CardDigitalization
-    attr_accessor :id
+  class Body11
+    # Array of merchant ID
+    attr_accessor :merchants
 
-    attr_accessor :card_id
+    # Action to do with merchants id list
+    attr_accessor :merchants_operation
 
-    # | Status | Description | | ---- | ----------- | | A | Active | | U | Not tokenized | | S | Suspended | | D | Deactivated (Final status, cannot be changed)| 
-    attr_accessor :status
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    attr_accessor :created_date
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
 
-    attr_accessor :modified_date
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'card_id' => :'cardId',
-        :'status' => :'status',
-        :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate'
+        :'merchants' => :'merchants',
+        :'merchants_operation' => :'merchantsOperation'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'id' => :'Integer',
-        :'card_id' => :'String',
-        :'status' => :'String',
-        :'created_date' => :'String',
-        :'modified_date' => :'String'
+        :'merchants' => :'Array<String>',
+        :'merchants_operation' => :'String'
       }
     end
 
@@ -55,24 +66,14 @@ module TreezorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'merchants')
+        if (value = attributes[:'merchants']).is_a?(Array)
+          self.merchants = value
+        end
       end
 
-      if attributes.has_key?(:'cardId')
-        self.card_id = attributes[:'cardId']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'createdDate')
-        self.created_date = attributes[:'createdDate']
-      end
-
-      if attributes.has_key?(:'modifiedDate')
-        self.modified_date = attributes[:'modifiedDate']
+      if attributes.has_key?(:'merchantsOperation')
+        self.merchants_operation = attributes[:'merchantsOperation']
       end
     end
 
@@ -86,7 +87,19 @@ module TreezorClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      merchants_operation_validator = EnumAttributeValidator.new('String', ['add', 'remove'])
+      return false unless merchants_operation_validator.valid?(@merchants_operation)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] merchants_operation Object to be assigned
+    def merchants_operation=(merchants_operation)
+      validator = EnumAttributeValidator.new('String', ['add', 'remove'])
+      unless validator.valid?(merchants_operation)
+        fail ArgumentError, 'invalid value for "merchants_operation", must be one of #{validator.allowable_values}.'
+      end
+      @merchants_operation = merchants_operation
     end
 
     # Checks equality by comparing each attribute.
@@ -94,11 +107,8 @@ module TreezorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          card_id == o.card_id &&
-          status == o.status &&
-          created_date == o.created_date &&
-          modified_date == o.modified_date
+          merchants == o.merchants &&
+          merchants_operation == o.merchants_operation
     end
 
     # @see the `==` method
@@ -110,7 +120,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, card_id, status, created_date, modified_date].hash
+      [merchants, merchants_operation].hash
     end
 
     # Builds the object from hash

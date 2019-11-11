@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **card_reserve_add_to**
-> Float card_reserve_add_to(id, opts)
+> Float card_reserve_add_to(opts)
 
 add an amount to the reserved amount of a card
 
@@ -30,8 +30,6 @@ end
 
 api_instance = TreezorClient::CardReserveApi.new
 
-id = 789 # Integer | the cardId of the reserved amount you want to pick up
-
 opts = { 
   access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -42,7 +40,7 @@ opts = {
 
 begin
   #add an amount to the reserved amount of a card
-  result = api_instance.card_reserve_add_to(id, opts)
+  result = api_instance.card_reserve_add_to(opts)
   p result
 rescue TreezorClient::ApiError => e
   puts "Exception when calling CardReserveApi->card_reserve_add_to: #{e}"
@@ -53,7 +51,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| the cardId of the reserved amount you want to pick up | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 
@@ -76,7 +73,7 @@ Name | Type | Description  | Notes
 
 
 # **card_reserve_check**
-> BOOLEAN card_reserve_check(id, opts)
+> BOOLEAN card_reserve_check(opts)
 
 check reserved amount
 
@@ -96,8 +93,6 @@ end
 
 api_instance = TreezorClient::CardReserveApi.new
 
-id = 789 # Integer | the cardId of the reserved amount you want to pick up
-
 opts = { 
   access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics). 
@@ -108,7 +103,7 @@ opts = {
 
 begin
   #check reserved amount
-  result = api_instance.card_reserve_check(id, opts)
+  result = api_instance.card_reserve_check(opts)
   p result
 rescue TreezorClient::ApiError => e
   puts "Exception when calling CardReserveApi->card_reserve_check: #{e}"
@@ -119,7 +114,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| the cardId of the reserved amount you want to pick up | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://www.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics).  | [optional] 

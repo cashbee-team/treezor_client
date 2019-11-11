@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 search for card transactions
 
-Search for documents.
+Search for documents. The request must contain at least one of those inputs - cardId, paymentId, publicToken, walletId
 
 ### Example
 ```ruby

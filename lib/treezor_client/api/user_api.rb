@@ -321,7 +321,7 @@ module TreezorClient
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
     # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory.
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
-    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
     # @return [InlineResponse20026]
     def put_user(id, opts = {})
@@ -375,7 +375,7 @@ module TreezorClient
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
     # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is not set to FR, the field is mandatory.
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
-    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
     def put_user_with_http_info(id, opts = {})
@@ -494,7 +494,7 @@ module TreezorClient
     # @option opts [String] :parent_type Type of bound between parent and current user : * shareholder * employee * leader  (deprecated you must use the controllingPersonType and employeeType parameters) 
     # @option opts [Integer] :controlling_person_type Type of relationship :  | Value | Type | | --- | --- | | 1 | Shareholder | | 2 | Other_relationship | | 3 | Director | | 4 | None (default) | 
     # @option opts [Integer] :employee_type Type of user&#39;s role :  | Value | Type | | --- | --- | | 1 | Leader | | 2 | Employee | | 3 | None (default)| 
-    # @option opts [Integer] :entity_type Type of user&#39;s entity type     | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
+    # @option opts [Integer] :entity_type Type of user&#39;s entity type :      | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
     # @option opts [String] :title User&#39;s title. Possible values: * M * MME * MLLE 
     # @option opts [String] :firstname User&#39;s first name
     # @option opts [String] :lastname User&#39;s last name
@@ -528,7 +528,7 @@ module TreezorClient
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
     # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory. (deprecated, you must use the TaxResidence endpoint) 
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm). (deprecated, you must use the TaxResidence endpoint) 
-    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :position User&#39;s position (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in Kâ‚¬.
     # @return [InlineResponse20026]
     def put_users(specified_us_person, email, opts = {})
@@ -551,7 +551,7 @@ module TreezorClient
     # @option opts [String] :parent_type Type of bound between parent and current user : * shareholder * employee * leader  (deprecated you must use the controllingPersonType and employeeType parameters) 
     # @option opts [Integer] :controlling_person_type Type of relationship :  | Value | Type | | --- | --- | | 1 | Shareholder | | 2 | Other_relationship | | 3 | Director | | 4 | None (default) | 
     # @option opts [Integer] :employee_type Type of user&#39;s role :  | Value | Type | | --- | --- | | 1 | Leader | | 2 | Employee | | 3 | None (default)| 
-    # @option opts [Integer] :entity_type Type of user&#39;s entity type     | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
+    # @option opts [Integer] :entity_type Type of user&#39;s entity type :      | Value | Type |     | --- | --- |     | 1 | Reporting Financial Institution |     | 2 | Non-Reporting Financial Institution |     | 3 | Active Non-Financial Entity - Governmental entities, Int. organizations |     | 4 | Active Non-Financial Entity - Other |     | 5 | Passive Non-Financial Entity - Investment entity that is not Participating Jurisdiction FI | 
     # @option opts [String] :title User&#39;s title. Possible values: * M * MME * MLLE 
     # @option opts [String] :firstname User&#39;s first name
     # @option opts [String] :lastname User&#39;s last name
@@ -585,7 +585,7 @@ module TreezorClient
     # @option opts [String] :language User&#39;s prefered language (ISO 639-1)
     # @option opts [String] :tax_number User&#39;s tax identification number. If the taxResidence is set to another country than France, the field is mandatory. (deprecated, you must use the TaxResidence endpoint) 
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm). (deprecated, you must use the TaxResidence endpoint) 
-    # @option opts [String] :position User&#39;s position.
+    # @option opts [String] :position User&#39;s position (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in Kâ‚¬.
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
     def put_users_with_http_info(specified_us_person, email, opts = {})

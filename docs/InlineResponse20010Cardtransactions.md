@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **cardtransaction_id** | **String** |  | [optional] 
 **card_id** | **String** |  | [optional] 
 **wallet_id** | **String** |  | [optional] 
+**acquirer_id** | **String** |  | [optional] 
 **wallet_currency** | **String** |  | [optional] 
 **merchant_id** | **String** |  | [optional] 
 **merchant_name** | **String** |  | [optional] 

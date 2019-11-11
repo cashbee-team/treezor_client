@@ -74,7 +74,7 @@ module TreezorClient
       return data, status_code, headers
     end
     # search for card transactions
-    # Search for documents.
+    # Search for documents. The request must contain at least one of those inputs - cardId, paymentId, publicToken, walletId
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
@@ -96,7 +96,7 @@ module TreezorClient
     end
 
     # search for card transactions
-    # Search for documents.
+    # Search for documents. The request must contain at least one of those inputs - cardId, paymentId, publicToken, walletId
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
