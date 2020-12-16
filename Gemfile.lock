@@ -26,7 +26,7 @@ GEM
     hashdiff (1.0.0)
     json (2.3.0)
     public_suffix (4.0.1)
-    rake (12.0.0)
+    rake (13.0.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -59,7 +59,7 @@ DEPENDENCIES
   autotest-fsevent (~> 0.2, >= 0.2.12)
   autotest-growl (~> 0.2, >= 0.2.16)
   autotest-rails-pure (~> 4.1, >= 4.1.2)
-  rake (~> 12.0.0)
+  rake (~> 13.0.1)
   rspec (~> 3.6, >= 3.6.0)
   treezor_client!
   vcr (~> 3.0, >= 3.0.1)
