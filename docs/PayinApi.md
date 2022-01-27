@@ -144,7 +144,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 56, # Integer | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  payin_id: 56, # Integer | Payin's id.
+  payin_id: 'payin_id_example', # String | Payin's id.
   wallet_id: 56, # Integer | Payin's wallet id.
   payin_tag: 'payin_tag_example', # String | Client custom data.
   payin_status: 'payin_status_example', # String | Payins's status.
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **Integer**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **payin_id** | **Integer**| Payin&#39;s id. | [optional] 
+ **payin_id** | **String**| Payin&#39;s id. | [optional] 
  **wallet_id** | **Integer**| Payin&#39;s wallet id. | [optional] 
  **payin_tag** | **String**| Client custom data. | [optional] 
  **payin_status** | **String**| Payins&#39;s status. | [optional] 

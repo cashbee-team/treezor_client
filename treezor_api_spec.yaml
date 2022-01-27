@@ -7046,7 +7046,7 @@ paths:
           in: query
           description: Payin's id.
           required: false
-          type: integer
+          type: string
         - name: walletId
           in: query
           description: Payin's wallet id.
@@ -7320,7 +7320,7 @@ paths:
           in: query
           description: payin's id to refund.
           required: true
-          type: integer
+          type: string
         - name: comment
           in: query
           description: End user, client or issuer comment.
@@ -7405,7 +7405,7 @@ paths:
           in: query
           description: Payin's id.
           required: false
-          type: integer
+          type: string
         - name: payinrefundId
           in: query
           description: Payinrefund's id.
@@ -12094,7 +12094,7 @@ definitions:
       walletId:
         type: integer
       payinId:
-        type: integer
+        type: string
       payinrefundDate:
         type: integer
       amount:
@@ -12849,7 +12849,7 @@ definitions:
     type: object
     properties:
       payinId:
-        type: integer
+        type: string
       payinTag:
         type: string
       payinStatus:

@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 
 # **businesssearchs_get**
-> Array&lt;Object&gt; businesssearchs_get(country, opts)
+> Array&lt;InlineResponse2003&gt; businesssearchs_get(country, opts)
 
 search businesses
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Array&lt;Object&gt;**
+[**Array&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 
