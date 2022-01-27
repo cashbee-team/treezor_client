@@ -144,7 +144,7 @@ opts = {
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
   access_user_ip: 'access_user_ip_example', # String | Access user's ip is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
-  payin_id: 56, # Integer | Payin's id.
+  payin_id: 'payin_id_example', # String | Payin's id.
   payinrefund_id: 56, # Integer | Payinrefund's id.
   payinrefund_tag: 'payinrefund_tag_example', # String | Custom data.
   payinrefund_status: 'payinrefund_status_example', # String | Payinrefund's status. Possible values: * PENDING * CANCELED * VALIDATED
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_ip** | **String**| Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 
- **payin_id** | **Integer**| Payin&#39;s id. | [optional] 
+ **payin_id** | **String**| Payin&#39;s id. | [optional] 
  **payinrefund_id** | **Integer**| Payinrefund&#39;s id. | [optional] 
  **payinrefund_tag** | **String**| Custom data. | [optional] 
  **payinrefund_status** | **String**| Payinrefund&#39;s status. Possible values: * PENDING * CANCELED * VALIDATED | [optional] 
@@ -234,7 +234,7 @@ end
 
 api_instance = TreezorClient::PayinrefundApi.new
 
-payin_id = 56 # Integer | payin's id to refund.
+payin_id = 'payin_id_example' # String | payin's id to refund.
 
 amount = 56 # Integer | Refund amount.
 
@@ -262,7 +262,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payin_id** | **Integer**| payin&#39;s id to refund. | 
+ **payin_id** | **String**| payin&#39;s id to refund. | 
  **amount** | **Integer**| Refund amount. | 
  **currency** | **String**| Refund currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217).  | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 

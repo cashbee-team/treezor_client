@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **payinrefund_tag** | **String** |  | [optional] 
 **payinrefund_status** | **String** |  | [optional] 
 **wallet_id** | **Integer** |  | [optional] 
-**payin_id** | **Integer** |  | [optional] 
+**payin_id** | **String** |  | [optional] 
 **payinrefund_date** | **Integer** |  | [optional] 
 **amount** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 

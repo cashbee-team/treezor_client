@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payin_id** | **Integer** |  | [optional] 
+**payin_id** | **String** |  | [optional] 
 **payin_tag** | **String** |  | [optional] 
 **payin_status** | **String** |  | [optional] 
 **code_status** | **Integer** |  | [optional] 
