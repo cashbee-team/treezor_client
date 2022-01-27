@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    treezor_client (1.12.0)
+    treezor_client (2.0.0)
+      addressable (~> 2.3, >= 2.3.0)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
@@ -24,9 +25,9 @@ GEM
       ffi (>= 1.3.0)
     ffi (1.11.1)
     hashdiff (1.0.0)
-    json (2.2.0)
+    json (2.6.1)
     public_suffix (4.0.1)
-    rake (12.0.0)
+    rake (13.0.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -43,7 +44,7 @@ GEM
     safe_yaml (1.0.5)
     sys-uname (1.1.0)
       ffi (>= 1.0.0)
-    typhoeus (1.3.1)
+    typhoeus (1.4.0)
       ethon (>= 0.9.0)
     vcr (3.0.3)
     webmock (1.24.6)
@@ -59,7 +60,7 @@ DEPENDENCIES
   autotest-fsevent (~> 0.2, >= 0.2.12)
   autotest-growl (~> 0.2, >= 0.2.16)
   autotest-rails-pure (~> 4.1, >= 4.1.2)
-  rake (~> 12.0.0)
+  rake (~> 13.0.1)
   rspec (~> 3.6, >= 3.6.0)
   treezor_client!
   vcr (~> 3.0, >= 3.0.1)
