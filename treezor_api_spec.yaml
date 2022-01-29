@@ -13145,6 +13145,51 @@ definitions:
       deletedDate:
         description: Date of the TaxResidence has been deleted
         type: string
+  SepaSctrInst:
+    type: object
+    properties:
+      walletId:
+        type: integer
+      debtorBic:
+        type: string
+      debtorIban:
+        type: string
+      debitorName:
+        type: string
+      debitorCountry:
+        type: string
+      debitorAddressLine:
+        type: string
+      messageId:
+        type: text
+      creditorBIC:
+        type: string
+      creditorIban:
+        type: string
+      creditorName:
+        type: string
+      creditorAddressLine:
+        type: string
+      creditorCountry:
+        type: string
+      transactionId:
+        type: string
+      virtualIbanId:
+        type: string
+      settlementDate:
+        type: string
+        format: datetime
+        description: RFC 3339
+      settlementAmount:
+        type: string
+      return_reason_code:
+        type: string
+      virtualIbanReference:
+        type: string
+      remittanceInformation:
+        type: string
+      transactionEndToEndId:
+        type: string
   Error:
     type: object
     properties:
