@@ -1,0 +1,11 @@
+diff --git a/Gemfile b/Gemfile
+index f833005..f58bec0 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -3,5 +3,5 @@ source 'https://rubygems.org'
+ gemspec
+ 
+ group :development, :test do
+-  gem 'rake', '~> 12.3.3'
++  gem 'rake', '~> 13.0.6'
+ end

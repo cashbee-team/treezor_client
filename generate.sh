@@ -8,3 +8,7 @@ docker run --rm -it -v $(pwd):/swagger-api/out \
 	-l ruby \
 	-o /swagger-api/out
 
+for filename in patches/*.patch; do
+	git apply $filename
+done
+

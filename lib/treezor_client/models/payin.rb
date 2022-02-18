@@ -388,6 +388,8 @@ module TreezorClient
 
       if attributes.has_key?(:'ibanBic')
         self.iban_bic = attributes[:'ibanBic']
+      elsif attributes.has_key?(:'ibanBIC')
+        self.iban_bic = attributes[:'ibanBIC']
       end
 
       if attributes.has_key?(:'ibanTxEndToEndId')

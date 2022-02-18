@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    treezor_client (2.1.0)
+    treezor_client (2.1.1)
       addressable (~> 2.3, >= 2.3.0)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
@@ -60,7 +60,7 @@ DEPENDENCIES
   autotest-fsevent (~> 0.2, >= 0.2.12)
   autotest-growl (~> 0.2, >= 0.2.16)
   autotest-rails-pure (~> 4.1, >= 4.1.2)
-  rake (~> 13.0.1)
+  rake (~> 13.0.6)
   rspec (~> 3.6, >= 3.6.0)
   treezor_client!
   vcr (~> 3.0, >= 3.0.1)
