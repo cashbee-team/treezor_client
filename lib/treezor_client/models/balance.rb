@@ -43,9 +43,9 @@ module TreezorClient
     def self.swagger_types
       {
         :'wallet_id' => :'Integer',
-        :'current_balance' => :'Integer',
-        :'authorizations' => :'Integer',
-        :'authorized_balance' => :'Integer',
+        :'current_balance' => :'String',
+        :'authorizations' => :'String',
+        :'authorized_balance' => :'String',
         :'currency' => :'String',
         :'calculation_date' => :'String'
       }

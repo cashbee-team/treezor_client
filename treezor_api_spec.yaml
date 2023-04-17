@@ -12147,13 +12147,13 @@ definitions:
       walletId:
         type: integer
       currentBalance:
-        type: integer
+        type: string
         format: decimal
       authorizations:
-        type: integer
+        type: string
         format: decimal
       authorizedBalance:
-        type: integer
+        type: string
         format: decimal
       currency:
         type: string
@@ -12838,10 +12838,10 @@ definitions:
       transferCount:
         type: integer
       solde:
-        type: integer
+        type: string
         format: decimal
       authorizedBalance:
-        type: integer
+        type: string
         format: decimal
       totalRows:
         type: integer

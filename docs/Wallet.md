@@ -30,8 +30,8 @@ Name | Type | Description | Notes
 **payin_count** | **Integer** |  | [optional] 
 **payout_count** | **Integer** |  | [optional] 
 **transfer_count** | **Integer** |  | [optional] 
-**solde** | **Integer** |  | [optional] 
-**authorized_balance** | **Integer** |  | [optional] 
+**solde** | **String** |  | [optional] 
+**authorized_balance** | **String** |  | [optional] 
 **total_rows** | **Integer** |  | [optional] 
 
 

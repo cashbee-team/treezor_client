@@ -168,8 +168,8 @@ module TreezorClient
         :'payin_count' => :'Integer',
         :'payout_count' => :'Integer',
         :'transfer_count' => :'Integer',
-        :'solde' => :'Integer',
-        :'authorized_balance' => :'Integer',
+        :'solde' => :'String',
+        :'authorized_balance' => :'String',
         :'total_rows' => :'Integer'
       }
     end
