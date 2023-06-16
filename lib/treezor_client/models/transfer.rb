@@ -14,38 +14,17 @@ require 'date'
 
 module TreezorClient
   class Transfer
-    attr_accessor :transfer_id
-
-    attr_accessor :transfer_status
-
-    attr_accessor :transfer_tag
-
-    attr_accessor :wallet_id
+    attr_accessor :transfer_id, :transfer_status, :transfer_tag, :wallet_id, :beneficiary_wallet_id, :wallet_event_name, :wallet_alias, :beneficiary_wallet_event_name, :beneficiary_wallet_alias, :amount, :currency, 
+      :label, :total_rows
 
     # | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
     attr_accessor :wallet_type_id
-
-    attr_accessor :beneficiary_wallet_id
 
     # | Id | Description | |----|----| | 9 | Electronic Money Wallet | | 10 | Payment Account Wallet | | 13 | Mirror Wallet | | 14 | Electronic Money Card (Internal only) | 
     attr_accessor :beneficiary_wallet_type_id
 
     # Date YYYY-MM-DD
     attr_accessor :transfer_date
-
-    attr_accessor :wallet_event_name
-
-    attr_accessor :wallet_alias
-
-    attr_accessor :beneficiary_wallet_event_name
-
-    attr_accessor :beneficiary_wallet_alias
-
-    attr_accessor :amount
-
-    attr_accessor :currency
-
-    attr_accessor :label
 
     # Transfer type  | Status | Description | | ------ | -------     | | 1 | Wallet to wallet | | 2 | Card transaction | | 3 | Client fees | | 4 | Credit note | 
     attr_accessor :transfer_type_id
@@ -56,11 +35,8 @@ module TreezorClient
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :modified_date
 
-    attr_accessor :total_rows
-
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -83,60 +59,60 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'transfer_id' => :'transferId',
-        :'transfer_status' => :'transferStatus',
-        :'transfer_tag' => :'transferTag',
-        :'wallet_id' => :'walletId',
-        :'wallet_type_id' => :'walletTypeId',
-        :'beneficiary_wallet_id' => :'beneficiaryWalletId',
-        :'beneficiary_wallet_type_id' => :'beneficiaryWalletTypeId',
-        :'transfer_date' => :'transferDate',
-        :'wallet_event_name' => :'walletEventName',
-        :'wallet_alias' => :'walletAlias',
+        :'transfer_id'                   => :'transferId',
+        :'transfer_status'               => :'transferStatus',
+        :'transfer_tag'                  => :'transferTag',
+        :'wallet_id'                     => :'walletId',
+        :'wallet_type_id'                => :'walletTypeId',
+        :'beneficiary_wallet_id'         => :'beneficiaryWalletId',
+        :'beneficiary_wallet_type_id'    => :'beneficiaryWalletTypeId',
+        :'transfer_date'                 => :'transferDate',
+        :'wallet_event_name'             => :'walletEventName',
+        :'wallet_alias'                  => :'walletAlias',
         :'beneficiary_wallet_event_name' => :'beneficiaryWalletEventName',
-        :'beneficiary_wallet_alias' => :'beneficiaryWalletAlias',
-        :'amount' => :'amount',
-        :'currency' => :'currency',
-        :'label' => :'label',
-        :'transfer_type_id' => :'transferTypeId',
-        :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate',
-        :'total_rows' => :'totalRows'
+        :'beneficiary_wallet_alias'      => :'beneficiaryWalletAlias',
+        :'amount'                        => :'amount',
+        :'currency'                      => :'currency',
+        :'label'                         => :'label',
+        :'transfer_type_id'              => :'transferTypeId',
+        :'created_date'                  => :'createdDate',
+        :'modified_date'                 => :'modifiedDate',
+        :'total_rows'                    => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'transfer_id' => :'Integer',
-        :'transfer_status' => :'String',
-        :'transfer_tag' => :'String',
-        :'wallet_id' => :'Integer',
-        :'wallet_type_id' => :'Integer',
-        :'beneficiary_wallet_id' => :'Integer',
-        :'beneficiary_wallet_type_id' => :'Integer',
-        :'transfer_date' => :'String',
-        :'wallet_event_name' => :'String',
-        :'wallet_alias' => :'String',
+        :'transfer_id'                   => :'Integer',
+        :'transfer_status'               => :'String',
+        :'transfer_tag'                  => :'String',
+        :'wallet_id'                     => :'Integer',
+        :'wallet_type_id'                => :'Integer',
+        :'beneficiary_wallet_id'         => :'Integer',
+        :'beneficiary_wallet_type_id'    => :'Integer',
+        :'transfer_date'                 => :'String',
+        :'wallet_event_name'             => :'String',
+        :'wallet_alias'                  => :'String',
         :'beneficiary_wallet_event_name' => :'String',
-        :'beneficiary_wallet_alias' => :'String',
-        :'amount' => :'String',
-        :'currency' => :'String',
-        :'label' => :'String',
-        :'transfer_type_id' => :'Integer',
-        :'created_date' => :'String',
-        :'modified_date' => :'String',
-        :'total_rows' => :'Integer'
+        :'beneficiary_wallet_alias'      => :'String',
+        :'amount'                        => :'String',
+        :'currency'                      => :'String',
+        :'label'                         => :'String',
+        :'transfer_type_id'              => :'Integer',
+        :'created_date'                  => :'String',
+        :'modified_date'                 => :'String',
+        :'total_rows'                    => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'transferId')
         self.transfer_id = attributes[:'transferId']
@@ -218,8 +194,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -275,7 +251,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [transfer_id, transfer_status, transfer_tag, wallet_id, wallet_type_id, beneficiary_wallet_id, beneficiary_wallet_type_id, transfer_date, wallet_event_name, wallet_alias, beneficiary_wallet_event_name, beneficiary_wallet_alias, amount, currency, label, transfer_type_id, created_date, modified_date, total_rows].hash
+      [transfer_id, transfer_status, transfer_tag, wallet_id, wallet_type_id, beneficiary_wallet_id, beneficiary_wallet_type_id, transfer_date, wallet_event_name, wallet_alias, beneficiary_wallet_event_name, 
+beneficiary_wallet_alias, amount, currency, label, transfer_type_id, created_date, modified_date, total_rows].hash
     end
 
     # Builds the object from hash
@@ -329,7 +306,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -355,7 +332,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -372,7 +349,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -381,6 +358,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

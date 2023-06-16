@@ -26,7 +26,7 @@ module TreezorClient
     # @option opts [Integer] :id id of the residence
     # @option opts [Integer] :user_id User&#39;s id residence
     # @return [InlineResponse20021]
-    def tax_residences_get(opts = {})
+    def tax_residences_get(opts = { })
       data, _status_code, _headers = tax_residences_get_with_http_info(opts)
       data
     end
@@ -38,7 +38,7 @@ module TreezorClient
     # @option opts [Integer] :id id of the residence
     # @option opts [Integer] :user_id User&#39;s id residence
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_get_with_http_info(opts = {})
+    def tax_residences_get_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_get ...'
       end
@@ -46,27 +46,27 @@ module TreezorClient
       local_var_path = '/taxResidences'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'id'] = opts[:'id'] if !opts[:'id'].nil?
       query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -78,7 +78,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @return [InlineResponse20021]
-    def tax_residences_id_delete(id, opts = {})
+    def tax_residences_id_delete(id, opts = { })
       data, _status_code, _headers = tax_residences_id_delete_with_http_info(id, opts)
       data
     end
@@ -89,7 +89,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_id_delete_with_http_info(id, opts = {})
+    def tax_residences_id_delete_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_delete ...'
       end
@@ -98,28 +98,28 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling TaxResidenceApi.tax_residences_id_delete"
       end
       # resource path
-      local_var_path = '/taxResidences/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/taxResidences/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -131,7 +131,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @return [InlineResponse20021]
-    def tax_residences_id_get(id, opts = {})
+    def tax_residences_id_get(id, opts = { })
       data, _status_code, _headers = tax_residences_id_get_with_http_info(id, opts)
       data
     end
@@ -142,7 +142,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_id_get_with_http_info(id, opts = {})
+    def tax_residences_id_get_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_get ...'
       end
@@ -151,28 +151,28 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling TaxResidenceApi.tax_residences_id_get"
       end
       # resource path
-      local_var_path = '/taxResidences/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/taxResidences/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -188,7 +188,7 @@ module TreezorClient
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver Tax declaration
     # @return [InlineResponse20021]
-    def tax_residences_id_put(id, opts = {})
+    def tax_residences_id_put(id, opts = { })
       data, _status_code, _headers = tax_residences_id_put_with_http_info(id, opts)
       data
     end
@@ -203,7 +203,7 @@ module TreezorClient
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver Tax declaration
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_id_put_with_http_info(id, opts = {})
+    def tax_residences_id_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_id_put ...'
       end
@@ -212,10 +212,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling TaxResidenceApi.tax_residences_id_put"
       end
       # resource path
-      local_var_path = '/taxResidences/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/taxResidences/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
       query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
@@ -223,21 +223,21 @@ module TreezorClient
       query_params[:'liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -252,7 +252,7 @@ module TreezorClient
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
     # @return [InlineResponse20021]
-    def tax_residences_post(user_id, country, opts = {})
+    def tax_residences_post(user_id, country, opts = { })
       data, _status_code, _headers = tax_residences_post_with_http_info(user_id, country, opts)
       data
     end
@@ -266,7 +266,7 @@ module TreezorClient
     # @option opts [String] :tax_payer_id Tax payer&#39;s id
     # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_post_with_http_info(user_id, country, opts = {})
+    def tax_residences_post_with_http_info(user_id, country, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_post ...'
       end
@@ -282,7 +282,7 @@ module TreezorClient
       local_var_path = '/taxResidences'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'userId'] = user_id
       query_params[:'country'] = country
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
@@ -290,21 +290,21 @@ module TreezorClient
       query_params[:'liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaxResidenceApi#tax_residences_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

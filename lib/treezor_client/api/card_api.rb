@@ -28,7 +28,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2006]
-    def cardimages_get(card_id, opts = {})
+    def cardimages_get(card_id, opts = { })
       data, _status_code, _headers = cardimages_get_with_http_info(card_id, opts)
       data
     end
@@ -42,7 +42,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
-    def cardimages_get_with_http_info(card_id, opts = {})
+    def cardimages_get_with_http_info(card_id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cardimages_get ...'
       end
@@ -54,7 +54,7 @@ module TreezorClient
       local_var_path = '/cardimages'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'cardId'] = card_id
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -62,21 +62,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2006')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cardimages_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -113,7 +113,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_create_virtual_post(user_id, wallet_id, perms_group, card_print, opts = {})
+    def cards_create_virtual_post(user_id, wallet_id, perms_group, card_print, opts = { })
       data, _status_code, _headers = cards_create_virtual_post_with_http_info(user_id, wallet_id, perms_group, card_print, opts)
       data
     end
@@ -149,7 +149,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_create_virtual_post_with_http_info(user_id, wallet_id, perms_group, card_print, opts = {})
+    def cards_create_virtual_post_with_http_info(user_id, wallet_id, perms_group, card_print, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_create_virtual_post ...'
       end
@@ -173,7 +173,7 @@ module TreezorClient
       local_var_path = '/cards/CreateVirtual'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'userId'] = user_id
       query_params[:'walletId'] = wallet_id
       query_params[:'permsGroup'] = perms_group
@@ -203,21 +203,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_create_virtual_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -249,7 +249,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [InlineResponse2005]
-    def cards_get(opts = {})
+    def cards_get(opts = { })
       data, _status_code, _headers = cards_get_with_http_info(opts)
       data
     end
@@ -280,7 +280,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_get_with_http_info(opts = {})
+    def cards_get_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_get ...'
       end
@@ -288,7 +288,7 @@ module TreezorClient
       local_var_path = '/cards'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -314,21 +314,21 @@ module TreezorClient
       query_params[:'updatedDateTo'] = opts[:'updated_date_to'] if !opts[:'updated_date_to'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -344,7 +344,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_activate_put(id, opts = {})
+    def cards_id_activate_put(id, opts = { })
       data, _status_code, _headers = cards_id_activate_put_with_http_info(id, opts)
       data
     end
@@ -359,7 +359,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_activate_put_with_http_info(id, opts = {})
+    def cards_id_activate_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_activate_put ...'
       end
@@ -368,10 +368,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_activate_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/Activate/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/Activate/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessToken'] = opts[:'access_token'] if !opts[:'access_token'].nil?
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -379,21 +379,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_activate_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -411,7 +411,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_change_pin_put(id, current_pin, new_pin, confirm_pin, opts = {})
+    def cards_id_change_pin_put(id, current_pin, new_pin, confirm_pin, opts = { })
       data, _status_code, _headers = cards_id_change_pin_put_with_http_info(id, current_pin, new_pin, confirm_pin, opts)
       data
     end
@@ -428,7 +428,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_change_pin_put_with_http_info(id, current_pin, new_pin, confirm_pin, opts = {})
+    def cards_id_change_pin_put_with_http_info(id, current_pin, new_pin, confirm_pin, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_change_pin_put ...'
       end
@@ -449,10 +449,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'confirm_pin' when calling CardApi.cards_id_change_pin_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/ChangePIN/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/ChangePIN/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'currentPIN'] = current_pin
       query_params[:'newPIN'] = new_pin
       query_params[:'confirmPIN'] = confirm_pin
@@ -462,21 +462,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_change_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -491,7 +491,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_convert_virtual_put(id, opts = {})
+    def cards_id_convert_virtual_put(id, opts = { })
       data, _status_code, _headers = cards_id_convert_virtual_put_with_http_info(id, opts)
       data
     end
@@ -505,7 +505,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_convert_virtual_put_with_http_info(id, opts = {})
+    def cards_id_convert_virtual_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_convert_virtual_put ...'
       end
@@ -514,31 +514,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_convert_virtual_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/ConvertVirtual/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/ConvertVirtual/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_convert_virtual_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -548,7 +548,7 @@ module TreezorClient
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse2005]
-    def cards_id_get(id, opts = {})
+    def cards_id_get(id, opts = { })
       data, _status_code, _headers = cards_id_get_with_http_info(id, opts)
       data
     end
@@ -557,7 +557,7 @@ module TreezorClient
     # @param id Card&#39;s id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_get_with_http_info(id, opts = {})
+    def cards_id_get_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_get ...'
       end
@@ -566,27 +566,27 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_get"
       end
       # resource path
-      local_var_path = '/cards/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -612,7 +612,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_limits_put(id, opts = {})
+    def cards_id_limits_put(id, opts = { })
       data, _status_code, _headers = cards_id_limits_put_with_http_info(id, opts)
       data
     end
@@ -637,7 +637,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_limits_put_with_http_info(id, opts = {})
+    def cards_id_limits_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_limits_put ...'
       end
@@ -646,10 +646,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_limits_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/Limits/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/Limits/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'limitAtmYear'] = opts[:'limit_atm_year'] if !opts[:'limit_atm_year'].nil?
       query_params[:'limitAtmMonth'] = opts[:'limit_atm_month'] if !opts[:'limit_atm_month'].nil?
@@ -667,21 +667,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_limits_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -697,7 +697,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_lock_unlock_put(id, lock_status, opts = {})
+    def cards_id_lock_unlock_put(id, lock_status, opts = { })
       data, _status_code, _headers = cards_id_lock_unlock_put_with_http_info(id, lock_status, opts)
       data
     end
@@ -712,7 +712,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_lock_unlock_put_with_http_info(id, lock_status, opts = {})
+    def cards_id_lock_unlock_put_with_http_info(id, lock_status, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_lock_unlock_put ...'
       end
@@ -725,10 +725,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'lock_status' when calling CardApi.cards_id_lock_unlock_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/LockUnlock/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/LockUnlock/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'lockStatus'] = lock_status
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -736,21 +736,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_lock_unlock_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -769,7 +769,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_options_put(id, foreign, online, atm, nfc, opts = {})
+    def cards_id_options_put(id, foreign, online, atm, nfc, opts = { })
       data, _status_code, _headers = cards_id_options_put_with_http_info(id, foreign, online, atm, nfc, opts)
       data
     end
@@ -787,7 +787,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_options_put_with_http_info(id, foreign, online, atm, nfc, opts = {})
+    def cards_id_options_put_with_http_info(id, foreign, online, atm, nfc, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_options_put ...'
       end
@@ -812,10 +812,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'nfc' when calling CardApi.cards_id_options_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/Options/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/Options/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'foreign'] = foreign
       query_params[:'online'] = online
       query_params[:'atm'] = atm
@@ -826,21 +826,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_options_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -858,7 +858,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_put(id, opts = {})
+    def cards_id_put(id, opts = { })
       data, _status_code, _headers = cards_id_put_with_http_info(id, opts)
       data
     end
@@ -875,7 +875,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_put_with_http_info(id, opts = {})
+    def cards_id_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_put ...'
       end
@@ -884,10 +884,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_put"
       end
       # resource path
-      local_var_path = '/cards/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'mccRestrictionGroupId'] = opts[:'mcc_restriction_group_id'] if !opts[:'mcc_restriction_group_id'].nil?
       query_params[:'merchantRestrictionGroupId'] = opts[:'merchant_restriction_group_id'] if !opts[:'merchant_restriction_group_id'].nil?
@@ -897,21 +897,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -926,7 +926,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_regenerate_put(id, opts = {})
+    def cards_id_regenerate_put(id, opts = { })
       data, _status_code, _headers = cards_id_regenerate_put_with_http_info(id, opts)
       data
     end
@@ -940,7 +940,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_regenerate_put_with_http_info(id, opts = {})
+    def cards_id_regenerate_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_regenerate_put ...'
       end
@@ -949,31 +949,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_regenerate_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/Regenerate/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/Regenerate/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_regenerate_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -990,7 +990,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_set_pin_put(id, new_pin, confirm_pin, opts = {})
+    def cards_id_set_pin_put(id, new_pin, confirm_pin, opts = { })
       data, _status_code, _headers = cards_id_set_pin_put_with_http_info(id, new_pin, confirm_pin, opts)
       data
     end
@@ -1006,7 +1006,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_set_pin_put_with_http_info(id, new_pin, confirm_pin, opts = {})
+    def cards_id_set_pin_put_with_http_info(id, new_pin, confirm_pin, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_set_pin_put ...'
       end
@@ -1023,10 +1023,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'confirm_pin' when calling CardApi.cards_id_set_pin_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/setPIN/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/setPIN/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'newPIN'] = new_pin
       query_params[:'confirmPIN'] = confirm_pin
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
@@ -1035,21 +1035,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_set_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1064,7 +1064,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_id_unblock_pin_put(id, opts = {})
+    def cards_id_unblock_pin_put(id, opts = { })
       data, _status_code, _headers = cards_id_unblock_pin_put_with_http_info(id, opts)
       data
     end
@@ -1078,7 +1078,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_id_unblock_pin_put_with_http_info(id, opts = {})
+    def cards_id_unblock_pin_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_id_unblock_pin_put ...'
       end
@@ -1087,31 +1087,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardApi.cards_id_unblock_pin_put"
       end
       # resource path
-      local_var_path = '/cards/{id}/UnblockPIN/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cards/{id}/UnblockPIN/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_id_unblock_pin_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1123,7 +1123,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
     # @return [InlineResponse2005]
-    def cards_register3_ds_post(card_id, opts = {})
+    def cards_register3_ds_post(card_id, opts = { })
       data, _status_code, _headers = cards_register3_ds_post_with_http_info(card_id, opts)
       data
     end
@@ -1134,7 +1134,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_register3_ds_post_with_http_info(card_id, opts = {})
+    def cards_register3_ds_post_with_http_info(card_id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_register3_ds_post ...'
       end
@@ -1146,26 +1146,26 @@ module TreezorClient
       local_var_path = '/cards/Register3DS'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'cardId'] = card_id
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_register3_ds_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1202,7 +1202,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse2005]
-    def cards_request_physical_post(user_id, wallet_id, perms_group, card_tag, card_print, opts = {})
+    def cards_request_physical_post(user_id, wallet_id, perms_group, card_tag, card_print, opts = { })
       data, _status_code, _headers = cards_request_physical_post_with_http_info(user_id, wallet_id, perms_group, card_tag, card_print, opts)
       data
     end
@@ -1238,7 +1238,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
-    def cards_request_physical_post_with_http_info(user_id, wallet_id, perms_group, card_tag, card_print, opts = {})
+    def cards_request_physical_post_with_http_info(user_id, wallet_id, perms_group, card_tag, card_print, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.cards_request_physical_post ...'
       end
@@ -1266,7 +1266,7 @@ module TreezorClient
       local_var_path = '/cards/RequestPhysical'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'userId'] = user_id
       query_params[:'walletId'] = wallet_id
       query_params[:'permsGroup'] = perms_group
@@ -1296,21 +1296,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#cards_request_physical_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

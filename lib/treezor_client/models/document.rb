@@ -14,33 +14,8 @@ require 'date'
 
 module TreezorClient
   class Document
-    attr_accessor :document_id
-
-    attr_accessor :document_tag
-
-    attr_accessor :document_status
-
-    attr_accessor :document_type_id
-
-    attr_accessor :document_type
-
-    attr_accessor :residence_id
-
-    attr_accessor :client_id
-
-    attr_accessor :user_id
-
-    attr_accessor :user_lastname
-
-    attr_accessor :user_firstname
-
-    attr_accessor :file_name
-
-    attr_accessor :temporary_url
-
-    attr_accessor :temporary_url_thumb
-
-    attr_accessor :information_status
+    attr_accessor :document_id, :document_tag, :document_status, :document_type_id, :document_type, :residence_id, :client_id, :user_id, :user_lastname, :user_firstname, :file_name, :temporary_url, :temporary_url_thumb, 
+      :information_status, :total_rows
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
@@ -48,11 +23,8 @@ module TreezorClient
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :modified_date
 
-    attr_accessor :total_rows
-
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -75,56 +47,56 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_id' => :'documentId',
-        :'document_tag' => :'documentTag',
-        :'document_status' => :'documentStatus',
-        :'document_type_id' => :'documentTypeId',
-        :'document_type' => :'documentType',
-        :'residence_id' => :'residenceId',
-        :'client_id' => :'clientId',
-        :'user_id' => :'userId',
-        :'user_lastname' => :'userLastname',
-        :'user_firstname' => :'userFirstname',
-        :'file_name' => :'fileName',
-        :'temporary_url' => :'temporaryUrl',
+        :'document_id'         => :'documentId',
+        :'document_tag'        => :'documentTag',
+        :'document_status'     => :'documentStatus',
+        :'document_type_id'    => :'documentTypeId',
+        :'document_type'       => :'documentType',
+        :'residence_id'        => :'residenceId',
+        :'client_id'           => :'clientId',
+        :'user_id'             => :'userId',
+        :'user_lastname'       => :'userLastname',
+        :'user_firstname'      => :'userFirstname',
+        :'file_name'           => :'fileName',
+        :'temporary_url'       => :'temporaryUrl',
         :'temporary_url_thumb' => :'temporaryUrlThumb',
-        :'information_status' => :'informationStatus',
-        :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate',
-        :'total_rows' => :'totalRows'
+        :'information_status'  => :'informationStatus',
+        :'created_date'        => :'createdDate',
+        :'modified_date'       => :'modifiedDate',
+        :'total_rows'          => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'document_id' => :'Integer',
-        :'document_tag' => :'String',
-        :'document_status' => :'String',
-        :'document_type_id' => :'Integer',
-        :'document_type' => :'String',
-        :'residence_id' => :'Integer',
-        :'client_id' => :'Integer',
-        :'user_id' => :'Integer',
-        :'user_lastname' => :'String',
-        :'user_firstname' => :'String',
-        :'file_name' => :'String',
-        :'temporary_url' => :'String',
+        :'document_id'         => :'Integer',
+        :'document_tag'        => :'String',
+        :'document_status'     => :'String',
+        :'document_type_id'    => :'Integer',
+        :'document_type'       => :'String',
+        :'residence_id'        => :'Integer',
+        :'client_id'           => :'Integer',
+        :'user_id'             => :'Integer',
+        :'user_lastname'       => :'String',
+        :'user_firstname'      => :'String',
+        :'file_name'           => :'String',
+        :'temporary_url'       => :'String',
         :'temporary_url_thumb' => :'String',
-        :'information_status' => :'String',
-        :'created_date' => :'String',
-        :'modified_date' => :'String',
-        :'total_rows' => :'Integer'
+        :'information_status'  => :'String',
+        :'created_date'        => :'String',
+        :'modified_date'       => :'String',
+        :'total_rows'          => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'documentId')
         self.document_id = attributes[:'documentId']
@@ -198,8 +170,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -253,7 +225,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [document_id, document_tag, document_status, document_type_id, document_type, residence_id, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, information_status, created_date, modified_date, total_rows].hash
+      [document_id, document_tag, document_status, document_type_id, document_type, residence_id, client_id, user_id, user_lastname, user_firstname, file_name, temporary_url, temporary_url_thumb, information_status, 
+created_date, modified_date, total_rows].hash
     end
 
     # Builds the object from hash
@@ -307,7 +280,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -333,7 +306,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -350,7 +323,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -359,6 +332,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

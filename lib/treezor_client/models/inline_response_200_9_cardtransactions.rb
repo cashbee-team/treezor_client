@@ -14,237 +14,144 @@ require 'date'
 
 module TreezorClient
   class InlineResponse2009Cardtransactions
-    attr_accessor :cardtransaction_id
-
-    attr_accessor :card_id
-
-    attr_accessor :wallet_id
-
-    attr_accessor :acquirer_id
-
-    attr_accessor :wallet_currency
-
-    attr_accessor :merchant_id
-
-    attr_accessor :merchant_name
-
-    attr_accessor :merchant_city
-
-    attr_accessor :merchant_country
-
-    attr_accessor :mcc_code
-
-    attr_accessor :payment_local_time
-
-    attr_accessor :public_token
-
-    attr_accessor :payment_amount
+    attr_accessor :cardtransaction_id, :card_id, :wallet_id, :acquirer_id, :wallet_currency, :merchant_id, :merchant_name, :merchant_city, :merchant_country, :mcc_code, :payment_local_time, :public_token, 
+      :payment_amount, :fees, :payment_country, :payment_id, :payment_local_amount, :pos_cardholder_presence, :pos_postcode, :pos_country, :pos_terminal_id, :pos_card_presence, :pan_entry_method, :authorization_note, :authorization_issuer_id, :authorization_issuer_time, :authorized_balance, :limit_atm_year, :limit_atm_month, :limit_atm_week, :limit_atm_day, :limit_atm_all, :limit_payment_year, :limit_payment_month, :limit_payment_week, :limit_payment_day, :limit_payment_all, :total_limit_atm_year, :total_limit_atm_month, :total_limit_atm_week, :total_limit_atm_day, :total_limit_atm_all, :total_limit_payment_year, :total_limit_payment_month, :total_limit_payment_week, :total_limit_payment_day, :total_limit_payment_all, :total_rows
 
     # payment currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
     attr_accessor :payment_currency
 
-    attr_accessor :fees
-
-    attr_accessor :payment_country
-
-    attr_accessor :payment_id
-
     # Payment status.  | Status | Description | | ------ | -------     | | A | Accepted | | C | Cleared | | I | Declined | | S | Settled | | V | Reversed | 
     attr_accessor :payment_status
-
-    attr_accessor :payment_local_amount
-
-    attr_accessor :pos_cardholder_presence
-
-    attr_accessor :pos_postcode
-
-    attr_accessor :pos_country
-
-    attr_accessor :pos_terminal_id
-
-    attr_accessor :pos_card_presence
-
-    attr_accessor :pan_entry_method
-
-    attr_accessor :authorization_note
 
     # Authorization response code.  | Code | Description | | ---- | ----------- | | 00 | All Good | | 01 | Refer to card issuer Refer | | 03 | Invalid merchant Decline | | 05 | Do not honour Decline | | 10 | Partial Approval Approve | | 13 | Invalid amount Decline | | 14 | Invalid card number (no such number) Decline | | 17 | Customer Cancellation Decline | | 33 | Expired card (Capture) Decline & Pickup | | 41 | Lost card (Capture) Decline & Pickup | | 43 | Stolen card (Capture) Decline & Pickup | | 51 | Insufficient funds Decline | | 54 | Expired card Decline | | 55 | Incorrect PIN Decline | | 57 | Transaction not permitted to cardholder Decline | | 58 | Transaction not permitted to terminal Decline | | 61 | Exceeds withdrawal amount limit Decline | | 62 | Restricted card Decline | | 63 | Security Violation Decline | | 65 | Exceeds withdrawal frequency limit Decline | | 68 | Response received too late Decline | | 70 | Cardholder to contact issuer Decline | | 75 | Allowable number of PIN tries exceeded Decline | | 82 | Timeout at IEM Decline | | 85 | PIN Unblock request Approve | | 91 | Issuer or switch is inoperative Decline | | N7 | Decline for CVV2 failure Decline | 
     attr_accessor :authorization_response_code
 
-    attr_accessor :authorization_issuer_id
-
-    attr_accessor :authorization_issuer_time
-
     # Authorization Message Type Identifier  | MTI | Description | | --- | ----| | 01xx | Authorization message | | 04xx | reversal message | | 12xx | Financial message | 
     attr_accessor :authorization_mti
-
-    attr_accessor :authorized_balance
-
-    attr_accessor :limit_atm_year
-
-    attr_accessor :limit_atm_month
-
-    attr_accessor :limit_atm_week
-
-    attr_accessor :limit_atm_day
-
-    attr_accessor :limit_atm_all
-
-    attr_accessor :limit_payment_year
-
-    attr_accessor :limit_payment_month
-
-    attr_accessor :limit_payment_week
-
-    attr_accessor :limit_payment_day
-
-    attr_accessor :limit_payment_all
-
-    attr_accessor :total_limit_atm_year
-
-    attr_accessor :total_limit_atm_month
-
-    attr_accessor :total_limit_atm_week
-
-    attr_accessor :total_limit_atm_day
-
-    attr_accessor :total_limit_atm_all
-
-    attr_accessor :total_limit_payment_year
-
-    attr_accessor :total_limit_payment_month
-
-    attr_accessor :total_limit_payment_week
-
-    attr_accessor :total_limit_payment_day
-
-    attr_accessor :total_limit_payment_all
-
-    attr_accessor :total_rows
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cardtransaction_id' => :'cardtransactionId',
-        :'card_id' => :'cardId',
-        :'wallet_id' => :'walletId',
-        :'acquirer_id' => :'acquirerId',
-        :'wallet_currency' => :'walletCurrency',
-        :'merchant_id' => :'merchantId',
-        :'merchant_name' => :'merchantName',
-        :'merchant_city' => :'merchantCity',
-        :'merchant_country' => :'merchantCountry',
-        :'mcc_code' => :'mccCode',
-        :'payment_local_time' => :'paymentLocalTime',
-        :'public_token' => :'publicToken',
-        :'payment_amount' => :'paymentAmount',
-        :'payment_currency' => :'paymentCurrency',
-        :'fees' => :'fees',
-        :'payment_country' => :'paymentCountry',
-        :'payment_id' => :'paymentId',
-        :'payment_status' => :'paymentStatus',
-        :'payment_local_amount' => :'paymentLocalAmount',
-        :'pos_cardholder_presence' => :'posCardholderPresence',
-        :'pos_postcode' => :'posPostcode',
-        :'pos_country' => :'posCountry',
-        :'pos_terminal_id' => :'posTerminalId',
-        :'pos_card_presence' => :'posCardPresence',
-        :'pan_entry_method' => :'panEntryMethod',
-        :'authorization_note' => :'authorizationNote',
+        :'cardtransaction_id'          => :'cardtransactionId',
+        :'card_id'                     => :'cardId',
+        :'wallet_id'                   => :'walletId',
+        :'acquirer_id'                 => :'acquirerId',
+        :'wallet_currency'             => :'walletCurrency',
+        :'merchant_id'                 => :'merchantId',
+        :'merchant_name'               => :'merchantName',
+        :'merchant_city'               => :'merchantCity',
+        :'merchant_country'            => :'merchantCountry',
+        :'mcc_code'                    => :'mccCode',
+        :'payment_local_time'          => :'paymentLocalTime',
+        :'public_token'                => :'publicToken',
+        :'payment_amount'              => :'paymentAmount',
+        :'payment_currency'            => :'paymentCurrency',
+        :'fees'                        => :'fees',
+        :'payment_country'             => :'paymentCountry',
+        :'payment_id'                  => :'paymentId',
+        :'payment_status'              => :'paymentStatus',
+        :'payment_local_amount'        => :'paymentLocalAmount',
+        :'pos_cardholder_presence'     => :'posCardholderPresence',
+        :'pos_postcode'                => :'posPostcode',
+        :'pos_country'                 => :'posCountry',
+        :'pos_terminal_id'             => :'posTerminalId',
+        :'pos_card_presence'           => :'posCardPresence',
+        :'pan_entry_method'            => :'panEntryMethod',
+        :'authorization_note'          => :'authorizationNote',
         :'authorization_response_code' => :'authorizationResponseCode',
-        :'authorization_issuer_id' => :'authorizationIssuerId',
-        :'authorization_issuer_time' => :'authorizationIssuerTime',
-        :'authorization_mti' => :'authorizationMti',
-        :'authorized_balance' => :'authorizedBalance',
-        :'limit_atm_year' => :'limitAtmYear',
-        :'limit_atm_month' => :'limitAtmMonth',
-        :'limit_atm_week' => :'limitAtmWeek',
-        :'limit_atm_day' => :'limitAtmDay',
-        :'limit_atm_all' => :'limitAtmAll',
-        :'limit_payment_year' => :'limitPaymentYear',
-        :'limit_payment_month' => :'limitPaymentMonth',
-        :'limit_payment_week' => :'limitPaymentWeek',
-        :'limit_payment_day' => :'limitPaymentDay',
-        :'limit_payment_all' => :'limitPaymentAll',
-        :'total_limit_atm_year' => :'totalLimitAtmYear',
-        :'total_limit_atm_month' => :'totalLimitAtmMonth',
-        :'total_limit_atm_week' => :'totalLimitAtmWeek',
-        :'total_limit_atm_day' => :'totalLimitAtmDay',
-        :'total_limit_atm_all' => :'totalLimitAtmAll',
-        :'total_limit_payment_year' => :'totalLimitPaymentYear',
-        :'total_limit_payment_month' => :'totalLimitPaymentMonth',
-        :'total_limit_payment_week' => :'totalLimitPaymentWeek',
-        :'total_limit_payment_day' => :'totalLimitPaymentDay',
-        :'total_limit_payment_all' => :'totalLimitPaymentAll',
-        :'total_rows' => :'totalRows'
+        :'authorization_issuer_id'     => :'authorizationIssuerId',
+        :'authorization_issuer_time'   => :'authorizationIssuerTime',
+        :'authorization_mti'           => :'authorizationMti',
+        :'authorized_balance'          => :'authorizedBalance',
+        :'limit_atm_year'              => :'limitAtmYear',
+        :'limit_atm_month'             => :'limitAtmMonth',
+        :'limit_atm_week'              => :'limitAtmWeek',
+        :'limit_atm_day'               => :'limitAtmDay',
+        :'limit_atm_all'               => :'limitAtmAll',
+        :'limit_payment_year'          => :'limitPaymentYear',
+        :'limit_payment_month'         => :'limitPaymentMonth',
+        :'limit_payment_week'          => :'limitPaymentWeek',
+        :'limit_payment_day'           => :'limitPaymentDay',
+        :'limit_payment_all'           => :'limitPaymentAll',
+        :'total_limit_atm_year'        => :'totalLimitAtmYear',
+        :'total_limit_atm_month'       => :'totalLimitAtmMonth',
+        :'total_limit_atm_week'        => :'totalLimitAtmWeek',
+        :'total_limit_atm_day'         => :'totalLimitAtmDay',
+        :'total_limit_atm_all'         => :'totalLimitAtmAll',
+        :'total_limit_payment_year'    => :'totalLimitPaymentYear',
+        :'total_limit_payment_month'   => :'totalLimitPaymentMonth',
+        :'total_limit_payment_week'    => :'totalLimitPaymentWeek',
+        :'total_limit_payment_day'     => :'totalLimitPaymentDay',
+        :'total_limit_payment_all'     => :'totalLimitPaymentAll',
+        :'total_rows'                  => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'cardtransaction_id' => :'Integer',
-        :'card_id' => :'Integer',
-        :'wallet_id' => :'Integer',
-        :'acquirer_id' => :'Integer',
-        :'wallet_currency' => :'String',
-        :'merchant_id' => :'String',
-        :'merchant_name' => :'String',
-        :'merchant_city' => :'String',
-        :'merchant_country' => :'String',
-        :'mcc_code' => :'String',
-        :'payment_local_time' => :'String',
-        :'public_token' => :'String',
-        :'payment_amount' => :'String',
-        :'payment_currency' => :'String',
-        :'fees' => :'String',
-        :'payment_country' => :'String',
-        :'payment_id' => :'String',
-        :'payment_status' => :'String',
-        :'payment_local_amount' => :'String',
-        :'pos_cardholder_presence' => :'String',
-        :'pos_postcode' => :'String',
-        :'pos_country' => :'String',
-        :'pos_terminal_id' => :'String',
-        :'pos_card_presence' => :'String',
-        :'pan_entry_method' => :'String',
-        :'authorization_note' => :'String',
+        :'cardtransaction_id'          => :'Integer',
+        :'card_id'                     => :'Integer',
+        :'wallet_id'                   => :'Integer',
+        :'acquirer_id'                 => :'Integer',
+        :'wallet_currency'             => :'String',
+        :'merchant_id'                 => :'String',
+        :'merchant_name'               => :'String',
+        :'merchant_city'               => :'String',
+        :'merchant_country'            => :'String',
+        :'mcc_code'                    => :'String',
+        :'payment_local_time'          => :'String',
+        :'public_token'                => :'String',
+        :'payment_amount'              => :'String',
+        :'payment_currency'            => :'String',
+        :'fees'                        => :'String',
+        :'payment_country'             => :'String',
+        :'payment_id'                  => :'String',
+        :'payment_status'              => :'String',
+        :'payment_local_amount'        => :'String',
+        :'pos_cardholder_presence'     => :'String',
+        :'pos_postcode'                => :'String',
+        :'pos_country'                 => :'String',
+        :'pos_terminal_id'             => :'String',
+        :'pos_card_presence'           => :'String',
+        :'pan_entry_method'            => :'String',
+        :'authorization_note'          => :'String',
         :'authorization_response_code' => :'String',
-        :'authorization_issuer_id' => :'String',
-        :'authorization_issuer_time' => :'String',
-        :'authorization_mti' => :'String',
-        :'authorized_balance' => :'String',
-        :'limit_atm_year' => :'String',
-        :'limit_atm_month' => :'String',
-        :'limit_atm_week' => :'String',
-        :'limit_atm_day' => :'String',
-        :'limit_atm_all' => :'String',
-        :'limit_payment_year' => :'String',
-        :'limit_payment_month' => :'String',
-        :'limit_payment_week' => :'String',
-        :'limit_payment_day' => :'String',
-        :'limit_payment_all' => :'String',
-        :'total_limit_atm_year' => :'String',
-        :'total_limit_atm_month' => :'String',
-        :'total_limit_atm_week' => :'String',
-        :'total_limit_atm_day' => :'String',
-        :'total_limit_atm_all' => :'String',
-        :'total_limit_payment_year' => :'String',
-        :'total_limit_payment_month' => :'String',
-        :'total_limit_payment_week' => :'String',
-        :'total_limit_payment_day' => :'String',
-        :'total_limit_payment_all' => :'String',
-        :'total_rows' => :'Integer'
+        :'authorization_issuer_id'     => :'String',
+        :'authorization_issuer_time'   => :'String',
+        :'authorization_mti'           => :'String',
+        :'authorized_balance'          => :'String',
+        :'limit_atm_year'              => :'String',
+        :'limit_atm_month'             => :'String',
+        :'limit_atm_week'              => :'String',
+        :'limit_atm_day'               => :'String',
+        :'limit_atm_all'               => :'String',
+        :'limit_payment_year'          => :'String',
+        :'limit_payment_month'         => :'String',
+        :'limit_payment_week'          => :'String',
+        :'limit_payment_day'           => :'String',
+        :'limit_payment_all'           => :'String',
+        :'total_limit_atm_year'        => :'String',
+        :'total_limit_atm_month'       => :'String',
+        :'total_limit_atm_week'        => :'String',
+        :'total_limit_atm_day'         => :'String',
+        :'total_limit_atm_all'         => :'String',
+        :'total_limit_payment_year'    => :'String',
+        :'total_limit_payment_month'   => :'String',
+        :'total_limit_payment_week'    => :'String',
+        :'total_limit_payment_day'     => :'String',
+        :'total_limit_payment_all'     => :'String',
+        :'total_rows'                  => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'cardtransactionId')
         self.cardtransaction_id = attributes[:'cardtransactionId']
@@ -458,8 +365,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -536,7 +443,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cardtransaction_id, card_id, wallet_id, acquirer_id, wallet_currency, merchant_id, merchant_name, merchant_city, merchant_country, mcc_code, payment_local_time, public_token, payment_amount, payment_currency, fees, payment_country, payment_id, payment_status, payment_local_amount, pos_cardholder_presence, pos_postcode, pos_country, pos_terminal_id, pos_card_presence, pan_entry_method, authorization_note, authorization_response_code, authorization_issuer_id, authorization_issuer_time, authorization_mti, authorized_balance, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, total_limit_atm_year, total_limit_atm_month, total_limit_atm_week, total_limit_atm_day, total_limit_atm_all, total_limit_payment_year, total_limit_payment_month, total_limit_payment_week, total_limit_payment_day, total_limit_payment_all, total_rows].hash
+      [cardtransaction_id, card_id, wallet_id, acquirer_id, wallet_currency, merchant_id, merchant_name, merchant_city, merchant_country, mcc_code, payment_local_time, public_token, payment_amount, payment_currency, 
+fees, payment_country, payment_id, payment_status, payment_local_amount, pos_cardholder_presence, pos_postcode, pos_country, pos_terminal_id, pos_card_presence, pan_entry_method, authorization_note, authorization_response_code, authorization_issuer_id, authorization_issuer_time, authorization_mti, authorized_balance, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, total_limit_atm_year, total_limit_atm_month, total_limit_atm_week, total_limit_atm_day, total_limit_atm_all, total_limit_payment_year, total_limit_payment_month, total_limit_payment_week, total_limit_payment_day, total_limit_payment_all, total_rows].hash
     end
 
     # Builds the object from hash
@@ -590,7 +498,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -616,7 +524,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -633,7 +541,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -642,6 +550,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

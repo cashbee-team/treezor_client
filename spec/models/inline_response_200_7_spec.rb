@@ -34,7 +34,7 @@ describe 'InlineResponse2007' do
   end
   describe 'test attribute "cardimages"' do
     it 'should work' do
-       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 

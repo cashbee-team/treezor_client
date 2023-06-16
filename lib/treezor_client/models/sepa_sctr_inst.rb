@@ -14,102 +14,69 @@ require 'date'
 
 module TreezorClient
   class SepaSctrInst
-    attr_accessor :wallet_id
-
-    attr_accessor :debtor_bic
-
-    attr_accessor :debtor_iban
-
-    attr_accessor :debitor_name
-
-    attr_accessor :debitor_country
-
-    attr_accessor :debitor_address_line
-
-    attr_accessor :creditor_bic
-
-    attr_accessor :creditor_iban
-
-    attr_accessor :creditor_name
-
-    attr_accessor :creditor_address_line
-
-    attr_accessor :creditor_country
-
-    attr_accessor :transaction_id
-
-    attr_accessor :virtual_iban_id
+    attr_accessor :wallet_id, :debtor_bic, :debtor_iban, :debitor_name, :debitor_country, :debitor_address_line, :creditor_bic, :creditor_iban, :creditor_name, :creditor_address_line, :creditor_country, :transaction_id, 
+      :virtual_iban_id, :settlement_amount, :return_reason_code, :virtual_iban_reference, :remittance_information, :transaction_end_to_end_id
 
     # RFC 3339
     attr_accessor :settlement_date
 
-    attr_accessor :settlement_amount
-
-    attr_accessor :return_reason_code
-
-    attr_accessor :virtual_iban_reference
-
-    attr_accessor :remittance_information
-
-    attr_accessor :transaction_end_to_end_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'wallet_id' => :'walletId',
-        :'debtor_bic' => :'debtorBic',
-        :'debtor_iban' => :'debtorIban',
-        :'debitor_name' => :'debitorName',
-        :'debitor_country' => :'debitorCountry',
-        :'debitor_address_line' => :'debitorAddressLine',
-        :'creditor_bic' => :'creditorBIC',
-        :'creditor_iban' => :'creditorIban',
-        :'creditor_name' => :'creditorName',
-        :'creditor_address_line' => :'creditorAddressLine',
-        :'creditor_country' => :'creditorCountry',
-        :'transaction_id' => :'transactionId',
-        :'virtual_iban_id' => :'virtualIbanId',
-        :'settlement_date' => :'settlementDate',
-        :'settlement_amount' => :'settlementAmount',
-        :'return_reason_code' => :'return_reason_code',
-        :'virtual_iban_reference' => :'virtualIbanReference',
-        :'remittance_information' => :'remittanceInformation',
-        :'transaction_end_to_end_id' => :'transactionEndToEndId'
+        :'wallet_id'                 => :'walletId',
+        :'debtor_bic'                => :'debtorBic',
+        :'debtor_iban'               => :'debtorIban',
+        :'debitor_name'              => :'debitorName',
+        :'debitor_country'           => :'debitorCountry',
+        :'debitor_address_line'      => :'debitorAddressLine',
+        :'creditor_bic'              => :'creditorBIC',
+        :'creditor_iban'             => :'creditorIban',
+        :'creditor_name'             => :'creditorName',
+        :'creditor_address_line'     => :'creditorAddressLine',
+        :'creditor_country'          => :'creditorCountry',
+        :'transaction_id'            => :'transactionId',
+        :'virtual_iban_id'           => :'virtualIbanId',
+        :'settlement_date'           => :'settlementDate',
+        :'settlement_amount'         => :'settlementAmount',
+        :'return_reason_code'        => :'return_reason_code',
+        :'virtual_iban_reference'    => :'virtualIbanReference',
+        :'remittance_information'    => :'remittanceInformation',
+        :'transaction_end_to_end_id' => :'transactionEndToEndId',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'wallet_id' => :'Integer',
-        :'debtor_bic' => :'String',
-        :'debtor_iban' => :'String',
-        :'debitor_name' => :'String',
-        :'debitor_country' => :'String',
-        :'debitor_address_line' => :'String',
-        :'creditor_bic' => :'String',
-        :'creditor_iban' => :'String',
-        :'creditor_name' => :'String',
-        :'creditor_address_line' => :'String',
-        :'creditor_country' => :'String',
-        :'transaction_id' => :'String',
-        :'virtual_iban_id' => :'String',
-        :'settlement_date' => :'String',
-        :'settlement_amount' => :'String',
-        :'return_reason_code' => :'String',
-        :'virtual_iban_reference' => :'String',
-        :'remittance_information' => :'String',
-        :'transaction_end_to_end_id' => :'String'
+        :'wallet_id'                 => :'Integer',
+        :'debtor_bic'                => :'String',
+        :'debtor_iban'               => :'String',
+        :'debitor_name'              => :'String',
+        :'debitor_country'           => :'String',
+        :'debitor_address_line'      => :'String',
+        :'creditor_bic'              => :'String',
+        :'creditor_iban'             => :'String',
+        :'creditor_name'             => :'String',
+        :'creditor_address_line'     => :'String',
+        :'creditor_country'          => :'String',
+        :'transaction_id'            => :'String',
+        :'virtual_iban_id'           => :'String',
+        :'settlement_date'           => :'String',
+        :'settlement_amount'         => :'String',
+        :'return_reason_code'        => :'String',
+        :'virtual_iban_reference'    => :'String',
+        :'remittance_information'    => :'String',
+        :'transaction_end_to_end_id' => :'String',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'walletId')
         self.wallet_id = attributes[:'walletId']
@@ -191,8 +158,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -236,7 +203,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [wallet_id, debtor_bic, debtor_iban, debitor_name, debitor_country, debitor_address_line, creditor_bic, creditor_iban, creditor_name, creditor_address_line, creditor_country, transaction_id, virtual_iban_id, settlement_date, settlement_amount, return_reason_code, virtual_iban_reference, remittance_information, transaction_end_to_end_id].hash
+      [wallet_id, debtor_bic, debtor_iban, debitor_name, debitor_country, debitor_address_line, creditor_bic, creditor_iban, creditor_name, creditor_address_line, creditor_country, transaction_id, virtual_iban_id, 
+settlement_date, settlement_amount, return_reason_code, virtual_iban_reference, remittance_information, transaction_end_to_end_id].hash
     end
 
     # Builds the object from hash
@@ -290,7 +258,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -316,7 +284,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -333,7 +301,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -342,6 +310,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

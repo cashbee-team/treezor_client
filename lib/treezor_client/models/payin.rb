@@ -14,109 +14,17 @@ require 'date'
 
 module TreezorClient
   class Payin
-    attr_accessor :payin_id
-
-    attr_accessor :payin_tag
-
-    attr_accessor :payin_status
-
-    attr_accessor :code_status
-
-    attr_accessor :information_status
-
-    attr_accessor :wallet_id
-
-    attr_accessor :user_id
-
-    attr_accessor :cart_id
-
-    attr_accessor :wallet_event_name
-
-    attr_accessor :wallet_alias
-
-    attr_accessor :user_firstname
-
-    attr_accessor :user_lastname
-
-    attr_accessor :message_to_user
-
-    attr_accessor :payment_method_id
-
-    attr_accessor :subtotal_items
-
-    attr_accessor :subtotal_services
-
-    attr_accessor :subtotal_tax
-
-    attr_accessor :amount
-
-    attr_accessor :currency
-
-    attr_accessor :distributor_fee
+    attr_accessor :payin_id, :payin_tag, :payin_status, :code_status, :information_status, :wallet_id, :user_id, :cart_id, :wallet_event_name, :wallet_alias, :user_firstname, :user_lastname, :message_to_user, 
+      :payment_method_id, :subtotal_items, :subtotal_services, :subtotal_tax, :amount, :currency, :distributor_fee, :created_ip, :payment_html, :payment_language, :payment_post_url, :payment_post_data_url, :payment_accepted_url, :payment_waiting_url, :payment_refused_url, :payment_canceled_url, :payment_exception_url, :iban_fullname, :iban_id, :iban_bic, :iban_tx_end_to_end_id, :iban_tx_id, :refund_amount, :total_rows, :forward_url, :mandate_id, :creditor_name, :creditor_address_line, :creditor_country, :creditor_iban, :creditor_bic, :virtual_iban_id, :virtual_iban_reference, :dbtr_iban
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
 
-    attr_accessor :created_ip
-
-    attr_accessor :payment_html
-
-    attr_accessor :payment_language
-
-    attr_accessor :payment_post_url
-
-    attr_accessor :payment_post_data_url
-
-    attr_accessor :payment_accepted_url
-
-    attr_accessor :payment_waiting_url
-
-    attr_accessor :payment_refused_url
-
-    attr_accessor :payment_canceled_url
-
-    attr_accessor :payment_exception_url
-
-    attr_accessor :iban_fullname
-
-    attr_accessor :iban_id
-
-    attr_accessor :iban_bic
-
-    attr_accessor :iban_tx_end_to_end_id
-
-    attr_accessor :iban_tx_id
-
-    attr_accessor :refund_amount
-
-    attr_accessor :total_rows
-
-    attr_accessor :forward_url
-
     # Date YYYY-MM-DD
     attr_accessor :payin_date
 
-    attr_accessor :mandate_id
-
-    attr_accessor :creditor_name
-
-    attr_accessor :creditor_address_line
-
-    attr_accessor :creditor_country
-
-    attr_accessor :creditor_iban
-
-    attr_accessor :creditor_bic
-
-    attr_accessor :virtual_iban_id
-
-    attr_accessor :virtual_iban_reference
-
-    attr_accessor :dbtr_iban
-
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -139,120 +47,120 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'payin_id' => :'payinId',
-        :'payin_tag' => :'payinTag',
-        :'payin_status' => :'payinStatus',
-        :'code_status' => :'codeStatus',
-        :'information_status' => :'informationStatus',
-        :'wallet_id' => :'walletId',
-        :'user_id' => :'userId',
-        :'cart_id' => :'cartId',
-        :'wallet_event_name' => :'walletEventName',
-        :'wallet_alias' => :'walletAlias',
-        :'user_firstname' => :'userFirstname',
-        :'user_lastname' => :'userLastname',
-        :'message_to_user' => :'messageToUser',
-        :'payment_method_id' => :'paymentMethodId',
-        :'subtotal_items' => :'subtotalItems',
-        :'subtotal_services' => :'subtotalServices',
-        :'subtotal_tax' => :'subtotalTax',
-        :'amount' => :'amount',
-        :'currency' => :'currency',
-        :'distributor_fee' => :'distributorFee',
-        :'created_date' => :'createdDate',
-        :'created_ip' => :'createdIp',
-        :'payment_html' => :'paymentHtml',
-        :'payment_language' => :'paymentLanguage',
-        :'payment_post_url' => :'paymentPostUrl',
-        :'payment_post_data_url' => :'paymentPostDataUrl',
-        :'payment_accepted_url' => :'paymentAcceptedUrl',
-        :'payment_waiting_url' => :'paymentWaitingUrl',
-        :'payment_refused_url' => :'paymentRefusedUrl',
-        :'payment_canceled_url' => :'paymentCanceledUrl',
-        :'payment_exception_url' => :'paymentExceptionUrl',
-        :'iban_fullname' => :'ibanFullname',
-        :'iban_id' => :'ibanId',
-        :'iban_bic' => :'ibanBic',
-        :'iban_tx_end_to_end_id' => :'ibanTxEndToEndId',
-        :'iban_tx_id' => :'ibanTxId',
-        :'refund_amount' => :'refundAmount',
-        :'total_rows' => :'totalRows',
-        :'forward_url' => :'forwardUrl',
-        :'payin_date' => :'payinDate',
-        :'mandate_id' => :'mandateId',
-        :'creditor_name' => :'creditorName',
-        :'creditor_address_line' => :'creditorAddressLine',
-        :'creditor_country' => :'creditorCountry',
-        :'creditor_iban' => :'creditorIban',
-        :'creditor_bic' => :'creditorBIC',
-        :'virtual_iban_id' => :'virtualIbanId',
+        :'payin_id'               => :'payinId',
+        :'payin_tag'              => :'payinTag',
+        :'payin_status'           => :'payinStatus',
+        :'code_status'            => :'codeStatus',
+        :'information_status'     => :'informationStatus',
+        :'wallet_id'              => :'walletId',
+        :'user_id'                => :'userId',
+        :'cart_id'                => :'cartId',
+        :'wallet_event_name'      => :'walletEventName',
+        :'wallet_alias'           => :'walletAlias',
+        :'user_firstname'         => :'userFirstname',
+        :'user_lastname'          => :'userLastname',
+        :'message_to_user'        => :'messageToUser',
+        :'payment_method_id'      => :'paymentMethodId',
+        :'subtotal_items'         => :'subtotalItems',
+        :'subtotal_services'      => :'subtotalServices',
+        :'subtotal_tax'           => :'subtotalTax',
+        :'amount'                 => :'amount',
+        :'currency'               => :'currency',
+        :'distributor_fee'        => :'distributorFee',
+        :'created_date'           => :'createdDate',
+        :'created_ip'             => :'createdIp',
+        :'payment_html'           => :'paymentHtml',
+        :'payment_language'       => :'paymentLanguage',
+        :'payment_post_url'       => :'paymentPostUrl',
+        :'payment_post_data_url'  => :'paymentPostDataUrl',
+        :'payment_accepted_url'   => :'paymentAcceptedUrl',
+        :'payment_waiting_url'    => :'paymentWaitingUrl',
+        :'payment_refused_url'    => :'paymentRefusedUrl',
+        :'payment_canceled_url'   => :'paymentCanceledUrl',
+        :'payment_exception_url'  => :'paymentExceptionUrl',
+        :'iban_fullname'          => :'ibanFullname',
+        :'iban_id'                => :'ibanId',
+        :'iban_bic'               => :'ibanBic',
+        :'iban_tx_end_to_end_id'  => :'ibanTxEndToEndId',
+        :'iban_tx_id'             => :'ibanTxId',
+        :'refund_amount'          => :'refundAmount',
+        :'total_rows'             => :'totalRows',
+        :'forward_url'            => :'forwardUrl',
+        :'payin_date'             => :'payinDate',
+        :'mandate_id'             => :'mandateId',
+        :'creditor_name'          => :'creditorName',
+        :'creditor_address_line'  => :'creditorAddressLine',
+        :'creditor_country'       => :'creditorCountry',
+        :'creditor_iban'          => :'creditorIban',
+        :'creditor_bic'           => :'creditorBIC',
+        :'virtual_iban_id'        => :'virtualIbanId',
         :'virtual_iban_reference' => :'virtualIbanReference',
-        :'dbtr_iban' => :'DbtrIBAN'
+        :'dbtr_iban'              => :'DbtrIBAN',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'payin_id' => :'String',
-        :'payin_tag' => :'String',
-        :'payin_status' => :'String',
-        :'code_status' => :'Integer',
-        :'information_status' => :'String',
-        :'wallet_id' => :'Integer',
-        :'user_id' => :'Integer',
-        :'cart_id' => :'Integer',
-        :'wallet_event_name' => :'String',
-        :'wallet_alias' => :'String',
-        :'user_firstname' => :'String',
-        :'user_lastname' => :'String',
-        :'message_to_user' => :'String',
-        :'payment_method_id' => :'Integer',
-        :'subtotal_items' => :'String',
-        :'subtotal_services' => :'String',
-        :'subtotal_tax' => :'String',
-        :'amount' => :'String',
-        :'currency' => :'String',
-        :'distributor_fee' => :'String',
-        :'created_date' => :'String',
-        :'created_ip' => :'String',
-        :'payment_html' => :'String',
-        :'payment_language' => :'String',
-        :'payment_post_url' => :'String',
-        :'payment_post_data_url' => :'String',
-        :'payment_accepted_url' => :'String',
-        :'payment_waiting_url' => :'String',
-        :'payment_refused_url' => :'String',
-        :'payment_canceled_url' => :'String',
-        :'payment_exception_url' => :'String',
-        :'iban_fullname' => :'String',
-        :'iban_id' => :'String',
-        :'iban_bic' => :'String',
-        :'iban_tx_end_to_end_id' => :'String',
-        :'iban_tx_id' => :'String',
-        :'refund_amount' => :'String',
-        :'total_rows' => :'Integer',
-        :'forward_url' => :'String',
-        :'payin_date' => :'String',
-        :'mandate_id' => :'Integer',
-        :'creditor_name' => :'String',
-        :'creditor_address_line' => :'String',
-        :'creditor_country' => :'String',
-        :'creditor_iban' => :'String',
-        :'creditor_bic' => :'String',
-        :'virtual_iban_id' => :'Integer',
+        :'payin_id'               => :'String',
+        :'payin_tag'              => :'String',
+        :'payin_status'           => :'String',
+        :'code_status'            => :'Integer',
+        :'information_status'     => :'String',
+        :'wallet_id'              => :'Integer',
+        :'user_id'                => :'Integer',
+        :'cart_id'                => :'Integer',
+        :'wallet_event_name'      => :'String',
+        :'wallet_alias'           => :'String',
+        :'user_firstname'         => :'String',
+        :'user_lastname'          => :'String',
+        :'message_to_user'        => :'String',
+        :'payment_method_id'      => :'Integer',
+        :'subtotal_items'         => :'String',
+        :'subtotal_services'      => :'String',
+        :'subtotal_tax'           => :'String',
+        :'amount'                 => :'String',
+        :'currency'               => :'String',
+        :'distributor_fee'        => :'String',
+        :'created_date'           => :'String',
+        :'created_ip'             => :'String',
+        :'payment_html'           => :'String',
+        :'payment_language'       => :'String',
+        :'payment_post_url'       => :'String',
+        :'payment_post_data_url'  => :'String',
+        :'payment_accepted_url'   => :'String',
+        :'payment_waiting_url'    => :'String',
+        :'payment_refused_url'    => :'String',
+        :'payment_canceled_url'   => :'String',
+        :'payment_exception_url'  => :'String',
+        :'iban_fullname'          => :'String',
+        :'iban_id'                => :'String',
+        :'iban_bic'               => :'String',
+        :'iban_tx_end_to_end_id'  => :'String',
+        :'iban_tx_id'             => :'String',
+        :'refund_amount'          => :'String',
+        :'total_rows'             => :'Integer',
+        :'forward_url'            => :'String',
+        :'payin_date'             => :'String',
+        :'mandate_id'             => :'Integer',
+        :'creditor_name'          => :'String',
+        :'creditor_address_line'  => :'String',
+        :'creditor_country'       => :'String',
+        :'creditor_iban'          => :'String',
+        :'creditor_bic'           => :'String',
+        :'virtual_iban_id'        => :'Integer',
         :'virtual_iban_reference' => :'String',
-        :'dbtr_iban' => :'String'
+        :'dbtr_iban'              => :'String',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'payinId')
         self.payin_id = attributes[:'payinId']
@@ -456,8 +364,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -543,7 +451,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [payin_id, payin_tag, payin_status, code_status, information_status, wallet_id, user_id, cart_id, wallet_event_name, wallet_alias, user_firstname, user_lastname, message_to_user, payment_method_id, subtotal_items, subtotal_services, subtotal_tax, amount, currency, distributor_fee, created_date, created_ip, payment_html, payment_language, payment_post_url, payment_post_data_url, payment_accepted_url, payment_waiting_url, payment_refused_url, payment_canceled_url, payment_exception_url, iban_fullname, iban_id, iban_bic, iban_tx_end_to_end_id, iban_tx_id, refund_amount, total_rows, forward_url, payin_date, mandate_id, creditor_name, creditor_address_line, creditor_country, creditor_iban, creditor_bic, virtual_iban_id, virtual_iban_reference, dbtr_iban].hash
+      [payin_id, payin_tag, payin_status, code_status, information_status, wallet_id, user_id, cart_id, wallet_event_name, wallet_alias, user_firstname, user_lastname, message_to_user, payment_method_id, subtotal_items, 
+subtotal_services, subtotal_tax, amount, currency, distributor_fee, created_date, created_ip, payment_html, payment_language, payment_post_url, payment_post_data_url, payment_accepted_url, payment_waiting_url, payment_refused_url, payment_canceled_url, payment_exception_url, iban_fullname, iban_id, iban_bic, iban_tx_end_to_end_id, iban_tx_id, refund_amount, total_rows, forward_url, payin_date, mandate_id, creditor_name, creditor_address_line, creditor_country, creditor_iban, creditor_bic, virtual_iban_id, virtual_iban_reference, dbtr_iban].hash
     end
 
     # Builds the object from hash
@@ -597,7 +506,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -623,7 +532,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -640,7 +549,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -649,6 +558,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

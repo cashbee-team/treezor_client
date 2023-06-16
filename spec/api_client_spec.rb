@@ -92,7 +92,7 @@ describe TreezorClient::ApiClient do
   describe "#deserialize" do
     it "handles Array<Integer>" do
       api_client = TreezorClient::ApiClient.new
-      headers = {'Content-Type' => 'application/json'}
+      headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '[12, 34]')
       data = api_client.deserialize(response, 'Array<Integer>')
       expect(data).to be_instance_of(Array)
@@ -101,7 +101,7 @@ describe TreezorClient::ApiClient do
 
     it "handles Array<Array<Integer>>" do
       api_client = TreezorClient::ApiClient.new
-      headers = {'Content-Type' => 'application/json'}
+      headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '[[12, 34], [56]]')
       data = api_client.deserialize(response, 'Array<Array<Integer>>')
       expect(data).to be_instance_of(Array)
@@ -110,24 +110,24 @@ describe TreezorClient::ApiClient do
 
     it "handles Hash<String, String>" do
       api_client = TreezorClient::ApiClient.new
-      headers = {'Content-Type' => 'application/json'}
+      headers = { 'Content-Type' => 'application/json' }
       response = double('response', headers: headers, body: '{"message": "Hello"}')
       data = api_client.deserialize(response, 'Hash<String, String>')
       expect(data).to be_instance_of(Hash)
-      expect(data).to eq({:message => 'Hello'})
+      expect(data).to eq({ :message => 'Hello' })
     end
   end
 
   describe "#object_to_hash" do
     it "ignores nils and includes empty arrays" do
       # uncomment below to test object_to_hash for model
-      #api_client = TreezorClient::ApiClient.new
-      #_model = TreezorClient::ModelName.new
+      # api_client = TreezorClient::ApiClient.new
+      # _model = TreezorClient::ModelName.new
       # update the model attribute below
-      #_model.id = 1 
+      # _model.id = 1 
       # update the expected value (hash) below
-      #expected = {id: 1, name: '', tags: []}
-      #expect(api_client.object_to_hash(_model)).to eq(expected)
+      # expected = {id: 1, name: '', tags: []}
+      # expect(api_client.object_to_hash(_model)).to eq(expected)
     end
   end
 

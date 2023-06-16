@@ -34,7 +34,7 @@ module TreezorClient
       @user_agent = "Swagger-Codegen/#{VERSION}/ruby"
       @default_headers = {
         'Content-Type' => 'application/json',
-        'User-Agent' => @user_agent
+        'User-Agent'   => @user_agent,
       }
     end
 
@@ -46,7 +46,7 @@ module TreezorClient
     #
     # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
     #   the data deserialized from response body (could be nil), response status code and response headers.
-    def call_api(http_method, path, opts = {})
+    def call_api(http_method, path, opts = { })
       request = build_request(http_method, path, opts)
       response = request.run
 
@@ -60,12 +60,12 @@ module TreezorClient
         elsif response.code == 0
           # Errors from libcurl will be made visible here
           fail ApiError.new(:code => 0,
-                            :message => response.return_message)
+            :message => response.return_message)
         else
           fail ApiError.new(:code => response.code,
-                            :response_headers => response.headers.to_h,
-                            :response_body => response.body),
-               response.status_message
+            :response_headers => response.headers.to_h,
+            :response_body => response.body),
+            response.status_message
         end
       end
 
@@ -86,13 +86,13 @@ module TreezorClient
     # @option opts [Hash] :form_params Query parameters
     # @option opts [Object] :body HTTP body (JSON/XML)
     # @return [Typhoeus::Request] A Typhoeus Request
-    def build_request(http_method, path, opts = {})
+    def build_request(http_method, path, opts = { })
       url = build_request_url(path)
       http_method = http_method.to_sym.downcase
 
-      header_params = @default_headers.merge(opts[:header_params] || {})
-      query_params = opts[:query_params] || {}
-      form_params = opts[:form_params] || {}
+      header_params = @default_headers.merge(opts[:header_params] || { })
+      query_params = opts[:query_params] || { }
+      form_params = opts[:form_params] || { }
 
       update_params_for_auth! header_params, query_params, opts[:auth_names]
 
@@ -100,19 +100,19 @@ module TreezorClient
       _verify_ssl_host = @config.verify_ssl_host ? 2 : 0
 
       req_opts = {
-        :method => http_method,
-        :headers => header_params,
-        :params => query_params,
+        :method          => http_method,
+        :headers         => header_params,
+        :params          => query_params,
         :params_encoding => @config.params_encoding,
-        :timeout => @config.timeout,
-        :ssl_verifypeer => @config.verify_ssl,
-        :ssl_verifyhost => _verify_ssl_host,
-        :sslcert => @config.cert_file,
-        :sslkey => @config.key_file,
-        :verbose => @config.debugging
+        :timeout         => @config.timeout,
+        :ssl_verifypeer  => @config.verify_ssl,
+        :ssl_verifyhost  => _verify_ssl_host,
+        :sslcert         => @config.cert_file,
+        :sslkey          => @config.key_file,
+        :verbose         => @config.debugging,
       }
 
-      req_opts.merge!(multipart: true) if header_params['Content-Type'].start_with? "multipart/"
+      req_opts[:multipart] = true if header_params['Content-Type'].start_with? "multipart/"
 
       # set custom cert, if provided
       req_opts[:cainfo] = @config.ssl_ca_cert if @config.ssl_ca_cert
@@ -204,10 +204,10 @@ module TreezorClient
         # e.g. Array<Pet>
         sub_type = $1
         data.map { |item| convert_to_type(item, sub_type) }
-      when /\AHash\<String, (.+)\>\z/
+      when /\AHash<String, (.+)>\z/
         # e.g. Hash<String, Integer>
         sub_type = $1
-        {}.tap do |hash|
+        { }.tap do |hash|
           data.each { |k, v| hash[k] = convert_to_type(v, sub_type) }
         end
       else
@@ -236,7 +236,7 @@ module TreezorClient
         else
           prefix = 'download-'
         end
-        prefix = prefix + '-' unless prefix.end_with?('-')
+        prefix = "#{prefix}-" unless prefix.end_with?('-')
         encoding = response.body.encoding
         tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
         @tempfile = tempfile
@@ -279,7 +279,7 @@ module TreezorClient
       # http form
       if header_params['Content-Type'] == 'application/x-www-form-urlencoded' ||
           header_params['Content-Type'] == 'multipart/form-data'
-        data = {}
+        data = { }
         form_params.each do |key, value|
           case value
           when ::File, ::Array, nil

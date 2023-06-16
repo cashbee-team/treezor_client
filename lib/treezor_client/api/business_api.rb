@@ -31,7 +31,7 @@ module TreezorClient
     # @option opts [String] :registration_number Unique business registration number.
     # @option opts [String] :vat_number Unique business VAT number.
     # @return [InlineResponse2004]
-    def businessinformations_get(country, opts = {})
+    def businessinformations_get(country, opts = { })
       data, _status_code, _headers = businessinformations_get_with_http_info(country, opts)
       data
     end
@@ -48,7 +48,7 @@ module TreezorClient
     # @option opts [String] :registration_number Unique business registration number.
     # @option opts [String] :vat_number Unique business VAT number.
     # @return [Array<(InlineResponse2004, Fixnum, Hash)>] InlineResponse2004 data, response status code and response headers
-    def businessinformations_get_with_http_info(country, opts = {})
+    def businessinformations_get_with_http_info(country, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BusinessApi.businessinformations_get ...'
       end
@@ -60,7 +60,7 @@ module TreezorClient
       local_var_path = '/businessinformations'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'country'] = country
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -71,21 +71,21 @@ module TreezorClient
       query_params[:'vatNumber'] = opts[:'vat_number'] if !opts[:'vat_number'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2004')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2004')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BusinessApi#businessinformations_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -109,7 +109,7 @@ module TreezorClient
     # @option opts [String] :address_city Business&#39; city address.
     # @option opts [String] :address_postal_code Business&#39; postal code address.
     # @return [Array<InlineResponse2003>]
-    def businesssearchs_get(country, opts = {})
+    def businesssearchs_get(country, opts = { })
       data, _status_code, _headers = businesssearchs_get_with_http_info(country, opts)
       data
     end
@@ -132,7 +132,7 @@ module TreezorClient
     # @option opts [String] :address_city Business&#39; city address.
     # @option opts [String] :address_postal_code Business&#39; postal code address.
     # @return [Array<(Array<InlineResponse2003>, Fixnum, Hash)>] Array<InlineResponse2003> data, response status code and response headers
-    def businesssearchs_get_with_http_info(country, opts = {})
+    def businesssearchs_get_with_http_info(country, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BusinessApi.businesssearchs_get ...'
       end
@@ -144,7 +144,7 @@ module TreezorClient
       local_var_path = '/businesssearchs'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'country'] = country
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -161,21 +161,21 @@ module TreezorClient
       query_params[:'addressPostalCode'] = opts[:'address_postal_code'] if !opts[:'address_postal_code'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Array<InlineResponse2003>')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'Array<InlineResponse2003>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BusinessApi#businesssearchs_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

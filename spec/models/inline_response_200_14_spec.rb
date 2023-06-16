@@ -34,7 +34,7 @@ describe 'InlineResponse20014' do
   end
   describe 'test attribute "bankaccounts"' do
     it 'should work' do
-       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 

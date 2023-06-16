@@ -39,7 +39,7 @@ module TreezorClient
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
     # @return [InlineResponse2002]
-    def get_beneficiaries(opts = {})
+    def get_beneficiaries(opts = { })
       data, _status_code, _headers = get_beneficiaries_with_http_info(opts)
       data
     end
@@ -64,7 +64,7 @@ module TreezorClient
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
     # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
-    def get_beneficiaries_with_http_info(opts = {})
+    def get_beneficiaries_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BeneficiariesApi.get_beneficiaries ...'
       end
@@ -72,7 +72,7 @@ module TreezorClient
       local_var_path = '/beneficiaries'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -91,25 +91,25 @@ module TreezorClient
       query_params[:'sortOrder'] = opts[:'sort_order'] if !opts[:'sort_order'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2002')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeneficiariesApi#get_beneficiaries\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -121,7 +121,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @return [InlineResponse2002]
-    def get_beneficiary(id, opts = {})
+    def get_beneficiary(id, opts = { })
       data, _status_code, _headers = get_beneficiary_with_http_info(id, opts)
       data
     end
@@ -132,7 +132,7 @@ module TreezorClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :fields List of the object&#39;s properties you want to pick up.
     # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
-    def get_beneficiary_with_http_info(id, opts = {})
+    def get_beneficiary_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BeneficiariesApi.get_beneficiary ...'
       end
@@ -141,32 +141,32 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling BeneficiariesApi.get_beneficiary"
       end
       # resource path
-      local_var_path = '/beneficiaries/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/beneficiaries/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'fields'] = @api_client.build_collection_param(opts[:'fields'], :csv) if !opts[:'fields'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2002')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeneficiariesApi#get_beneficiary\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -181,7 +181,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Body] :body 
     # @return [InlineResponse2002]
-    def post_beneficiary(opts = {})
+    def post_beneficiary(opts = { })
       data, _status_code, _headers = post_beneficiary_with_http_info(opts)
       data
     end
@@ -195,7 +195,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Body] :body 
     # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
-    def post_beneficiary_with_http_info(opts = {})
+    def post_beneficiary_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BeneficiariesApi.post_beneficiary ...'
       end
@@ -203,32 +203,32 @@ module TreezorClient
       local_var_path = '/beneficiaries'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2002')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeneficiariesApi#post_beneficiary\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -244,7 +244,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Body1] :body 
     # @return [InlineResponse2002]
-    def put_beneficiary(id, opts = {})
+    def put_beneficiary(id, opts = { })
       data, _status_code, _headers = put_beneficiary_with_http_info(id, opts)
       data
     end
@@ -259,7 +259,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Body1] :body 
     # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
-    def put_beneficiary_with_http_info(id, opts = {})
+    def put_beneficiary_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BeneficiariesApi.put_beneficiary ...'
       end
@@ -268,35 +268,35 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling BeneficiariesApi.put_beneficiary"
       end
       # resource path
-      local_var_path = '/beneficiaries/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/beneficiaries/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2002')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BeneficiariesApi#put_beneficiary\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

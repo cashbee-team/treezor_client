@@ -3,5 +3,10 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'rake', '~> 13.0.6'
+  gem 'rake'
+    gem 'codestyle', path: '/Users/waghnaza/workspace/cashbee/codestyle'
+
+  gem 'rspec' 
+  gem 'vcr' 
+  gem 'webmock'  
 end

@@ -28,7 +28,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body2] :body 
     # @return [Float]
-    def card_reserve_add_to(opts = {})
+    def card_reserve_add_to(opts = { })
       data, _status_code, _headers = card_reserve_add_to_with_http_info(opts)
       data
     end
@@ -42,7 +42,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body2] :body 
     # @return [Array<(Float, Fixnum, Hash)>] Float data, response status code and response headers
-    def card_reserve_add_to_with_http_info(opts = {})
+    def card_reserve_add_to_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardReserveApi.card_reserve_add_to ...'
       end
@@ -50,32 +50,32 @@ module TreezorClient
       local_var_path = '/cardReserves/AddTo'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Float')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'Float')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardReserveApi#card_reserve_add_to\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -90,7 +90,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body3] :body 
     # @return [BOOLEAN]
-    def card_reserve_check(opts = {})
+    def card_reserve_check(opts = { })
       data, _status_code, _headers = card_reserve_check_with_http_info(opts)
       data
     end
@@ -104,7 +104,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body3] :body 
     # @return [Array<(BOOLEAN, Fixnum, Hash)>] BOOLEAN data, response status code and response headers
-    def card_reserve_check_with_http_info(opts = {})
+    def card_reserve_check_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardReserveApi.card_reserve_check ...'
       end
@@ -112,32 +112,32 @@ module TreezorClient
       local_var_path = '/cardReserves/Check'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'BOOLEAN')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'BOOLEAN')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardReserveApi#card_reserve_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -152,7 +152,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @return [InlineResponse2008]
-    def card_reserve_get(id, opts = {})
+    def card_reserve_get(id, opts = { })
       data, _status_code, _headers = card_reserve_get_with_http_info(id, opts)
       data
     end
@@ -166,7 +166,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
-    def card_reserve_get_with_http_info(id, opts = {})
+    def card_reserve_get_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardReserveApi.card_reserve_get ...'
       end
@@ -175,35 +175,35 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardReserveApi.card_reserve_get"
       end
       # resource path
-      local_var_path = '/cardReserves/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cardReserves/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2008')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardReserveApi#card_reserve_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -123,16 +123,14 @@ module TreezorClient
     # https://github.com/typhoeus/ethon/blob/master/lib/ethon/easy/queryable.rb#L96
     attr_accessor :params_encoding
 
-    attr_accessor :inject_format
-
-    attr_accessor :force_ending_format
+    attr_accessor :inject_format, :force_ending_format
 
     def initialize
       @scheme = 'https'
       @host = 'sandbox.treezor.com'
       @base_path = '/v1/index.php'
-      @api_key = {}
-      @api_key_prefix = {}
+      @api_key = { }
+      @api_key_prefix = { }
       @timeout = 0
       @client_side_validation = true
       @verify_ssl = true
@@ -143,7 +141,7 @@ module TreezorClient
       @debugging = false
       @inject_format = false
       @force_ending_format = false
-      @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @logger = defined?(Rails) ? Rails.logger : Logger.new($stdout)
 
       yield(self) if block_given?
     end
@@ -190,18 +188,18 @@ module TreezorClient
 
     # Gets Basic Auth token string
     def basic_auth_token
-      'Basic ' + ["#{username}:#{password}"].pack('m').delete("\r\n")
+      "Basic #{["#{username}:#{password}"].pack('m').delete("\r\n")}"
     end
 
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
         'api_key' =>
-          {
-            type: 'api_key',
-            in: 'header',
-            key: 'Authorization',
-            value: api_key_with_prefix('Authorization')
+                     {
+            type:  'api_key',
+            in:    'header',
+            key:   'Authorization',
+            value: api_key_with_prefix('Authorization'),
           },
       }
     end

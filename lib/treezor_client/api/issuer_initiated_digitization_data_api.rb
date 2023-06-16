@@ -28,7 +28,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body6] :body 
     # @return [InlineResponse20013]
-    def tav_request_post(opts = {})
+    def tav_request_post(opts = { })
       data, _status_code, _headers = tav_request_post_with_http_info(opts)
       data
     end
@@ -42,7 +42,7 @@ module TreezorClient
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://www.treezor.com/basics). 
     # @option opts [Body6] :body 
     # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
-    def tav_request_post_with_http_info(opts = {})
+    def tav_request_post_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IssuerInitiatedDigitizationDataApi.tav_request_post ...'
       end
@@ -50,32 +50,32 @@ module TreezorClient
       local_var_path = '/issuerInitiatedDigitizationDatas'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = @api_client.object_to_http_body(opts[:'body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20013')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: IssuerInitiatedDigitizationDataApi#tav_request_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -95,7 +95,7 @@ module TreezorClient
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
     # @return [InlineResponse20013]
-    def tavrequestget(opts = {})
+    def tavrequestget(opts = { })
       data, _status_code, _headers = tavrequestget_with_http_info(opts)
       data
     end
@@ -114,7 +114,7 @@ module TreezorClient
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_order The order you want to sort the list. * **DESC** for a descending sort * **ASC** for a ascending sort.  Default value : DESC. More info [here](https://agent.treezor.com/lists). 
     # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
-    def tavrequestget_with_http_info(opts = {})
+    def tavrequestget_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IssuerInitiatedDigitizationDataApi.tavrequestget ...'
       end
@@ -122,7 +122,7 @@ module TreezorClient
       local_var_path = '/issuerInitiatedDigitizationDatas'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -135,25 +135,25 @@ module TreezorClient
       query_params[:'sortOrder'] = opts[:'sort_order'] if !opts[:'sort_order'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20013')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: IssuerInitiatedDigitizationDataApi#tavrequestget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

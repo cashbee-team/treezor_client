@@ -27,8 +27,8 @@ module TreezorClient
     def self.attribute_map
       {
         :'unique_mandate_reference' => :'uniqueMandateReference',
-        :'is_recurrent' => :'isRecurrent',
-        :'wallet_id' => :'walletId'
+        :'is_recurrent'             => :'isRecurrent',
+        :'wallet_id'                => :'walletId',
       }
     end
 
@@ -36,18 +36,18 @@ module TreezorClient
     def self.swagger_types
       {
         :'unique_mandate_reference' => :'String',
-        :'is_recurrent' => :'BOOLEAN',
-        :'wallet_id' => :'Float'
+        :'is_recurrent'             => :'BOOLEAN',
+        :'wallet_id'                => :'Float',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'uniqueMandateReference')
         self.unique_mandate_reference = attributes[:'uniqueMandateReference']
@@ -158,7 +158,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -184,7 +184,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -201,7 +201,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -210,6 +210,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

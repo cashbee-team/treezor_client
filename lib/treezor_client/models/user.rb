@@ -14,90 +14,11 @@ require 'date'
 
 module TreezorClient
   class User
-    attr_accessor :user_id
-
-    attr_accessor :user_type_id
-
-    attr_accessor :user_status
-
-    attr_accessor :user_tag
-
-    attr_accessor :parent_user_id
-
-    attr_accessor :parent_type
-
-    attr_accessor :controlling_person_type
-
-    attr_accessor :employee_type
-
-    attr_accessor :specified_us_person
-
-    attr_accessor :title
-
-    attr_accessor :firstname
-
-    attr_accessor :lastname
-
-    attr_accessor :middle_names
-
-    attr_accessor :birthday
-
-    attr_accessor :email
-
-    attr_accessor :address1
-
-    attr_accessor :address2
-
-    attr_accessor :postcode
-
-    attr_accessor :city
-
-    attr_accessor :state
-
-    attr_accessor :country
-
-    attr_accessor :country_name
-
-    attr_accessor :phone
-
-    attr_accessor :mobile
-
-    attr_accessor :nationality
-
-    attr_accessor :nationality_other
-
-    attr_accessor :place_of_birth
-
-    attr_accessor :birth_country
-
-    attr_accessor :occupation
-
-    attr_accessor :income_range
-
-    attr_accessor :legal_name
-
-    attr_accessor :legal_name_embossed
-
-    attr_accessor :legal_registration_number
-
-    attr_accessor :legal_tva_number
+    attr_accessor :user_id, :user_type_id, :user_status, :user_tag, :parent_user_id, :parent_type, :controlling_person_type, :employee_type, :specified_us_person, :title, :firstname, :lastname, :middle_names, :birthday, 
+      :email, :address1, :address2, :postcode, :city, :state, :country, :country_name, :phone, :mobile, :nationality, :nationality_other, :place_of_birth, :birth_country, :occupation, :income_range, :legal_name, :legal_name_embossed, :legal_registration_number, :legal_tva_number, :legal_form, :legal_share_capital, :legal_sector, :legal_annual_turn_over, :legal_net_income_range, :legal_number_of_employee_range, :effective_beneficiary, :kyc_review_comment, :is_freezed, :language, :opt_in_mailing, :sepa_creditor_identifier, :tax_number, :tax_residence, :position, :personal_assets, :wallet_count, :payin_count, :total_rows
 
     # Date YYYY-MM-DD
     attr_accessor :legal_registration_date
-
-    attr_accessor :legal_form
-
-    attr_accessor :legal_share_capital
-
-    attr_accessor :legal_sector
-
-    attr_accessor :legal_annual_turn_over
-
-    attr_accessor :legal_net_income_range
-
-    attr_accessor :legal_number_of_employee_range
-
-    attr_accessor :effective_beneficiary
 
     # | Value | Description | |----|----| | 0 | NONE | | 1 | LIGHT | | 2 | REGULAR | | 4 | REFUSED | 
     attr_accessor :kyc_level
@@ -105,39 +26,14 @@ module TreezorClient
     # | Value | Description | |----|----| | 0 | NONE | | 1 | PENDING | | 2 | VALIDATED | | 3 | REFUSED | 
     attr_accessor :kyc_review
 
-    attr_accessor :kyc_review_comment
-
-    attr_accessor :is_freezed
-
-    attr_accessor :language
-
-    attr_accessor :opt_in_mailing
-
-    attr_accessor :sepa_creditor_identifier
-
-    attr_accessor :tax_number
-
-    attr_accessor :tax_residence
-
-    attr_accessor :position
-
-    attr_accessor :personal_assets
-
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :modified_date
 
-    attr_accessor :wallet_count
-
-    attr_accessor :payin_count
-
-    attr_accessor :total_rows
-
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -160,138 +56,138 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user_id' => :'userId',
-        :'user_type_id' => :'userTypeId',
-        :'user_status' => :'userStatus',
-        :'user_tag' => :'userTag',
-        :'parent_user_id' => :'parentUserId',
-        :'parent_type' => :'parentType',
-        :'controlling_person_type' => :'controllingPersonType',
-        :'employee_type' => :'employeeType',
-        :'specified_us_person' => :'specifiedUSPerson',
-        :'title' => :'title',
-        :'firstname' => :'firstname',
-        :'lastname' => :'lastname',
-        :'middle_names' => :'middleNames',
-        :'birthday' => :'birthday',
-        :'email' => :'email',
-        :'address1' => :'address1',
-        :'address2' => :'address2',
-        :'postcode' => :'postcode',
-        :'city' => :'city',
-        :'state' => :'state',
-        :'country' => :'country',
-        :'country_name' => :'countryName',
-        :'phone' => :'phone',
-        :'mobile' => :'mobile',
-        :'nationality' => :'nationality',
-        :'nationality_other' => :'nationalityOther',
-        :'place_of_birth' => :'placeOfBirth',
-        :'birth_country' => :'birthCountry',
-        :'occupation' => :'occupation',
-        :'income_range' => :'incomeRange',
-        :'legal_name' => :'legalName',
-        :'legal_name_embossed' => :'legalNameEmbossed',
-        :'legal_registration_number' => :'legalRegistrationNumber',
-        :'legal_tva_number' => :'legalTvaNumber',
-        :'legal_registration_date' => :'legalRegistrationDate',
-        :'legal_form' => :'legalForm',
-        :'legal_share_capital' => :'legalShareCapital',
-        :'legal_sector' => :'legalSector',
-        :'legal_annual_turn_over' => :'legalAnnualTurnOver',
-        :'legal_net_income_range' => :'legalNetIncomeRange',
+        :'user_id'                        => :'userId',
+        :'user_type_id'                   => :'userTypeId',
+        :'user_status'                    => :'userStatus',
+        :'user_tag'                       => :'userTag',
+        :'parent_user_id'                 => :'parentUserId',
+        :'parent_type'                    => :'parentType',
+        :'controlling_person_type'        => :'controllingPersonType',
+        :'employee_type'                  => :'employeeType',
+        :'specified_us_person'            => :'specifiedUSPerson',
+        :'title'                          => :'title',
+        :'firstname'                      => :'firstname',
+        :'lastname'                       => :'lastname',
+        :'middle_names'                   => :'middleNames',
+        :'birthday'                       => :'birthday',
+        :'email'                          => :'email',
+        :'address1'                       => :'address1',
+        :'address2'                       => :'address2',
+        :'postcode'                       => :'postcode',
+        :'city'                           => :'city',
+        :'state'                          => :'state',
+        :'country'                        => :'country',
+        :'country_name'                   => :'countryName',
+        :'phone'                          => :'phone',
+        :'mobile'                         => :'mobile',
+        :'nationality'                    => :'nationality',
+        :'nationality_other'              => :'nationalityOther',
+        :'place_of_birth'                 => :'placeOfBirth',
+        :'birth_country'                  => :'birthCountry',
+        :'occupation'                     => :'occupation',
+        :'income_range'                   => :'incomeRange',
+        :'legal_name'                     => :'legalName',
+        :'legal_name_embossed'            => :'legalNameEmbossed',
+        :'legal_registration_number'      => :'legalRegistrationNumber',
+        :'legal_tva_number'               => :'legalTvaNumber',
+        :'legal_registration_date'        => :'legalRegistrationDate',
+        :'legal_form'                     => :'legalForm',
+        :'legal_share_capital'            => :'legalShareCapital',
+        :'legal_sector'                   => :'legalSector',
+        :'legal_annual_turn_over'         => :'legalAnnualTurnOver',
+        :'legal_net_income_range'         => :'legalNetIncomeRange',
         :'legal_number_of_employee_range' => :'legalNumberOfEmployeeRange',
-        :'effective_beneficiary' => :'effectiveBeneficiary',
-        :'kyc_level' => :'kycLevel',
-        :'kyc_review' => :'kycReview',
-        :'kyc_review_comment' => :'kycReviewComment',
-        :'is_freezed' => :'isFreezed',
-        :'language' => :'language',
-        :'opt_in_mailing' => :'optInMailing',
-        :'sepa_creditor_identifier' => :'sepaCreditorIdentifier',
-        :'tax_number' => :'taxNumber',
-        :'tax_residence' => :'taxResidence',
-        :'position' => :'position',
-        :'personal_assets' => :'personalAssets',
-        :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate',
-        :'wallet_count' => :'walletCount',
-        :'payin_count' => :'payinCount',
-        :'total_rows' => :'totalRows'
+        :'effective_beneficiary'          => :'effectiveBeneficiary',
+        :'kyc_level'                      => :'kycLevel',
+        :'kyc_review'                     => :'kycReview',
+        :'kyc_review_comment'             => :'kycReviewComment',
+        :'is_freezed'                     => :'isFreezed',
+        :'language'                       => :'language',
+        :'opt_in_mailing'                 => :'optInMailing',
+        :'sepa_creditor_identifier'       => :'sepaCreditorIdentifier',
+        :'tax_number'                     => :'taxNumber',
+        :'tax_residence'                  => :'taxResidence',
+        :'position'                       => :'position',
+        :'personal_assets'                => :'personalAssets',
+        :'created_date'                   => :'createdDate',
+        :'modified_date'                  => :'modifiedDate',
+        :'wallet_count'                   => :'walletCount',
+        :'payin_count'                    => :'payinCount',
+        :'total_rows'                     => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user_id' => :'Integer',
-        :'user_type_id' => :'Integer',
-        :'user_status' => :'String',
-        :'user_tag' => :'String',
-        :'parent_user_id' => :'Integer',
-        :'parent_type' => :'String',
-        :'controlling_person_type' => :'Integer',
-        :'employee_type' => :'Integer',
-        :'specified_us_person' => :'Integer',
-        :'title' => :'String',
-        :'firstname' => :'String',
-        :'lastname' => :'String',
-        :'middle_names' => :'String',
-        :'birthday' => :'String',
-        :'email' => :'String',
-        :'address1' => :'String',
-        :'address2' => :'String',
-        :'postcode' => :'String',
-        :'city' => :'String',
-        :'state' => :'String',
-        :'country' => :'String',
-        :'country_name' => :'String',
-        :'phone' => :'String',
-        :'mobile' => :'String',
-        :'nationality' => :'String',
-        :'nationality_other' => :'String',
-        :'place_of_birth' => :'String',
-        :'birth_country' => :'String',
-        :'occupation' => :'String',
-        :'income_range' => :'String',
-        :'legal_name' => :'String',
-        :'legal_name_embossed' => :'String',
-        :'legal_registration_number' => :'String',
-        :'legal_tva_number' => :'String',
-        :'legal_registration_date' => :'String',
-        :'legal_form' => :'String',
-        :'legal_share_capital' => :'Integer',
-        :'legal_sector' => :'String',
-        :'legal_annual_turn_over' => :'String',
-        :'legal_net_income_range' => :'String',
+        :'user_id'                        => :'Integer',
+        :'user_type_id'                   => :'Integer',
+        :'user_status'                    => :'String',
+        :'user_tag'                       => :'String',
+        :'parent_user_id'                 => :'Integer',
+        :'parent_type'                    => :'String',
+        :'controlling_person_type'        => :'Integer',
+        :'employee_type'                  => :'Integer',
+        :'specified_us_person'            => :'Integer',
+        :'title'                          => :'String',
+        :'firstname'                      => :'String',
+        :'lastname'                       => :'String',
+        :'middle_names'                   => :'String',
+        :'birthday'                       => :'String',
+        :'email'                          => :'String',
+        :'address1'                       => :'String',
+        :'address2'                       => :'String',
+        :'postcode'                       => :'String',
+        :'city'                           => :'String',
+        :'state'                          => :'String',
+        :'country'                        => :'String',
+        :'country_name'                   => :'String',
+        :'phone'                          => :'String',
+        :'mobile'                         => :'String',
+        :'nationality'                    => :'String',
+        :'nationality_other'              => :'String',
+        :'place_of_birth'                 => :'String',
+        :'birth_country'                  => :'String',
+        :'occupation'                     => :'String',
+        :'income_range'                   => :'String',
+        :'legal_name'                     => :'String',
+        :'legal_name_embossed'            => :'String',
+        :'legal_registration_number'      => :'String',
+        :'legal_tva_number'               => :'String',
+        :'legal_registration_date'        => :'String',
+        :'legal_form'                     => :'String',
+        :'legal_share_capital'            => :'Integer',
+        :'legal_sector'                   => :'String',
+        :'legal_annual_turn_over'         => :'String',
+        :'legal_net_income_range'         => :'String',
         :'legal_number_of_employee_range' => :'String',
-        :'effective_beneficiary' => :'Integer',
-        :'kyc_level' => :'Integer',
-        :'kyc_review' => :'Integer',
-        :'kyc_review_comment' => :'String',
-        :'is_freezed' => :'Integer',
-        :'language' => :'String',
-        :'opt_in_mailing' => :'Integer',
-        :'sepa_creditor_identifier' => :'String',
-        :'tax_number' => :'String',
-        :'tax_residence' => :'String',
-        :'position' => :'String',
-        :'personal_assets' => :'String',
-        :'created_date' => :'String',
-        :'modified_date' => :'String',
-        :'wallet_count' => :'Integer',
-        :'payin_count' => :'Integer',
-        :'total_rows' => :'Integer'
+        :'effective_beneficiary'          => :'Integer',
+        :'kyc_level'                      => :'Integer',
+        :'kyc_review'                     => :'Integer',
+        :'kyc_review_comment'             => :'String',
+        :'is_freezed'                     => :'Integer',
+        :'language'                       => :'String',
+        :'opt_in_mailing'                 => :'Integer',
+        :'sepa_creditor_identifier'       => :'String',
+        :'tax_number'                     => :'String',
+        :'tax_residence'                  => :'String',
+        :'position'                       => :'String',
+        :'personal_assets'                => :'String',
+        :'created_date'                   => :'String',
+        :'modified_date'                  => :'String',
+        :'wallet_count'                   => :'Integer',
+        :'payin_count'                    => :'Integer',
+        :'total_rows'                     => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'userId')
         self.user_id = attributes[:'userId']
@@ -529,8 +425,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -637,7 +533,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, birth_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
+      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, 
+address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, birth_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
     end
 
     # Builds the object from hash
@@ -691,7 +588,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -717,7 +614,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -734,7 +631,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -743,6 +640,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

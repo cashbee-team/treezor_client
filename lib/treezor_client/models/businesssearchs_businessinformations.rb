@@ -60,8 +60,7 @@ module TreezorClient
     attr_accessor :tradename
 
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -84,52 +83,52 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'legal_name' => :'legalName',
-        :'phone' => :'phone',
-        :'legal_tva_number' => :'legalTvaNumber',
+        :'legal_name'                => :'legalName',
+        :'phone'                     => :'phone',
+        :'legal_tva_number'          => :'legalTvaNumber',
         :'legal_registration_number' => :'legalRegistrationNumber',
-        :'status' => :'status',
-        :'office_type' => :'officeType',
-        :'safe_number' => :'safeNumber',
-        :'activity_type' => :'activityType',
-        :'external_id' => :'externalId',
-        :'address1' => :'address1',
-        :'postcode' => :'postcode',
-        :'city' => :'city',
-        :'state' => :'state',
-        :'country' => :'country',
-        :'tradename' => :'tradename'
+        :'status'                    => :'status',
+        :'office_type'               => :'officeType',
+        :'safe_number'               => :'safeNumber',
+        :'activity_type'             => :'activityType',
+        :'external_id'               => :'externalId',
+        :'address1'                  => :'address1',
+        :'postcode'                  => :'postcode',
+        :'city'                      => :'city',
+        :'state'                     => :'state',
+        :'country'                   => :'country',
+        :'tradename'                 => :'tradename',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'legal_name' => :'String',
-        :'phone' => :'String',
-        :'legal_tva_number' => :'String',
+        :'legal_name'                => :'String',
+        :'phone'                     => :'String',
+        :'legal_tva_number'          => :'String',
         :'legal_registration_number' => :'String',
-        :'status' => :'String',
-        :'office_type' => :'Integer',
-        :'safe_number' => :'String',
-        :'activity_type' => :'String',
-        :'external_id' => :'String',
-        :'address1' => :'String',
-        :'postcode' => :'String',
-        :'city' => :'String',
-        :'state' => :'String',
-        :'country' => :'String',
-        :'tradename' => :'String'
+        :'status'                    => :'String',
+        :'office_type'               => :'Integer',
+        :'safe_number'               => :'String',
+        :'activity_type'             => :'String',
+        :'external_id'               => :'String',
+        :'address1'                  => :'String',
+        :'postcode'                  => :'String',
+        :'city'                      => :'String',
+        :'state'                     => :'String',
+        :'country'                   => :'String',
+        :'tradename'                 => :'String',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'legalName')
         self.legal_name = attributes[:'legalName']
@@ -195,8 +194,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -302,7 +301,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -328,7 +327,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -345,7 +344,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -354,6 +353,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

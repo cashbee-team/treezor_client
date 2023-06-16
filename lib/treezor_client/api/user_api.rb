@@ -29,7 +29,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse20026]
-    def delete_user(id, origin, opts = {})
+    def delete_user(id, origin, opts = { })
       data, _status_code, _headers = delete_user_with_http_info(id, origin, opts)
       data
     end
@@ -44,7 +44,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def delete_user_with_http_info(id, origin, opts = {})
+    def delete_user_with_http_info(id, origin, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user ...'
       end
@@ -57,10 +57,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'origin' when calling UserApi.delete_user"
       end
       # resource path
-      local_var_path = '/users/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/users/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'origin'] = origin
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -68,25 +68,25 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#delete_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -101,7 +101,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse20026]
-    def get_user(id, opts = {})
+    def get_user(id, opts = { })
       data, _status_code, _headers = get_user_with_http_info(id, opts)
       data
     end
@@ -115,7 +115,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def get_user_with_http_info(id, opts = {})
+    def get_user_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.get_user ...'
       end
@@ -124,35 +124,35 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling UserApi.get_user"
       end
       # resource path
-      local_var_path = '/users/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/users/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -185,7 +185,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [InlineResponse20026]
-    def get_users(opts = {})
+    def get_users(opts = { })
       data, _status_code, _headers = get_users_with_http_info(opts)
       data
     end
@@ -217,7 +217,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def get_users_with_http_info(opts = {})
+    def get_users_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.get_users ...'
       end
@@ -225,7 +225,7 @@ module TreezorClient
       local_var_path = '/users'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -251,25 +251,25 @@ module TreezorClient
       query_params[:'updatedDateTo'] = opts[:'updated_date_to'] if !opts[:'updated_date_to'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -324,7 +324,7 @@ module TreezorClient
     # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
     # @return [InlineResponse20026]
-    def put_user(id, opts = {})
+    def put_user(id, opts = { })
       data, _status_code, _headers = put_user_with_http_info(id, opts)
       data
     end
@@ -378,7 +378,7 @@ module TreezorClient
     # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def put_user_with_http_info(id, opts = {})
+    def put_user_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.put_user ...'
       end
@@ -389,10 +389,13 @@ module TreezorClient
       if @api_client.config.client_side_validation && opts[:'income_range'] && !['0-18', '19-23', '24-27', '28-35', '36-56', '57-*'].include?(opts[:'income_range'])
         fail ArgumentError, 'invalid value for "income_range", must be one of 0-18, 19-23, 24-27, 28-35, 36-56, 57-*'
       end
-      if @api_client.config.client_side_validation && opts[:'legal_form'] && !['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'].include?(opts[:'legal_form'])
-        fail ArgumentError, 'invalid value for "legal_form", must be one of 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2110, 2120, 2210, 2220, 2310, 2320, 2385, 2400, 2700, 2900, 3110, 3120, 3205, 3210, 3220, 3290, 4110, 4120, 4130, 4140, 4150, 4160, 5191, 5192, 5193, 5194, 5195, 5196, 5202, 5203, 5306, 5307, 5308, 5309, 5385, 5410, 5415, 5422, 5426, 5430, 5431, 5432, 5442, 5443, 5451, 5453, 5454, 5455, 5458, 5459, 5460, 5485, 5498, 5499, 5505, 5510, 5515, 5520, 5522, 5525, 5530, 5531, 5532, 5542, 5543, 5546, 5547, 5548, 5551, 5552, 5553, 5554, 5555, 5558, 5559, 5560, 5585, 5599, 5605, 5610, 5615, 5620, 5622, 5625, 5630, 5631, 5632, 5642, 5643, 5646, 5647, 5648, 5651, 5652, 5653, 5654, 5655, 5658, 5659, 5660, 5685, 5699, 5710, 5720, 5785, 5800, 6100, 6210, 6220, 6316, 6317, 6318, 6411, 6521, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6551, 6554, 6558, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6585, 6588, 6589, 6595, 6596, 6597, 6598, 6599, 6901, 7111, 7112, 7113, 7120, 7150, 7160, 7171, 7172, 7179, 7190, 7210, 7220, 7225, 7229, 7230, 7312, 7313, 7314, 7321, 7322, 7323, 7331, 7340, 7341, 7342, 7343, 7344, 7345, 7346, 7347, 7348, 7349, 7351, 7352, 7353, 7354, 7355, 7356, 7361, 7362, 7363, 7364, 7365, 7366, 7371, 7372, 7373, 7378, 7379, 7381, 7382, 7383, 7384, 7385, 7389, 7410, 7430, 7450, 7470, 7490, 8110, 8120, 8130, 8140, 8150, 8160, 8170, 8190, 8210, 8250, 8290, 8310, 8311, 8410, 8420, 8450, 8470, 8490, 8510, 8520, 9110, 9150, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260, 9300, 9900, 9970'
+      if @api_client.config.client_side_validation && opts[:'legal_form'] && !['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', 
+'2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'].include?(opts[:'legal_form'])
+        fail ArgumentError, 
+          'invalid value for "legal_form", must be one of 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2110, 2120, 2210, 2220, 2310, 2320, 2385, 2400, 2700, 2900, 3110, 3120, 3205, 3210, 3220, 3290, 4110, 4120, 4130, 4140, 4150, 4160, 5191, 5192, 5193, 5194, 5195, 5196, 5202, 5203, 5306, 5307, 5308, 5309, 5385, 5410, 5415, 5422, 5426, 5430, 5431, 5432, 5442, 5443, 5451, 5453, 5454, 5455, 5458, 5459, 5460, 5485, 5498, 5499, 5505, 5510, 5515, 5520, 5522, 5525, 5530, 5531, 5532, 5542, 5543, 5546, 5547, 5548, 5551, 5552, 5553, 5554, 5555, 5558, 5559, 5560, 5585, 5599, 5605, 5610, 5615, 5620, 5622, 5625, 5630, 5631, 5632, 5642, 5643, 5646, 5647, 5648, 5651, 5652, 5653, 5654, 5655, 5658, 5659, 5660, 5685, 5699, 5710, 5720, 5785, 5800, 6100, 6210, 6220, 6316, 6317, 6318, 6411, 6521, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6551, 6554, 6558, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6585, 6588, 6589, 6595, 6596, 6597, 6598, 6599, 6901, 7111, 7112, 7113, 7120, 7150, 7160, 7171, 7172, 7179, 7190, 7210, 7220, 7225, 7229, 7230, 7312, 7313, 7314, 7321, 7322, 7323, 7331, 7340, 7341, 7342, 7343, 7344, 7345, 7346, 7347, 7348, 7349, 7351, 7352, 7353, 7354, 7355, 7356, 7361, 7362, 7363, 7364, 7365, 7366, 7371, 7372, 7373, 7378, 7379, 7381, 7382, 7383, 7384, 7385, 7389, 7410, 7430, 7450, 7470, 7490, 8110, 8120, 8130, 8140, 8150, 8160, 8170, 8190, 8210, 8250, 8290, 8310, 8311, 8410, 8420, 8450, 8470, 8490, 8510, 8520, 9110, 9150, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260, 9300, 9900, 9970'
       end
-      if @api_client.config.client_side_validation && opts[:'legal_annual_turn_over'] && !['0-39', '40-99', '100-249', '250-999', '1000-2999', '3000-9999', '10000-99999', '100000-*'].include?(opts[:'legal_annual_turn_over'])
+      if @api_client.config.client_side_validation && opts[:'legal_annual_turn_over'] && !['0-39', '40-99', '100-249', '250-999', '1000-2999', '3000-9999', '10000-99999', 
+'100000-*'].include?(opts[:'legal_annual_turn_over'])
         fail ArgumentError, 'invalid value for "legal_annual_turn_over", must be one of 0-39, 40-99, 100-249, 250-999, 1000-2999, 3000-9999, 10000-99999, 100000-*'
       end
       if @api_client.config.client_side_validation && opts[:'legal_net_income_range'] && !['0-4', '5-9', '10-49', '50-149', '150-499', '500-*'].include?(opts[:'legal_net_income_range'])
@@ -405,10 +408,10 @@ module TreezorClient
         fail ArgumentError, 'invalid value for "personal_assets", must be one of 0-2, 3-22, 23-128, 129-319, 320-464, 465-'
       end
       # resource path
-      local_var_path = '/users/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/users/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -455,25 +458,25 @@ module TreezorClient
       query_params[:'personalAssets'] = opts[:'personal_assets'] if !opts[:'personal_assets'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#put_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -531,7 +534,7 @@ module TreezorClient
     # @option opts [String] :position User&#39;s position (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in Kâ‚¬.
     # @return [InlineResponse20026]
-    def put_users(specified_us_person, email, opts = {})
+    def put_users(specified_us_person, email, opts = { })
       data, _status_code, _headers = put_users_with_http_info(specified_us_person, email, opts)
       data
     end
@@ -588,7 +591,7 @@ module TreezorClient
     # @option opts [String] :position User&#39;s position (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range exprimed in Kâ‚¬.
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def put_users_with_http_info(specified_us_person, email, opts = {})
+    def put_users_with_http_info(specified_us_person, email, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.put_users ...'
       end
@@ -603,10 +606,13 @@ module TreezorClient
       if @api_client.config.client_side_validation && opts[:'income_range'] && !['0-18', '19-23', '24-27', '28-35', '36-56', '57-*'].include?(opts[:'income_range'])
         fail ArgumentError, 'invalid value for "income_range", must be one of 0-18, 19-23, 24-27, 28-35, 36-56, 57-*'
       end
-      if @api_client.config.client_side_validation && opts[:'legal_form'] && !['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'].include?(opts[:'legal_form'])
-        fail ArgumentError, 'invalid value for "legal_form", must be one of 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2110, 2120, 2210, 2220, 2310, 2320, 2385, 2400, 2700, 2900, 3110, 3120, 3205, 3210, 3220, 3290, 4110, 4120, 4130, 4140, 4150, 4160, 5191, 5192, 5193, 5194, 5195, 5196, 5202, 5203, 5306, 5307, 5308, 5309, 5385, 5410, 5415, 5422, 5426, 5430, 5431, 5432, 5442, 5443, 5451, 5453, 5454, 5455, 5458, 5459, 5460, 5485, 5498, 5499, 5505, 5510, 5515, 5520, 5522, 5525, 5530, 5531, 5532, 5542, 5543, 5546, 5547, 5548, 5551, 5552, 5553, 5554, 5555, 5558, 5559, 5560, 5585, 5599, 5605, 5610, 5615, 5620, 5622, 5625, 5630, 5631, 5632, 5642, 5643, 5646, 5647, 5648, 5651, 5652, 5653, 5654, 5655, 5658, 5659, 5660, 5685, 5699, 5710, 5720, 5785, 5800, 6100, 6210, 6220, 6316, 6317, 6318, 6411, 6521, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6551, 6554, 6558, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6585, 6588, 6589, 6595, 6596, 6597, 6598, 6599, 6901, 7111, 7112, 7113, 7120, 7150, 7160, 7171, 7172, 7179, 7190, 7210, 7220, 7225, 7229, 7230, 7312, 7313, 7314, 7321, 7322, 7323, 7331, 7340, 7341, 7342, 7343, 7344, 7345, 7346, 7347, 7348, 7349, 7351, 7352, 7353, 7354, 7355, 7356, 7361, 7362, 7363, 7364, 7365, 7366, 7371, 7372, 7373, 7378, 7379, 7381, 7382, 7383, 7384, 7385, 7389, 7410, 7430, 7450, 7470, 7490, 8110, 8120, 8130, 8140, 8150, 8160, 8170, 8190, 8210, 8250, 8290, 8310, 8311, 8410, 8420, 8450, 8470, 8490, 8510, 8520, 9110, 9150, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260, 9300, 9900, 9970'
+      if @api_client.config.client_side_validation && opts[:'legal_form'] && !['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', 
+'2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'].include?(opts[:'legal_form'])
+        fail ArgumentError, 
+          'invalid value for "legal_form", must be one of 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2110, 2120, 2210, 2220, 2310, 2320, 2385, 2400, 2700, 2900, 3110, 3120, 3205, 3210, 3220, 3290, 4110, 4120, 4130, 4140, 4150, 4160, 5191, 5192, 5193, 5194, 5195, 5196, 5202, 5203, 5306, 5307, 5308, 5309, 5385, 5410, 5415, 5422, 5426, 5430, 5431, 5432, 5442, 5443, 5451, 5453, 5454, 5455, 5458, 5459, 5460, 5485, 5498, 5499, 5505, 5510, 5515, 5520, 5522, 5525, 5530, 5531, 5532, 5542, 5543, 5546, 5547, 5548, 5551, 5552, 5553, 5554, 5555, 5558, 5559, 5560, 5585, 5599, 5605, 5610, 5615, 5620, 5622, 5625, 5630, 5631, 5632, 5642, 5643, 5646, 5647, 5648, 5651, 5652, 5653, 5654, 5655, 5658, 5659, 5660, 5685, 5699, 5710, 5720, 5785, 5800, 6100, 6210, 6220, 6316, 6317, 6318, 6411, 6521, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6551, 6554, 6558, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6585, 6588, 6589, 6595, 6596, 6597, 6598, 6599, 6901, 7111, 7112, 7113, 7120, 7150, 7160, 7171, 7172, 7179, 7190, 7210, 7220, 7225, 7229, 7230, 7312, 7313, 7314, 7321, 7322, 7323, 7331, 7340, 7341, 7342, 7343, 7344, 7345, 7346, 7347, 7348, 7349, 7351, 7352, 7353, 7354, 7355, 7356, 7361, 7362, 7363, 7364, 7365, 7366, 7371, 7372, 7373, 7378, 7379, 7381, 7382, 7383, 7384, 7385, 7389, 7410, 7430, 7450, 7470, 7490, 8110, 8120, 8130, 8140, 8150, 8160, 8170, 8190, 8210, 8250, 8290, 8310, 8311, 8410, 8420, 8450, 8470, 8490, 8510, 8520, 9110, 9150, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260, 9300, 9900, 9970'
       end
-      if @api_client.config.client_side_validation && opts[:'legal_annual_turn_over'] && !['0-39', '40-99', '100-249', '250-999', '1000-2999', '3000-9999', '10000-99999', '100000-*'].include?(opts[:'legal_annual_turn_over'])
+      if @api_client.config.client_side_validation && opts[:'legal_annual_turn_over'] && !['0-39', '40-99', '100-249', '250-999', '1000-2999', '3000-9999', '10000-99999', 
+'100000-*'].include?(opts[:'legal_annual_turn_over'])
         fail ArgumentError, 'invalid value for "legal_annual_turn_over", must be one of 0-39, 40-99, 100-249, 250-999, 1000-2999, 3000-9999, 10000-99999, 100000-*'
       end
       if @api_client.config.client_side_validation && opts[:'legal_net_income_range'] && !['0-4', '5-9', '10-49', '50-149', '150-499', '500-*'].include?(opts[:'legal_net_income_range'])
@@ -622,7 +628,7 @@ module TreezorClient
       local_var_path = '/users'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'specifiedUSPerson'] = specified_us_person
       query_params[:'email'] = email
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
@@ -673,25 +679,25 @@ module TreezorClient
       query_params[:'personalAssets'] = opts[:'personal_assets'] if !opts[:'personal_assets'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#put_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -707,7 +713,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [InlineResponse20026]
-    def users_id_kycreview_put(id, opts = {})
+    def users_id_kycreview_put(id, opts = { })
       data, _status_code, _headers = users_id_kycreview_put_with_http_info(id, opts)
       data
     end
@@ -722,7 +728,7 @@ module TreezorClient
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
-    def users_id_kycreview_put_with_http_info(id, opts = {})
+    def users_id_kycreview_put_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.users_id_kycreview_put ...'
       end
@@ -731,10 +737,10 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling UserApi.users_id_kycreview_put"
       end
       # resource path
-      local_var_path = '/users/{id}/Kycreview/'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/users/{id}/Kycreview/'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessToken'] = opts[:'access_token'] if !opts[:'access_token'].nil?
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
@@ -742,21 +748,21 @@ module TreezorClient
       query_params[:'accessUserIp'] = opts[:'access_user_ip'] if !opts[:'access_user_ip'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#users_id_kycreview_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

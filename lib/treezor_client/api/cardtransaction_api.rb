@@ -24,7 +24,7 @@ module TreezorClient
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse20010]
-    def get_cardtransaction(id, opts = {})
+    def get_cardtransaction(id, opts = { })
       data, _status_code, _headers = get_cardtransaction_with_http_info(id, opts)
       data
     end
@@ -34,7 +34,7 @@ module TreezorClient
     # @param id Card transactions&#39;s internal id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
-    def get_cardtransaction_with_http_info(id, opts = {})
+    def get_cardtransaction_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardtransactionApi.get_cardtransaction ...'
       end
@@ -43,31 +43,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling CardtransactionApi.get_cardtransaction"
       end
       # resource path
-      local_var_path = '/cardtransactions/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/cardtransactions/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20010')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardtransactionApi#get_cardtransaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -90,7 +90,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
     # @return [InlineResponse2009]
-    def read_card_transaction(opts = {})
+    def read_card_transaction(opts = { })
       data, _status_code, _headers = read_card_transaction_with_http_info(opts)
       data
     end
@@ -112,7 +112,7 @@ module TreezorClient
     # @option opts [Integer] :page_count The number of items per page. More info [here](https://agent.treezor.com/lists). 
     # @option opts [String] :sort_by The transaction element you want to sort the list with. Default value : _createdDate_. More info [here](https://agent.treezor.com/lists). required: false
     # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
-    def read_card_transaction_with_http_info(opts = {})
+    def read_card_transaction_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardtransactionApi.read_card_transaction ...'
       end
@@ -120,7 +120,7 @@ module TreezorClient
       local_var_path = '/cardtransactions'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -136,25 +136,25 @@ module TreezorClient
       query_params[:'sortBy'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse2009')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse2009')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardtransactionApi#read_card_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -71,8 +71,7 @@ module TreezorClient
     attr_accessor :users
 
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -95,60 +94,60 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'legal_name' => :'legalName',
-        :'legal_registration_number' => :'legalRegistrationNumber',
-        :'legal_registration_date' => :'legalRegistrationDate',
-        :'legal_form' => :'legalForm',
-        :'legal_share_capital' => :'legalShareCapital',
-        :'legal_sector' => :'legalSector',
-        :'legal_annual_turn_over' => :'legalAnnualTurnOver',
-        :'legal_net_income_range' => :'legalNetIncomeRange',
+        :'legal_name'                     => :'legalName',
+        :'legal_registration_number'      => :'legalRegistrationNumber',
+        :'legal_registration_date'        => :'legalRegistrationDate',
+        :'legal_form'                     => :'legalForm',
+        :'legal_share_capital'            => :'legalShareCapital',
+        :'legal_sector'                   => :'legalSector',
+        :'legal_annual_turn_over'         => :'legalAnnualTurnOver',
+        :'legal_net_income_range'         => :'legalNetIncomeRange',
         :'legal_number_of_employee_range' => :'legalNumberOfEmployeeRange',
-        :'phone' => :'phone',
-        :'email' => :'email',
-        :'address1' => :'address1',
-        :'postcode' => :'postcode',
-        :'city' => :'city',
-        :'state' => :'state',
-        :'country' => :'country',
-        :'status' => :'status',
-        :'tradename' => :'tradename',
-        :'users' => :'users'
+        :'phone'                          => :'phone',
+        :'email'                          => :'email',
+        :'address1'                       => :'address1',
+        :'postcode'                       => :'postcode',
+        :'city'                           => :'city',
+        :'state'                          => :'state',
+        :'country'                        => :'country',
+        :'status'                         => :'status',
+        :'tradename'                      => :'tradename',
+        :'users'                          => :'users',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'legal_name' => :'String',
-        :'legal_registration_number' => :'String',
-        :'legal_registration_date' => :'String',
-        :'legal_form' => :'String',
-        :'legal_share_capital' => :'Float',
-        :'legal_sector' => :'String',
-        :'legal_annual_turn_over' => :'String',
-        :'legal_net_income_range' => :'String',
+        :'legal_name'                     => :'String',
+        :'legal_registration_number'      => :'String',
+        :'legal_registration_date'        => :'String',
+        :'legal_form'                     => :'String',
+        :'legal_share_capital'            => :'Float',
+        :'legal_sector'                   => :'String',
+        :'legal_annual_turn_over'         => :'String',
+        :'legal_net_income_range'         => :'String',
         :'legal_number_of_employee_range' => :'String',
-        :'phone' => :'String',
-        :'email' => :'String',
-        :'address1' => :'String',
-        :'postcode' => :'String',
-        :'city' => :'String',
-        :'state' => :'String',
-        :'country' => :'String',
-        :'status' => :'String',
-        :'tradename' => :'String',
-        :'users' => :'Array<InlineResponse2004Users>'
+        :'phone'                          => :'String',
+        :'email'                          => :'String',
+        :'address1'                       => :'String',
+        :'postcode'                       => :'String',
+        :'city'                           => :'String',
+        :'state'                          => :'String',
+        :'country'                        => :'String',
+        :'status'                         => :'String',
+        :'tradename'                      => :'String',
+        :'users'                          => :'Array<InlineResponse2004Users>',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'legalName')
         self.legal_name = attributes[:'legalName']
@@ -232,14 +231,16 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      legal_form_validator = EnumAttributeValidator.new('String', ['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'])
+      legal_form_validator = EnumAttributeValidator.new('String', 
+        ['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', 
+'4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'])
       return false unless legal_form_validator.valid?(@legal_form)
       legal_annual_turn_over_validator = EnumAttributeValidator.new('String', ['', '0-39', '40-99', '100-249', '250-999', '1000-2999', '3000-9999', '10000-99999', '100000-*'])
       return false unless legal_annual_turn_over_validator.valid?(@legal_annual_turn_over)
@@ -255,7 +256,9 @@ module TreezorClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] legal_form Object to be assigned
     def legal_form=(legal_form)
-      validator = EnumAttributeValidator.new('String', ['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', '4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'])
+      validator = EnumAttributeValidator.new('String', 
+        ['1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2110', '2120', '2210', '2220', '2310', '2320', '2385', '2400', '2700', '2900', '3110', '3120', '3205', '3210', '3220', '3290', '4110', 
+'4120', '4130', '4140', '4150', '4160', '5191', '5192', '5193', '5194', '5195', '5196', '5202', '5203', '5306', '5307', '5308', '5309', '5385', '5410', '5415', '5422', '5426', '5430', '5431', '5432', '5442', '5443', '5451', '5453', '5454', '5455', '5458', '5459', '5460', '5485', '5498', '5499', '5505', '5510', '5515', '5520', '5522', '5525', '5530', '5531', '5532', '5542', '5543', '5546', '5547', '5548', '5551', '5552', '5553', '5554', '5555', '5558', '5559', '5560', '5585', '5599', '5605', '5610', '5615', '5620', '5622', '5625', '5630', '5631', '5632', '5642', '5643', '5646', '5647', '5648', '5651', '5652', '5653', '5654', '5655', '5658', '5659', '5660', '5685', '5699', '5710', '5720', '5785', '5800', '6100', '6210', '6220', '6316', '6317', '6318', '6411', '6521', '6532', '6533', '6534', '6535', '6536', '6537', '6538', '6539', '6540', '6541', '6542', '6543', '6544', '6551', '6554', '6558', '6560', '6561', '6562', '6563', '6564', '6565', '6566', '6567', '6568', '6569', '6571', '6572', '6573', '6574', '6575', '6576', '6577', '6578', '6585', '6588', '6589', '6595', '6596', '6597', '6598', '6599', '6901', '7111', '7112', '7113', '7120', '7150', '7160', '7171', '7172', '7179', '7190', '7210', '7220', '7225', '7229', '7230', '7312', '7313', '7314', '7321', '7322', '7323', '7331', '7340', '7341', '7342', '7343', '7344', '7345', '7346', '7347', '7348', '7349', '7351', '7352', '7353', '7354', '7355', '7356', '7361', '7362', '7363', '7364', '7365', '7366', '7371', '7372', '7373', '7378', '7379', '7381', '7382', '7383', '7384', '7385', '7389', '7410', '7430', '7450', '7470', '7490', '8110', '8120', '8130', '8140', '8150', '8160', '8170', '8190', '8210', '8250', '8290', '8310', '8311', '8410', '8420', '8450', '8470', '8490', '8510', '8520', '9110', '9150', '9210', '9220', '9221', '9222', '9223', '9224', '9230', '9240', '9260', '9300', '9900', '9970'])
       unless validator.valid?(legal_form)
         fail ArgumentError, 'invalid value for "legal_form", must be one of #{validator.allowable_values}.'
       end
@@ -337,7 +340,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [legal_name, legal_registration_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, phone, email, address1, postcode, city, state, country, status, tradename, users].hash
+      [legal_name, legal_registration_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, phone, email, 
+address1, postcode, city, state, country, status, tradename, users].hash
     end
 
     # Builds the object from hash
@@ -391,7 +395,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -417,7 +421,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -434,7 +438,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -443,6 +447,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

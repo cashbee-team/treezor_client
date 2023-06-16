@@ -14,75 +14,14 @@ require 'date'
 
 module TreezorClient
   class Mandate
-    attr_accessor :mandate_id
-
-    attr_accessor :title
-
-    attr_accessor :legal_informations
-
-    attr_accessor :unique_mandate_reference
-
-    attr_accessor :mandate_status
-
-    attr_accessor :user_id
-
-    attr_accessor :debtor_name
-
-    attr_accessor :debtor_address
-
-    attr_accessor :debtor_city
-
-    attr_accessor :debtor_zip_code
-
-    attr_accessor :debtor_country
-
-    attr_accessor :debtor_iban
-
-    attr_accessor :debtor_bic
-
-    attr_accessor :sequence_type
-
-    attr_accessor :creditor_name
-
-    attr_accessor :sepa_creditor_identifier
-
-    attr_accessor :creditor_address
-
-    attr_accessor :creditor_city
-
-    attr_accessor :creditor_zip_code
-
-    attr_accessor :creditor_country
+    attr_accessor :mandate_id, :title, :legal_informations, :unique_mandate_reference, :mandate_status, :user_id, :debtor_name, :debtor_address, :debtor_city, :debtor_zip_code, :debtor_country, :debtor_iban, 
+      :debtor_bic, :sequence_type, :creditor_name, :sepa_creditor_identifier, :creditor_address, :creditor_city, :creditor_zip_code, :creditor_country, :debtor_signature_ip, :signed, :debtor_identification_code, :debtor_reference_party_name, :debtor_reference_identification_code, :creditor_reference_party_name, :creditor_reference_identification_code, :contract_identification_number, :contract_description, :is_paper, :sdd_type, :created_ip
 
     # Date YYYY-MM-DD
     attr_accessor :signature_date
 
-    attr_accessor :debtor_signature_ip
-
-    attr_accessor :signed
-
-    attr_accessor :debtor_identification_code
-
-    attr_accessor :debtor_reference_party_name
-
-    attr_accessor :debtor_reference_identification_code
-
-    attr_accessor :creditor_reference_party_name
-
-    attr_accessor :creditor_reference_identification_code
-
-    attr_accessor :contract_identification_number
-
-    attr_accessor :contract_description
-
-    attr_accessor :is_paper
-
-    attr_accessor :sdd_type
-
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :revocation_signature_date
-
-    attr_accessor :created_ip
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
@@ -94,8 +33,7 @@ module TreezorClient
     attr_accessor :user_id_ultimate_creditor
 
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -118,96 +56,96 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'mandate_id' => :'mandateId',
-        :'title' => :'title',
-        :'legal_informations' => :'legalInformations',
-        :'unique_mandate_reference' => :'uniqueMandateReference',
-        :'mandate_status' => :'mandateStatus',
-        :'user_id' => :'userId',
-        :'debtor_name' => :'debtorName',
-        :'debtor_address' => :'debtorAddress',
-        :'debtor_city' => :'debtorCity',
-        :'debtor_zip_code' => :'debtorZipCode',
-        :'debtor_country' => :'debtorCountry',
-        :'debtor_iban' => :'debtorIban',
-        :'debtor_bic' => :'debtorBic',
-        :'sequence_type' => :'sequenceType',
-        :'creditor_name' => :'creditorName',
-        :'sepa_creditor_identifier' => :'sepaCreditorIdentifier',
-        :'creditor_address' => :'creditorAddress',
-        :'creditor_city' => :'creditorCity',
-        :'creditor_zip_code' => :'creditorZipCode',
-        :'creditor_country' => :'creditorCountry',
-        :'signature_date' => :'signatureDate',
-        :'debtor_signature_ip' => :'debtorSignatureIp',
-        :'signed' => :'signed',
-        :'debtor_identification_code' => :'debtorIdentificationCode',
-        :'debtor_reference_party_name' => :'debtorReferencePartyName',
-        :'debtor_reference_identification_code' => :'debtorReferenceIdentificationCode',
-        :'creditor_reference_party_name' => :'creditorReferencePartyName',
+        :'mandate_id'                             => :'mandateId',
+        :'title'                                  => :'title',
+        :'legal_informations'                     => :'legalInformations',
+        :'unique_mandate_reference'               => :'uniqueMandateReference',
+        :'mandate_status'                         => :'mandateStatus',
+        :'user_id'                                => :'userId',
+        :'debtor_name'                            => :'debtorName',
+        :'debtor_address'                         => :'debtorAddress',
+        :'debtor_city'                            => :'debtorCity',
+        :'debtor_zip_code'                        => :'debtorZipCode',
+        :'debtor_country'                         => :'debtorCountry',
+        :'debtor_iban'                            => :'debtorIban',
+        :'debtor_bic'                             => :'debtorBic',
+        :'sequence_type'                          => :'sequenceType',
+        :'creditor_name'                          => :'creditorName',
+        :'sepa_creditor_identifier'               => :'sepaCreditorIdentifier',
+        :'creditor_address'                       => :'creditorAddress',
+        :'creditor_city'                          => :'creditorCity',
+        :'creditor_zip_code'                      => :'creditorZipCode',
+        :'creditor_country'                       => :'creditorCountry',
+        :'signature_date'                         => :'signatureDate',
+        :'debtor_signature_ip'                    => :'debtorSignatureIp',
+        :'signed'                                 => :'signed',
+        :'debtor_identification_code'             => :'debtorIdentificationCode',
+        :'debtor_reference_party_name'            => :'debtorReferencePartyName',
+        :'debtor_reference_identification_code'   => :'debtorReferenceIdentificationCode',
+        :'creditor_reference_party_name'          => :'creditorReferencePartyName',
         :'creditor_reference_identification_code' => :'creditorReferenceIdentificationCode',
-        :'contract_identification_number' => :'contractIdentificationNumber',
-        :'contract_description' => :'contractDescription',
-        :'is_paper' => :'isPaper',
-        :'sdd_type' => :'sddType',
-        :'revocation_signature_date' => :'revocationSignatureDate',
-        :'created_ip' => :'createdIp',
-        :'created_date' => :'createdDate',
-        :'modified_date' => :'modifiedDate',
-        :'user_id_ultimate_creditor' => :'userIdUltimateCreditor'
+        :'contract_identification_number'         => :'contractIdentificationNumber',
+        :'contract_description'                   => :'contractDescription',
+        :'is_paper'                               => :'isPaper',
+        :'sdd_type'                               => :'sddType',
+        :'revocation_signature_date'              => :'revocationSignatureDate',
+        :'created_ip'                             => :'createdIp',
+        :'created_date'                           => :'createdDate',
+        :'modified_date'                          => :'modifiedDate',
+        :'user_id_ultimate_creditor'              => :'userIdUltimateCreditor',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'mandate_id' => :'Integer',
-        :'title' => :'String',
-        :'legal_informations' => :'String',
-        :'unique_mandate_reference' => :'String',
-        :'mandate_status' => :'String',
-        :'user_id' => :'Integer',
-        :'debtor_name' => :'String',
-        :'debtor_address' => :'String',
-        :'debtor_city' => :'String',
-        :'debtor_zip_code' => :'String',
-        :'debtor_country' => :'String',
-        :'debtor_iban' => :'String',
-        :'debtor_bic' => :'String',
-        :'sequence_type' => :'String',
-        :'creditor_name' => :'String',
-        :'sepa_creditor_identifier' => :'String',
-        :'creditor_address' => :'String',
-        :'creditor_city' => :'String',
-        :'creditor_zip_code' => :'String',
-        :'creditor_country' => :'String',
-        :'signature_date' => :'String',
-        :'debtor_signature_ip' => :'String',
-        :'signed' => :'Integer',
-        :'debtor_identification_code' => :'String',
-        :'debtor_reference_party_name' => :'String',
-        :'debtor_reference_identification_code' => :'String',
-        :'creditor_reference_party_name' => :'String',
+        :'mandate_id'                             => :'Integer',
+        :'title'                                  => :'String',
+        :'legal_informations'                     => :'String',
+        :'unique_mandate_reference'               => :'String',
+        :'mandate_status'                         => :'String',
+        :'user_id'                                => :'Integer',
+        :'debtor_name'                            => :'String',
+        :'debtor_address'                         => :'String',
+        :'debtor_city'                            => :'String',
+        :'debtor_zip_code'                        => :'String',
+        :'debtor_country'                         => :'String',
+        :'debtor_iban'                            => :'String',
+        :'debtor_bic'                             => :'String',
+        :'sequence_type'                          => :'String',
+        :'creditor_name'                          => :'String',
+        :'sepa_creditor_identifier'               => :'String',
+        :'creditor_address'                       => :'String',
+        :'creditor_city'                          => :'String',
+        :'creditor_zip_code'                      => :'String',
+        :'creditor_country'                       => :'String',
+        :'signature_date'                         => :'String',
+        :'debtor_signature_ip'                    => :'String',
+        :'signed'                                 => :'Integer',
+        :'debtor_identification_code'             => :'String',
+        :'debtor_reference_party_name'            => :'String',
+        :'debtor_reference_identification_code'   => :'String',
+        :'creditor_reference_party_name'          => :'String',
         :'creditor_reference_identification_code' => :'String',
-        :'contract_identification_number' => :'String',
-        :'contract_description' => :'String',
-        :'is_paper' => :'BOOLEAN',
-        :'sdd_type' => :'String',
-        :'revocation_signature_date' => :'String',
-        :'created_ip' => :'String',
-        :'created_date' => :'String',
-        :'modified_date' => :'String',
-        :'user_id_ultimate_creditor' => :'Integer'
+        :'contract_identification_number'         => :'String',
+        :'contract_description'                   => :'String',
+        :'is_paper'                               => :'BOOLEAN',
+        :'sdd_type'                               => :'String',
+        :'revocation_signature_date'              => :'String',
+        :'created_ip'                             => :'String',
+        :'created_date'                           => :'String',
+        :'modified_date'                          => :'String',
+        :'user_id_ultimate_creditor'              => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'mandateId')
         self.mandate_id = attributes[:'mandateId']
@@ -361,8 +299,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -460,7 +398,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [mandate_id, title, legal_informations, unique_mandate_reference, mandate_status, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, debtor_bic, sequence_type, creditor_name, sepa_creditor_identifier, creditor_address, creditor_city, creditor_zip_code, creditor_country, signature_date, debtor_signature_ip, signed, debtor_identification_code, debtor_reference_party_name, debtor_reference_identification_code, creditor_reference_party_name, creditor_reference_identification_code, contract_identification_number, contract_description, is_paper, sdd_type, revocation_signature_date, created_ip, created_date, modified_date, user_id_ultimate_creditor].hash
+      [mandate_id, title, legal_informations, unique_mandate_reference, mandate_status, user_id, debtor_name, debtor_address, debtor_city, debtor_zip_code, debtor_country, debtor_iban, debtor_bic, sequence_type, 
+creditor_name, sepa_creditor_identifier, creditor_address, creditor_city, creditor_zip_code, creditor_country, signature_date, debtor_signature_ip, signed, debtor_identification_code, debtor_reference_party_name, debtor_reference_identification_code, creditor_reference_party_name, creditor_reference_identification_code, contract_identification_number, contract_description, is_paper, sdd_type, revocation_signature_date, created_ip, created_date, modified_date, user_id_ultimate_creditor].hash
     end
 
     # Builds the object from hash
@@ -514,7 +453,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -540,7 +479,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -557,7 +496,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -566,6 +505,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

@@ -14,38 +14,11 @@ require 'date'
 
 module TreezorClient
   class Card
-    attr_accessor :card_id
-
-    attr_accessor :user_id
-
-    attr_accessor :wallet_id
-
-    attr_accessor :wallet_cardtransaction_id
-
-    attr_accessor :mcc_restriction_group_id
-
-    attr_accessor :merchant_restriction_group_id
-
-    attr_accessor :country_restriction_group_id
-
-    attr_accessor :public_token
-
-    attr_accessor :card_tag
-
-    attr_accessor :status_code
-
-    attr_accessor :is_live
-
-    attr_accessor :pin_try_exceeds
-
-    attr_accessor :masked_pan
-
-    attr_accessor :embossed_name
+    attr_accessor :card_id, :user_id, :wallet_id, :wallet_cardtransaction_id, :mcc_restriction_group_id, :merchant_restriction_group_id, :country_restriction_group_id, :public_token, :card_tag, :status_code, :is_live, 
+      :pin_try_exceeds, :masked_pan, :embossed_name, :cvv, :country_code, :currency_code, :lang, :delivery_title, :delivery_lastname, :delivery_firstname, :delivery_address1, :delivery_address2, :delivery_address3, :delivery_city, :delivery_postcode, :delivery_country, :mobile_sent, :limits_group, :perms_group, :card_design, :virtual_converted, :option_atm, :option_foreign, :option_online, :option_nfc, :limit_atm_year, :limit_atm_month, :limit_atm_week, :limit_atm_day, :limit_atm_all, :limit_payment_year, :limit_payment_month, :limit_payment_week, :limit_payment_day, :limit_payment_all, :payment_daily_limit, :total_atm_year, :total_atm_month, :total_atm_week, :total_atm_day, :total_atm_all, :total_payment_year, :total_payment_month, :total_payment_week, :total_payment_day, :total_payment_all, :created_by, :modified_by, :total_rows
 
     # Date YYYY-MM-DD
     attr_accessor :expiry_date
-
-    attr_accessor :cvv
 
     # Date YYYY-MM-DD
     attr_accessor :start_date
@@ -53,105 +26,14 @@ module TreezorClient
     # Date YYYY-MM-DD
     attr_accessor :end_date
 
-    attr_accessor :country_code
-
-    attr_accessor :currency_code
-
-    attr_accessor :lang
-
-    attr_accessor :delivery_title
-
-    attr_accessor :delivery_lastname
-
-    attr_accessor :delivery_firstname
-
-    attr_accessor :delivery_address1
-
-    attr_accessor :delivery_address2
-
-    attr_accessor :delivery_address3
-
-    attr_accessor :delivery_city
-
-    attr_accessor :delivery_postcode
-
-    attr_accessor :delivery_country
-
-    attr_accessor :mobile_sent
-
-    attr_accessor :limits_group
-
-    attr_accessor :perms_group
-
-    attr_accessor :card_design
-
-    attr_accessor :virtual_converted
-
-    attr_accessor :option_atm
-
-    attr_accessor :option_foreign
-
-    attr_accessor :option_online
-
-    attr_accessor :option_nfc
-
-    attr_accessor :limit_atm_year
-
-    attr_accessor :limit_atm_month
-
-    attr_accessor :limit_atm_week
-
-    attr_accessor :limit_atm_day
-
-    attr_accessor :limit_atm_all
-
-    attr_accessor :limit_payment_year
-
-    attr_accessor :limit_payment_month
-
-    attr_accessor :limit_payment_week
-
-    attr_accessor :limit_payment_day
-
-    attr_accessor :limit_payment_all
-
-    attr_accessor :payment_daily_limit
-
-    attr_accessor :total_atm_year
-
-    attr_accessor :total_atm_month
-
-    attr_accessor :total_atm_week
-
-    attr_accessor :total_atm_day
-
-    attr_accessor :total_atm_all
-
-    attr_accessor :total_payment_year
-
-    attr_accessor :total_payment_month
-
-    attr_accessor :total_payment_week
-
-    attr_accessor :total_payment_day
-
-    attr_accessor :total_payment_all
-
-    attr_accessor :created_by
-
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
-
-    attr_accessor :modified_by
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :modified_date
 
-    attr_accessor :total_rows
-
     class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+      attr_reader :datatype, :allowable_values
 
       def initialize(datatype, allowable_values)
         @allowable_values = allowable_values.map do |value|
@@ -174,152 +56,152 @@ module TreezorClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'card_id' => :'cardId',
-        :'user_id' => :'userId',
-        :'wallet_id' => :'walletId',
-        :'wallet_cardtransaction_id' => :'walletCardtransactionId',
-        :'mcc_restriction_group_id' => :'mccRestrictionGroupId',
+        :'card_id'                       => :'cardId',
+        :'user_id'                       => :'userId',
+        :'wallet_id'                     => :'walletId',
+        :'wallet_cardtransaction_id'     => :'walletCardtransactionId',
+        :'mcc_restriction_group_id'      => :'mccRestrictionGroupId',
         :'merchant_restriction_group_id' => :'merchantRestrictionGroupId',
-        :'country_restriction_group_id' => :'countryRestrictionGroupId',
-        :'public_token' => :'publicToken',
-        :'card_tag' => :'cardTag',
-        :'status_code' => :'statusCode',
-        :'is_live' => :'isLive',
-        :'pin_try_exceeds' => :'pinTryExceeds',
-        :'masked_pan' => :'maskedPan',
-        :'embossed_name' => :'embossedName',
-        :'expiry_date' => :'expiryDate',
-        :'cvv' => :'CVV',
-        :'start_date' => :'startDate',
-        :'end_date' => :'endDate',
-        :'country_code' => :'countryCode',
-        :'currency_code' => :'currencyCode',
-        :'lang' => :'lang',
-        :'delivery_title' => :'deliveryTitle',
-        :'delivery_lastname' => :'deliveryLastname',
-        :'delivery_firstname' => :'deliveryFirstname',
-        :'delivery_address1' => :'deliveryAddress1',
-        :'delivery_address2' => :'deliveryAddress2',
-        :'delivery_address3' => :'deliveryAddress3',
-        :'delivery_city' => :'deliveryCity',
-        :'delivery_postcode' => :'deliveryPostcode',
-        :'delivery_country' => :'deliveryCountry',
-        :'mobile_sent' => :'mobileSent',
-        :'limits_group' => :'limitsGroup',
-        :'perms_group' => :'permsGroup',
-        :'card_design' => :'cardDesign',
-        :'virtual_converted' => :'virtualConverted',
-        :'option_atm' => :'optionAtm',
-        :'option_foreign' => :'optionForeign',
-        :'option_online' => :'optionOnline',
-        :'option_nfc' => :'optionNfc',
-        :'limit_atm_year' => :'limitAtmYear',
-        :'limit_atm_month' => :'limitAtmMonth',
-        :'limit_atm_week' => :'limitAtmWeek',
-        :'limit_atm_day' => :'limitAtmDay',
-        :'limit_atm_all' => :'limitAtmAll',
-        :'limit_payment_year' => :'limitPaymentYear',
-        :'limit_payment_month' => :'limitPaymentMonth',
-        :'limit_payment_week' => :'limitPaymentWeek',
-        :'limit_payment_day' => :'limitPaymentDay',
-        :'limit_payment_all' => :'limitPaymentAll',
-        :'payment_daily_limit' => :'paymentDailyLimit',
-        :'total_atm_year' => :'totalAtmYear',
-        :'total_atm_month' => :'totalAtmMonth',
-        :'total_atm_week' => :'totalAtmWeek',
-        :'total_atm_day' => :'totalAtmDay',
-        :'total_atm_all' => :'totalAtmAll',
-        :'total_payment_year' => :'totalPaymentYear',
-        :'total_payment_month' => :'totalPaymentMonth',
-        :'total_payment_week' => :'totalPaymentWeek',
-        :'total_payment_day' => :'totalPaymentDay',
-        :'total_payment_all' => :'totalPaymentAll',
-        :'created_by' => :'createdBy',
-        :'created_date' => :'createdDate',
-        :'modified_by' => :'modifiedBy',
-        :'modified_date' => :'modifiedDate',
-        :'total_rows' => :'totalRows'
+        :'country_restriction_group_id'  => :'countryRestrictionGroupId',
+        :'public_token'                  => :'publicToken',
+        :'card_tag'                      => :'cardTag',
+        :'status_code'                   => :'statusCode',
+        :'is_live'                       => :'isLive',
+        :'pin_try_exceeds'               => :'pinTryExceeds',
+        :'masked_pan'                    => :'maskedPan',
+        :'embossed_name'                 => :'embossedName',
+        :'expiry_date'                   => :'expiryDate',
+        :'cvv'                           => :'CVV',
+        :'start_date'                    => :'startDate',
+        :'end_date'                      => :'endDate',
+        :'country_code'                  => :'countryCode',
+        :'currency_code'                 => :'currencyCode',
+        :'lang'                          => :'lang',
+        :'delivery_title'                => :'deliveryTitle',
+        :'delivery_lastname'             => :'deliveryLastname',
+        :'delivery_firstname'            => :'deliveryFirstname',
+        :'delivery_address1'             => :'deliveryAddress1',
+        :'delivery_address2'             => :'deliveryAddress2',
+        :'delivery_address3'             => :'deliveryAddress3',
+        :'delivery_city'                 => :'deliveryCity',
+        :'delivery_postcode'             => :'deliveryPostcode',
+        :'delivery_country'              => :'deliveryCountry',
+        :'mobile_sent'                   => :'mobileSent',
+        :'limits_group'                  => :'limitsGroup',
+        :'perms_group'                   => :'permsGroup',
+        :'card_design'                   => :'cardDesign',
+        :'virtual_converted'             => :'virtualConverted',
+        :'option_atm'                    => :'optionAtm',
+        :'option_foreign'                => :'optionForeign',
+        :'option_online'                 => :'optionOnline',
+        :'option_nfc'                    => :'optionNfc',
+        :'limit_atm_year'                => :'limitAtmYear',
+        :'limit_atm_month'               => :'limitAtmMonth',
+        :'limit_atm_week'                => :'limitAtmWeek',
+        :'limit_atm_day'                 => :'limitAtmDay',
+        :'limit_atm_all'                 => :'limitAtmAll',
+        :'limit_payment_year'            => :'limitPaymentYear',
+        :'limit_payment_month'           => :'limitPaymentMonth',
+        :'limit_payment_week'            => :'limitPaymentWeek',
+        :'limit_payment_day'             => :'limitPaymentDay',
+        :'limit_payment_all'             => :'limitPaymentAll',
+        :'payment_daily_limit'           => :'paymentDailyLimit',
+        :'total_atm_year'                => :'totalAtmYear',
+        :'total_atm_month'               => :'totalAtmMonth',
+        :'total_atm_week'                => :'totalAtmWeek',
+        :'total_atm_day'                 => :'totalAtmDay',
+        :'total_atm_all'                 => :'totalAtmAll',
+        :'total_payment_year'            => :'totalPaymentYear',
+        :'total_payment_month'           => :'totalPaymentMonth',
+        :'total_payment_week'            => :'totalPaymentWeek',
+        :'total_payment_day'             => :'totalPaymentDay',
+        :'total_payment_all'             => :'totalPaymentAll',
+        :'created_by'                    => :'createdBy',
+        :'created_date'                  => :'createdDate',
+        :'modified_by'                   => :'modifiedBy',
+        :'modified_date'                 => :'modifiedDate',
+        :'total_rows'                    => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'card_id' => :'Integer',
-        :'user_id' => :'Integer',
-        :'wallet_id' => :'Integer',
-        :'wallet_cardtransaction_id' => :'Integer',
-        :'mcc_restriction_group_id' => :'Integer',
+        :'card_id'                       => :'Integer',
+        :'user_id'                       => :'Integer',
+        :'wallet_id'                     => :'Integer',
+        :'wallet_cardtransaction_id'     => :'Integer',
+        :'mcc_restriction_group_id'      => :'Integer',
         :'merchant_restriction_group_id' => :'Integer',
-        :'country_restriction_group_id' => :'Integer',
-        :'public_token' => :'String',
-        :'card_tag' => :'String',
-        :'status_code' => :'String',
-        :'is_live' => :'Integer',
-        :'pin_try_exceeds' => :'Integer',
-        :'masked_pan' => :'Integer',
-        :'embossed_name' => :'String',
-        :'expiry_date' => :'String',
-        :'cvv' => :'String',
-        :'start_date' => :'String',
-        :'end_date' => :'String',
-        :'country_code' => :'String',
-        :'currency_code' => :'String',
-        :'lang' => :'String',
-        :'delivery_title' => :'String',
-        :'delivery_lastname' => :'String',
-        :'delivery_firstname' => :'String',
-        :'delivery_address1' => :'String',
-        :'delivery_address2' => :'String',
-        :'delivery_address3' => :'String',
-        :'delivery_city' => :'String',
-        :'delivery_postcode' => :'String',
-        :'delivery_country' => :'String',
-        :'mobile_sent' => :'String',
-        :'limits_group' => :'String',
-        :'perms_group' => :'String',
-        :'card_design' => :'String',
-        :'virtual_converted' => :'Integer',
-        :'option_atm' => :'Integer',
-        :'option_foreign' => :'Integer',
-        :'option_online' => :'Integer',
-        :'option_nfc' => :'Integer',
-        :'limit_atm_year' => :'Integer',
-        :'limit_atm_month' => :'Integer',
-        :'limit_atm_week' => :'Integer',
-        :'limit_atm_day' => :'Integer',
-        :'limit_atm_all' => :'Integer',
-        :'limit_payment_year' => :'Integer',
-        :'limit_payment_month' => :'Integer',
-        :'limit_payment_week' => :'Integer',
-        :'limit_payment_day' => :'Integer',
-        :'limit_payment_all' => :'Integer',
-        :'payment_daily_limit' => :'Float',
-        :'total_atm_year' => :'Integer',
-        :'total_atm_month' => :'Integer',
-        :'total_atm_week' => :'Integer',
-        :'total_atm_day' => :'Integer',
-        :'total_atm_all' => :'Integer',
-        :'total_payment_year' => :'Integer',
-        :'total_payment_month' => :'Integer',
-        :'total_payment_week' => :'Integer',
-        :'total_payment_day' => :'Integer',
-        :'total_payment_all' => :'Integer',
-        :'created_by' => :'Integer',
-        :'created_date' => :'String',
-        :'modified_by' => :'Integer',
-        :'modified_date' => :'String',
-        :'total_rows' => :'Integer'
+        :'country_restriction_group_id'  => :'Integer',
+        :'public_token'                  => :'String',
+        :'card_tag'                      => :'String',
+        :'status_code'                   => :'String',
+        :'is_live'                       => :'Integer',
+        :'pin_try_exceeds'               => :'Integer',
+        :'masked_pan'                    => :'Integer',
+        :'embossed_name'                 => :'String',
+        :'expiry_date'                   => :'String',
+        :'cvv'                           => :'String',
+        :'start_date'                    => :'String',
+        :'end_date'                      => :'String',
+        :'country_code'                  => :'String',
+        :'currency_code'                 => :'String',
+        :'lang'                          => :'String',
+        :'delivery_title'                => :'String',
+        :'delivery_lastname'             => :'String',
+        :'delivery_firstname'            => :'String',
+        :'delivery_address1'             => :'String',
+        :'delivery_address2'             => :'String',
+        :'delivery_address3'             => :'String',
+        :'delivery_city'                 => :'String',
+        :'delivery_postcode'             => :'String',
+        :'delivery_country'              => :'String',
+        :'mobile_sent'                   => :'String',
+        :'limits_group'                  => :'String',
+        :'perms_group'                   => :'String',
+        :'card_design'                   => :'String',
+        :'virtual_converted'             => :'Integer',
+        :'option_atm'                    => :'Integer',
+        :'option_foreign'                => :'Integer',
+        :'option_online'                 => :'Integer',
+        :'option_nfc'                    => :'Integer',
+        :'limit_atm_year'                => :'Integer',
+        :'limit_atm_month'               => :'Integer',
+        :'limit_atm_week'                => :'Integer',
+        :'limit_atm_day'                 => :'Integer',
+        :'limit_atm_all'                 => :'Integer',
+        :'limit_payment_year'            => :'Integer',
+        :'limit_payment_month'           => :'Integer',
+        :'limit_payment_week'            => :'Integer',
+        :'limit_payment_day'             => :'Integer',
+        :'limit_payment_all'             => :'Integer',
+        :'payment_daily_limit'           => :'Float',
+        :'total_atm_year'                => :'Integer',
+        :'total_atm_month'               => :'Integer',
+        :'total_atm_week'                => :'Integer',
+        :'total_atm_day'                 => :'Integer',
+        :'total_atm_all'                 => :'Integer',
+        :'total_payment_year'            => :'Integer',
+        :'total_payment_month'           => :'Integer',
+        :'total_payment_week'            => :'Integer',
+        :'total_payment_day'             => :'Integer',
+        :'total_payment_all'             => :'Integer',
+        :'created_by'                    => :'Integer',
+        :'created_date'                  => :'String',
+        :'modified_by'                   => :'Integer',
+        :'modified_date'                 => :'String',
+        :'total_rows'                    => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'cardId')
         self.card_id = attributes[:'cardId']
@@ -585,8 +467,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -688,7 +570,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [card_id, user_id, wallet_id, wallet_cardtransaction_id, mcc_restriction_group_id, merchant_restriction_group_id, country_restriction_group_id, public_token, card_tag, status_code, is_live, pin_try_exceeds, masked_pan, embossed_name, expiry_date, cvv, start_date, end_date, country_code, currency_code, lang, delivery_title, delivery_lastname, delivery_firstname, delivery_address1, delivery_address2, delivery_address3, delivery_city, delivery_postcode, delivery_country, mobile_sent, limits_group, perms_group, card_design, virtual_converted, option_atm, option_foreign, option_online, option_nfc, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, payment_daily_limit, total_atm_year, total_atm_month, total_atm_week, total_atm_day, total_atm_all, total_payment_year, total_payment_month, total_payment_week, total_payment_day, total_payment_all, created_by, created_date, modified_by, modified_date, total_rows].hash
+      [card_id, user_id, wallet_id, wallet_cardtransaction_id, mcc_restriction_group_id, merchant_restriction_group_id, country_restriction_group_id, public_token, card_tag, status_code, is_live, pin_try_exceeds, 
+masked_pan, embossed_name, expiry_date, cvv, start_date, end_date, country_code, currency_code, lang, delivery_title, delivery_lastname, delivery_firstname, delivery_address1, delivery_address2, delivery_address3, delivery_city, delivery_postcode, delivery_country, mobile_sent, limits_group, perms_group, card_design, virtual_converted, option_atm, option_foreign, option_online, option_nfc, limit_atm_year, limit_atm_month, limit_atm_week, limit_atm_day, limit_atm_all, limit_payment_year, limit_payment_month, limit_payment_week, limit_payment_day, limit_payment_all, payment_daily_limit, total_atm_year, total_atm_month, total_atm_week, total_atm_day, total_atm_all, total_payment_year, total_payment_month, total_payment_week, total_payment_day, total_payment_all, created_by, created_date, modified_by, modified_date, total_rows].hash
     end
 
     # Builds the object from hash
@@ -742,7 +625,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -768,7 +651,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -785,7 +668,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -794,6 +677,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

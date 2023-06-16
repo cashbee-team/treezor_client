@@ -6,18 +6,22 @@ PATH
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
+PATH
+  remote: /Users/waghnaza/workspace/cashbee/codestyle
+  specs:
+    codestyle (2.4.3)
+      rubocop (~> 1.52.1)
+      rubocop-factory_bot (~> 2.23.1)
+      rubocop-performance (~> 1.18.0)
+      rubocop-rake (~> 0.6.0)
+      rubocop-rspec (~> 2.22.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    ZenTest (4.12.1)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
-    autotest-fsevent (0.2.20)
-      sys-uname
-    autotest-growl (0.2.16)
-    autotest-rails-pure (4.1.2)
+    ast (2.4.2)
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
@@ -26,8 +30,15 @@ GEM
     ffi (1.15.5)
     hashdiff (1.0.1)
     json (2.6.3)
+    parallel (1.23.0)
+    parser (3.2.2.3)
+      ast (~> 2.4.1)
+      racc
     public_suffix (5.0.1)
+    racc (1.7.1)
+    rainbow (3.1.1)
     rake (13.0.6)
+    regexp_parser (2.8.1)
     rexml (3.2.5)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
@@ -42,10 +53,35 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
-    sys-uname (1.2.3)
-      ffi (~> 1.1)
+    rubocop (1.52.1)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.2.3)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.29.0)
+      parser (>= 3.2.1.0)
+    rubocop-capybara (2.18.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.23.1)
+      rubocop (~> 1.33)
+    rubocop-performance (1.18.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
+    rubocop-rspec (2.22.0)
+      rubocop (~> 1.33)
+      rubocop-capybara (~> 2.17)
+      rubocop-factory_bot (~> 2.22)
+    ruby-progressbar (1.13.0)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
+    unicode-display_width (2.4.2)
     vcr (3.0.3)
     webmock (1.24.6)
       addressable (>= 2.3.6)
@@ -56,15 +92,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autotest (~> 4.4, >= 4.4.6)
-  autotest-fsevent (~> 0.2, >= 0.2.12)
-  autotest-growl (~> 0.2, >= 0.2.16)
-  autotest-rails-pure (~> 4.1, >= 4.1.2)
-  rake (~> 13.0.6)
-  rspec (~> 3.6, >= 3.6.0)
+  codestyle!
+  rake
+  rspec
   treezor_client!
-  vcr (~> 3.0, >= 3.0.1)
-  webmock (~> 1.24, >= 1.24.3)
+  vcr
+  webmock
 
 BUNDLED WITH
-   2.1.4
+   2.4.14

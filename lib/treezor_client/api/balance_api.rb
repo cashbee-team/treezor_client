@@ -29,7 +29,7 @@ module TreezorClient
     # @option opts [Integer] :wallet_id Wallet&#39;s ID of wanted balance
     # @option opts [Integer] :user_id Wallet&#39;s user id of wanted balanced
     # @return [InlineResponse200]
-    def get_balances(opts = {})
+    def get_balances(opts = { })
       data, _status_code, _headers = get_balances_with_http_info(opts)
       data
     end
@@ -44,7 +44,7 @@ module TreezorClient
     # @option opts [Integer] :wallet_id Wallet&#39;s ID of wanted balance
     # @option opts [Integer] :user_id Wallet&#39;s user id of wanted balanced
     # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
-    def get_balances_with_http_info(opts = {})
+    def get_balances_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: BalanceApi.get_balances ...'
       end
@@ -52,7 +52,7 @@ module TreezorClient
       local_var_path = '/balances'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -61,25 +61,25 @@ module TreezorClient
       query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse200')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse200')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BalanceApi#get_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

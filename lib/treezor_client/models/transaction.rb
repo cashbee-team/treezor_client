@@ -14,19 +14,7 @@ require 'date'
 
 module TreezorClient
   class Transaction
-    attr_accessor :transaction_id
-
-    attr_accessor :wallet_debit_id
-
-    attr_accessor :wallet_credit_id
-
-    attr_accessor :transaction_type
-
-    attr_accessor :foreign_id
-
-    attr_accessor :name
-
-    attr_accessor :description
+    attr_accessor :transaction_id, :wallet_debit_id, :wallet_credit_id, :transaction_type, :foreign_id, :name, :description, :amount, :wallet_debit_balance, :wallet_credit_balance, :currency, :total_rows
 
     # Date YYYY-MM-DD
     attr_accessor :value_date
@@ -34,68 +22,58 @@ module TreezorClient
     # Date YYYY-MM-DD
     attr_accessor :execution_date
 
-    attr_accessor :amount
-
-    attr_accessor :wallet_debit_balance
-
-    attr_accessor :wallet_credit_balance
-
-    attr_accessor :currency
-
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
-
-    attr_accessor :total_rows
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'transaction_id' => :'transactionId',
-        :'wallet_debit_id' => :'walletDebitId',
-        :'wallet_credit_id' => :'walletCreditId',
-        :'transaction_type' => :'transactionType',
-        :'foreign_id' => :'foreignId',
-        :'name' => :'name',
-        :'description' => :'description',
-        :'value_date' => :'valueDate',
-        :'execution_date' => :'executionDate',
-        :'amount' => :'amount',
-        :'wallet_debit_balance' => :'walletDebitBalance',
+        :'transaction_id'        => :'transactionId',
+        :'wallet_debit_id'       => :'walletDebitId',
+        :'wallet_credit_id'      => :'walletCreditId',
+        :'transaction_type'      => :'transactionType',
+        :'foreign_id'            => :'foreignId',
+        :'name'                  => :'name',
+        :'description'           => :'description',
+        :'value_date'            => :'valueDate',
+        :'execution_date'        => :'executionDate',
+        :'amount'                => :'amount',
+        :'wallet_debit_balance'  => :'walletDebitBalance',
         :'wallet_credit_balance' => :'walletCreditBalance',
-        :'currency' => :'currency',
-        :'created_date' => :'createdDate',
-        :'total_rows' => :'totalRows'
+        :'currency'              => :'currency',
+        :'created_date'          => :'createdDate',
+        :'total_rows'            => :'totalRows',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'transaction_id' => :'Integer',
-        :'wallet_debit_id' => :'Integer',
-        :'wallet_credit_id' => :'Integer',
-        :'transaction_type' => :'String',
-        :'foreign_id' => :'Integer',
-        :'name' => :'String',
-        :'description' => :'String',
-        :'value_date' => :'String',
-        :'execution_date' => :'String',
-        :'amount' => :'String',
-        :'wallet_debit_balance' => :'String',
+        :'transaction_id'        => :'Integer',
+        :'wallet_debit_id'       => :'Integer',
+        :'wallet_credit_id'      => :'Integer',
+        :'transaction_type'      => :'String',
+        :'foreign_id'            => :'Integer',
+        :'name'                  => :'String',
+        :'description'           => :'String',
+        :'value_date'            => :'String',
+        :'execution_date'        => :'String',
+        :'amount'                => :'String',
+        :'wallet_debit_balance'  => :'String',
         :'wallet_credit_balance' => :'String',
-        :'currency' => :'String',
-        :'created_date' => :'String',
-        :'total_rows' => :'Integer'
+        :'currency'              => :'String',
+        :'created_date'          => :'String',
+        :'total_rows'            => :'Integer',
       }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(attributes = {})
+    def initialize(attributes = { })
       return unless attributes.is_a?(Hash)
 
       # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      attributes = attributes.each_with_object({ }) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'transactionId')
         self.transaction_id = attributes[:'transactionId']
@@ -161,8 +139,8 @@ module TreezorClient
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      invalid_properties
+      Array.new
+      
     end
 
     # Check to see if the all the properties in the model are valid
@@ -202,7 +180,8 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [transaction_id, wallet_debit_id, wallet_credit_id, transaction_type, foreign_id, name, description, value_date, execution_date, amount, wallet_debit_balance, wallet_credit_balance, currency, created_date, total_rows].hash
+      [transaction_id, wallet_debit_id, wallet_credit_id, transaction_type, foreign_id, name, description, value_date, execution_date, amount, wallet_debit_balance, wallet_credit_balance, currency, created_date, 
+total_rows].hash
     end
 
     # Builds the object from hash
@@ -256,7 +235,7 @@ module TreezorClient
       when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
         k_type = Regexp.last_match[:k_type]
         v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each do |k, v|
             hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
           end
@@ -282,7 +261,7 @@ module TreezorClient
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = { }
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         next if value.nil?
@@ -299,7 +278,7 @@ module TreezorClient
       if value.is_a?(Array)
         value.compact.map { |v| _to_hash(v) }
       elsif value.is_a?(Hash)
-        {}.tap do |hash|
+        { }.tap do |hash|
           value.each { |k, v| hash[k] = _to_hash(v) }
         end
       elsif value.respond_to? :to_hash
@@ -308,6 +287,5 @@ module TreezorClient
         value
       end
     end
-
   end
 end

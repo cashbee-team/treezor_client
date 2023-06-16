@@ -24,7 +24,7 @@ module TreezorClient
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse20019]
-    def delete_payout(id, opts = {})
+    def delete_payout(id, opts = { })
       data, _status_code, _headers = delete_payout_with_http_info(id, opts)
       data
     end
@@ -34,7 +34,7 @@ module TreezorClient
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
-    def delete_payout_with_http_info(id, opts = {})
+    def delete_payout_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.delete_payout ...'
       end
@@ -43,31 +43,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling PayoutApi.delete_payout"
       end
       # resource path
-      local_var_path = '/payouts/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/payouts/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#delete_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -78,7 +78,7 @@ module TreezorClient
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse20019]
-    def get_payout(id, opts = {})
+    def get_payout(id, opts = { })
       data, _status_code, _headers = get_payout_with_http_info(id, opts)
       data
     end
@@ -88,7 +88,7 @@ module TreezorClient
     # @param id Payouts internal id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
-    def get_payout_with_http_info(id, opts = {})
+    def get_payout_with_http_info(id, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.get_payout ...'
       end
@@ -97,31 +97,31 @@ module TreezorClient
         fail ArgumentError, "Missing the required parameter 'id' when calling PayoutApi.get_payout"
       end
       # resource path
-      local_var_path = '/payouts/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/payouts/{id}'.sub("{id}", id.to_s)
 
       # query parameters
-      query_params = {}
+      query_params = { }
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#get_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -154,7 +154,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [InlineResponse20019]
-    def get_payouts(opts = {})
+    def get_payouts(opts = { })
       data, _status_code, _headers = get_payouts_with_http_info(opts)
       data
     end
@@ -186,7 +186,7 @@ module TreezorClient
     # @option opts [DateTime] :updated_date_from The modification date from which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @option opts [DateTime] :updated_date_to The modification date up to which you want to filter the request result. Format YYYY-MM-DD HH:MM:SS. More info [here](https://agent.treezor.com/lists) 
     # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
-    def get_payouts_with_http_info(opts = {})
+    def get_payouts_with_http_info(opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.get_payouts ...'
       end
@@ -194,7 +194,7 @@ module TreezorClient
       local_var_path = '/payouts'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
       query_params[:'accessTag'] = opts[:'access_tag'] if !opts[:'access_tag'].nil?
       query_params[:'accessUserId'] = opts[:'access_user_id'] if !opts[:'access_user_id'].nil?
@@ -220,25 +220,25 @@ module TreezorClient
       query_params[:'updatedDateTo'] = opts[:'updated_date_to'] if !opts[:'updated_date_to'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#get_payouts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -260,7 +260,7 @@ module TreezorClient
     # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account (140 chars max).
     # @option opts [String] :supporting_file_link Support file link
     # @return [InlineResponse20019]
-    def post_payout(wallet_id, amount, currency, opts = {})
+    def post_payout(wallet_id, amount, currency, opts = { })
       data, _status_code, _headers = post_payout_with_http_info(wallet_id, amount, currency, opts)
       data
     end
@@ -281,7 +281,7 @@ module TreezorClient
     # @option opts [String] :label Pay out label that will be displayed in the receiver&#39;s account (140 chars max).
     # @option opts [String] :supporting_file_link Support file link
     # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
-    def post_payout_with_http_info(wallet_id, amount, currency, opts = {})
+    def post_payout_with_http_info(wallet_id, amount, currency, opts = { })
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PayoutApi.post_payout ...'
       end
@@ -301,7 +301,7 @@ module TreezorClient
       local_var_path = '/payouts'
 
       # query parameters
-      query_params = {}
+      query_params = { }
       query_params[:'walletId'] = wallet_id
       query_params[:'amount'] = amount
       query_params[:'currency'] = currency
@@ -316,25 +316,25 @@ module TreezorClient
       query_params[:'supportingFileLink'] = opts[:'supporting_file_link'] if !opts[:'supporting_file_link'].nil?
 
       # header parameters
-      header_params = {}
+      header_params = { }
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
-      form_params = {}
+      form_params = { }
 
       # http body (model)
       post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :query_params  => query_params,
+        :form_params   => form_params,
+        :body          => post_body,
+        :auth_names    => auth_names,
+        :return_type   => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PayoutApi#post_payout\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
