@@ -189,6 +189,11 @@ Class | Method | HTTP request | Description
 *TreezorClient::UserApi* | [**put_user**](docs/UserApi.md#put_user) | **PUT** /users/{id} | update a user
 *TreezorClient::UserApi* | [**put_users**](docs/UserApi.md#put_users) | **POST** /users | create user
 *TreezorClient::UserApi* | [**users_id_kycreview_put**](docs/UserApi.md#users_id_kycreview_put) | **PUT** /users/{id}/Kycreview/ | review user information
+*TreezorClient::UserTaxResidencesApi* | [**delete_taxresidence**](docs/UserTaxResidencesApi.md#delete_taxresidence) | **DELETE** /v1/taxResidences/{id} | Delete a residence
+*TreezorClient::UserTaxResidencesApi* | [**get_taxresidence**](docs/UserTaxResidencesApi.md#get_taxresidence) | **GET** /v1/taxResidences/{id} | Get Tax Residence
+*TreezorClient::UserTaxResidencesApi* | [**get_taxresidences**](docs/UserTaxResidencesApi.md#get_taxresidences) | **GET** /v1/taxResidences | Search Tax Residences
+*TreezorClient::UserTaxResidencesApi* | [**post_taxresidence**](docs/UserTaxResidencesApi.md#post_taxresidence) | **POST** /v1/taxResidences | Create Tax Residence
+*TreezorClient::UserTaxResidencesApi* | [**put_taxresidence**](docs/UserTaxResidencesApi.md#put_taxresidence) | **PUT** /v1/taxResidences/{id} | Update Tax Residence
 *TreezorClient::VirtualibansApi* | [**getvirtualiban**](docs/VirtualibansApi.md#getvirtualiban) | **GET** /virtualibans/{id} | get a virtualiban by Id
 *TreezorClient::VirtualibansApi* | [**getvirtualibans**](docs/VirtualibansApi.md#getvirtualibans) | **GET** /virtualibans | search virtualibans
 *TreezorClient::VirtualibansApi* | [**post_virtual_iban**](docs/VirtualibansApi.md#post_virtual_iban) | **POST** /virtualibans | create a virtual IBAN
@@ -210,6 +215,7 @@ Class | Method | HTTP request | Description
  - [TreezorClient::Body1](docs/Body1.md)
  - [TreezorClient::Body10](docs/Body10.md)
  - [TreezorClient::Body11](docs/Body11.md)
+ - [TreezorClient::Body12](docs/Body12.md)
  - [TreezorClient::Body2](docs/Body2.md)
  - [TreezorClient::Body3](docs/Body3.md)
  - [TreezorClient::Body4](docs/Body4.md)
@@ -247,7 +253,17 @@ Class | Method | HTTP request | Description
  - [TreezorClient::InlineResponse20026](docs/InlineResponse20026.md)
  - [TreezorClient::InlineResponse20027](docs/InlineResponse20027.md)
  - [TreezorClient::InlineResponse20028](docs/InlineResponse20028.md)
+ - [TreezorClient::InlineResponse20029](docs/InlineResponse20029.md)
+ - [TreezorClient::InlineResponse20029TaxResidences](docs/InlineResponse20029TaxResidences.md)
  - [TreezorClient::InlineResponse2003](docs/InlineResponse2003.md)
+ - [TreezorClient::InlineResponse20030](docs/InlineResponse20030.md)
+ - [TreezorClient::InlineResponse20030TaxResidences](docs/InlineResponse20030TaxResidences.md)
+ - [TreezorClient::InlineResponse20031](docs/InlineResponse20031.md)
+ - [TreezorClient::InlineResponse20031TaxResidences](docs/InlineResponse20031TaxResidences.md)
+ - [TreezorClient::InlineResponse20032](docs/InlineResponse20032.md)
+ - [TreezorClient::InlineResponse20032TaxResidences](docs/InlineResponse20032TaxResidences.md)
+ - [TreezorClient::InlineResponse20033](docs/InlineResponse20033.md)
+ - [TreezorClient::InlineResponse20033TaxResidences](docs/InlineResponse20033TaxResidences.md)
  - [TreezorClient::InlineResponse2004](docs/InlineResponse2004.md)
  - [TreezorClient::InlineResponse2004Businessinformations](docs/InlineResponse2004Businessinformations.md)
  - [TreezorClient::InlineResponse2004Users](docs/InlineResponse2004Users.md)
