@@ -17,7 +17,6 @@ schemes:
   - https
   - http
 paths:
-
   /balances:
     get:
       tags:
@@ -12006,7 +12005,462 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
-
+  /v1/taxResidences:
+    get:
+      tags:
+        - User Tax Residences
+      summary: Search Tax Residences
+      operationId: getTaxresidences
+      description: Retrieve Tax Residences that match your search conditions.
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Legacy attribute, do not use.
+          required: false
+          type: string
+        - name: id
+          in: query
+          description: The unique identifier of the Tax Residence.
+          required: false
+          type: integer
+        - name: userId
+          in: query
+          description: The unique identifier of the User.
+          required: false
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The unique identifier of the TaxResidence.
+                    userId:
+                      type: integer
+                      description: The unique identifier of the User.
+                    country:
+                      type: string
+                      description: The residence country
+                    taxPayerId:
+                      type: string
+                      description: the taxPayer id
+                    liabilityWaiver:
+                      type: boolean
+                      description: Tax declaration
+                    createdDate:
+                      type: string
+                      description: Date of creation
+                    lastUpdate:
+                      type: string
+                      description: Date and time at which the taxResidence has been updated
+                    deletedDate:
+                      type: string
+                      description: Date and time at which the texResidence has been deleted
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        403:
+          description: Forbidden
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - jwt: []
+    post:
+      tags:
+        - User Tax Residences
+      summary: Create Tax Residence
+      operationId: postTaxresidence
+      description: Create a new Tax Residence.
+      consumes:
+        - application/json
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |
+            Legacy attribute, do not use.
+          required: false
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - userId
+              - country
+              - liabilityWaiver
+            properties:
+              userId:
+                type: integer
+                description: The unique identifier of the user.
+              country:
+                type: string
+                description: The country of the resident.
+              taxPayerId:
+                type: string
+                description: |
+                  Tax payer's id. This field is mandatory if the country of the resident is `US`, but optional otherwise.
+              liabilityWaiver:
+                type: boolean
+                description: |
+                  Must be set to true if the `taxPayerId` is empty or null, and set to false otherwise.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: TaxResidence Id
+                    userId:
+                      type: integer
+                      description: The unique identifier of the user.
+                    country:
+                      type: string
+                      description: The residence country
+                    taxPayerId:
+                      type: string
+                      description: the taxPayer id
+                    liabilityWaiver:
+                      type: boolean
+                      description: Tax declaration
+                    createdDate:
+                      type: string
+                      description: Date of creation
+                    lastUpdate:
+                      type: string
+                      description: The date and time at which the taxResidence has been updated
+                    deletedDate:
+                      type: string
+                      description: The date and time at which the taxResidence has been deleted
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        403:
+          description: Forbidden
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - jwt: []
+  /v1/taxResidences/{id}:
+    get:
+      tags:
+        - User Tax Residences
+      operationId: getTaxresidence
+      summary: Get Tax Residence
+      description: Retrieve a Tax Residence based on its `id`.
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |-
+            Legacy attribute, do not use.
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: The unique identifier of the TaxResidence.
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: TaxResidence Id
+                    userId:
+                      type: integer
+                      description: The unique identifier of the user.
+                    country:
+                      type: string
+                      description: The residence country
+                    taxPayerId:
+                      type: string
+                      description: The taxPayer id
+                    liabilityWaiver:
+                      type: boolean
+                      description: Tax declaration
+                    createdDate:
+                      type: string
+                      description: Date of creation
+                    lastUpdate:
+                      type: string
+                      description: The date and time the taxResidence has been updated
+                    deletedDate:
+                      type: string
+                      description: The date and time the taxResidence has been deleted
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        403:
+          description: Forbidden
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - jwt: []
+    put:
+      tags:
+        - User Tax Residences
+      summary: Update Tax Residence
+      operationId: putTaxresidence
+      description: Modify an existing Tax Residence.
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |-
+            Legacy attribute, do not use.
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: The unique identifier of the TaxResidence
+          required: true
+          type: integer
+        - name: userId
+          in: query
+          description: User's id residence
+          required: false
+          type: integer
+        - name: country
+          in: query
+          description: country of the resident
+          required: false
+          type: string
+        - name: taxPayerId
+          in: query
+          description: Tax payer's id
+          required: false
+          type: string
+        - name: liabilityWaiver
+          in: query
+          description: Tax declaration
+          required: false
+          type: boolean
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: TaxResidence Id
+                    userId:
+                      type: integer
+                      description: The unique identifier of the user.
+                    country:
+                      type: string
+                      description: The residence country
+                    taxPayerId:
+                      type: string
+                      description: the taxPayer id
+                    liabilityWaiver:
+                      type: boolean
+                      description: Tax declaration
+                    createdDate:
+                      type: string
+                      description: Date of creation
+                    lastUpdate:
+                      type: string
+                      description: The date and time the taxResidence has been updated
+                    deletedDate:
+                      type: string
+                      description: The date and time the taxResidence has been deleted
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        403:
+          description: Forbidden
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - jwt: []
+    delete:
+      tags:
+        - User Tax Residences
+      summary: Delete a residence
+      operationId: deleteTaxresidence
+      description: Delete a residence that match id
+      parameters:
+        - name: accessSignature
+          in: query
+          description: |-
+            Legacy attribute, do not use.
+          required: false
+          type: string
+        - name: id
+          in: path
+          description: The unique identifier of the Tax Residence
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              taxResidences:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: TaxResidence Id
+                    userId:
+                      type: integer
+                      description: The unique identifier of the User.
+                    country:
+                      type: string
+                      description: The residence country
+                    taxPayerId:
+                      type: string
+                      description: the taxPayer id
+                    liabilityWaiver:
+                      type: boolean
+                      description: Tax declaration
+                    createdDate:
+                      type: string
+                      description: Date of creation
+                    lastUpdate:
+                      type: string
+                      description: The date and time the taxResidence has been updated
+                    deletedDate:
+                      type: string
+                      description: The date and time the taxResidence has been deleted
+        400:
+          description: Bad Request
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        403:
+          description: Forbidden
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
 securityDefinitions:
   api_key:
     type: apiKey
