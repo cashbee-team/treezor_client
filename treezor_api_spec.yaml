@@ -8119,26 +8119,26 @@ paths:
              [here](https://agent.treezor.com/security-authentication).
           required: false
           type: string
-        - name: userId
-          in: formData
-          description: User's id residence
-          required: true
-          type: integer
-        - name: country
-          in: formData
-          description: country of the resident
-          required: true
-          type: string
-        - name: taxPayerId
-          in: formData
-          description: Tax payer's id
-          required: false
-          type: string
-        - name: liabilityWaiver
-          in: formData
-          description:  When there is no taxPayerId for a residence, this field shall be set to true.
-          required: false
-          type: boolean
+        - in: body
+          name: taxResidenceBody
+          schema:
+            type: object
+            required:
+              - userId
+              - country
+              - liabilityWaiver
+            properties:
+              userId:
+                type: integer
+              country:
+                description: country of the resident
+                type: string
+              taxPayerId:
+                description: Tax payer's id
+                type: string
+              liabilityWaiver:
+                description:  When there is no taxPayerId for a residence, this field shall be set to true.
+                type: boolean
       responses:
         '200':
           description: OK
@@ -8234,22 +8234,22 @@ paths:
           required: true
           type: integer
         - name: userId
-          in: formData
+          in: query
           description: User's id residence
           required: false
           type: integer
         - name: country
-          in: formData
+          in: query
           description: country of the resident
           required: false
           type: string
         - name: taxPayerId
-          in: formData
+          in: query
           description: Tax payer's id
           required: false
           type: string
         - name: liabilityWaiver
-          in: formData
+          in: query
           description: Tax declaration
           required: false
           type: boolean

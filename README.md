@@ -286,6 +286,7 @@ Class | Method | HTTP request | Description
  - [TreezorClient::PayoutRefund](docs/PayoutRefund.md)
  - [TreezorClient::SepaSctrInst](docs/SepaSctrInst.md)
  - [TreezorClient::TaxResidence](docs/TaxResidence.md)
+ - [TreezorClient::TaxResidenceBody](docs/TaxResidenceBody.md)
  - [TreezorClient::Transaction](docs/Transaction.md)
  - [TreezorClient::Transfer](docs/Transfer.md)
  - [TreezorClient::Transferrefund](docs/Transferrefund.md)
