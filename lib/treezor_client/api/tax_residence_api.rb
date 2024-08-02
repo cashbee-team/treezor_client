@@ -217,16 +217,16 @@ module TreezorClient
       # query parameters
       query_params = {}
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
-      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
-      query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
-      query_params[:'taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
-      query_params[:'liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # header parameters
       header_params = {}
 
       # form parameters
       form_params = {}
+      form_params['userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      form_params['country'] = opts[:'country'] if !opts[:'country'].nil?
+      form_params['taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
+      form_params['liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # http body (model)
       post_body = nil
@@ -283,17 +283,17 @@ module TreezorClient
 
       # query parameters
       query_params = {}
-      query_params[:'userId'] = user_id
-      query_params[:'country'] = country
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
-      query_params[:'taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
-      query_params[:'liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # header parameters
       header_params = {}
 
       # form parameters
       form_params = {}
+      form_params['userId'] = user_id
+      form_params['country'] = country
+      form_params['taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
+      form_params['liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # http body (model)
       post_body = nil

@@ -8120,22 +8120,22 @@ paths:
           required: false
           type: string
         - name: userId
-          in: query
+          in: formData
           description: User's id residence
           required: true
           type: integer
         - name: country
-          in: query
+          in: formData
           description: country of the resident
           required: true
           type: string
         - name: taxPayerId
-          in: query
+          in: formData
           description: Tax payer's id
           required: false
           type: string
         - name: liabilityWaiver
-          in: query
+          in: formData
           description:  When there is no taxPayerId for a residence, this field shall be set to true.
           required: false
           type: boolean
@@ -8234,22 +8234,22 @@ paths:
           required: true
           type: integer
         - name: userId
-          in: query
+          in: formData
           description: User's id residence
           required: false
           type: integer
         - name: country
-          in: query
+          in: formData
           description: country of the resident
           required: false
           type: string
         - name: taxPayerId
-          in: query
+          in: formData
           description: Tax payer's id
           required: false
           type: string
         - name: liabilityWaiver
-          in: query
+          in: formData
           description: Tax declaration
           required: false
           type: boolean
