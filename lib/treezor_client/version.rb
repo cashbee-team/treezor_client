@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.19
 =end
 
 module TreezorClient
-  VERSION = '2.3.0'
+  VERSION = '2.4.0'
 end
