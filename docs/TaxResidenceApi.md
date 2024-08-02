@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 
 # **tax_residences_post**
-> InlineResponse20021 tax_residences_post(user_id, country, opts)
+> InlineResponse20021 tax_residences_post(opts)
 
 create a residence
 
@@ -273,19 +273,14 @@ end
 
 api_instance = TreezorClient::TaxResidenceApi.new
 
-user_id = 56 # Integer | User's id residence
-
-country = 'country_example' # String | country of the resident
-
 opts = { 
   access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-  tax_payer_id: 'tax_payer_id_example', # String | Tax payer's id
-  liability_waiver: true # BOOLEAN | When there is no taxPayerId for a residence, this field shall be set to true.
+  tax_residence_body: TreezorClient::TaxResidenceBody.new # TaxResidenceBody | 
 }
 
 begin
   #create a residence
-  result = api_instance.tax_residences_post(user_id, country, opts)
+  result = api_instance.tax_residences_post(opts)
   p result
 rescue TreezorClient::ApiError => e
   puts "Exception when calling TaxResidenceApi->tax_residences_post: #{e}"
@@ -296,11 +291,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **Integer**| User&#39;s id residence | 
- **country** | **String**| country of the resident | 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication). | [optional] 
- **tax_payer_id** | **String**| Tax payer&#39;s id | [optional] 
- **liability_waiver** | **BOOLEAN**| When there is no taxPayerId for a residence, this field shall be set to true. | [optional] 
+ **tax_residence_body** | [**TaxResidenceBody**](TaxResidenceBody.md)|  | [optional] 
 
 ### Return type
 

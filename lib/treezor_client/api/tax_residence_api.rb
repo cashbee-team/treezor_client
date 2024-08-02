@@ -217,16 +217,16 @@ module TreezorClient
       # query parameters
       query_params = {}
       query_params[:'accessSignature'] = opts[:'access_signature'] if !opts[:'access_signature'].nil?
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
+      query_params[:'taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
+      query_params[:'liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # header parameters
       header_params = {}
 
       # form parameters
       form_params = {}
-      form_params['userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
-      form_params['country'] = opts[:'country'] if !opts[:'country'].nil?
-      form_params['taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
-      form_params['liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # http body (model)
       post_body = nil
@@ -245,38 +245,24 @@ module TreezorClient
     end
     # create a residence
     # Create a new tax residence.
-    # @param user_id User&#39;s id residence
-    # @param country country of the resident
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :tax_payer_id Tax payer&#39;s id
-    # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
+    # @option opts [TaxResidenceBody] :tax_residence_body 
     # @return [InlineResponse20021]
-    def tax_residences_post(user_id, country, opts = {})
-      data, _status_code, _headers = tax_residences_post_with_http_info(user_id, country, opts)
+    def tax_residences_post(opts = {})
+      data, _status_code, _headers = tax_residences_post_with_http_info(opts)
       data
     end
 
     # create a residence
     # Create a new tax residence.
-    # @param user_id User&#39;s id residence
-    # @param country country of the resident
     # @param [Hash] opts the optional parameters
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will  contact you if so. More info  [here](https://agent.treezor.com/security-authentication).
-    # @option opts [String] :tax_payer_id Tax payer&#39;s id
-    # @option opts [BOOLEAN] :liability_waiver When there is no taxPayerId for a residence, this field shall be set to true.
+    # @option opts [TaxResidenceBody] :tax_residence_body 
     # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
-    def tax_residences_post_with_http_info(user_id, country, opts = {})
+    def tax_residences_post_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaxResidenceApi.tax_residences_post ...'
-      end
-      # verify the required parameter 'user_id' is set
-      if @api_client.config.client_side_validation && user_id.nil?
-        fail ArgumentError, "Missing the required parameter 'user_id' when calling TaxResidenceApi.tax_residences_post"
-      end
-      # verify the required parameter 'country' is set
-      if @api_client.config.client_side_validation && country.nil?
-        fail ArgumentError, "Missing the required parameter 'country' when calling TaxResidenceApi.tax_residences_post"
       end
       # resource path
       local_var_path = '/taxResidences'
@@ -290,13 +276,9 @@ module TreezorClient
 
       # form parameters
       form_params = {}
-      form_params['userId'] = user_id
-      form_params['country'] = country
-      form_params['taxPayerId'] = opts[:'tax_payer_id'] if !opts[:'tax_payer_id'].nil?
-      form_params['liabilityWaiver'] = opts[:'liability_waiver'] if !opts[:'liability_waiver'].nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(opts[:'tax_residence_body'])
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
