@@ -293,7 +293,9 @@ opts = {
   place_of_birth: 'place_of_birth_example', # String | User's place of birth
   birth_country: 'birth_country_example', # String | User's country of birth
   occupation: 'occupation_example', # String | User's occupation
+  occupation_category: 'occupation_category_example', # String | 
   income_range: 'income_range_example', # String | Customer income range
+  monthly_income_range: 'monthly_income_range_example', # String | 
   legal_name: 'legal_name_example', # String | Business name
   legal_registration_number: 'legal_registration_number_example', # String | Business registration number
   legal_tva_number: 'legal_tva_number_example', # String | Business VAT number
@@ -309,7 +311,8 @@ opts = {
   tax_number: 'tax_number_example', # String | User's tax identification number. If the taxResidence is not set to FR, the field is mandatory.
   tax_residence: 'tax_residence_example', # String | User's tax residence country code (2 char code following ISO 3166 norm).
   position: 'position_example', # String | User's position  (deprecated, you must use the parameter occupation).
-  personal_assets: 'personal_assets_example' # String | User's personal assets range expressed in k€.
+  personal_assets: 'personal_assets_example', # String | User's personal assets range expressed in k€.
+  personal_assets_range: 'personal_assets_range_example' # String | 
 }
 
 begin
@@ -353,7 +356,9 @@ Name | Type | Description  | Notes
  **place_of_birth** | **String**| User&#39;s place of birth | [optional] 
  **birth_country** | **String**| User&#39;s country of birth | [optional] 
  **occupation** | **String**| User&#39;s occupation | [optional] 
+ **occupation_category** | **String**|  | [optional] 
  **income_range** | **String**| Customer income range | [optional] 
+ **monthly_income_range** | **String**|  | [optional] 
  **legal_name** | **String**| Business name | [optional] 
  **legal_registration_number** | **String**| Business registration number | [optional] 
  **legal_tva_number** | **String**| Business VAT number | [optional] 
@@ -370,6 +375,7 @@ Name | Type | Description  | Notes
  **tax_residence** | **String**| User&#39;s tax residence country code (2 char code following ISO 3166 norm). | [optional] 
  **position** | **String**| User&#39;s position  (deprecated, you must use the parameter occupation). | [optional] 
  **personal_assets** | **String**| User&#39;s personal assets range expressed in k€. | [optional] 
+ **personal_assets_range** | **String**|  | [optional] 
 
 ### Return type
 
