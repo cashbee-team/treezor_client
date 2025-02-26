@@ -306,7 +306,9 @@ module TreezorClient
     # @option opts [String] :place_of_birth User&#39;s place of birth
     # @option opts [String] :birth_country User&#39;s country of birth
     # @option opts [String] :occupation User&#39;s occupation
+    # @option opts [String] :occupation_category 
     # @option opts [String] :income_range Customer income range
+    # @option opts [String] :monthly_income_range 
     # @option opts [String] :legal_name Business name
     # @option opts [String] :legal_registration_number Business registration number
     # @option opts [String] :legal_tva_number Business VAT number
@@ -323,6 +325,7 @@ module TreezorClient
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
     # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
+    # @option opts [String] :personal_assets_range 
     # @return [InlineResponse20026]
     def put_user(id, opts = {})
       data, _status_code, _headers = put_user_with_http_info(id, opts)
@@ -360,7 +363,9 @@ module TreezorClient
     # @option opts [String] :place_of_birth User&#39;s place of birth
     # @option opts [String] :birth_country User&#39;s country of birth
     # @option opts [String] :occupation User&#39;s occupation
+    # @option opts [String] :occupation_category 
     # @option opts [String] :income_range Customer income range
+    # @option opts [String] :monthly_income_range 
     # @option opts [String] :legal_name Business name
     # @option opts [String] :legal_registration_number Business registration number
     # @option opts [String] :legal_tva_number Business VAT number
@@ -377,6 +382,7 @@ module TreezorClient
     # @option opts [String] :tax_residence User&#39;s tax residence country code (2 char code following ISO 3166 norm).
     # @option opts [String] :position User&#39;s position  (deprecated, you must use the parameter occupation).
     # @option opts [String] :personal_assets User&#39;s personal assets range expressed in k€.
+    # @option opts [String] :personal_assets_range 
     # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
     def put_user_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -436,7 +442,9 @@ module TreezorClient
       query_params[:'placeOfBirth'] = opts[:'place_of_birth'] if !opts[:'place_of_birth'].nil?
       query_params[:'birthCountry'] = opts[:'birth_country'] if !opts[:'birth_country'].nil?
       query_params[:'occupation'] = opts[:'occupation'] if !opts[:'occupation'].nil?
+      query_params[:'occupationCategory'] = opts[:'occupation_category'] if !opts[:'occupation_category'].nil?
       query_params[:'incomeRange'] = opts[:'income_range'] if !opts[:'income_range'].nil?
+      query_params[:'monthlyIncomeRange'] = opts[:'monthly_income_range'] if !opts[:'monthly_income_range'].nil?
       query_params[:'legalName'] = opts[:'legal_name'] if !opts[:'legal_name'].nil?
       query_params[:'legalRegistrationNumber'] = opts[:'legal_registration_number'] if !opts[:'legal_registration_number'].nil?
       query_params[:'legalTvaNumber'] = opts[:'legal_tva_number'] if !opts[:'legal_tva_number'].nil?
@@ -453,6 +461,7 @@ module TreezorClient
       query_params[:'taxResidence'] = opts[:'tax_residence'] if !opts[:'tax_residence'].nil?
       query_params[:'position'] = opts[:'position'] if !opts[:'position'].nil?
       query_params[:'personalAssets'] = opts[:'personal_assets'] if !opts[:'personal_assets'].nil?
+      query_params[:'personalAssetsRange'] = opts[:'personal_assets_range'] if !opts[:'personal_assets_range'].nil?
 
       # header parameters
       header_params = {}
