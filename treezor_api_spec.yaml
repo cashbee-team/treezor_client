@@ -9577,12 +9577,20 @@ paths:
           description: User's occupation
           required: false
           type: string
+        - name: occupationCategory
+          in: query
+          required: false
+          type: string
         - name: incomeRange
           in: query
           description: Customer income range
           type: string
           required: false
           enum: ["0-18", "19-23", "24-27", "28-35", "36-56", "57-*"]
+        - name: monthlyIncomeRange
+          type: string
+          in: query
+          required: false
         - name: legalName
           in: query
           description: Business name
@@ -9938,6 +9946,10 @@ paths:
           required: false
           type: string
           enum: ["0-2", "3-22", "23-128", "129-319", "320-464", "465-"]
+        - name: personalAssetsRange
+          in: query
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -13157,7 +13169,11 @@ definitions:
         type: string
       occupation:
         type: string
+      occupationCategory:
+        type: string
       incomeRange:
+        type: string
+      monthlyIncomeRange:
         type: string
       legalName:
         type: string
@@ -13220,6 +13236,8 @@ definitions:
       position:
         type: string
       personalAssets:
+        type: string
+      personalAssetsRange:
         type: string
       createdDate:
         type: string
