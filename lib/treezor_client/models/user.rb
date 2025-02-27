@@ -72,7 +72,11 @@ module TreezorClient
 
     attr_accessor :occupation
 
+    attr_accessor :occupation_category
+
     attr_accessor :income_range
+
+    attr_accessor :monthly_income_range
 
     attr_accessor :legal_name
 
@@ -122,6 +126,8 @@ module TreezorClient
     attr_accessor :position
 
     attr_accessor :personal_assets
+
+    attr_accessor :personal_assets_range
 
     # Date YYYY-MM-DD HH:MM:SS
     attr_accessor :created_date
@@ -189,7 +195,9 @@ module TreezorClient
         :'place_of_birth' => :'placeOfBirth',
         :'birth_country' => :'birthCountry',
         :'occupation' => :'occupation',
+        :'occupation_category' => :'occupationCategory',
         :'income_range' => :'incomeRange',
+        :'monthly_income_range' => :'monthlyIncomeRange',
         :'legal_name' => :'legalName',
         :'legal_name_embossed' => :'legalNameEmbossed',
         :'legal_registration_number' => :'legalRegistrationNumber',
@@ -213,6 +221,7 @@ module TreezorClient
         :'tax_residence' => :'taxResidence',
         :'position' => :'position',
         :'personal_assets' => :'personalAssets',
+        :'personal_assets_range' => :'personalAssetsRange',
         :'created_date' => :'createdDate',
         :'modified_date' => :'modifiedDate',
         :'wallet_count' => :'walletCount',
@@ -253,7 +262,9 @@ module TreezorClient
         :'place_of_birth' => :'String',
         :'birth_country' => :'String',
         :'occupation' => :'String',
+        :'occupation_category' => :'String',
         :'income_range' => :'String',
+        :'monthly_income_range' => :'String',
         :'legal_name' => :'String',
         :'legal_name_embossed' => :'String',
         :'legal_registration_number' => :'String',
@@ -277,6 +288,7 @@ module TreezorClient
         :'tax_residence' => :'String',
         :'position' => :'String',
         :'personal_assets' => :'String',
+        :'personal_assets_range' => :'String',
         :'created_date' => :'String',
         :'modified_date' => :'String',
         :'wallet_count' => :'Integer',
@@ -409,8 +421,16 @@ module TreezorClient
         self.occupation = attributes[:'occupation']
       end
 
+      if attributes.has_key?(:'occupationCategory')
+        self.occupation_category = attributes[:'occupationCategory']
+      end
+
       if attributes.has_key?(:'incomeRange')
         self.income_range = attributes[:'incomeRange']
+      end
+
+      if attributes.has_key?(:'monthlyIncomeRange')
+        self.monthly_income_range = attributes[:'monthlyIncomeRange']
       end
 
       if attributes.has_key?(:'legalName')
@@ -505,6 +525,10 @@ module TreezorClient
         self.personal_assets = attributes[:'personalAssets']
       end
 
+      if attributes.has_key?(:'personalAssetsRange')
+        self.personal_assets_range = attributes[:'personalAssetsRange']
+      end
+
       if attributes.has_key?(:'createdDate')
         self.created_date = attributes[:'createdDate']
       end
@@ -597,7 +621,9 @@ module TreezorClient
           place_of_birth == o.place_of_birth &&
           birth_country == o.birth_country &&
           occupation == o.occupation &&
+          occupation_category == o.occupation_category &&
           income_range == o.income_range &&
+          monthly_income_range == o.monthly_income_range &&
           legal_name == o.legal_name &&
           legal_name_embossed == o.legal_name_embossed &&
           legal_registration_number == o.legal_registration_number &&
@@ -621,6 +647,7 @@ module TreezorClient
           tax_residence == o.tax_residence &&
           position == o.position &&
           personal_assets == o.personal_assets &&
+          personal_assets_range == o.personal_assets_range &&
           created_date == o.created_date &&
           modified_date == o.modified_date &&
           wallet_count == o.wallet_count &&
@@ -637,7 +664,7 @@ module TreezorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, birth_country, occupation, income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, created_date, modified_date, wallet_count, payin_count, total_rows].hash
+      [user_id, user_type_id, user_status, user_tag, parent_user_id, parent_type, controlling_person_type, employee_type, specified_us_person, title, firstname, lastname, middle_names, birthday, email, address1, address2, postcode, city, state, country, country_name, phone, mobile, nationality, nationality_other, place_of_birth, birth_country, occupation, occupation_category, income_range, monthly_income_range, legal_name, legal_name_embossed, legal_registration_number, legal_tva_number, legal_registration_date, legal_form, legal_share_capital, legal_sector, legal_annual_turn_over, legal_net_income_range, legal_number_of_employee_range, effective_beneficiary, kyc_level, kyc_review, kyc_review_comment, is_freezed, language, opt_in_mailing, sepa_creditor_identifier, tax_number, tax_residence, position, personal_assets, personal_assets_range, created_date, modified_date, wallet_count, payin_count, total_rows].hash
     end
 
     # Builds the object from hash
