@@ -250,6 +250,7 @@ module TreezorClient
     # @param amount Pay out amount.
     # @param currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
     # @param [Hash] opts the optional parameters
+    # @option opts [Object] :x_trz_vop_exemption 
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
@@ -271,6 +272,7 @@ module TreezorClient
     # @param amount Pay out amount.
     # @param currency Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
     # @param [Hash] opts the optional parameters
+    # @option opts [Object] :x_trz_vop_exemption 
     # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
     # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
     # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics). 
@@ -321,6 +323,7 @@ module TreezorClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'X-Trz-Vop-Exemption'] = opts[:'x_trz_vop_exemption'] if !opts[:'x_trz_vop_exemption'].nil?
 
       # form parameters
       form_params = {}

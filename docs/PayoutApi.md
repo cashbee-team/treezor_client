@@ -245,6 +245,7 @@ amount = 56 # Integer | Pay out amount.
 currency = 'currency_example' # String | Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217). 
 
 opts = { 
+  x_trz_vop_exemption: nil, # Object | 
   access_signature: 'access_signature_example', # String | Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication). 
   access_tag: 'access_tag_example', # String | Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics). 
   access_user_id: 56, # Integer | Access user's id is used for user's action restriction. More info [here](https://agent.treezor.com/basics). 
@@ -272,6 +273,7 @@ Name | Type | Description  | Notes
  **wallet_id** | **Integer**| Pay out wallet id. | 
  **amount** | **Integer**| Pay out amount. | 
  **currency** | **String**| Transfert amount currency. Format: [ISO 4217](https://fr.wikipedia.org/wiki/ISO_4217).  | 
+ **x_trz_vop_exemption** | [**Object**](.md)|  | [optional] 
  **access_signature** | **String**| Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).  | [optional] 
  **access_tag** | **String**| Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).  | [optional] 
  **access_user_id** | **Integer**| Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).  | [optional] 

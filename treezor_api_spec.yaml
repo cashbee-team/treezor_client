@@ -7637,6 +7637,11 @@ paths:
       produces:
         - application/json
       parameters:
+        - name: X-Trz-Vop-Exemption
+          in: header
+          schema:
+            type: boolean
+          required: false
         - name: accessSignature
           in: query
           description: |
