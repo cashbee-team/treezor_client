@@ -10918,6 +10918,72 @@ paths:
                   $ref: '#/definitions/Error'
       security:
         - api_key: []
+  # CC-5618 - hand-authored ahead of Treezor publishing an updated OpenAPI
+  # spec for this endpoint. See the Kycreview definition above for context.
+  '/users/{id}/kyc':
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: User's ID
+          required: true
+          type: integer
+        - name: accessSignature
+          in: query
+          description: |
+            Access signature can be mandatory for specific context. Treezor will
+            contact you if so. More info
+            [here](https://agent.treezor.com/security-authentication).
+          required: false
+          type: string
+        - name: accessTag
+          in: query
+          description: |
+            Access tag is used for idem potency query. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+        - name: accessUserId
+          in: query
+          description: |
+            Access user's id is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: integer
+        - name: accessUserIp
+          in: query
+          description: |
+            Access user's ip is used for user's action restriction. More info
+            [here](https://agent.treezor.com/basics).
+          required: false
+          type: string
+      tags:
+        - user
+      summary: get a user's KYC status
+      description: Get the unified KYC object (kycStatus/kycReviewType) for a given user.
+      operationId: getKyc
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Kycreview'
+        '405':
+          description: Invalid input
+        default:
+          description: Unexpected error
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: '#/definitions/Error'
+      security:
+        - api_key: []
   /users/{id}/Kycreview/:
     put:
       summary: review user information
@@ -13257,6 +13323,51 @@ definitions:
         type: integer
       totalRows:
         type: integer
+  # CC-5618 - hand-authored ahead of Treezor publishing an updated OpenAPI
+  # spec for their unified KYC model. Confirmed against
+  # https://docs.treezor.com/guide/user-verification/kyc-request.html -
+  # this object is returned directly (not wrapped in a plural array like
+  # every other resource in this spec) by both GET /users/{id}/kyc and the
+  # kycreview.request/kycreview.result webhooks.
+  Kycreview:
+    type: object
+    properties:
+      userId:
+        type: integer
+      clientId:
+        type: integer
+      distributionCountry:
+        type: string
+        enum: ['BE', 'DE', 'ES', 'FR', 'IT', 'NL']
+      kycLevel:
+        type: integer
+        description: Deprecated - retained by Treezor for migration purposes only. Use kycStatus.
+      kycReview:
+        type: integer
+        description: Deprecated - retained by Treezor for migration purposes only. Use kycStatus.
+      kycReviewComment:
+        type: string
+      kycStatus:
+        type: string
+        enum: ['NONE', 'PENDING', 'INCOMPLETE', 'REFUSED', 'REVIEW NEEDED', 'VALIDATED', 'CANCELED']
+        description: Replaces kycLevel and kycReview.
+      kycReviewType:
+        type: string
+        enum: ['ONBOARDING', 'PERIODIC', 'ON_EVENT']
+        description: 'The reason for the verification: ONBOARDING - initial verification, PERIODIC - routine compliance check, ON_EVENT - triggered by account changes.'
+      codeStatus:
+        type: string
+      informationStatus:
+        type: string
+      lastRequestDatetime:
+        type: string
+        description: Timestamp of the user's most recent KYC request.
+      lastReviewDatetime:
+        type: string
+        description: Timestamp of the most recent manual or automatic review by Treezor.
+      nextReviewDate:
+        type: string
+        description: 'The date of the next scheduled review. Note: kycStatus changes to REVIEW NEEDED 3 months prior to this date.'
   Wallet:
     type: object
     properties:

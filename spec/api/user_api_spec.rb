@@ -65,6 +65,22 @@ describe 'UserApi' do
     end
   end
 
+  # unit tests for get_kyc
+  # get a user's KYC status
+  # Get the unified KYC object (kycStatus/kycReviewType) for a given user.
+  # @param id User&#39;s ID
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :access_signature Access signature can be mandatory for specific context. Treezor will contact you if so. More info [here](https://agent.treezor.com/security-authentication).
+  # @option opts [String] :access_tag Access tag is used for idem potency query. More info [here](https://agent.treezor.com/basics).
+  # @option opts [Integer] :access_user_id Access user&#39;s id is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @option opts [String] :access_user_ip Access user&#39;s ip is used for user&#39;s action restriction. More info [here](https://agent.treezor.com/basics).
+  # @return [Kycreview]
+  describe 'get_kyc test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_users
   # search users
   # Get users from the system.
