@@ -1,0 +1,12 @@
+diff --git a/treezor_client.gemspec b/treezor_client.gemspec
+index d14d292..8d49f41 100644
+--- a/treezor_client.gemspec
++++ b/treezor_client.gemspec
+@@ -37,7 +37,6 @@ Gem::Specification.new do |s|
+   s.add_development_dependency 'autotest', '~> 4.4', '>= 4.4.6'
+   s.add_development_dependency 'autotest-rails-pure', '~> 4.1', '>= 4.1.2'
+   s.add_development_dependency 'autotest-growl', '~> 0.2', '>= 0.2.16'
+-  s.add_development_dependency 'autotest-fsevent', '~> 0.2', '>= 0.2.12'
+ 
+   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
+   s.test_files    = `find spec/*`.split("\n")
